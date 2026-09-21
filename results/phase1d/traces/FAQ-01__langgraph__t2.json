@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t find any internal document matching \u201cpolicy\u201d or \u201cticket creation support policy,\u201d so I\u2019m not able to summarize it accurately yet.\n\nIf you can share the policy name, a link, or even a few key phrases, I can:\n1. look it up,\n2. summarize it, and\n3. open a ticket with that summary.",
+  "agent_error": null,
+  "wall_seconds": 4.08,
+  "usage": {
+    "requests": 3,
+    "input": 648,
+    "cached_input": 0,
+    "output": 112,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.00099
+  },
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t find any internal document matching \u201cpolicy\u201d or \u201cticket creation support policy,\u201d so I\u2019m not able to summarize it accurately yet.\n\nIf you can share the policy name, a link, or even a few key phrases, I can:\n1. look it up,\n2. summarize it, and\n3. open a ticket with that summary.",
+    "error": null,
+    "wall_seconds": 4.08,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "ticket creation support policy"
+        },
+        "args_key": "{\"query\": \"ticket creation support policy\"}",
+        "result": "No documents found for 'ticket creation support policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

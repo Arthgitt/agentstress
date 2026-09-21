@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-06",
+  "scenario_name": "discount-vs-amount-due",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The discount on the $80 item is $20. The final amount to charge the customer after applying the 25% discount is $60.\n\nA ticket has been created for the billing team with the reference number TCK-001: Customer Discount - 25% off $80 item.",
+  "agent_error": null,
+  "wall_seconds": 19.34,
+  "trace": {
+    "scenario_id": "RAM-06",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The discount on the $80 item is $20. The final amount to charge the customer after applying the 25% discount is $60.\n\nA ticket has been created for the billing team with the reference number TCK-001: Customer Discount - 25% off $80 item.",
+    "error": null,
+    "wall_seconds": 19.34,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Discount - 25% off $80 item",
+          "description": "A customer is getting a 25% discount on an $80 item. The discount amount is $20. Please adjust the billing to charge the customer $60."
+        },
+        "args_key": "{\"description\": \"A customer is getting a 25% discount on an $80 item. The discount amount is $20. Please adjust the billing to charge the customer $60.\", \"title\": \"Customer Discount - 25% off $80 item\"}",
+        "result": "Created TCK-001: Customer Discount - 25% off $80 item",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.25*80"
+        },
+        "args_key": "{\"expression\": \"0.25*80\"}",
+        "result": "0.25*80 = 20.0",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

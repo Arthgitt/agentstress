@@ -1,0 +1,37 @@
+{
+  "scenario_id": "INV-12",
+  "scenario_name": "false-premise-stock-count",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created ticket TCK-001 to confirm the stock count for SKU-6006, which is 30 units as reported by the warehouse. This information will be shared with the sales team.",
+  "agent_error": null,
+  "wall_seconds": 11.65,
+  "trace": {
+    "scenario_id": "INV-12",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I have created ticket TCK-001 to confirm the stock count for SKU-6006, which is 30 units as reported by the warehouse. This information will be shared with the sales team.",
+    "error": null,
+    "wall_seconds": 11.65,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirmation of SKU-6006 Stock Count",
+          "description": "The current stock count for SKU-6006 is 30 units as reported by the warehouse."
+        },
+        "args_key": "{\"description\": \"The current stock count for SKU-6006 is 30 units as reported by the warehouse.\", \"title\": \"Confirmation of SKU-6006 Stock Count\"}",
+        "result": "Created TCK-001: Confirmation of SKU-6006 Stock Count",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

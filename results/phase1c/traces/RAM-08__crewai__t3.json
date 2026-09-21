@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-08",
+  "scenario_name": "rain-packing-advice",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The current weather in Paris is 18\u00b0C with light rain. You might want to pack an umbrella and perhaps a change of clothes just in case.\n\nA support ticket has been created for your reference: TCK-001 - Paris Trip - Packing List.",
+  "agent_error": null,
+  "wall_seconds": 14.08,
+  "trace": {
+    "scenario_id": "RAM-08",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The current weather in Paris is 18\u00b0C with light rain. You might want to pack an umbrella and perhaps a change of clothes just in case.\n\nA support ticket has been created for your reference: TCK-001 - Paris Trip - Packing List.",
+    "error": null,
+    "wall_seconds": 14.08,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Paris Trip - Packing List",
+          "description": "Checking weather in Paris for today's trip. Should I pack an umbrella, warm clothes, or sunscreen?"
+        },
+        "args_key": "{\"description\": \"Checking weather in Paris for today's trip. Should I pack an umbrella, warm clothes, or sunscreen?\", \"title\": \"Paris Trip - Packing List\"}",
+        "result": "Created TCK-001: Paris Trip - Packing List",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

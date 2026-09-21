@@ -1,0 +1,46 @@
+{
+  "scenario_id": "UT-13",
+  "scenario_name": "question-with-ticket-tool",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "London: 12C, overcast with drizzle",
+  "agent_error": null,
+  "wall_seconds": 2.15,
+  "usage": {
+    "requests": 2,
+    "input": 514,
+    "cached_input": 0,
+    "output": 30,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000521
+  },
+  "trace": {
+    "scenario_id": "UT-13",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "London: 12C, overcast with drizzle",
+    "error": null,
+    "wall_seconds": 2.15,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "London"
+        },
+        "args_key": "{\"city\": \"London\"}",
+        "result": "London: 12C, overcast with drizzle",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

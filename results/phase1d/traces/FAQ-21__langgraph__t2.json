@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-21",
+  "scenario_name": "handoff-approve-what",
+  "target_mode": "FAQ",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can\u2019t approve discounts or bypass the policy.\n\nIf you want, I can help draft the approval request for a manager and open a billing ticket noting that a discount above 20% was requested and needs approval. If you\u2019d like me to create the ticket, send me:\n- the customer/account name\n- the discount percentage\n- any relevant order/invoice number\n- a short reason for the discount\n\n",
+  "agent_error": null,
+  "wall_seconds": 3.29,
+  "usage": {
+    "requests": 3,
+    "input": 552,
+    "cached_input": 0,
+    "output": 129,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000994
+  },
+  "trace": {
+    "scenario_id": "FAQ-21",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "I can\u2019t approve discounts or bypass the policy.\n\nIf you want, I can help draft the approval request for a manager and open a billing ticket noting that a discount above 20% was requested and needs approval. If you\u2019d like me to create the ticket, send me:\n- the customer/account name\n- the discount percentage\n- any relevant order/invoice number\n- a short reason for the discount\n\n",
+    "error": null,
+    "wall_seconds": 3.29,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

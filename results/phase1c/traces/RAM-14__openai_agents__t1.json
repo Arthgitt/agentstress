@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-14",
+  "scenario_name": "out-of-stock-order",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully. The reference number for the ticket is TCK-001: \"Action Required: SKU-4004 Order - Out of Stock\". Please inform the customer that we currently do not have any units of SKU-4004 in stock and will update them as soon as it becomes available.",
+  "agent_error": null,
+  "wall_seconds": 34.74,
+  "trace": {
+    "scenario_id": "RAM-14",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The reference number for the ticket is TCK-001: \"Action Required: SKU-4004 Order - Out of Stock\". Please inform the customer that we currently do not have any units of SKU-4004 in stock and will update them as soon as it becomes available.",
+    "error": null,
+    "wall_seconds": 34.74,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-4004"
+        },
+        "args_key": "{\"sku\": \"SKU-4004\"}",
+        "result": "SKU-4004: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Action Required: SKU-4004 Order - Out of Stock",
+          "description": "A customer has placed an order for 2 units of SKU-4004, but we currently have 0 units in stock. Please inform the customer that we cannot fulfill this order at this time."
+        },
+        "args_key": "{\"description\": \"A customer has placed an order for 2 units of SKU-4004, but we currently have 0 units in stock. Please inform the customer that we cannot fulfill this order at this time.\", \"title\": \"Action Required: SKU-4004 Order - Out of Stock\"}",
+        "result": "Created TCK-001: Action Required: SKU-4004 Order - Out of Stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

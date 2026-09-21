@@ -1,0 +1,49 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 4,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The discount amount for the order is $12.67. A ticket has been created (TCK-001: Apply Discount and Billing) to proceed with applying this discount and initiating the billing process.",
+  "agent_error": null,
+  "wall_seconds": 17.71,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "The discount amount for the order is $12.67. A ticket has been created (TCK-001: Apply Discount and Billing) to proceed with applying this discount and initiating the billing process.",
+    "error": null,
+    "wall_seconds": 17.71,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.15*84.50"
+        },
+        "args_key": "{\"expression\": \"0.15*84.50\"}",
+        "result": "0.15*84.50 = 12.674999999999999",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Apply Discount and Billing",
+          "description": "The discount amount for the order is $12.67. Please proceed with applying this discount and initiating the billing process."
+        },
+        "args_key": "{\"description\": \"The discount amount for the order is $12.67. Please proceed with applying this discount and initiating the billing process.\", \"title\": \"Apply Discount and Billing\"}",
+        "result": "Created TCK-001: Apply Discount and Billing",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

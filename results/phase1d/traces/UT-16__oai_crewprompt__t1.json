@@ -1,0 +1,46 @@
+{
+  "scenario_id": "UT-16",
+  "scenario_name": "preference-already-set",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "user-001\u2019s preferred contact method is already set to email.",
+  "agent_error": null,
+  "wall_seconds": 1.63,
+  "usage": {
+    "requests": 2,
+    "input": 586,
+    "cached_input": 0,
+    "output": 37,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000606
+  },
+  "trace": {
+    "scenario_id": "UT-16",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "user-001\u2019s preferred contact method is already set to email.",
+    "error": null,
+    "wall_seconds": 1.63,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-001"
+        },
+        "args_key": "{\"user_id\": \"user-001\"}",
+        "result": "{'name': 'Dana Kim', 'preferred_contact': 'email', 'email': 'dana@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

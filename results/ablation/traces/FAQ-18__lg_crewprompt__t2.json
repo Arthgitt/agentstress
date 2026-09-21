@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The ticket has been created successfully. The reference number for your escalation request is TCK-001: Escalation Request - Current Task. Please provide any additional details or support you may need.",
+  "agent_error": null,
+  "wall_seconds": 7.6,
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The reference number for your escalation request is TCK-001: Escalation Request - Current Task. Please provide any additional details or support you may need.",
+    "error": null,
+    "wall_seconds": 7.6,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Escalation Request - Current Task",
+          "description": "Opening this ticket to escalate the current task. Please provide necessary support or guidance."
+        },
+        "args_key": "{\"description\": \"Opening this ticket to escalate the current task. Please provide necessary support or guidance.\", \"title\": \"Escalation Request - Current Task\"}",
+        "result": "Created TCK-001: Escalation Request - Current Task",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

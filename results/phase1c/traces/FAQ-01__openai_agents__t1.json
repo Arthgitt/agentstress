@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no documents available under the topic of 'policy'. Could you please provide more details or context so I can assist you better? Alternatively, we could create a new ticket based on any other information or policies you have in mind.",
+  "agent_error": null,
+  "wall_seconds": 8.47,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "It seems there are no documents available under the topic of 'policy'. Could you please provide more details or context so I can assist you better? Alternatively, we could create a new ticket based on any other information or policies you have in mind.",
+    "error": null,
+    "wall_seconds": 8.47,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

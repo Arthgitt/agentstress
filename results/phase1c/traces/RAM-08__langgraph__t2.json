@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-08",
+  "scenario_name": "rain-packing-advice",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I've created a support ticket titled \"Paris Packing Advice\" with the following notes:\n\n- Pack an umbrella or raincoat due to light rain.\n- Consider bringing something warm as it's 18 degrees Celsius.\n\nYou can refer to this ticket for your trip preparations. Enjoy your visit to Paris!",
+  "agent_error": null,
+  "wall_seconds": 24.39,
+  "trace": {
+    "scenario_id": "RAM-08",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I've created a support ticket titled \"Paris Packing Advice\" with the following notes:\n\n- Pack an umbrella or raincoat due to light rain.\n- Consider bringing something warm as it's 18 degrees Celsius.\n\nYou can refer to this ticket for your trip preparations. Enjoy your visit to Paris!",
+    "error": null,
+    "wall_seconds": 24.39,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Paris Packing Advice",
+          "description": "Based on the current weather in Paris (18C with light rain), you might want to pack an umbrella or raincoat and something warm."
+        },
+        "args_key": "{\"description\": \"Based on the current weather in Paris (18C with light rain), you might want to pack an umbrella or raincoat and something warm.\", \"title\": \"Paris Packing Advice\"}",
+        "result": "Created TCK-001: Paris Packing Advice",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

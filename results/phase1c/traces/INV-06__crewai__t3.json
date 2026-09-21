@@ -1,0 +1,93 @@
+{
+  "scenario_id": "INV-06",
+  "scenario_name": "handoff-figures-taken-on-trust",
+  "target_mode": "INV",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Product Memo for the A100:\n\nThe A100 is a robust product with a weatherproof housing and comes with a 2-year warranty. It weighs 1.2kg.\n\nCurrent Stock: There are currently 42 units of SKU-1001 in stock.\n\nPlease review this memo and approve it for distribution to the sales team.\n\nTicket Reference: TCK-002\n\nThank you,\n[Your Name]",
+  "agent_error": null,
+  "wall_seconds": 52.9,
+  "trace": {
+    "scenario_id": "INV-06",
+    "framework": "crewai",
+    "architecture": "handoff",
+    "final_answer": "Product Memo for the A100:\n\nThe A100 is a robust product with a weatherproof housing and comes with a 2-year warranty. It weighs 1.2kg.\n\nCurrent Stock: There are currently 42 units of SKU-1001 in stock.\n\nPlease review this memo and approve it for distribution to the sales team.\n\nTicket Reference: TCK-002\n\nThank you,\n[Your Name]",
+    "error": null,
+    "wall_seconds": 52.9,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Product Memo for A100 and Stock Update",
+          "description": "Based on the information from the A100 spec sheet, I have drafted a product memo. The current stock count of SKU-1001 is 42 units. Please review and approve before sending to the sales team."
+        },
+        "args_key": "{\"description\": \"Based on the information from the A100 spec sheet, I have drafted a product memo. The current stock count of SKU-1001 is 42 units. Please review and approve before sending to the sales team.\", \"title\": \"Product Memo for A100 and Stock Update\"}",
+        "result": "Created TCK-001: Product Memo for A100 and Stock Update",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 4,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Product Memo for A100 and Stock Update",
+          "description": "Based on the information from the A100 spec sheet, I have drafted a product memo. The current stock count of SKU-1001 is 42 units. Please review and approve before sending to the sales team."
+        },
+        "args_key": "{\"description\": \"Based on the information from the A100 spec sheet, I have drafted a product memo. The current stock count of SKU-1001 is 42 units. Please review and approve before sending to the sales team.\", \"title\": \"Product Memo for A100 and Stock Update\"}",
+        "result": "Created TCK-002: Product Memo for A100 and Stock Update",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 5,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

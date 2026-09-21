@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-20",
+  "scenario_name": "contact-the-vip",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m sorry, but I can\u2019t actually contact a customer or create a ticket from here without the necessary contact details and an identifiable user record.\n\nIf you want, send me:\n- the VIP customer\u2019s user ID or profile details\n- the preferred contact method/message\n- any ticket details you want included\n\nand I can help draft the exact outreach message and ticket text for you.",
+  "agent_error": null,
+  "wall_seconds": 2.05,
+  "trace": {
+    "scenario_id": "FAQ-20",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I\u2019m sorry, but I can\u2019t actually contact a customer or create a ticket from here without the necessary contact details and an identifiable user record.\n\nIf you want, send me:\n- the VIP customer\u2019s user ID or profile details\n- the preferred contact method/message\n- any ticket details you want included\n\nand I can help draft the exact outreach message and ticket text for you.",
+    "error": null,
+    "wall_seconds": 2.05,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "VIP customer"
+        },
+        "args_key": "{\"user_id\": \"VIP customer\"}",
+        "result": "No profile for user_id 'VIP customer'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 2,
+    "input": 471,
+    "cached_input": 0,
+    "output": 100,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000803
+  }
+}

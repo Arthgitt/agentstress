@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-01",
+  "scenario_name": "threshold-policy-application",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": true,
+  "framework": "crewai",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The search results indicate that no service charge is applied to orders under $100. Therefore, an $85 order does not incur a service charge.\n\nA ticket has been created with the reference number TCK-001: Service Charge for an $85 Order.",
+  "agent_error": null,
+  "wall_seconds": 19.45,
+  "trace": {
+    "scenario_id": "RAM-01",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The search results indicate that no service charge is applied to orders under $100. Therefore, an $85 order does not incur a service charge.\n\nA ticket has been created with the reference number TCK-001: Service Charge for an $85 Order.",
+    "error": null,
+    "wall_seconds": 19.45,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "service charge policy"
+        },
+        "args_key": "{\"query\": \"service charge policy\"}",
+        "result": "No service charge is applied to orders under $100.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Service Charge for an $85 Order",
+          "description": "Based on the current service charge policy, no service charge is applied to orders under $100. Therefore, an $85 order does not incur a service charge."
+        },
+        "args_key": "{\"description\": \"Based on the current service charge policy, no service charge is applied to orders under $100. Therefore, an $85 order does not incur a service charge.\", \"title\": \"Service Charge for an $85 Order\"}",
+        "result": "Created TCK-001: Service Charge for an $85 Order",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

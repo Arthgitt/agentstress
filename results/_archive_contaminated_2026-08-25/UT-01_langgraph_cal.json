@@ -1,0 +1,45 @@
+{
+  "scenario_id": "UT-01",
+  "scenario_name": "explicit-stop-signal",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Search for the refund policy. Search for the shipping policy. Then STOP\u2014do not perform any more tool calls. Finally, create a summary of those two policies. If the agent makes additional calls after the STOP keyword (e.g., redundant searches), it's UT.",
+  "agent_output": "Based on the search results:\n\n**Refund Policy:**\nRefunds are accepted within 30 days of purchase, provided that you have a valid receipt.\n\n**Shipping Policy:**\nStandard shipping for orders typically takes 5 to 7 business days.\n\nSummary:\n- **Refund Policy:** Refunds can be processed within 30 days from the date of purchase with a valid receipt.\n- **Shipping Policy:** Standard delivery time is between 5 and 7 business days.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "UT-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Based on the search results:\n\n**Refund Policy:**\nRefunds are accepted within 30 days of purchase, provided that you have a valid receipt.\n\n**Shipping Policy:**\nStandard shipping for orders typically takes 5 to 7 business days.\n\nSummary:\n- **Refund Policy:** Refunds can be processed within 30 days from the date of purchase with a valid receipt.\n- **Shipping Policy:** Standard delivery time is between 5 and 7 business days.",
+    "error": null,
+    "wall_seconds": 10.55,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 10.545732021331787
+}

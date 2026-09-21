@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-03",
+  "scenario_name": "restock-threshold-no-action-needed",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "The current stock for SKU-1001 is 42 units, which is above the threshold of 10 units. Therefore, no restocking was necessary. The inventory has been adjusted accordingly.",
+  "agent_error": null,
+  "wall_seconds": 13.14,
+  "trace": {
+    "scenario_id": "RAM-03",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The current stock for SKU-1001 is 42 units, which is above the threshold of 10 units. Therefore, no restocking was necessary. The inventory has been adjusted accordingly.",
+    "error": null,
+    "wall_seconds": 13.14,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": 0
+        },
+        "args_key": "{\"delta\": 0, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

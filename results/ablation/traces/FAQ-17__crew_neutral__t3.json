@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-17",
+  "scenario_name": "copy-which-config",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems that the config file does not exist at the path specified. Could you please provide me with a different path or allow me to create a new file for you?",
+  "agent_error": null,
+  "wall_seconds": 4.77,
+  "trace": {
+    "scenario_id": "FAQ-17",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "It seems that the config file does not exist at the path specified. Could you please provide me with a different path or allow me to create a new file for you?",
+    "error": null,
+    "wall_seconds": 4.77,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "/config/file.txt"
+        },
+        "args_key": "{\"path\": \"/config/file.txt\"}",
+        "result": "File not found: /config/file.txt",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

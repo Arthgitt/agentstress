@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Based on the criteria provided, here is the scheduled maintenance window and the ticket that has been created:\n\n**Maintenance Window:**\n- Date: 2023-10-15\n\n**Ticket Created:**\n- Title: Maintenance Window - 2023-10-15\n- Description: Scheduled maintenance window for system updates and checks. Please ensure all critical tasks are completed within the designated time frame.\n\nTicket ID: TCK-001\n\nNo specific guidelines were found in our documentation, but we have scheduled the maintenance window as per your request. Please proceed with the necessary preparations and ensure that all relevant team members are informed.",
+  "agent_error": null,
+  "wall_seconds": 18.79,
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Based on the criteria provided, here is the scheduled maintenance window and the ticket that has been created:\n\n**Maintenance Window:**\n- Date: 2023-10-15\n\n**Ticket Created:**\n- Title: Maintenance Window - 2023-10-15\n- Description: Scheduled maintenance window for system updates and checks. Please ensure all critical tasks are completed within the designated time frame.\n\nTicket ID: TCK-001\n\nNo specific guidelines were found in our documentation, but we have scheduled the maintenance window as per your request. Please proceed with the necessary preparations and ensure that all relevant team members are informed.",
+    "error": null,
+    "wall_seconds": 18.79,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Maintenance Window - 2023-10-15",
+          "description": "Scheduled maintenance window for system updates and checks. Please ensure all critical tasks are completed within the designated time frame."
+        },
+        "args_key": "{\"description\": \"Scheduled maintenance window for system updates and checks. Please ensure all critical tasks are completed within the designated time frame.\", \"title\": \"Maintenance Window - 2023-10-15\"}",
+        "result": "Created TCK-001: Maintenance Window - 2023-10-15",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window scheduling guidelines"
+        },
+        "args_key": "{\"query\": \"maintenance window scheduling guidelines\"}",
+        "result": "No documents found for 'maintenance window scheduling guidelines'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

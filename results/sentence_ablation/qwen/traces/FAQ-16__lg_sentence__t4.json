@@ -1,0 +1,38 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 4,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "-ticket created successfully with title \"Maintenance Window - Weekly Update\" and reference number TCK-001.\n\nNext, let's schedule the maintenance window. Do you have specific dates and times in mind for this maintenance window? If not, I can suggest a default time frame.\nIf you provide me with the details, I will proceed accordingly.",
+  "agent_error": null,
+  "wall_seconds": 25.51,
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "-ticket created successfully with title \"Maintenance Window - Weekly Update\" and reference number TCK-001.\n\nNext, let's schedule the maintenance window. Do you have specific dates and times in mind for this maintenance window? If not, I can suggest a default time frame.\nIf you provide me with the details, I will proceed accordingly.",
+    "error": null,
+    "wall_seconds": 25.51,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Maintenance Window - Weekly Update",
+          "description": "This ticket pertains to scheduling and executing the weekly maintenance window for our systems. The tasks include system checks, updates, and any necessary repairs."
+        },
+        "args_key": "{\"description\": \"This ticket pertains to scheduling and executing the weekly maintenance window for our systems. The tasks include system checks, updates, and any necessary repairs.\", \"title\": \"Maintenance Window - Weekly Update\"}",
+        "result": "Created TCK-001: Maintenance Window - Weekly Update",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can open the ticket, but I don\u2019t have enough details to schedule the maintenance window yet.\n\nPlease send:\n- preferred date and start/end time\n- timezone\n- systems/services affected\n- reason for maintenance\n- any rollback or risk notes\n- who should be notified\n\nOnce you provide that, I\u2019ll create the ticket right away.",
+  "agent_error": null,
+  "wall_seconds": 4.29,
+  "usage": {
+    "requests": 4,
+    "input": 1128,
+    "cached_input": 0,
+    "output": 133,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001445
+  },
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I can open the ticket, but I don\u2019t have enough details to schedule the maintenance window yet.\n\nPlease send:\n- preferred date and start/end time\n- timezone\n- systems/services affected\n- reason for maintenance\n- any rollback or risk notes\n- who should be notified\n\nOnce you provide that, I\u2019ll create the ticket right away.",
+    "error": null,
+    "wall_seconds": 4.29,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window scheduling procedure ticket required fields"
+        },
+        "args_key": "{\"query\": \"maintenance window scheduling procedure ticket required fields\"}",
+        "result": "No documents found for 'maintenance window scheduling procedure ticket required fields'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window policy"
+        },
+        "args_key": "{\"query\": \"maintenance window policy\"}",
+        "result": "No documents found for 'maintenance window policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window"
+        },
+        "args_key": "{\"query\": \"maintenance window\"}",
+        "result": "No documents found for 'maintenance window'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

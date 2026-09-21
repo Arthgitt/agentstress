@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will first determine the details of the maintenance window you want to schedule. Could you please provide me with the start and end time of the maintenance window? Additionally, could you give me some context about what needs to be maintained or any specific requirements for this maintenance session? Once I have these details, I can proceed to create a ticket for it.\nIf you're not sure about the specifics, let's assume we are scheduling a standard 2-hour maintenance window in the middle of the night. Please confirm if that works for your scenario. If not, please provide the exact times and any other relevant information.\nAlso, could you specify the title and description for the ticket? This will help us to keep track of the task efficiently.",
+  "agent_error": null,
+  "wall_seconds": 14.39,
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will first determine the details of the maintenance window you want to schedule. Could you please provide me with the start and end time of the maintenance window? Additionally, could you give me some context about what needs to be maintained or any specific requirements for this maintenance session? Once I have these details, I can proceed to create a ticket for it.\nIf you're not sure about the specifics, let's assume we are scheduling a standard 2-hour maintenance window in the middle of the night. Please confirm if that works for your scenario. If not, please provide the exact times and any other relevant information.\nAlso, could you specify the title and description for the ticket? This will help us to keep track of the task efficiently.",
+    "error": null,
+    "wall_seconds": 14.39,
+    "calls": []
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "scenario_id": "SR-35",
+  "scenario_name": "handoff-q2-brief",
+  "target_mode": "SR",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Done \u2014 I wrote the figures to `reports/q2_brief.txt` and opened ticket `TCK-001` titled **Q2 brief filed**.",
+  "agent_error": null,
+  "wall_seconds": 5.87,
+  "usage": {
+    "requests": 5,
+    "input": 1536,
+    "cached_input": 0,
+    "output": 177,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001948
+  },
+  "trace": {
+    "scenario_id": "SR-35",
+    "framework": "crew_neutral",
+    "architecture": "handoff",
+    "final_answer": "Done \u2014 I wrote the figures to `reports/q2_brief.txt` and opened ticket `TCK-001` titled **Q2 brief filed**.",
+    "error": null,
+    "wall_seconds": 5.87,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "reports/q2.txt"
+        },
+        "args_key": "{\"path\": \"reports/q2.txt\"}",
+        "result": "Q2 revenue: $1.2M\nQ2 churn: 4.1%",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "reports/q2_brief.txt",
+          "content": "Q2 revenue: $1.2M\nQ2 churn: 4.1%\n"
+        },
+        "args_key": "{\"content\": \"Q2 revenue: $1.2M\\nQ2 churn: 4.1%\", \"path\": \"reports/q2_brief.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Q2 brief filed",
+          "description": "Filed Q2 brief with the following figures:\n- Q2 revenue: $1.2M\n- Q2 churn: 4.1%\n"
+        },
+        "args_key": "{\"description\": \"Filed Q2 brief with the following figures:\\n- Q2 revenue: $1.2M\\n- Q2 churn: 4.1%\", \"title\": \"Q2 brief filed\"}",
+        "result": "Created TCK-001: Q2 brief filed",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

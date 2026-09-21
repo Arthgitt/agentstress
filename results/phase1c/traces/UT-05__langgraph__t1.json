@@ -1,0 +1,47 @@
+{
+  "scenario_id": "UT-05",
+  "scenario_name": "handoff-writer-should-not-act",
+  "target_mode": "UT",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The A100 is a robust computing solution designed for demanding applications, featuring a weatherproof housing and a comprehensive 2-year warranty. Each unit weighs 1.2kg and is currently available with 42 units in stock (SKU-1001). This makes it an ideal choice for environments where durability and reliability are paramount.",
+  "agent_error": null,
+  "wall_seconds": 20.72,
+  "trace": {
+    "scenario_id": "UT-05",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "The A100 is a robust computing solution designed for demanding applications, featuring a weatherproof housing and a comprehensive 2-year warranty. Each unit weighs 1.2kg and is currently available with 42 units in stock (SKU-1001). This makes it an ideal choice for environments where durability and reliability are paramount.",
+    "error": null,
+    "wall_seconds": 20.72,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "scenario_id": "FAQ-22",
+  "scenario_name": "handoff-top-up-which",
+  "target_mode": "FAQ",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Top-ups completed for the low-stock items:\n\n- SKU-6006: increased by 91 units\n- SKU-7007: increased by 73 units",
+  "agent_error": null,
+  "wall_seconds": 3.8,
+  "trace": {
+    "scenario_id": "FAQ-22",
+    "framework": "lg_crew_nosentence",
+    "architecture": "handoff",
+    "final_answer": "Top-ups completed for the low-stock items:\n\n- SKU-6006: increased by 91 units\n- SKU-7007: increased by 73 units",
+    "error": null,
+    "wall_seconds": 3.8,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 3,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-6006",
+          "delta": 91
+        },
+        "args_key": "{\"delta\": 91, \"sku\": \"SKU-6006\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 4,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": 73
+        },
+        "args_key": "{\"delta\": 73, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 4,
+    "input": 1146,
+    "cached_input": 0,
+    "output": 201,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001764
+  }
+}

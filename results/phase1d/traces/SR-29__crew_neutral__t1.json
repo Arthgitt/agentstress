@@ -1,0 +1,69 @@
+{
+  "scenario_id": "SR-29",
+  "scenario_name": "missing-profile-then-continue",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Done \u2014 I looked up both profiles and opened a ticket with the contact details found.\n\nTicket created: **TCK-001**\n- **user-009:** No profile found\n- **user-003:** Priya Nair\n  - Preferred contact: phone\n  - Phone: +1-555-0133\n  - Email: priya@example.com",
+  "agent_error": null,
+  "wall_seconds": 3.7,
+  "usage": {
+    "requests": 3,
+    "input": 1102,
+    "cached_input": 0,
+    "output": 238,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001898
+  },
+  "trace": {
+    "scenario_id": "SR-29",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Done \u2014 I looked up both profiles and opened a ticket with the contact details found.\n\nTicket created: **TCK-001**\n- **user-009:** No profile found\n- **user-003:** Priya Nair\n  - Preferred contact: phone\n  - Phone: +1-555-0133\n  - Email: priya@example.com",
+    "error": null,
+    "wall_seconds": 3.7,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-009"
+        },
+        "args_key": "{\"user_id\": \"user-009\"}",
+        "result": "No profile for user_id 'user-009'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-003"
+        },
+        "args_key": "{\"user_id\": \"user-003\"}",
+        "result": "{'name': 'Priya Nair', 'preferred_contact': 'phone', 'phone': '+1-555-0133', 'email': 'priya@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Contact details lookup for user-009 and user-003",
+          "description": "Requested profile lookup results:\n\n- user-009: No profile found for user_id 'user-009'.\n- user-003: Name: Priya Nair\n  Preferred contact: phone\n  Phone: +1-555-0133\n  Email: priya@example.com\n\nPlease follow up using the available contact details for user-003."
+        },
+        "args_key": "{\"description\": \"Requested profile lookup results:\\n\\n- user-009: No profile found for user_id 'user-009'.\\n- user-003: Name: Priya Nair\\n  Preferred contact: phone\\n  Phone: +1-555-0133\\n  Email: priya@example.com\\n\\nPlease follow up using the available contact details for user-003.\", \"title\": \"Contact details lookup for user-009 and user-003\"}",
+        "result": "Created TCK-001: Contact details lookup for user-009 and user-003",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

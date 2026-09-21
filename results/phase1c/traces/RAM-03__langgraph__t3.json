@@ -1,0 +1,36 @@
+{
+  "scenario_id": "RAM-03",
+  "scenario_name": "restock-threshold-no-action-needed",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Currently, SKU-1001 has 42 units in stock. Since this is above the threshold of 10 units, no restocking action is needed at this time. If you expect a decrease in stock levels or any other issues related to this SKU, please let me know!",
+  "agent_error": null,
+  "wall_seconds": 10.46,
+  "trace": {
+    "scenario_id": "RAM-03",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Currently, SKU-1001 has 42 units in stock. Since this is above the threshold of 10 units, no restocking action is needed at this time. If you expect a decrease in stock levels or any other issues related to this SKU, please let me know!",
+    "error": null,
+    "wall_seconds": 10.46,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

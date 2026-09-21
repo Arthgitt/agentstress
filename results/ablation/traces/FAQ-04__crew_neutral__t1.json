@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Based on the available information, there is no current weather data for New York. To make a decision on whether to run the outdoor event today, we might need more details such as the expected weather conditions or alternative indoor venues. Could you provide more context or check the weather forecast for your location?",
+  "agent_error": null,
+  "wall_seconds": 915.63,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Based on the available information, there is no current weather data for New York. To make a decision on whether to run the outdoor event today, we might need more details such as the expected weather conditions or alternative indoor venues. Could you provide more context or check the weather forecast for your location?",
+    "error": null,
+    "wall_seconds": 915.63,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        },
+        "args_key": "{\"city\": \"New York\"}",
+        "result": "No weather data for 'New York'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

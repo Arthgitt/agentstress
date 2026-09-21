@@ -1,0 +1,58 @@
+{
+  "scenario_id": "SR-23",
+  "scenario_name": "three-distinct-lookups",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Based on the information retrieved, here is a summary of our policies:\n\n- **Refund Policy**: Refunds are accepted within 30 days from the date of purchase with a valid receipt.\n- **Shipping Policy**: Standard shipping typically takes 5 to 7 business days.\n- **Warranty Terms**: All products come with a minimum one-year warranty starting from the date of purchase.\n\nIf you need more detailed information or have specific questions about these policies, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 22.85,
+  "trace": {
+    "scenario_id": "SR-23",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Based on the information retrieved, here is a summary of our policies:\n\n- **Refund Policy**: Refunds are accepted within 30 days from the date of purchase with a valid receipt.\n- **Shipping Policy**: Standard shipping typically takes 5 to 7 business days.\n- **Warranty Terms**: All products come with a minimum one-year warranty starting from the date of purchase.\n\nIf you need more detailed information or have specific questions about these policies, feel free to ask!",
+    "error": null,
+    "wall_seconds": 22.85,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "warranty terms"
+        },
+        "args_key": "{\"query\": \"warranty terms\"}",
+        "result": "All products carry a minimum 1 year warranty from date of purchase.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

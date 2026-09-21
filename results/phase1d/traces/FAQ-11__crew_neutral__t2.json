@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t update the stock because the SKU `widget` was not found in inventory. Please provide the correct SKU, and I can update it for you.",
+  "agent_error": null,
+  "wall_seconds": 1.8,
+  "usage": {
+    "requests": 2,
+    "input": 486,
+    "cached_input": 0,
+    "output": 52,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000598
+  },
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t update the stock because the SKU `widget` was not found in inventory. Please provide the correct SKU, and I can update it for you.",
+    "error": null,
+    "wall_seconds": 1.8,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "widget"
+        },
+        "args_key": "{\"sku\": \"widget\"}",
+        "result": "Unknown SKU: widget",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

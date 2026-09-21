@@ -1,0 +1,27 @@
+{
+  "scenario_id": "FAQ-23",
+  "agent_output": "The stock for SKU-7007 has been adjusted by removing 7 units.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-23",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The stock for SKU-7007 has been adjusted by removing 7 units.",
+    "error": null,
+    "wall_seconds": 6.48,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -7
+        },
+        "args_key": "{\"delta\": -7, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

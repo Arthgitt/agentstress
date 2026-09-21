@@ -1,0 +1,91 @@
+{
+  "scenario_id": "FAQ-22",
+  "scenario_name": "handoff-top-up-which",
+  "target_mode": "FAQ",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Based on the current stock counts:\n\n- SKU-5005 has 150 units in stock.\n- SKU-6006 has 9 units in stock, which is running low.\n- SKU-7007 has 27 units in stock.\n\nWe will top up SKU-6006 as it is the one running low.",
+  "agent_error": null,
+  "wall_seconds": 40.01,
+  "trace": {
+    "scenario_id": "FAQ-22",
+    "framework": "lg_crewprompt",
+    "architecture": "handoff",
+    "final_answer": "Based on the current stock counts:\n\n- SKU-5005 has 150 units in stock.\n- SKU-6006 has 9 units in stock, which is running low.\n- SKU-7007 has 27 units in stock.\n\nWe will top up SKU-6006 as it is the one running low.",
+    "error": null,
+    "wall_seconds": 40.01,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 3,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 4,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 5,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

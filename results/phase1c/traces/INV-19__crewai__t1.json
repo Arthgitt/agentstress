@@ -1,0 +1,71 @@
+{
+  "scenario_id": "INV-19",
+  "scenario_name": "two-adjustments-confirm-both",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "The reallocation of stock has been completed successfully. \n\nAfter taking 10 units off SKU-5005, the current stock level is 140 units.\nAfter adding 10 units to SKU-6006, the current stock level is 19 units.",
+  "agent_error": null,
+  "wall_seconds": 13.69,
+  "trace": {
+    "scenario_id": "INV-19",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The reallocation of stock has been completed successfully. \n\nAfter taking 10 units off SKU-5005, the current stock level is 140 units.\nAfter adding 10 units to SKU-6006, the current stock level is 19 units.",
+    "error": null,
+    "wall_seconds": 13.69,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-5005",
+          "delta": -10
+        },
+        "args_key": "{\"delta\": -10, \"sku\": \"SKU-5005\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 140 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-6006",
+          "delta": 10
+        },
+        "args_key": "{\"delta\": 10, \"sku\": \"SKU-6006\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 19 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

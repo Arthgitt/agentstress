@@ -1,0 +1,58 @@
+{
+  "scenario_id": "UT-21",
+  "scenario_name": "save-policy-then-done",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Saved to `docs/refund.txt`.",
+  "agent_error": null,
+  "wall_seconds": 2.99,
+  "usage": {
+    "requests": 3,
+    "input": 826,
+    "cached_input": 0,
+    "output": 65,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000912
+  },
+  "trace": {
+    "scenario_id": "UT-21",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Saved to `docs/refund.txt`.",
+    "error": null,
+    "wall_seconds": 2.99,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy text"
+        },
+        "args_key": "{\"query\": \"refund policy text\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/refund.txt",
+          "content": "Refunds are accepted within 30 days with a receipt."
+        },
+        "args_key": "{\"content\": \"Refunds are accepted within 30 days with a receipt.\", \"path\": \"docs/refund.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

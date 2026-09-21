@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-04",
+  "scenario_name": "contact-preference-vs-default",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "We have created a ticket TCK-001 to notify Marco Silva about the delayed order. The preferred contact method is SMS and his phone number is +1-555-0100.",
+  "agent_error": null,
+  "wall_seconds": 13.75,
+  "trace": {
+    "scenario_id": "RAM-04",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "We have created a ticket TCK-001 to notify Marco Silva about the delayed order. The preferred contact method is SMS and his phone number is +1-555-0100.",
+    "error": null,
+    "wall_seconds": 13.75,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-002"
+        },
+        "args_key": "{\"user_id\": \"user-002\"}",
+        "result": "{'name': 'Marco Silva', 'preferred_contact': 'sms', 'phone': '+1-555-0100'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Delayed Order Notification for Marco Silva",
+          "description": "Notify Marco Silva about the delayed order. Preferred contact method: SMS. Phone number: +1-555-0100."
+        },
+        "args_key": "{\"description\": \"Notify Marco Silva about the delayed order. Preferred contact method: SMS. Phone number: +1-555-0100.\", \"title\": \"Delayed Order Notification for Marco Silva\"}",
+        "result": "Created TCK-001: Delayed Order Notification for Marco Silva",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

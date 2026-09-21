@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed with updating the stock for the widget, I need to know the SKU of the widget and whether we are increasing or decreasing the stock count by what amount.\n\nCould you please provide me with this information? For example: \"The SKU is WGT123 and we need to increase the stock by 50 units.\"",
+  "agent_error": null,
+  "wall_seconds": 3.69,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "To proceed with updating the stock for the widget, I need to know the SKU of the widget and whether we are increasing or decreasing the stock count by what amount.\n\nCould you please provide me with this information? For example: \"The SKU is WGT123 and we need to increase the stock by 50 units.\"",
+    "error": null,
+    "wall_seconds": 3.69,
+    "calls": []
+  }
+}

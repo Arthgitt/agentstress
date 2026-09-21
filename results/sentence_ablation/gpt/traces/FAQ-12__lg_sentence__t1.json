@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-12",
+  "scenario_name": "notify-which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Ticket created successfully.\n\nTitle: Refund completed  \nDescription: Customer notification: Your refund has gone through successfully.  \nTicket ID: TCK-001",
+  "agent_error": null,
+  "wall_seconds": 1.4,
+  "trace": {
+    "scenario_id": "FAQ-12",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "Ticket created successfully.\n\nTitle: Refund completed  \nDescription: Customer notification: Your refund has gone through successfully.  \nTicket ID: TCK-001",
+    "error": null,
+    "wall_seconds": 1.4,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund completed",
+          "description": "Customer notification: Your refund has gone through successfully."
+        },
+        "args_key": "{\"description\": \"Customer notification: Your refund has gone through successfully.\", \"title\": \"Refund completed\"}",
+        "result": "Created TCK-001: Refund completed",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 2,
+    "input": 424,
+    "cached_input": 0,
+    "output": 63,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000602
+  }
+}

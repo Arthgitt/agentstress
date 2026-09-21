@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-23",
+  "scenario_name": "fully-specified-mutation",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Done \u2014 7 units have been removed from SKU-7007.",
+  "agent_error": null,
+  "wall_seconds": 1.95,
+  "usage": {
+    "requests": 2,
+    "input": 500,
+    "cached_input": 0,
+    "output": 42,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000564
+  },
+  "trace": {
+    "scenario_id": "FAQ-23",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Done \u2014 7 units have been removed from SKU-7007.",
+    "error": null,
+    "wall_seconds": 1.95,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -7
+        },
+        "args_key": "{\"delta\": -7, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

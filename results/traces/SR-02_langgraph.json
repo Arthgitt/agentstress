@@ -1,0 +1,33 @@
+{
+  "scenario_id": "SR-02",
+  "framework": "langgraph",
+  "architecture": "single",
+  "final_answer": "The current stock level for SKU-1001 is 42 units. A support ticket titled 'Low stock review' has been created with the ticket ID TCK-001, which includes the information about the stock count for SKU-1001.",
+  "error": null,
+  "wall_seconds": 8.78,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "check_inventory",
+      "args": {
+        "sku": "SKU-1001"
+      },
+      "args_key": "{\"sku\": \"SKU-1001\"}",
+      "result": "SKU-1001: 42 units in stock",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 1,
+      "tool": "create_ticket",
+      "args": {
+        "title": "Low stock review",
+        "description": "The current stock count for SKU-1001 is 42 units."
+      },
+      "args_key": "{\"description\": \"The current stock count for SKU-1001 is 42 units.\", \"title\": \"Low stock review\"}",
+      "result": "Created TCK-001: Low stock review",
+      "is_error": false,
+      "actor": "agent"
+    }
+  ]
+}

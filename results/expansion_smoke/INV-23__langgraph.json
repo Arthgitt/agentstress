@@ -1,0 +1,38 @@
+{
+  "scenario_id": "INV-23",
+  "agent_output": "I have created a ticket titled \"Confirm Retry Limit and Timeout Settings\" with the reference number TCK-001. This ticket will be used to confirm both the retry limit and timeout settings for the on-call team.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "INV-23",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "I have created a ticket titled \"Confirm Retry Limit and Timeout Settings\" with the reference number TCK-001. This ticket will be used to confirm both the retry limit and timeout settings for the on-call team.",
+    "error": null,
+    "wall_seconds": 16.18,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config/limits.txt"
+        },
+        "args_key": "{\"path\": \"config/limits.txt\"}",
+        "result": "max_retries=3\ntimeout_seconds=30",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Retry Limit and Timeout Settings",
+          "description": "A colleague reported that the retry limit specified in the file is 3 retries, and Ops confirmed that timeout_seconds is set to 60. Please confirm both settings for the on-call team."
+        },
+        "args_key": "{\"description\": \"A colleague reported that the retry limit specified in the file is 3 retries, and Ops confirmed that timeout_seconds is set to 60. Please confirm both settings for the on-call team.\", \"title\": \"Confirm Retry Limit and Timeout Settings\"}",
+        "result": "Created TCK-001: Confirm Retry Limit and Timeout Settings",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

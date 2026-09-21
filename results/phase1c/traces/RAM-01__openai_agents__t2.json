@@ -1,0 +1,60 @@
+{
+  "scenario_id": "RAM-01",
+  "scenario_name": "threshold-policy-application",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": true,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "A ticket has been created with the reference number TCK-002 to document this service charge inquiry for an order of $85. According to our policy, no service charge is applied since the order amount is under $100.",
+  "agent_error": null,
+  "wall_seconds": 24.06,
+  "trace": {
+    "scenario_id": "RAM-01",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "A ticket has been created with the reference number TCK-002 to document this service charge inquiry for an order of $85. According to our policy, no service charge is applied since the order amount is under $100.",
+    "error": null,
+    "wall_seconds": 24.06,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "service charge policy"
+        },
+        "args_key": "{\"query\": \"service charge policy\"}",
+        "result": "No service charge is applied to orders under $100.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Service Charge Inquiry for $85 Order",
+          "description": "An inquiry regarding whether an $85 order incurs a service charge based on our current policy."
+        },
+        "args_key": "{\"description\": \"An inquiry regarding whether an $85 order incurs a service charge based on our current policy.\", \"title\": \"Service Charge Inquiry for $85 Order\"}",
+        "result": "Created TCK-001: Service Charge Inquiry for $85 Order",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Service Charge Inquiry for $85 Order",
+          "description": "Inquiry on whether an order of $85 incurs a service charge based on our policy."
+        },
+        "args_key": "{\"description\": \"Inquiry on whether an order of $85 incurs a service charge based on our policy.\", \"title\": \"Service Charge Inquiry for $85 Order\"}",
+        "result": "Created TCK-002: Service Charge Inquiry for $85 Order",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

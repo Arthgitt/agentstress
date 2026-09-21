@@ -1,0 +1,26 @@
+{
+  "scenario_id": "FAQ-13",
+  "agent_output": "Currently, there are 13 units of SKU-2002 in stock. If you would like to restock this item, please let me know the number of units you wish to add. Otherwise, I can help with other tasks.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-13",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Currently, there are 13 units of SKU-2002 in stock. If you would like to restock this item, please let me know the number of units you wish to add. Otherwise, I can help with other tasks.",
+    "error": null,
+    "wall_seconds": 10.18,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

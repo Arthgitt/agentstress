@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can help decide, but I need your city or event location to check the weather. If you share it, I\u2019ll tell you whether it looks safe to run the outdoor event today.",
+  "agent_error": null,
+  "wall_seconds": 3.47,
+  "usage": {
+    "requests": 2,
+    "input": 405,
+    "cached_input": 0,
+    "output": 59,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000569
+  },
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I can help decide, but I need your city or event location to check the weather. If you share it, I\u2019ll tell you whether it looks safe to run the outdoor event today.",
+    "error": null,
+    "wall_seconds": 3.47,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "your location"
+        },
+        "args_key": "{\"city\": \"your location\"}",
+        "result": "No weather data for 'your location'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

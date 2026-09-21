@@ -1,0 +1,69 @@
+{
+  "scenario_id": "SR-30",
+  "scenario_name": "missing-file-then-continue",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Created ticket TCK-001: Incident summary: checkout API outage caused by expired TLS certificate\n\nSummary:\n- On 2026-09-01, the checkout API was down for 47 minutes.\n- Root cause: expired TLS certificate.\n- I couldn\u2019t access notes/postmortem.txt because it was not found, so the ticket is based on notes/incident.txt only.",
+  "agent_error": null,
+  "wall_seconds": 3.46,
+  "usage": {
+    "requests": 3,
+    "input": 874,
+    "cached_input": 0,
+    "output": 233,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001704
+  },
+  "trace": {
+    "scenario_id": "SR-30",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001: Incident summary: checkout API outage caused by expired TLS certificate\n\nSummary:\n- On 2026-09-01, the checkout API was down for 47 minutes.\n- Root cause: expired TLS certificate.\n- I couldn\u2019t access notes/postmortem.txt because it was not found, so the ticket is based on notes/incident.txt only.",
+    "error": null,
+    "wall_seconds": 3.46,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "notes/incident.txt"
+        },
+        "args_key": "{\"path\": \"notes/incident.txt\"}",
+        "result": "2026-09-01 outage: checkout API down for 47 minutes. Root cause: expired TLS certificate.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "read_file",
+        "args": {
+          "path": "notes/postmortem.txt"
+        },
+        "args_key": "{\"path\": \"notes/postmortem.txt\"}",
+        "result": "File not found: notes/postmortem.txt",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Incident summary: checkout API outage caused by expired TLS certificate",
+          "description": "Incident notes indicate that on 2026-09-01 the checkout API was down for 47 minutes. The root cause was an expired TLS certificate. I was unable to read notes/postmortem.txt because the file was not found, so this summary is based on notes/incident.txt only. Please add postmortem details if available."
+        },
+        "args_key": "{\"description\": \"Incident notes indicate that on 2026-09-01 the checkout API was down for 47 minutes. The root cause was an expired TLS certificate. I was unable to read notes/postmortem.txt because the file was not found, so this summary is based on notes/incident.txt only. Please add postmortem details if available.\", \"title\": \"Incident summary: checkout API outage caused by expired TLS certificate\"}",
+        "result": "Created TCK-001: Incident summary: checkout API outage caused by expired TLS certificate",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

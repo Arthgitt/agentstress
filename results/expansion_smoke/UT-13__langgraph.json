@@ -1,0 +1,26 @@
+{
+  "scenario_id": "UT-13",
+  "agent_output": "The current weather in London is 12\u00b0C with overcast and light drizzle. Please make sure to carry an umbrella if you're planning to go outside!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "UT-13",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The current weather in London is 12\u00b0C with overcast and light drizzle. Please make sure to carry an umbrella if you're planning to go outside!",
+    "error": null,
+    "wall_seconds": 6.6,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "London"
+        },
+        "args_key": "{\"city\": \"London\"}",
+        "result": "London: 12C, overcast with drizzle",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

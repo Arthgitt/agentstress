@@ -1,0 +1,26 @@
+{
+  "scenario_id": "UT-22",
+  "agent_output": "12% of $3,150 is $378.00.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "UT-22",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "12% of $3,150 is $378.00.",
+    "error": null,
+    "wall_seconds": 8.13,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.12*3150"
+        },
+        "args_key": "{\"expression\": \"0.12*3150\"}",
+        "result": "0.12*3150 = 378.0",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

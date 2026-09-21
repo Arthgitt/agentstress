@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-15",
+  "scenario_name": "delivery-on-closed-day",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created a ticket titled \"Arrange Delivery After Office Closure on December 25\" for the logistics team. They will be notified to schedule your delivery as soon as possible after our office reopens.\n\nIf you need any further assistance or updates, please let me know!",
+  "agent_error": null,
+  "wall_seconds": 26.61,
+  "trace": {
+    "scenario_id": "RAM-15",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have created a ticket titled \"Arrange Delivery After Office Closure on December 25\" for the logistics team. They will be notified to schedule your delivery as soon as possible after our office reopens.\n\nIf you need any further assistance or updates, please let me know!",
+    "error": null,
+    "wall_seconds": 26.61,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "office holidays"
+        },
+        "args_key": "{\"query\": \"office holidays\"}",
+        "result": "The office is closed December 24-26 and January 1. No deliveries are scheduled on closed days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Arrange Delivery After Office Closure on December 25",
+          "description": "The office is closed on December 24-26 and January 1, so no deliveries can be processed on those days. Please schedule the delivery for the next working day after December 25."
+        },
+        "args_key": "{\"description\": \"The office is closed on December 24-26 and January 1, so no deliveries can be processed on those days. Please schedule the delivery for the next working day after December 25.\", \"title\": \"Arrange Delivery After Office Closure on December 25\"}",
+        "result": "Created TCK-001: Arrange Delivery After Office Closure on December 25",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

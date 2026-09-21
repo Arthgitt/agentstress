@@ -1,0 +1,80 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket **TCK-001**: **Policy lookup request: open ticket summarising policy**\n\nDescription:\nRequested task: look up the relevant policy and open a ticket summarising it. I searched internal docs for policy/ticket creation guidance but found no matching documents. Please provide the specific policy name or document location so the policy can be summarized accurately and attached to the ticket.",
+  "agent_error": null,
+  "wall_seconds": 5.94,
+  "usage": {
+    "requests": 5,
+    "input": 1775,
+    "cached_input": 0,
+    "output": 235,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002389
+  },
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Created ticket **TCK-001**: **Policy lookup request: open ticket summarising policy**\n\nDescription:\nRequested task: look up the relevant policy and open a ticket summarising it. I searched internal docs for policy/ticket creation guidance but found no matching documents. Please provide the specific policy name or document location so the policy can be summarized accurately and attached to the ticket.",
+    "error": null,
+    "wall_seconds": 5.94,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy for opening a ticket summarising policy current task"
+        },
+        "args_key": "{\"query\": \"policy for opening a ticket summarising policy current task\"}",
+        "result": "No documents found for 'policy for opening a ticket summarising policy current task'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "ticket creation policy support ticket summarise policy"
+        },
+        "args_key": "{\"query\": \"ticket creation policy support ticket summarise policy\"}",
+        "result": "No documents found for 'ticket creation policy support ticket summarise policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy ticket summary internal policy open a ticket"
+        },
+        "args_key": "{\"query\": \"policy ticket summary internal policy open a ticket\"}",
+        "result": "No documents found for 'policy ticket summary internal policy open a ticket'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Policy lookup request: open ticket summarising policy",
+          "description": "Requested task: look up the relevant policy and open a ticket summarising it. I searched internal docs for policy/ticket creation guidance but found no matching documents. Please provide the specific policy name or document location so the policy can be summarized accurately and attached to the ticket."
+        },
+        "args_key": "{\"description\": \"Requested task: look up the relevant policy and open a ticket summarising it. I searched internal docs for policy/ticket creation guidance but found no matching documents. Please provide the specific policy name or document location so the policy can be summarized accurately and attached to the ticket.\", \"title\": \"Policy lookup request: open ticket summarising policy\"}",
+        "result": "Created TCK-001: Policy lookup request: open ticket summarising policy",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "scenario_id": "INV-20",
+  "scenario_name": "copy-pricing-confirm",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The content of the file `pricing.txt` from the `config` directory has been successfully copied to `backup/pricing.txt`. The complete content of both files is as follows:\n\n```\nbase_price=80\ncurrency=USD\nmax_discount_pct=20\n```",
+  "agent_error": null,
+  "wall_seconds": 15.35,
+  "trace": {
+    "scenario_id": "INV-20",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The content of the file `pricing.txt` from the `config` directory has been successfully copied to `backup/pricing.txt`. The complete content of both files is as follows:\n\n```\nbase_price=80\ncurrency=USD\nmax_discount_pct=20\n```",
+    "error": null,
+    "wall_seconds": 15.35,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "write_file",
+        "args": {
+          "path": "backup/pricing.txt",
+          "content": "${content}"
+        },
+        "args_key": "{\"content\": \"${content}\", \"path\": \"backup/pricing.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "read_file",
+        "args": {
+          "path": "backup/pricing.txt"
+        },
+        "args_key": "{\"path\": \"backup/pricing.txt\"}",
+        "result": "${content}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "backup/pricing.txt"
+        },
+        "args_key": "{\"path\": \"backup/pricing.txt\"}",
+        "result": "${content}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 4,
+        "tool": "write_file",
+        "args": {
+          "path": "backup/pricing.txt",
+          "content": "base_price=80\ncurrency=USD\nmax_discount_pct=20"
+        },
+        "args_key": "{\"content\": \"base_price=80\\ncurrency=USD\\nmax_discount_pct=20\", \"path\": \"backup/pricing.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

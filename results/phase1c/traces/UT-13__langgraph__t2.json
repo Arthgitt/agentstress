@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-13",
+  "scenario_name": "question-with-ticket-tool",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "The current weather in London is 12 degrees Celsius with overcast and some drizzle. Please make sure to carry an umbrella if you're planning to go outside.",
+  "agent_error": null,
+  "wall_seconds": 5.08,
+  "trace": {
+    "scenario_id": "UT-13",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The current weather in London is 12 degrees Celsius with overcast and some drizzle. Please make sure to carry an umbrella if you're planning to go outside.",
+    "error": null,
+    "wall_seconds": 5.08,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "London"
+        },
+        "args_key": "{\"city\": \"London\"}",
+        "result": "London: 12C, overcast with drizzle",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

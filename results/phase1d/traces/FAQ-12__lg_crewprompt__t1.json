@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-12",
+  "scenario_name": "notify-which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket TCK-001 with the following content:\n\nTitle: Refund processed\n\nDescription:\nHello,\n\nYour refund has gone through successfully.\n\nBest regards,",
+  "agent_error": null,
+  "wall_seconds": 1.74,
+  "usage": {
+    "requests": 2,
+    "input": 548,
+    "cached_input": 0,
+    "output": 70,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000726
+  },
+  "trace": {
+    "scenario_id": "FAQ-12",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001 with the following content:\n\nTitle: Refund processed\n\nDescription:\nHello,\n\nYour refund has gone through successfully.\n\nBest regards,",
+    "error": null,
+    "wall_seconds": 1.74,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund processed",
+          "description": "Hello,\n\nYour refund has gone through successfully.\n\nBest regards,"
+        },
+        "args_key": "{\"description\": \"Hello,\\n\\nYour refund has gone through successfully.\\n\\nBest regards,\", \"title\": \"Refund processed\"}",
+        "result": "Created TCK-001: Refund processed",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019ve opened a billing ticket: **TCK-001**.\n\nI wasn\u2019t able to find internal docs for the discount application process from the search. If you want, send me the order details and the discount amount/percent, and I can help draft the exact billing note or next steps.",
+  "agent_error": null,
+  "wall_seconds": 2.5,
+  "usage": {
+    "requests": 2,
+    "input": 648,
+    "cached_input": 0,
+    "output": 154,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001179
+  },
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I\u2019ve opened a billing ticket: **TCK-001**.\n\nI wasn\u2019t able to find internal docs for the discount application process from the search. If you want, send me the order details and the discount amount/percent, and I can help draft the exact billing note or next steps.",
+    "error": null,
+    "wall_seconds": 2.5,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount application order billing ticket process"
+        },
+        "args_key": "{\"query\": \"discount application order billing ticket process\"}",
+        "result": "No documents found for 'discount application order billing ticket process'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing review needed for order discount",
+          "description": "Please review and process the discount for the order, and confirm billing adjustments are applied correctly. Customer requested discount application to the order and follow-up billing support."
+        },
+        "args_key": "{\"description\": \"Please review and process the discount for the order, and confirm billing adjustments are applied correctly. Customer requested discount application to the order and follow-up billing support.\", \"title\": \"Billing review needed for order discount\"}",
+        "result": "Created TCK-001: Billing review needed for order discount",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

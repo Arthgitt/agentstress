@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Done \u2014 I opened ticket **TCK-001** titled **\u201cEscalation requested.\u201d**\n\nIf you want, I can also help draft a more specific escalation note with the issue details.",
+  "agent_error": null,
+  "wall_seconds": 2.28,
+  "usage": {
+    "requests": 2,
+    "input": 417,
+    "cached_input": 0,
+    "output": 90,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000718
+  },
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Done \u2014 I opened ticket **TCK-001** titled **\u201cEscalation requested.\u201d**\n\nIf you want, I can also help draft a more specific escalation note with the issue details.",
+    "error": null,
+    "wall_seconds": 2.28,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Escalation requested",
+          "description": "User requested escalation, but no additional context was provided in the conversation. Please investigate the underlying issue and determine appropriate next steps."
+        },
+        "args_key": "{\"description\": \"User requested escalation, but no additional context was provided in the conversation. Please investigate the underlying issue and determine appropriate next steps.\", \"title\": \"Escalation requested\"}",
+        "result": "Created TCK-001: Escalation requested",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

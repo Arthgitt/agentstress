@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-06",
+  "scenario_name": "discount-vs-amount-due",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "-ticket created successfully. The ticket details are as follows:\n\n**Title:** Customer Discount Adjustment - Item $80 with 25% Off\n\nThe billing team has been notified that a customer is getting a $20 discount on an $80 item, so they should charge the customer $60.\n\nIf you need any further assistance or have additional requests, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 25.09,
+  "trace": {
+    "scenario_id": "RAM-06",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "-ticket created successfully. The ticket details are as follows:\n\n**Title:** Customer Discount Adjustment - Item $80 with 25% Off\n\nThe billing team has been notified that a customer is getting a $20 discount on an $80 item, so they should charge the customer $60.\n\nIf you need any further assistance or have additional requests, feel free to ask!",
+    "error": null,
+    "wall_seconds": 25.09,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.25*80"
+        },
+        "args_key": "{\"expression\": \"0.25*80\"}",
+        "result": "0.25*80 = 20.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Discount Adjustment - Item $80 with 25% Off",
+          "description": "The customer is getting a discount of $20 on an item priced at $80 due to a 25% off sale. Please update the billing system to charge the customer $60."
+        },
+        "args_key": "{\"description\": \"The customer is getting a discount of $20 on an item priced at $80 due to a 25% off sale. Please update the billing system to charge the customer $60.\", \"title\": \"Customer Discount Adjustment - Item $80 with 25% Off\"}",
+        "result": "Created TCK-001: Customer Discount Adjustment - Item $80 with 25% Off",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

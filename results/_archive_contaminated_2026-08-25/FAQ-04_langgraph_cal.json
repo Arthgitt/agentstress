@@ -1,0 +1,45 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "vague-recommendation-scope",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "MEDIUM",
+  "prompt": "Recommend whether we should run an outdoor event today. (Note: unclear what factors matter\u2014just weather? Also inventory? Budget?) If the agent doesn't ask for clarification on what factors to consider, it's FAQ.",
+  "agent_output": "It appears we don't have specific inventory information for \"outdoor_event_supplies,\" so this won't directly impact the decision. However, generally speaking, having sufficient supplies is crucial for a successful outdoor event.\n\nGiven the lack of weather data and inventory details, here are some general considerations:\n\n1. **Weather**: If it's sunny or partly cloudy with mild temperatures, an outdoor event would likely be enjoyable.\n2. **Safety**: Ensure there are no risks from extreme weather conditions like heavy rain, strong winds, or excessive heat.\n\nSince we don't have specific weather data for today in New York, let's assume the weather is favorable based on typical conditions. \n\nWould you like to proceed with planning the outdoor event under these assumptions? If so, I can help create a support ticket to address any potential issues that might arise.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It appears we don't have specific inventory information for \"outdoor_event_supplies,\" so this won't directly impact the decision. However, generally speaking, having sufficient supplies is crucial for a successful outdoor event.\n\nGiven the lack of weather data and inventory details, here are some general considerations:\n\n1. **Weather**: If it's sunny or partly cloudy with mild temperatures, an outdoor event would likely be enjoyable.\n2. **Safety**: Ensure there are no risks from extreme weather conditions like heavy rain, strong winds, or excessive heat.\n\nSince we don't have specific weather data for today in New York, let's assume the weather is favorable based on typical conditions. \n\nWould you like to proceed with planning the outdoor event under these assumptions? If so, I can help create a support ticket to address any potential issues that might arise.",
+    "error": null,
+    "wall_seconds": 24.3,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        },
+        "args_key": "{\"city\": \"New York\"}",
+        "result": "No weather data for 'New York'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "outdoor_event_supplies"
+        },
+        "args_key": "{\"sku\": \"outdoor_event_supplies\"}",
+        "result": "Unknown SKU: outdoor_event_supplies",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 24.30280303955078
+}

@@ -1,0 +1,69 @@
+==============================================================================
+PROMPT ABLATION — does CrewAI's prompt reproduce CrewAI's failures?
+==============================================================================
+tool calls per run (mean / max):
+  LangGraph (base)                  2.48 / 9
+  OpenAI Agents (base)              2.64 / 7
+  CrewAI (base)                     2.77 / 12
+  LangGraph + CrewAI prompt         2.64 / 7
+  OpenAI Agents + CrewAI prompt     2.74 / 12
+  CrewAI + neutral wording          2.73 / 9
+
+SR — 20 scenarios x 2 trials
+  LangGraph (base)                   2.5%
+  OpenAI Agents (base)               2.5%
+  CrewAI (base)                      5.0%
+  LangGraph + CrewAI prompt          2.5%
+  OpenAI Agents + CrewAI prompt      2.5%
+  CrewAI + neutral wording           5.0%
+  paired sign tests (scenario as unit):
+    LangGraph + CrewAI prompt        vs own baseline     worse  0 / better  0 / tie 20   p = 1.000
+    LangGraph + CrewAI prompt        vs CrewAI baseline  worse  0 / better  1 / tie 19   p = 1.000
+    OpenAI Agents + CrewAI prompt    vs own baseline     worse  0 / better  0 / tie 20   p = 1.000
+    OpenAI Agents + CrewAI prompt    vs CrewAI baseline  worse  0 / better  1 / tie 19   p = 1.000
+    CrewAI + neutral wording         vs own baseline     worse  0 / better  0 / tie 20   p = 1.000
+
+UT — 20 scenarios x 2 trials
+  LangGraph (base)                   0.0%
+  OpenAI Agents (base)              12.5%
+  CrewAI (base)                      7.5%
+  LangGraph + CrewAI prompt          2.5%
+  OpenAI Agents + CrewAI prompt      2.5%
+  CrewAI + neutral wording           5.0%
+  paired sign tests (scenario as unit):
+    LangGraph + CrewAI prompt        vs own baseline     worse  1 / better  0 / tie 19   p = 1.000
+    LangGraph + CrewAI prompt        vs CrewAI baseline  worse  0 / better  2 / tie 18   p = 0.500
+    OpenAI Agents + CrewAI prompt    vs own baseline     worse  0 / better  2 / tie 18   p = 0.500
+    OpenAI Agents + CrewAI prompt    vs CrewAI baseline  worse  0 / better  1 / tie 19   p = 1.000
+    CrewAI + neutral wording         vs own baseline     worse  0 / better  1 / tie 19   p = 1.000
+
+FAQ — 20 scenarios x 2 trials
+  LangGraph (base)                  22.5%
+  OpenAI Agents (base)              42.5%
+  CrewAI (base)                     62.5%
+  LangGraph + CrewAI prompt         60.0%
+  OpenAI Agents + CrewAI prompt     67.5%
+  CrewAI + neutral wording          55.0%
+  paired sign tests (scenario as unit):
+    LangGraph + CrewAI prompt        vs own baseline     worse 12 / better  1 / tie  7   p = 0.003
+    LangGraph + CrewAI prompt        vs CrewAI baseline  worse  3 / better  4 / tie 13   p = 1.000
+    OpenAI Agents + CrewAI prompt    vs own baseline     worse  6 / better  0 / tie 14   p = 0.031
+    OpenAI Agents + CrewAI prompt    vs CrewAI baseline  worse  2 / better  1 / tie 17   p = 1.000
+    CrewAI + neutral wording         vs own baseline     worse  2 / better  4 / tie 14   p = 0.688
+
+ALL THREE MODES POOLED — 60 scenarios x 2 trials
+  LangGraph (base)                   8.3%
+  OpenAI Agents (base)              19.2%
+  CrewAI (base)                     25.0%
+  LangGraph + CrewAI prompt         21.7%
+  OpenAI Agents + CrewAI prompt     24.2%
+  CrewAI + neutral wording          21.7%
+  paired sign tests (Bonferroni x6):
+    LangGraph + CrewAI prompt        vs LangGraph (base)       worse 13 / better  1 / tie 46   p = 0.0018   corrected 0.011
+    OpenAI Agents + CrewAI prompt    vs OpenAI Agents (base)   worse  6 / better  2 / tie 52   p = 0.29   corrected 1
+    CrewAI + neutral wording         vs CrewAI (base)          worse  2 / better  5 / tie 53   p = 0.45   corrected 1
+    LangGraph + CrewAI prompt        vs CrewAI (base)          worse  3 / better  7 / tie 50   p = 0.34   corrected 1
+    OpenAI Agents + CrewAI prompt    vs CrewAI (base)          worse  2 / better  3 / tie 55   p = 1   corrected 1
+    CrewAI + neutral wording         vs LangGraph (base)       worse 13 / better  1 / tie 46   p = 0.0018   corrected 0.011
+    CrewAI (base)                    vs LangGraph (base)       worse 13 / better  1 / tie 46   p = 0.0018   corrected 0.011
+    CrewAI (base)                    vs OpenAI Agents (base)   worse  7 / better  2 / tie 51   p = 0.18   corrected 1

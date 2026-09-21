@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems we don't have any specific documents on policy priorities. However, I can still help you create a ticket with your request to prioritize the policies. Could you please provide me with more details about which policies you want to rank and how you would like to prioritize them? This information will be crucial for creating an accurate ticket.\nWould you like to proceed this way?",
+  "agent_error": null,
+  "wall_seconds": 9.34,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems we don't have any specific documents on policy priorities. However, I can still help you create a ticket with your request to prioritize the policies. Could you please provide me with more details about which policies you want to rank and how you would like to prioritize them? This information will be crucial for creating an accurate ticket.\nWould you like to proceed this way?",
+    "error": null,
+    "wall_seconds": 9.34,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies priority ranking"
+        },
+        "args_key": "{\"query\": \"policies priority ranking\"}",
+        "result": "No documents found for 'policies priority ranking'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

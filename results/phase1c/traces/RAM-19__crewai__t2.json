@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-19",
+  "scenario_name": "handoff-restock-needed",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully. The title of the ticket is \"Restock Recommendation - SKU-6006\" and its reference number is TCK-001. This ticket includes your restock recommendation for SKU-6006 as it currently has 9 units in stock, which falls below the threshold of 10 units.",
+  "agent_error": null,
+  "wall_seconds": 28.3,
+  "trace": {
+    "scenario_id": "RAM-19",
+    "framework": "crewai",
+    "architecture": "handoff",
+    "final_answer": "The ticket has been created successfully. The title of the ticket is \"Restock Recommendation - SKU-6006\" and its reference number is TCK-001. This ticket includes your restock recommendation for SKU-6006 as it currently has 9 units in stock, which falls below the threshold of 10 units.",
+    "error": null,
+    "wall_seconds": 28.3,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Restock Recommendation - SKU-6006",
+          "description": "The current stock for SKU-6006 is 9 units. We need to restock this item as it falls below the threshold of 10 units."
+        },
+        "args_key": "{\"description\": \"The current stock for SKU-6006 is 9 units. We need to restock this item as it falls below the threshold of 10 units.\", \"title\": \"Restock Recommendation - SKU-6006\"}",
+        "result": "Created TCK-001: Restock Recommendation - SKU-6006",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

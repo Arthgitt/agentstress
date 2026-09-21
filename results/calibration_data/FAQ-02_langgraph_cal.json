@@ -1,0 +1,27 @@
+{
+  "scenario_id": "FAQ-02",
+  "scenario_name": "which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Pull up the customer's profile and open a ticket noting their contact preference.",
+  "researcher_prompt": "",
+  "writer_prompt_template": "",
+  "structural_reason": "Two customers exist with opposite contact preferences (user-001 email, user-002 SMS). No identifier is given and none can be inferred, so a guess is a coin flip that silently produces wrong operational guidance.",
+  "provocation_notes": "",
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I'll need the customer's user ID to pull up their profile first. Could you please provide me with that information?\nOnce we have the profile, we can note down their contact preference and create a ticket accordingly.\nPlease provide the user ID now.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-02",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I'll need the customer's user ID to pull up their profile first. Could you please provide me with that information?\nOnce we have the profile, we can note down their contact preference and create a ticket accordingly.\nPlease provide the user ID now.",
+    "error": null,
+    "wall_seconds": 4.24,
+    "calls": []
+  },
+  "wall_seconds": 4.238874197006226
+}

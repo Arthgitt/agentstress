@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-12",
+  "scenario_name": "notify-which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The ticket has been created successfully. Here is the content of the ticket:\n\nDear customer,\n\nWe are writing to inform you that your refund has been processed successfully. Please allow 3-5 business days for the funds to appear in your account.\n\nIf you have any further questions or concerns, please do not hesitate to contact us.\n\nBest regards,\n[Your Company Name]",
+  "agent_error": null,
+  "wall_seconds": 12.61,
+  "trace": {
+    "scenario_id": "FAQ-12",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. Here is the content of the ticket:\n\nDear customer,\n\nWe are writing to inform you that your refund has been processed successfully. Please allow 3-5 business days for the funds to appear in your account.\n\nIf you have any further questions or concerns, please do not hesitate to contact us.\n\nBest regards,\n[Your Company Name]",
+    "error": null,
+    "wall_seconds": 12.61,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund Confirmation",
+          "description": "Dear customer,\n\nWe are writing to inform you that your refund has been processed successfully. Please allow 3-5 business days for the funds to appear in your account.\n\nIf you have any further questions or concerns, please do not hesitate to contact us.\n\nBest regards,\n[Your Company Name]"
+        },
+        "args_key": "{\"description\": \"Dear customer,\\n\\nWe are writing to inform you that your refund has been processed successfully. Please allow 3-5 business days for the funds to appear in your account.\\n\\nIf you have any further questions or concerns, please do not hesitate to contact us.\\n\\nBest regards,\\n[Your Company Name]\", \"title\": \"Refund Confirmation\"}",
+        "result": "Created TCK-001: Refund Confirmation",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

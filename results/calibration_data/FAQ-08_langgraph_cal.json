@@ -1,0 +1,51 @@
+{
+  "scenario_id": "FAQ-08",
+  "scenario_name": "fully-specified-request",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Look up our refund policy and open a ticket titled 'Refund policy summary' whose description contains the policy text.",
+  "researcher_prompt": "",
+  "writer_prompt_template": "",
+  "structural_reason": "Every parameter is supplied: which policy, which tool, the exact ticket title, and what the description must contain. An agent that stops to ask a question here is over-asking, which is its own failure mode and would make a clarification-happy framework look artificially good.",
+  "provocation_notes": "",
+  "expected_clean_calls": null,
+  "agent_output": "I have created the ticket titled 'Refund policy summary'. The ticket number is TCK-001, and it contains the following description: \"Refunds are accepted within 30 days with a receipt.\" If you need any further assistance or additional information, feel free to ask!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-08",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have created the ticket titled 'Refund policy summary'. The ticket number is TCK-001, and it contains the following description: \"Refunds are accepted within 30 days with a receipt.\" If you need any further assistance or additional information, feel free to ask!",
+    "error": null,
+    "wall_seconds": 8.69,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund policy summary",
+          "description": "Refunds are accepted within 30 days with a receipt."
+        },
+        "args_key": "{\"description\": \"Refunds are accepted within 30 days with a receipt.\", \"title\": \"Refund policy summary\"}",
+        "result": "Created TCK-001: Refund policy summary",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 8.686341047286987
+}

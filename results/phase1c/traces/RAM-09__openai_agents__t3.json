@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-09",
+  "scenario_name": "contact-preference-aligned",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "User-001's profile indicates that their preferred contact method is email. A ticket (TCK-001) has been created to confirm this and any other details needed for contacting them effectively.",
+  "agent_error": null,
+  "wall_seconds": 14.7,
+  "trace": {
+    "scenario_id": "RAM-09",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "User-001's profile indicates that their preferred contact method is email. A ticket (TCK-001) has been created to confirm this and any other details needed for contacting them effectively.",
+    "error": null,
+    "wall_seconds": 14.7,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-001"
+        },
+        "args_key": "{\"user_id\": \"user-001\"}",
+        "result": "{'name': 'Dana Kim', 'preferred_contact': 'email', 'email': 'dana@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Best Contact Method for user-001",
+          "description": "Based on the information from user-001's profile, please confirm the best way to contact them (e.g., email, phone)."
+        },
+        "args_key": "{\"description\": \"Based on the information from user-001's profile, please confirm the best way to contact them (e.g., email, phone).\", \"title\": \"Confirm Best Contact Method for user-001\"}",
+        "result": "Created TCK-001: Confirm Best Contact Method for user-001",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

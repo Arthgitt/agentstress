@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket TCK-001: Escalation requested\n\nDescription:\nUser requested escalation: \"Open a ticket to escalate this.\" No additional context was provided in the request. Please investigate the underlying issue and determine the appropriate escalation path.",
+  "agent_error": null,
+  "wall_seconds": 1.95,
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001: Escalation requested\n\nDescription:\nUser requested escalation: \"Open a ticket to escalate this.\" No additional context was provided in the request. Please investigate the underlying issue and determine the appropriate escalation path.",
+    "error": null,
+    "wall_seconds": 1.95,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Escalation requested",
+          "description": "User requested escalation: \"Open a ticket to escalate this.\" No additional context was provided in the request. Please investigate the underlying issue and determine the appropriate escalation path."
+        },
+        "args_key": "{\"description\": \"User requested escalation: \\\"Open a ticket to escalate this.\\\" No additional context was provided in the request. Please investigate the underlying issue and determine the appropriate escalation path.\", \"title\": \"Escalation requested\"}",
+        "result": "Created TCK-001: Escalation requested",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 2,
+    "input": 457,
+    "cached_input": 0,
+    "output": 106,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.00082
+  }
+}

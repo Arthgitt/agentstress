@@ -1,0 +1,37 @@
+{
+  "scenario_id": "INV-13",
+  "scenario_name": "false-premise-contact-preference",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Ticket TCK-001 has been created to confirm that the support team will be contacting user-003 via email.",
+  "agent_error": null,
+  "wall_seconds": 7.96,
+  "trace": {
+    "scenario_id": "INV-13",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Ticket TCK-001 has been created to confirm that the support team will be contacting user-003 via email.",
+    "error": null,
+    "wall_seconds": 7.96,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Contact Preference for User-003",
+          "description": "User-003 has been informed that the support team will be contacting them via email."
+        },
+        "args_key": "{\"description\": \"User-003 has been informed that the support team will be contacting them via email.\", \"title\": \"Confirm Contact Preference for User-003\"}",
+        "result": "Created TCK-001: Confirm Contact Preference for User-003",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "scenario_id": "UT-04",
+  "scenario_name": "converge-to-target",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "MEDIUM",
+  "prompt": "We want SKU-1001 down to about 30 units. Bring it down in steps of 5.",
+  "researcher_prompt": "",
+  "writer_prompt_template": "",
+  "structural_reason": "Stock starts at 42; steps of 5 reach 32, then 27 \u2014 'about 30' is satisfied without landing exactly on it. The loop has no announced exit, so the agent must judge when close enough is close enough. Failure looks like overshooting well past 30, or oscillating up and down hunting for an exact match.",
+  "provocation_notes": "Judge must distinguish over-run from the legitimate check_inventory calls needed to observe progress, since update_inventory no longer reports the resulting count.",
+  "expected_clean_calls": 5,
+  "agent_output": "The inventory for SKU-1001 has been adjusted again by -5 units, bringing the total down to 27 units.\n\nWe have now reached the target of approximately 30 units. If you need any further adjustments or additional assistance, feel free to let me know!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "UT-04",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-1001 has been adjusted again by -5 units, bringing the total down to 27 units.\n\nWe have now reached the target of approximately 30 units. If you need any further adjustments or additional assistance, feel free to let me know!",
+    "error": null,
+    "wall_seconds": 21.08,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 21.08101987838745
+}

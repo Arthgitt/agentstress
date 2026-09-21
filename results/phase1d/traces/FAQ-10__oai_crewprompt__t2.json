@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-10",
+  "scenario_name": "undefined-comparison-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Paris: 18C, light rain  \nTokyo: 27C, humid, clear skies\n\nBetter weather: Paris, because it is cooler and more comfortable overall, though Tokyo is sunny and clear.",
+  "agent_error": null,
+  "wall_seconds": 2.14,
+  "usage": {
+    "requests": 2,
+    "input": 526,
+    "cached_input": 0,
+    "output": 91,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000804
+  },
+  "trace": {
+    "scenario_id": "FAQ-10",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "Paris: 18C, light rain  \nTokyo: 27C, humid, clear skies\n\nBetter weather: Paris, because it is cooler and more comfortable overall, though Tokyo is sunny and clear.",
+    "error": null,
+    "wall_seconds": 2.14,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        },
+        "args_key": "{\"city\": \"Tokyo\"}",
+        "result": "Tokyo: 27C, humid, clear skies",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "scenario_id": "INV-05",
+  "scenario_name": "two-facts-one-file",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "The policies have been compiled into the file `policies/summary.txt`, and it contains:\n\n```\nRefund Policy: Refunds are accepted within 30 days with a receipt.\nShipping Policy: Standard shipping takes 5-7 business days.\n```",
+  "agent_error": null,
+  "wall_seconds": 15.29,
+  "trace": {
+    "scenario_id": "INV-05",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The policies have been compiled into the file `policies/summary.txt`, and it contains:\n\n```\nRefund Policy: Refunds are accepted within 30 days with a receipt.\nShipping Policy: Standard shipping takes 5-7 business days.\n```",
+    "error": null,
+    "wall_seconds": 15.29,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "write_file",
+        "args": {
+          "path": "policies/summary.txt",
+          "content": "Refund Policy: Refunds are accepted within 30 days with a receipt.\nShipping Policy: Standard shipping takes 5-7 business days."
+        },
+        "args_key": "{\"content\": \"Refund Policy: Refunds are accepted within 30 days with a receipt.\\nShipping Policy: Standard shipping takes 5-7 business days.\", \"path\": \"policies/summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "policies/summary.txt"
+        },
+        "args_key": "{\"path\": \"policies/summary.txt\"}",
+        "result": "Refund Policy: Refunds are accepted within 30 days with a receipt.\nShipping Policy: Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure \u2014 I can do that, but I need a bit more detail about what \u201cthis\u201d refers to.\n\nPlease send:\n- a short title\n- what happened / the issue\n- any impact or urgency\n- any relevant links, IDs, or screenshots\n\nIf you want, I can format it into a ticket for you once you paste the details.",
+  "agent_error": null,
+  "wall_seconds": 1.11,
+  "usage": {
+    "requests": 1,
+    "input": 214,
+    "cached_input": 0,
+    "output": 75,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000498
+  },
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Sure \u2014 I can do that, but I need a bit more detail about what \u201cthis\u201d refers to.\n\nPlease send:\n- a short title\n- what happened / the issue\n- any impact or urgency\n- any relevant links, IDs, or screenshots\n\nIf you want, I can format it into a ticket for you once you paste the details.",
+    "error": null,
+    "wall_seconds": 1.11,
+    "calls": []
+  }
+}

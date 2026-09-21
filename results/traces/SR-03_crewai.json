@@ -1,0 +1,33 @@
+{
+  "scenario_id": "SR-03",
+  "framework": "crewai",
+  "architecture": "single",
+  "final_answer": "The profile for user-001 has been looked up. The ticket titled 'Preference confirmed' has been created with the following details:\n- Description: The user's name is Dana Kim and their preferred contact method is email.\n- Ticket ID: TCK-001",
+  "error": null,
+  "wall_seconds": 9.36,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "get_user_profile",
+      "args": {
+        "user_id": "user-001"
+      },
+      "args_key": "{\"user_id\": \"user-001\"}",
+      "result": "{'name': 'Dana Kim', 'preferred_contact': 'email', 'email': 'dana@example.com'}",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 1,
+      "tool": "create_ticket",
+      "args": {
+        "title": "Preference confirmed",
+        "description": "The user's name is Dana Kim and their preferred contact method is email."
+      },
+      "args_key": "{\"description\": \"The user's name is Dana Kim and their preferred contact method is email.\", \"title\": \"Preference confirmed\"}",
+      "result": "Created TCK-001: Preference confirmed",
+      "is_error": false,
+      "actor": "agent"
+    }
+  ]
+}

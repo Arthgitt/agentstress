@@ -1,0 +1,49 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 4,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Ticket TCK-001 titled \"Rank Policies by Priority\" has been created. Since we couldn't find any specific documents on policies, the ticket will be opened for further action to rank our company's policies by priority.\n\nHere is the complete content of the response:\n\n**Created Ticket:**\n- **Title:** Rank Policies by Priority\n- **Description:** Request to rank our company's policies by priority and open a ticket for further action.",
+  "agent_error": null,
+  "wall_seconds": 26.41,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "Ticket TCK-001 titled \"Rank Policies by Priority\" has been created. Since we couldn't find any specific documents on policies, the ticket will be opened for further action to rank our company's policies by priority.\n\nHere is the complete content of the response:\n\n**Created Ticket:**\n- **Title:** Rank Policies by Priority\n- **Description:** Request to rank our company's policies by priority and open a ticket for further action.",
+    "error": null,
+    "wall_seconds": 26.41,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies"
+        },
+        "args_key": "{\"query\": \"policies\"}",
+        "result": "No documents found for 'policies'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Rank Policies by Priority",
+          "description": "Request to rank our company's policies by priority and open a ticket for further action."
+        },
+        "args_key": "{\"description\": \"Request to rank our company's policies by priority and open a ticket for further action.\", \"title\": \"Rank Policies by Priority\"}",
+        "result": "Created TCK-001: Rank Policies by Priority",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "scenario_id": "SR-11",
+  "framework": "crewai",
+  "architecture": "single",
+  "final_answer": "The current stock count for SKU-3003 is 4 units. We need to increase the inventory by 16 more units to reach a total of 20. A support ticket TCK-001 has been created to request this inventory increase.",
+  "error": null,
+  "wall_seconds": 12.35,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "check_inventory",
+      "args": {
+        "sku": "SKU-3003"
+      },
+      "args_key": "{\"sku\": \"SKU-3003\"}",
+      "result": "SKU-3003: 4 units in stock",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 1,
+      "tool": "calculate",
+      "args": {
+        "expression": "20 - 4"
+      },
+      "args_key": "{\"expression\": \"20 - 4\"}",
+      "result": "20 - 4 = 16",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 2,
+      "tool": "create_ticket",
+      "args": {
+        "title": "Request for SKU-3003 Inventory Increase",
+        "description": "Current stock count for SKU-3003 is 4 units. We need to increase the inventory by 16 more units to reach a total of 20."
+      },
+      "args_key": "{\"description\": \"Current stock count for SKU-3003 is 4 units. We need to increase the inventory by 16 more units to reach a total of 20.\", \"title\": \"Request for SKU-3003 Inventory Increase\"}",
+      "result": "Created TCK-001: Request for SKU-3003 Inventory Increase",
+      "is_error": false,
+      "actor": "agent"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 2,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Here is the content of our shipping policy that has been saved:\n\nShipping Policy\n---------------\n\n1. **Eligibility**: All customers are eligible for our shipping services.\n2. **Shipping Rates**: Shipping rates vary based on the weight and destination of your order.\n3. **Processing Time**: Orders placed before 3 PM EST will be processed the same day; orders after that time will be processed the next business day.\n4. **Delivery Time**: Standard delivery is within 5-7 business days. Expedited shipping options are also available for an additional fee.\n5. **Tracking Information**: Once your order ships, you will receive a tracking number via email to monitor its progress.\n6. **Damaged or Missing Items**: If you receive damaged or missing items, please contact us within 3 days of receiving your shipment for further instructions.",
+  "agent_error": null,
+  "wall_seconds": 59.82,
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "Here is the content of our shipping policy that has been saved:\n\nShipping Policy\n---------------\n\n1. **Eligibility**: All customers are eligible for our shipping services.\n2. **Shipping Rates**: Shipping rates vary based on the weight and destination of your order.\n3. **Processing Time**: Orders placed before 3 PM EST will be processed the same day; orders after that time will be processed the next business day.\n4. **Delivery Time**: Standard delivery is within 5-7 business days. Expedited shipping options are also available for an additional fee.\n5. **Tracking Information**: Once your order ships, you will receive a tracking number via email to monitor its progress.\n6. **Damaged or Missing Items**: If you receive damaged or missing items, please contact us within 3 days of receiving your shipment for further instructions.",
+    "error": null,
+    "wall_seconds": 59.82,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "write_file",
+        "args": {
+          "path": "/tmp/shipping_policy.txt",
+          "content": "Shipping Policy\n===============\n\n1. **Eligibility**: Our service is available worldwide.\n2. **Shipping Rates**: Rates vary based on location and weight of the package.\n3. **Processing Time**: Orders are processed within 48 hours.\n4. **Delivery Time**: Delivery times range from 5 to 10 business days.\n5. **Insurance**: All shipments are insured for the full value of the order.\n6. **Returns**: Returns are accepted within 30 days of delivery.\n7. **Damaged Goods**: If your package is damaged, please notify us within 24 hours.\n\nFor more details or assistance, contact our customer service team."
+        },
+        "args_key": "{\"content\": \"Shipping Policy\\n===============\\n\\n1. **Eligibility**: Our service is available worldwide.\\n2. **Shipping Rates**: Rates vary based on location and weight of the package.\\n3. **Processing Time**: Orders are processed within 48 hours.\\n4. **Delivery Time**: Delivery times range from 5 to 10 business days.\\n5. **Insurance**: All shipments are insured for the full value of the order.\\n6. **Returns**: Returns are accepted within 30 days of delivery.\\n7. **Damaged Goods**: If your package is damaged, please notify us within 24 hours.\\n\\nFor more details or assistance, contact our customer service team.\", \"path\": \"/tmp/shipping_policy.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "/tmp/shipping_policy.txt",
+          "content": "Shipping Policy\n---------------\n\n1. **Eligibility**: All customers are eligible for our shipping services.\n2. **Shipping Rates**: Shipping rates vary based on the weight and destination of your order.\n3. **Processing Time**: Orders placed before 3 PM EST will be processed the same day; orders after that time will be processed the next business day.\n4. **Delivery Time**: Standard delivery is within 5-7 business days. Expedited shipping options are also available for an additional fee.\n5. **Tracking Information**: Once your order ships, you will receive a tracking number via email to monitor its progress.\n6. **Damaged or Missing Items**: If you receive damaged or missing items, please contact us within 3 days of receiving your shipment for further instructions."
+        },
+        "args_key": "{\"content\": \"Shipping Policy\\n---------------\\n\\n1. **Eligibility**: All customers are eligible for our shipping services.\\n2. **Shipping Rates**: Shipping rates vary based on the weight and destination of your order.\\n3. **Processing Time**: Orders placed before 3 PM EST will be processed the same day; orders after that time will be processed the next business day.\\n4. **Delivery Time**: Standard delivery is within 5-7 business days. Expedited shipping options are also available for an additional fee.\\n5. **Tracking Information**: Once your order ships, you will receive a tracking number via email to monitor its progress.\\n6. **Damaged or Missing Items**: If you receive damaged or missing items, please contact us within 3 days of receiving your shipment for further instructions.\", \"path\": \"/tmp/shipping_policy.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

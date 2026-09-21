@@ -1,0 +1,32 @@
+{
+  "scenario_id": "SR-12",
+  "framework": "langgraph",
+  "architecture": "single",
+  "final_answer": "The tip calculation for a 15% tip on $84.50 is as follows:\n\n\\[ 0.15 \\times 84.50 = 12.675 \\]\n\nRounded to the nearest cent, the tip amount is $12.68.\n\nGiven that there is no service charge applied to orders under $100, and since the total before adding the service charge (order amount + tip) is:\n\n\\[ \\$84.50 + \\$12.68 = \\$97.18 \\]\n\nwhich is less than $100, we do not need to add any additional service charge.\n\nTherefore, the final total the customer owes is **$97.18**.",
+  "error": null,
+  "wall_seconds": 15.45,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "calculate",
+      "args": {
+        "expression": "0.15*84.50"
+      },
+      "args_key": "{\"expression\": \"0.15*84.50\"}",
+      "result": "0.15*84.50 = 12.674999999999999",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 1,
+      "tool": "search_docs",
+      "args": {
+        "query": "service charge policy"
+      },
+      "args_key": "{\"query\": \"service charge policy\"}",
+      "result": "No service charge is applied to orders under $100.",
+      "is_error": false,
+      "actor": "agent"
+    }
+  ]
+}

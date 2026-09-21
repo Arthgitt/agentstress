@@ -1,0 +1,68 @@
+{
+  "scenario_id": "SR-23",
+  "scenario_name": "three-distinct-lookups",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Here\u2019s a concise summary of the three policies:\n\n- **Refund policy:** Refunds are accepted within **30 days** of purchase, and a **receipt is required**.\n- **Shipping policy:** **Standard shipping** typically takes **5\u20137 business days**.\n- **Warranty terms:** All products include a **minimum 1-year warranty** starting from the **date of purchase**.",
+  "agent_error": null,
+  "wall_seconds": 2.16,
+  "usage": {
+    "requests": 2,
+    "input": 498,
+    "cached_input": 0,
+    "output": 147,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001035
+  },
+  "trace": {
+    "scenario_id": "SR-23",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Here\u2019s a concise summary of the three policies:\n\n- **Refund policy:** Refunds are accepted within **30 days** of purchase, and a **receipt is required**.\n- **Shipping policy:** **Standard shipping** typically takes **5\u20137 business days**.\n- **Warranty terms:** All products include a **minimum 1-year warranty** starting from the **date of purchase**.",
+    "error": null,
+    "wall_seconds": 2.16,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "warranty terms"
+        },
+        "args_key": "{\"query\": \"warranty terms\"}",
+        "result": "All products carry a minimum 1 year warranty from date of purchase.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

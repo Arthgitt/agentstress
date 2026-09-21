@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The ticket has been created successfully. The ticket ID is TCK-001: Escalation Request. This will be escalated for immediate attention.",
+  "agent_error": null,
+  "wall_seconds": 6.22,
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The ticket ID is TCK-001: Escalation Request. This will be escalated for immediate attention.",
+    "error": null,
+    "wall_seconds": 6.22,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Escalation Request",
+          "description": "This is an escalation request for immediate attention."
+        },
+        "args_key": "{\"description\": \"This is an escalation request for immediate attention.\", \"title\": \"Escalation Request\"}",
+        "result": "Created TCK-001: Escalation Request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

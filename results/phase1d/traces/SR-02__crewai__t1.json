@@ -1,0 +1,58 @@
+{
+  "scenario_id": "SR-02",
+  "scenario_name": "inventory-ticket",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Created support ticket TCK-001 with title \u201cLow stock review\u201d and description: \u201cCurrent stock count for SKU-1001: 42 units in stock.\u201d",
+  "agent_error": null,
+  "wall_seconds": 6.58,
+  "usage": {
+    "requests": 3,
+    "input": 916,
+    "cached_input": 0,
+    "output": 93,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001105
+  },
+  "trace": {
+    "scenario_id": "SR-02",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Created support ticket TCK-001 with title \u201cLow stock review\u201d and description: \u201cCurrent stock count for SKU-1001: 42 units in stock.\u201d",
+    "error": null,
+    "wall_seconds": 6.58,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Low stock review",
+          "description": "Current stock count for SKU-1001: 42 units in stock."
+        },
+        "args_key": "{\"description\": \"Current stock count for SKU-1001: 42 units in stock.\", \"title\": \"Low stock review\"}",
+        "result": "Created TCK-001: Low stock review",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

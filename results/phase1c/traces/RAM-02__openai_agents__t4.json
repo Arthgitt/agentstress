@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-02",
+  "scenario_name": "weather-outdoor-event-decision",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The current weather in Austin is 31\u00b0C and sunny. Based on these conditions, I recommend proceeding with the outdoor promo as planned.\n\nA ticket has been created for your reference: TCK-001 - Outdoor Promo Recommendation for Austin.",
+  "agent_error": null,
+  "wall_seconds": 16.21,
+  "trace": {
+    "scenario_id": "RAM-02",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The current weather in Austin is 31\u00b0C and sunny. Based on these conditions, I recommend proceeding with the outdoor promo as planned.\n\nA ticket has been created for your reference: TCK-001 - Outdoor Promo Recommendation for Austin.",
+    "error": null,
+    "wall_seconds": 16.21,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Austin"
+        },
+        "args_key": "{\"city\": \"Austin\"}",
+        "result": "Austin: 31C, sunny",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Outdoor Promo Recommendation for Austin",
+          "description": "The current weather in Austin is [response from get_weather]. Based on the conditions, I recommend proceeding with the outdoor promo as planned."
+        },
+        "args_key": "{\"description\": \"The current weather in Austin is [response from get_weather]. Based on the conditions, I recommend proceeding with the outdoor promo as planned.\", \"title\": \"Outdoor Promo Recommendation for Austin\"}",
+        "result": "Created TCK-001: Outdoor Promo Recommendation for Austin",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

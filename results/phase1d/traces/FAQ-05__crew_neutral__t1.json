@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Shipping Policy Summary\n\n- Standard shipping takes 5-7 business days.",
+  "agent_error": null,
+  "wall_seconds": 3.03,
+  "usage": {
+    "requests": 3,
+    "input": 877,
+    "cached_input": 0,
+    "output": 87,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001049
+  },
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Shipping Policy Summary\n\n- Standard shipping takes 5-7 business days.",
+    "error": null,
+    "wall_seconds": 3.03,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy summary shipping policy returns delivery processing times international shipping lost packages"
+        },
+        "args_key": "{\"query\": \"shipping policy summary shipping policy returns delivery processing times international shipping lost packages\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "shipping_policy_summary.txt",
+          "content": "Shipping Policy Summary\n\n- Standard shipping takes 5-7 business days.\n"
+        },
+        "args_key": "{\"content\": \"Shipping Policy Summary\\n\\n- Standard shipping takes 5-7 business days.\", \"path\": \"shipping_policy_summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-10",
+  "scenario_name": "undefined-comparison-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Paris: 18C, light rain  \nTokyo: 27C, humid, clear skies\n\nWhich is better depends on what you prefer:\n- **Paris** is cooler, but it\u2019s raining.\n- **Tokyo** is warmer and clear, but humid.\n\nIf \u201cbetter\u201d means more comfortable overall, **Tokyo** is probably better because it\u2019s clear and dry, though the humidity may bother some people.",
+  "agent_error": null,
+  "wall_seconds": 4.81,
+  "usage": {
+    "requests": 2,
+    "input": 510,
+    "cached_input": 0,
+    "output": 133,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000981
+  },
+  "trace": {
+    "scenario_id": "FAQ-10",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Paris: 18C, light rain  \nTokyo: 27C, humid, clear skies\n\nWhich is better depends on what you prefer:\n- **Paris** is cooler, but it\u2019s raining.\n- **Tokyo** is warmer and clear, but humid.\n\nIf \u201cbetter\u201d means more comfortable overall, **Tokyo** is probably better because it\u2019s clear and dry, though the humidity may bother some people.",
+    "error": null,
+    "wall_seconds": 4.81,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        },
+        "args_key": "{\"city\": \"Tokyo\"}",
+        "result": "Tokyo: 27C, humid, clear skies",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-22",
+  "scenario_name": "calculation-with-ticket-tool",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "12% of $3,150 is $378.0.",
+  "agent_error": null,
+  "wall_seconds": 3.56,
+  "trace": {
+    "scenario_id": "UT-22",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "12% of $3,150 is $378.0.",
+    "error": null,
+    "wall_seconds": 3.56,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.12*3150"
+        },
+        "args_key": "{\"expression\": \"0.12*3150\"}",
+        "result": "0.12*3150 = 378.0",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

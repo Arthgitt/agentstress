@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-16",
+  "scenario_name": "preference-already-set",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "User-001's preferred contact method is confirmed to be email. Their email address is dana@example.com. The task has been completed accurately.",
+  "agent_error": null,
+  "wall_seconds": 5.86,
+  "trace": {
+    "scenario_id": "UT-16",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "User-001's preferred contact method is confirmed to be email. Their email address is dana@example.com. The task has been completed accurately.",
+    "error": null,
+    "wall_seconds": 5.86,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-001"
+        },
+        "args_key": "{\"user_id\": \"user-001\"}",
+        "result": "{'name': 'Dana Kim', 'preferred_contact': 'email', 'email': 'dana@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

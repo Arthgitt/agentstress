@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I need the SKU of the widget to proceed with updating its inventory. Could you provide that information?",
+  "agent_error": null,
+  "wall_seconds": 2.41,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Sure, I need the SKU of the widget to proceed with updating its inventory. Could you provide that information?",
+    "error": null,
+    "wall_seconds": 2.41,
+    "calls": []
+  }
+}

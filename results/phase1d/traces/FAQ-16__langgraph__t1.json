@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can do that, but I need the maintenance window details first.\n\nPlease send:\n- Date\n- Start time\n- End time\n- Time zone\n- Systems/services affected\n- Short reason/description\n- Any requester or owner name to include in the ticket\n\nOnce you provide those, I\u2019ll open the ticket.",
+  "agent_error": null,
+  "wall_seconds": 3.21,
+  "usage": {
+    "requests": 3,
+    "input": 675,
+    "cached_input": 0,
+    "output": 115,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001024
+  },
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I can do that, but I need the maintenance window details first.\n\nPlease send:\n- Date\n- Start time\n- End time\n- Time zone\n- Systems/services affected\n- Short reason/description\n- Any requester or owner name to include in the ticket\n\nOnce you provide those, I\u2019ll open the ticket.",
+    "error": null,
+    "wall_seconds": 3.21,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window scheduling ticket requirements support process"
+        },
+        "args_key": "{\"query\": \"maintenance window scheduling ticket requirements support process\"}",
+        "result": "No documents found for 'maintenance window scheduling ticket requirements support process'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window process ticket create maintenance window"
+        },
+        "args_key": "{\"query\": \"maintenance window process ticket create maintenance window\"}",
+        "result": "No documents found for 'maintenance window process ticket create maintenance window'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

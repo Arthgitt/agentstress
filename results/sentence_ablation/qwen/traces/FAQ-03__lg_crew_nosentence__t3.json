@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 3,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems we didn't specify a particular SKU to check. Could you please provide the SKU of the product you are interested in, or shall I proceed with checking the inventory for our most critical items?",
+  "agent_error": null,
+  "wall_seconds": 7.93,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "It seems we didn't specify a particular SKU to check. Could you please provide the SKU of the product you are interested in, or shall I proceed with checking the inventory for our most critical items?",
+    "error": null,
+    "wall_seconds": 7.93,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": ""
+        },
+        "args_key": "{\"sku\": \"\"}",
+        "result": "Unknown SKU: ",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

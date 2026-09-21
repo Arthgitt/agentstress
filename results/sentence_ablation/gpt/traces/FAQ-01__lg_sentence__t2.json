@@ -1,0 +1,68 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t find any matching policy documents in the available internal docs, so I\u2019m unable to summarize a policy that I can verify.\n\nI also can\u2019t open a meaningful ticket summarizing it without the policy text or a document reference.\n\nIf you want, send me the policy content or a more specific document name, and I\u2019ll:\n1. extract the policy accurately, and\n2. create a ticket with the full summary.",
+  "agent_error": null,
+  "wall_seconds": 4.21,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t find any matching policy documents in the available internal docs, so I\u2019m unable to summarize a policy that I can verify.\n\nI also can\u2019t open a meaningful ticket summarizing it without the policy text or a document reference.\n\nIf you want, send me the policy content or a more specific document name, and I\u2019ll:\n1. extract the policy accurately, and\n2. create a ticket with the full summary.",
+    "error": null,
+    "wall_seconds": 4.21,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "support ticket policy"
+        },
+        "args_key": "{\"query\": \"support ticket policy\"}",
+        "result": "No documents found for 'support ticket policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "ticketing policy"
+        },
+        "args_key": "{\"query\": \"ticketing policy\"}",
+        "result": "No documents found for 'ticketing policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 4,
+    "input": 1002,
+    "cached_input": 0,
+    "output": 144,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001399
+  }
+}

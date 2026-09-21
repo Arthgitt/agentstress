@@ -1,0 +1,59 @@
+{
+  "scenario_id": "SR-34",
+  "scenario_name": "handoff-escalation-contact",
+  "target_mode": "SR",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Ticket TCK-001 titled 'Urgent escalation contact' has been created. The ticket states that according to our escalation policy, tickets marked urgent must be escalated to the on-call manager within 1 hour. This week's on-call manager is Sam Rivera.",
+  "agent_error": null,
+  "wall_seconds": 23.63,
+  "trace": {
+    "scenario_id": "SR-34",
+    "framework": "lg_crewprompt",
+    "architecture": "handoff",
+    "final_answer": "Ticket TCK-001 titled 'Urgent escalation contact' has been created. The ticket states that according to our escalation policy, tickets marked urgent must be escalated to the on-call manager within 1 hour. This week's on-call manager is Sam Rivera.",
+    "error": null,
+    "wall_seconds": 23.63,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy"
+        },
+        "args_key": "{\"query\": \"escalation policy\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "on-call manager rota this week"
+        },
+        "args_key": "{\"query\": \"on-call manager rota this week\"}",
+        "result": "This week's on-call manager is Sam Rivera.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Urgent escalation contact",
+          "description": "According to our escalation policy, tickets marked urgent must be escalated to the on-call manager within 1 hour. This week's on-call manager is Sam Rivera."
+        },
+        "args_key": "{\"description\": \"According to our escalation policy, tickets marked urgent must be escalated to the on-call manager within 1 hour. This week's on-call manager is Sam Rivera.\", \"title\": \"Urgent escalation contact\"}",
+        "result": "Created TCK-001: Urgent escalation contact",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

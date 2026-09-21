@@ -1,0 +1,70 @@
+{
+  "scenario_id": "FAQ-22",
+  "scenario_name": "handoff-top-up-which",
+  "target_mode": "FAQ",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The inventory for SKU-6006 has been successfully topped up. The stock count has been adjusted, and your colleague should now have more units available.\n\nIf you need to check the new stock level or make further adjustments, feel free to let me know!",
+  "agent_error": null,
+  "wall_seconds": 57.49,
+  "trace": {
+    "scenario_id": "FAQ-22",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "The inventory for SKU-6006 has been successfully topped up. The stock count has been adjusted, and your colleague should now have more units available.\n\nIf you need to check the new stock level or make further adjustments, feel free to let me know!",
+    "error": null,
+    "wall_seconds": 57.49,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 3,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-6006",
+          "delta": 50
+        },
+        "args_key": "{\"delta\": 50, \"sku\": \"SKU-6006\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

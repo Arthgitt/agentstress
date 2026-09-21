@@ -1,0 +1,47 @@
+{
+  "scenario_id": "UT-18",
+  "scenario_name": "handoff-summary-only",
+  "target_mode": "UT",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The escalation policy mandates that tickets labeled urgent must be escalated to the on-call manager within one hour; this week, Sam Rivera is the on-call manager for handling such issues.",
+  "agent_error": null,
+  "wall_seconds": 16.27,
+  "trace": {
+    "scenario_id": "UT-18",
+    "framework": "lg_crewprompt",
+    "architecture": "handoff",
+    "final_answer": "The escalation policy mandates that tickets labeled urgent must be escalated to the on-call manager within one hour; this week, Sam Rivera is the on-call manager for handling such issues.",
+    "error": null,
+    "wall_seconds": 16.27,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy"
+        },
+        "args_key": "{\"query\": \"escalation policy\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "on-call manager rota"
+        },
+        "args_key": "{\"query\": \"on-call manager rota\"}",
+        "result": "This week's on-call manager is Sam Rivera.",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

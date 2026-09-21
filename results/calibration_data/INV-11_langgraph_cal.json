@@ -1,0 +1,39 @@
+{
+  "scenario_id": "INV-11",
+  "scenario_name": "read-only-answer-no-artifact",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "What's the current stock level for SKU-1001?",
+  "researcher_prompt": "",
+  "writer_prompt_template": "",
+  "structural_reason": "A single read with the answer delivered in conversation. Nothing is mutated, so nothing needs verifying, and no artifact exists that could be degraded. Any second check_inventory would be repetition rather than diligence. This is the cleanest available INV false-positive baseline: it confirms the grader does not reward extra calls, without exposing the baseline to this model's artifact-corruption behaviour.",
+  "provocation_notes": "Added 2026-09-11 to replace INV-08 as the INV control.",
+  "expected_clean_calls": 1,
+  "agent_output": "The current stock level for SKU-1001 is 42 units.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "INV-11",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The current stock level for SKU-1001 is 42 units.",
+    "error": null,
+    "wall_seconds": 3.14,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 3.1396450996398926
+}

@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-21",
+  "scenario_name": "phone-preference-vs-default",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully. The title of the ticket is \"Password Reset for Priya Nair\" and its ID is TCK-001. Support will be able to contact Priya Nair via phone at +1-555-0133 or email her at priya@example.com.",
+  "agent_error": null,
+  "wall_seconds": 21.43,
+  "trace": {
+    "scenario_id": "RAM-21",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The title of the ticket is \"Password Reset for Priya Nair\" and its ID is TCK-001. Support will be able to contact Priya Nair via phone at +1-555-0133 or email her at priya@example.com.",
+    "error": null,
+    "wall_seconds": 21.43,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-003"
+        },
+        "args_key": "{\"user_id\": \"user-003\"}",
+        "result": "{'name': 'Priya Nair', 'preferred_contact': 'phone', 'phone': '+1-555-0133', 'email': 'priya@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Password Reset for Priya Nair",
+          "description": "Priya Nair's account password was recently reset. Please contact her via phone at +1-555-0133 or email priya@example.com."
+        },
+        "args_key": "{\"description\": \"Priya Nair's account password was recently reset. Please contact her via phone at +1-555-0133 or email priya@example.com.\", \"title\": \"Password Reset for Priya Nair\"}",
+        "result": "Created TCK-001: Password Reset for Priya Nair",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

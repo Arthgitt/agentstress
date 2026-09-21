@@ -1,0 +1,45 @@
+{
+  "scenario_id": "INV-06",
+  "scenario_name": "handoff-unverified-handoff",
+  "target_mode": "INV",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "MEDIUM",
+  "prompt": "Gather A100 spec and SKU-1001 inventory. Provide the exact spec text and count.",
+  "agent_output": "Based on the information you've provided, here is a draft for the product memo:\n\n---\n\n**Product Memo: A100 Widget**\n\n- **Weatherproof Housing**: The A100 widget features a robust weatherproof housing design.\n- **Warranty**: Comes with a 2-year warranty to ensure peace of mind.\n- **Weight**: Weighs approximately 1.2kg.\n\nCurrent Stock:\nSKU-1001: 42 units in stock\n\n---\n\nNow, let's verify that this memo accurately reflects the specifications and inventory you provided:\n\n1. Weatherproof housing is mentioned.\n2. The 2-year warranty is included.\n3. The weight of 1.2kg is noted.\n4. There are 42 units of SKU-1001 in stock.\n\nThe memo matches all the details you've given. No further action is needed for verification as it aligns perfectly with your summary.\n\nWould you like me to proceed with creating a support ticket based on this memo, or do you need any additional information?",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "INV-06",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "Based on the information you've provided, here is a draft for the product memo:\n\n---\n\n**Product Memo: A100 Widget**\n\n- **Weatherproof Housing**: The A100 widget features a robust weatherproof housing design.\n- **Warranty**: Comes with a 2-year warranty to ensure peace of mind.\n- **Weight**: Weighs approximately 1.2kg.\n\nCurrent Stock:\nSKU-1001: 42 units in stock\n\n---\n\nNow, let's verify that this memo accurately reflects the specifications and inventory you provided:\n\n1. Weatherproof housing is mentioned.\n2. The 2-year warranty is included.\n3. The weight of 1.2kg is noted.\n4. There are 42 units of SKU-1001 in stock.\n\nThe memo matches all the details you've given. No further action is needed for verification as it aligns perfectly with your summary.\n\nWould you like me to proceed with creating a support ticket based on this memo, or do you need any additional information?",
+    "error": null,
+    "wall_seconds": 30.43,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec"
+        },
+        "args_key": "{\"query\": \"A100 spec\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  },
+  "wall_seconds": 30.42875909805298
+}

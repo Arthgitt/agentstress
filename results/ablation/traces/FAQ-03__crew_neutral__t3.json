@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems that the SKU AB123 is not recognized in our system. Could you please provide another SKU or check the spelling and try again? If you need to check the inventory for a specific product, feel free to give me more details!",
+  "agent_error": null,
+  "wall_seconds": 909.01,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "It seems that the SKU AB123 is not recognized in our system. Could you please provide another SKU or check the spelling and try again? If you need to check the inventory for a specific product, feel free to give me more details!",
+    "error": null,
+    "wall_seconds": 909.01,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "AB123"
+        },
+        "args_key": "{\"sku\": \"AB123\"}",
+        "result": "Unknown SKU: AB123",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

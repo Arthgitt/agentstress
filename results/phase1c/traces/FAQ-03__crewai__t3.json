@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It appears that none of the SKUs (A123, B456, C789) you provided are recognized in our system. Could you please provide more information or check the SKUs and try again? If you need to check other SKUs, feel free to let me know!",
+  "agent_error": null,
+  "wall_seconds": 11.4,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "It appears that none of the SKUs (A123, B456, C789) you provided are recognized in our system. Could you please provide more information or check the SKUs and try again? If you need to check other SKUs, feel free to let me know!",
+    "error": null,
+    "wall_seconds": 11.4,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "B456"
+        },
+        "args_key": "{\"sku\": \"B456\"}",
+        "result": "Unknown SKU: B456",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "A123"
+        },
+        "args_key": "{\"sku\": \"A123\"}",
+        "result": "Unknown SKU: A123",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "C789"
+        },
+        "args_key": "{\"sku\": \"C789\"}",
+        "result": "Unknown SKU: C789",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

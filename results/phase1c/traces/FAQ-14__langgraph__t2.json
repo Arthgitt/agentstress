@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The ticket has been created successfully. The ticket number is TCK-001, and it pertains to the billing for the discounted order.\n\nWould you like me to provide more details or take any further actions? For example, do you need me to send an email notification about this ticket or update any specific system with this information?",
+  "agent_error": null,
+  "wall_seconds": 23.17,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The ticket number is TCK-001, and it pertains to the billing for the discounted order.\n\nWould you like me to provide more details or take any further actions? For example, do you need me to send an email notification about this ticket or update any specific system with this information?",
+    "error": null,
+    "wall_seconds": 23.17,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "100 * (1 - 0.2)"
+        },
+        "args_key": "{\"expression\": \"100 * (1 - 0.2)\"}",
+        "result": "100 * (1 - 0.2) = 80.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing for Discounted Order",
+          "description": "A ticket has been created for processing the billing of an order that received a 20% discount. The discounted total is $80.00."
+        },
+        "args_key": "{\"description\": \"A ticket has been created for processing the billing of an order that received a 20% discount. The discounted total is $80.00.\", \"title\": \"Billing for Discounted Order\"}",
+        "result": "Created TCK-001: Billing for Discounted Order",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

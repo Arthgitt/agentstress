@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-15",
+  "scenario_name": "weather-there",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Could you please tell me which city you are asking about?",
+  "agent_error": null,
+  "wall_seconds": 0.82,
+  "trace": {
+    "scenario_id": "FAQ-15",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Could you please tell me which city you are asking about?",
+    "error": null,
+    "wall_seconds": 0.82,
+    "calls": []
+  }
+}

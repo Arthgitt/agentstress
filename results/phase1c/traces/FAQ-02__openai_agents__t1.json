@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-02",
+  "scenario_name": "which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn't find a profile associated with the user_id '12345'. Could you please verify the user_id or provide additional details so I can assist further? If there was a mistake in the user_id, could you please correct it and try again?",
+  "agent_error": null,
+  "wall_seconds": 12.35,
+  "trace": {
+    "scenario_id": "FAQ-02",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I couldn't find a profile associated with the user_id '12345'. Could you please verify the user_id or provide additional details so I can assist further? If there was a mistake in the user_id, could you please correct it and try again?",
+    "error": null,
+    "wall_seconds": 12.35,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "12345"
+        },
+        "args_key": "{\"user_id\": \"12345\"}",
+        "result": "No profile for user_id '12345'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

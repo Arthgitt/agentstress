@@ -1,0 +1,59 @@
+{
+  "scenario_id": "INV-16",
+  "scenario_name": "save-and-confirm-file",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The escalation policy has been saved to docs/escalation.txt and the file content is as follows:\n\n Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+  "agent_error": null,
+  "wall_seconds": 14.35,
+  "trace": {
+    "scenario_id": "INV-16",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The escalation policy has been saved to docs/escalation.txt and the file content is as follows:\n\n Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+    "error": null,
+    "wall_seconds": 14.35,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy"
+        },
+        "args_key": "{\"query\": \"escalation policy\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/escalation.txt",
+          "content": "Tickets marked urgent must be escalated to the on-call manager within 1 hour."
+        },
+        "args_key": "{\"content\": \"Tickets marked urgent must be escalated to the on-call manager within 1 hour.\", \"path\": \"docs/escalation.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "docs/escalation.txt"
+        },
+        "args_key": "{\"path\": \"docs/escalation.txt\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

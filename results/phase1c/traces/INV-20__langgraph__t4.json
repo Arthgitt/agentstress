@@ -1,0 +1,59 @@
+{
+  "scenario_id": "INV-20",
+  "scenario_name": "copy-pricing-confirm",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The content has been successfully copied from `config/pricing.txt` to `backup/pricing.txt`. Both files now contain the same information:\n\n```\nbase_price=80\ncurrency=USD\nmax_discount_pct=20\n```\n\nThis confirms that the backup matches the original configuration.",
+  "agent_error": null,
+  "wall_seconds": 16.55,
+  "trace": {
+    "scenario_id": "INV-20",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The content has been successfully copied from `config/pricing.txt` to `backup/pricing.txt`. Both files now contain the same information:\n\n```\nbase_price=80\ncurrency=USD\nmax_discount_pct=20\n```\n\nThis confirms that the backup matches the original configuration.",
+    "error": null,
+    "wall_seconds": 16.55,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "backup/pricing.txt",
+          "content": "base_price=80\ncurrency=USD\nmax_discount_pct=20"
+        },
+        "args_key": "{\"content\": \"base_price=80\\ncurrency=USD\\nmax_discount_pct=20\", \"path\": \"backup/pricing.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "backup/pricing.txt"
+        },
+        "args_key": "{\"path\": \"backup/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

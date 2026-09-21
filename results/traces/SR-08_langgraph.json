@@ -1,0 +1,44 @@
+{
+  "scenario_id": "SR-08",
+  "framework": "langgraph",
+  "architecture": "handoff",
+  "final_answer": "The FAQ answer has been successfully written to the file `faq/refunds.txt`. Here is the content:\n\n**Refund Policy:** We accept returns within 30 days of purchase with a valid receipt.\n\n**Shipping Policy:** Standard delivery typically takes 5 to 7 business days.",
+  "error": null,
+  "wall_seconds": 26.27,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "search_docs",
+      "args": {
+        "query": "refund policy"
+      },
+      "args_key": "{\"query\": \"refund policy\"}",
+      "result": "Refunds are accepted within 30 days with a receipt.",
+      "is_error": false,
+      "actor": "researcher"
+    },
+    {
+      "step_index": 1,
+      "tool": "search_docs",
+      "args": {
+        "query": "shipping policy"
+      },
+      "args_key": "{\"query\": \"shipping policy\"}",
+      "result": "Standard shipping takes 5-7 business days.",
+      "is_error": false,
+      "actor": "researcher"
+    },
+    {
+      "step_index": 2,
+      "tool": "write_file",
+      "args": {
+        "path": "faq/refunds.txt",
+        "content": "Refund Policy: We accept returns within 30 days of purchase with a valid receipt. Shipping Policy: Standard delivery typically takes 5 to 7 business days."
+      },
+      "args_key": "{\"content\": \"Refund Policy: We accept returns within 30 days of purchase with a valid receipt. Shipping Policy: Standard delivery typically takes 5 to 7 business days.\", \"path\": \"faq/refunds.txt\"}",
+      "result": "Wrote 154 chars to faq/refunds.txt",
+      "is_error": false,
+      "actor": "writer"
+    }
+  ]
+}

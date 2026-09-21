@@ -1,0 +1,38 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 1,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The ticket has been created successfully. The ticket ID is TCK-001: Escalation Request - Current Task.",
+  "agent_error": null,
+  "wall_seconds": 7.54,
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The ticket ID is TCK-001: Escalation Request - Current Task.",
+    "error": null,
+    "wall_seconds": 7.54,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Escalation Request - Current Task",
+          "description": "Opening a ticket to escalate the current task."
+        },
+        "args_key": "{\"description\": \"Opening a ticket to escalate the current task.\", \"title\": \"Escalation Request - Current Task\"}",
+        "result": "Created TCK-001: Escalation Request - Current Task",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

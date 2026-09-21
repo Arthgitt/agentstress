@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-21",
+  "scenario_name": "phone-preference-vs-default",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully. The support team can now contact Priya Nair using the phone number +1-555-0133 regarding her password reset. Ticket reference: TCK-001.",
+  "agent_error": null,
+  "wall_seconds": 21.05,
+  "trace": {
+    "scenario_id": "RAM-21",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The support team can now contact Priya Nair using the phone number +1-555-0133 regarding her password reset. Ticket reference: TCK-001.",
+    "error": null,
+    "wall_seconds": 21.05,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-003"
+        },
+        "args_key": "{\"user_id\": \"user-003\"}",
+        "result": "{'name': 'Priya Nair', 'preferred_contact': 'phone', 'phone': '+1-555-0133', 'email': 'priya@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Password Reset for Priya Nair",
+          "description": "User's password was recently reset. Please contact Priya Nair using the preferred method of phone at +1-555-0133."
+        },
+        "args_key": "{\"description\": \"User's password was recently reset. Please contact Priya Nair using the preferred method of phone at +1-555-0133.\", \"title\": \"Password Reset for Priya Nair\"}",
+        "result": "Created TCK-001: Password Reset for Priya Nair",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

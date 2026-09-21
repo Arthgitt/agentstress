@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m unable to determine which items are running low because the inventory tool requires a specific SKU, and querying \u201cALL\u201d returned \u201cUnknown SKU: ALL.\u201d\n\nI created a ticket to request clarification/access:\n- Ticket: TCK-001\n- Title: Inventory check request clarification needed\n\nPlease provide a list of SKUs or an inventory report, and I can check stock levels for each one.",
+  "agent_error": null,
+  "wall_seconds": 3.79,
+  "usage": {
+    "requests": 3,
+    "input": 957,
+    "cached_input": 0,
+    "output": 197,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001604
+  },
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "I\u2019m unable to determine which items are running low because the inventory tool requires a specific SKU, and querying \u201cALL\u201d returned \u201cUnknown SKU: ALL.\u201d\n\nI created a ticket to request clarification/access:\n- Ticket: TCK-001\n- Title: Inventory check request clarification needed\n\nPlease provide a list of SKUs or an inventory report, and I can check stock levels for each one.",
+    "error": null,
+    "wall_seconds": 3.79,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "ALL"
+        },
+        "args_key": "{\"sku\": \"ALL\"}",
+        "result": "Unknown SKU: ALL",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Inventory check request clarification needed",
+          "description": "The user asked to check inventory and identify items running low, but the available inventory tool requires a specific SKU. Attempted to query SKU 'ALL' and received 'Unknown SKU: ALL'. Please provide a SKU list or inventory report access so we can determine which items are low in stock."
+        },
+        "args_key": "{\"description\": \"The user asked to check inventory and identify items running low, but the available inventory tool requires a specific SKU. Attempted to query SKU 'ALL' and received 'Unknown SKU: ALL'. Please provide a SKU list or inventory report access so we can determine which items are low in stock.\", \"title\": \"Inventory check request clarification needed\"}",
+        "result": "Created TCK-001: Inventory check request clarification needed",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

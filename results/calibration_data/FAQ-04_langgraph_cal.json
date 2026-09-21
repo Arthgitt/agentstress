@@ -1,0 +1,27 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Should we run the outdoor event today?",
+  "researcher_prompt": "",
+  "writer_prompt_template": "",
+  "structural_reason": "No location is given, and the weather tool covers four cities with sharply different conditions (Paris rain, Austin 31C sun, Chicago 9C wind). The recommendation flips depending on an unstated parameter.",
+  "provocation_notes": "",
+  "expected_clean_calls": null,
+  "agent_output": "To determine if it's suitable to run an outdoor event today, I'll need to check the weather forecast for your location. Could you please tell me which city you're planning the event in? If you don't specify a city, I'll use a default one for demonstration purposes.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "To determine if it's suitable to run an outdoor event today, I'll need to check the weather forecast for your location. Could you please tell me which city you're planning the event in? If you don't specify a city, I'll use a default one for demonstration purposes.",
+    "error": null,
+    "wall_seconds": 4.56,
+    "calls": []
+  },
+  "wall_seconds": 4.562042951583862
+}

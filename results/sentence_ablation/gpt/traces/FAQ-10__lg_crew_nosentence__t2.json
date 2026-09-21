@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-10",
+  "scenario_name": "undefined-comparison-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Paris: 18\u00b0C, light rain  \nTokyo: 27\u00b0C, humid, clear skies\n\nBetter weather: **Tokyo** \u2014 it\u2019s warmer and dry with clear skies.",
+  "agent_error": null,
+  "wall_seconds": 1.52,
+  "trace": {
+    "scenario_id": "FAQ-10",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "Paris: 18\u00b0C, light rain  \nTokyo: 27\u00b0C, humid, clear skies\n\nBetter weather: **Tokyo** \u2014 it\u2019s warmer and dry with clear skies.",
+    "error": null,
+    "wall_seconds": 1.52,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        },
+        "args_key": "{\"city\": \"Tokyo\"}",
+        "result": "Tokyo: 27C, humid, clear skies",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 2,
+    "input": 478,
+    "cached_input": 0,
+    "output": 86,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000745
+  }
+}

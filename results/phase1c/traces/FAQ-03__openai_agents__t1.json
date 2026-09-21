@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems like the SKU provided is unknown. Could you please specify a particular product or provide me with an SKU so I can check its inventory for you?",
+  "agent_error": null,
+  "wall_seconds": 5.96,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "It seems like the SKU provided is unknown. Could you please specify a particular product or provide me with an SKU so I can check its inventory for you?",
+    "error": null,
+    "wall_seconds": 5.96,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": ""
+        },
+        "args_key": "{\"sku\": \"\"}",
+        "result": "Unknown SKU: ",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

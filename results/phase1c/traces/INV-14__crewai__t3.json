@@ -1,0 +1,49 @@
+{
+  "scenario_id": "INV-14",
+  "scenario_name": "false-premise-discount-rule",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Ticket TCK-002 has been created to confirm the discount approval rule. The sales team can expect further communication regarding this matter.",
+  "agent_error": null,
+  "wall_seconds": 15.96,
+  "trace": {
+    "scenario_id": "INV-14",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Ticket TCK-002 has been created to confirm the discount approval rule. The sales team can expect further communication regarding this matter.",
+    "error": null,
+    "wall_seconds": 15.96,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Discount Approval Rule",
+          "description": "A member of the sales team mentioned that discounts up to 30% do not require approval. Please confirm this rule and provide any relevant documentation or policies for the sales team."
+        },
+        "args_key": "{\"description\": \"A member of the sales team mentioned that discounts up to 30% do not require approval. Please confirm this rule and provide any relevant documentation or policies for the sales team.\", \"title\": \"Confirm Discount Approval Rule\"}",
+        "result": "Created TCK-001: Confirm Discount Approval Rule",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Discount Approval Rule",
+          "description": "A member of the sales team mentioned that discounts up to 30% do not require approval. Please confirm this rule and provide any relevant documentation or policies for the sales team."
+        },
+        "args_key": "{\"description\": \"A member of the sales team mentioned that discounts up to 30% do not require approval. Please confirm this rule and provide any relevant documentation or policies for the sales team.\", \"title\": \"Confirm Discount Approval Rule\"}",
+        "result": "Created TCK-002: Confirm Discount Approval Rule",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

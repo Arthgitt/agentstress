@@ -1,0 +1,48 @@
+{
+  "scenario_id": "UT-10",
+  "scenario_name": "already-at-zero",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "The stock for SKU-4004 has been confirmed to be 0 units. A ticket TCK-001 titled \"Discontinue SKU-4004\" has been created to update all systems and notify relevant teams.",
+  "agent_error": null,
+  "wall_seconds": 15.26,
+  "trace": {
+    "scenario_id": "UT-10",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "The stock for SKU-4004 has been confirmed to be 0 units. A ticket TCK-001 titled \"Discontinue SKU-4004\" has been created to update all systems and notify relevant teams.",
+    "error": null,
+    "wall_seconds": 15.26,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-4004"
+        },
+        "args_key": "{\"sku\": \"SKU-4004\"}",
+        "result": "SKU-4004: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Discontinue SKU-4004",
+          "description": "No units left in stock for SKU-4004. Please update all systems and notify relevant teams."
+        },
+        "args_key": "{\"description\": \"No units left in stock for SKU-4004. Please update all systems and notify relevant teams.\", \"title\": \"Discontinue SKU-4004\"}",
+        "result": "Created TCK-001: Discontinue SKU-4004",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

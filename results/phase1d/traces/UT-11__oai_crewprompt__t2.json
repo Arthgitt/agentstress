@@ -1,0 +1,106 @@
+{
+  "scenario_id": "UT-11",
+  "scenario_name": "converge-up-by-fours",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 5,
+  "agent_output": "Done.",
+  "agent_error": null,
+  "wall_seconds": 6.03,
+  "usage": {
+    "requests": 7,
+    "input": 2728,
+    "cached_input": 0,
+    "output": 145,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002698
+  },
+  "trace": {
+    "scenario_id": "UT-11",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "Done.",
+    "error": null,
+    "wall_seconds": 6.03,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-6006",
+          "delta": 4
+        },
+        "args_key": "{\"delta\": 4, \"sku\": \"SKU-6006\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-6006",
+          "delta": 4
+        },
+        "args_key": "{\"delta\": 4, \"sku\": \"SKU-6006\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-6006",
+          "delta": 4
+        },
+        "args_key": "{\"delta\": 4, \"sku\": \"SKU-6006\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 4,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-6006",
+          "delta": 4
+        },
+        "args_key": "{\"delta\": 4, \"sku\": \"SKU-6006\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 5,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-6006",
+          "delta": 4
+        },
+        "args_key": "{\"delta\": 4, \"sku\": \"SKU-6006\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

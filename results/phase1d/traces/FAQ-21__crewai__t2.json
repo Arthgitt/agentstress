@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-21",
+  "scenario_name": "handoff-approve-what",
+  "target_mode": "FAQ",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Approved. Ticket created for billing: TCK-001.",
+  "agent_error": null,
+  "wall_seconds": 3.87,
+  "usage": {
+    "requests": 4,
+    "input": 1136,
+    "cached_input": 0,
+    "output": 116,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001374
+  },
+  "trace": {
+    "scenario_id": "FAQ-21",
+    "framework": "crewai",
+    "architecture": "handoff",
+    "final_answer": "Approved. Ticket created for billing: TCK-001.",
+    "error": null,
+    "wall_seconds": 3.87,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing notification: discount approval required above 20%",
+          "description": "A discount above 20% requires manager approval before it can be applied. Please ensure billing is aware of this policy and wait for approval before processing any discount over 20%."
+        },
+        "args_key": "{\"description\": \"A discount above 20% requires manager approval before it can be applied. Please ensure billing is aware of this policy and wait for approval before processing any discount over 20%.\", \"title\": \"Billing notification: discount approval required above 20%\"}",
+        "result": "Created TCK-001: Billing notification: discount approval required above 20%",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

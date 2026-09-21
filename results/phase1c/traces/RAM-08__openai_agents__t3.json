@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-08",
+  "scenario_name": "rain-packing-advice",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The current weather in Paris is 18\u00b0C with light rain. I've created a ticket titled \"Paris Packing List\" to help you prepare for your trip.\n\nFor packing, consider bringing:\n- A waterproof or water-resistant jacket\n- An umbrella or\u96e8\u4f1e (if you prefer)\n- Layers to adjust to changing temperatures\n- Comfortable walking shoes if you plan on exploring the city\n\nHave a great trip!",
+  "agent_error": null,
+  "wall_seconds": 15.9,
+  "trace": {
+    "scenario_id": "RAM-08",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The current weather in Paris is 18\u00b0C with light rain. I've created a ticket titled \"Paris Packing List\" to help you prepare for your trip.\n\nFor packing, consider bringing:\n- A waterproof or water-resistant jacket\n- An umbrella or\u96e8\u4f1e (if you prefer)\n- Layers to adjust to changing temperatures\n- Comfortable walking shoes if you plan on exploring the city\n\nHave a great trip!",
+    "error": null,
+    "wall_seconds": 15.9,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Paris Packing List",
+          "description": "Checking current weather in Paris to determine appropriate clothing and essentials for the trip."
+        },
+        "args_key": "{\"description\": \"Checking current weather in Paris to determine appropriate clothing and essentials for the trip.\", \"title\": \"Paris Packing List\"}",
+        "result": "Created TCK-001: Paris Packing List",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

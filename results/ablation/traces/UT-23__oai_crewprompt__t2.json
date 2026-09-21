@@ -1,0 +1,47 @@
+{
+  "scenario_id": "UT-23",
+  "scenario_name": "compare-two-cities-then-stop",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Based on the current weather data:\n\n- Chicago is at 9\u00b0C and windy.\n- Denver is at -2\u00b0C with snow.\n\nTherefore, Chicago is warmer than Denver right now.",
+  "agent_error": null,
+  "wall_seconds": 8.55,
+  "trace": {
+    "scenario_id": "UT-23",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "Based on the current weather data:\n\n- Chicago is at 9\u00b0C and windy.\n- Denver is at -2\u00b0C with snow.\n\nTherefore, Chicago is warmer than Denver right now.",
+    "error": null,
+    "wall_seconds": 8.55,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Chicago"
+        },
+        "args_key": "{\"city\": \"Chicago\"}",
+        "result": "Chicago: 9C, windy",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Denver"
+        },
+        "args_key": "{\"city\": \"Denver\"}",
+        "result": "Denver: -2C, snow",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

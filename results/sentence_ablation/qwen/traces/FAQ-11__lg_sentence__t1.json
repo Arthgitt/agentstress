@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, could you please specify the SKU of the widget and the change in stock count (delta) that you want to make? For example, if the SKU is \"WG123\" and you want to increase the stock by 50 units, I would need this information to proceed.",
+  "agent_error": null,
+  "wall_seconds": 6.35,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "Sure, could you please specify the SKU of the widget and the change in stock count (delta) that you want to make? For example, if the SKU is \"WG123\" and you want to increase the stock by 50 units, I would need this information to proceed.",
+    "error": null,
+    "wall_seconds": 6.35,
+    "calls": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "scenario_id": "SR-32",
+  "scenario_name": "save-then-announce",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The discount policy has been saved in the file `docs/discount.txt`. The content of the file is as follows:\n\n```\nDiscounts above 20% require manager approval before they can be applied.\n```\n\nA support ticket (TCK-001) titled \"New Discount Policy Documented\" has also been created for your reference. The sales team can find this information in the document and the ticket.",
+  "agent_error": null,
+  "wall_seconds": 23.33,
+  "trace": {
+    "scenario_id": "SR-32",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "The discount policy has been saved in the file `docs/discount.txt`. The content of the file is as follows:\n\n```\nDiscounts above 20% require manager approval before they can be applied.\n```\n\nA support ticket (TCK-001) titled \"New Discount Policy Documented\" has also been created for your reference. The sales team can find this information in the document and the ticket.",
+    "error": null,
+    "wall_seconds": 23.33,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "New Discount Policy Documented",
+          "description": "A new discount policy has been documented in the file located at docs/discount.txt. The policy states: 'Discounts above 20% require manager approval before they can be applied.' Please refer to this document for future reference."
+        },
+        "args_key": "{\"description\": \"A new discount policy has been documented in the file located at docs/discount.txt. The policy states: 'Discounts above 20% require manager approval before they can be applied.' Please refer to this document for future reference.\", \"title\": \"New Discount Policy Documented\"}",
+        "result": "Created TCK-001: New Discount Policy Documented",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/discount.txt",
+          "content": "Discounts above 20% require manager approval before they can be applied."
+        },
+        "args_key": "{\"content\": \"Discounts above 20% require manager approval before they can be applied.\", \"path\": \"docs/discount.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

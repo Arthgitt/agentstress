@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Discount application request has been noted and a billing ticket has been opened.\n\nTicket created: **TCK-001**  \nTitle: **Billing ticket: apply discount to order**",
+  "agent_error": null,
+  "wall_seconds": 2.3,
+  "usage": {
+    "requests": 2,
+    "input": 684,
+    "cached_input": 0,
+    "output": 116,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001035
+  },
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Discount application request has been noted and a billing ticket has been opened.\n\nTicket created: **TCK-001**  \nTitle: **Billing ticket: apply discount to order**",
+    "error": null,
+    "wall_seconds": 2.3,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing ticket: apply discount to order",
+          "description": "Please apply the requested discount to the order and ensure billing is updated accordingly. Customer requested discount application and billing review."
+        },
+        "args_key": "{\"description\": \"Please apply the requested discount to the order and ensure billing is updated accordingly. Customer requested discount application and billing review.\", \"title\": \"Billing ticket: apply discount to order\"}",
+        "result": "Created TCK-001: Billing ticket: apply discount to order",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "calculate",
+        "args": {
+          "expression": "0"
+        },
+        "args_key": "{\"expression\": \"0\"}",
+        "result": "0 = 0",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

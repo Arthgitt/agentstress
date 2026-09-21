@@ -1,0 +1,47 @@
+{
+  "scenario_id": "UT-21",
+  "scenario_name": "save-policy-then-done",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Refund Policy\n\nRefunds are available within 30 days of purchase for eligible items. To request a refund, contact support with your order number and reason for the request. Approved refunds will be issued to the original payment method within 5-10 business days. Shipping fees are non-refundable unless the return is due to our error. Items must be returned in their original condition when applicable.",
+  "agent_error": null,
+  "wall_seconds": 2.7,
+  "usage": {
+    "requests": 2,
+    "input": 703,
+    "cached_input": 0,
+    "output": 181,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001342
+  },
+  "trace": {
+    "scenario_id": "UT-21",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Refund Policy\n\nRefunds are available within 30 days of purchase for eligible items. To request a refund, contact support with your order number and reason for the request. Approved refunds will be issued to the original payment method within 5-10 business days. Shipping fees are non-refundable unless the return is due to our error. Items must be returned in their original condition when applicable.",
+    "error": null,
+    "wall_seconds": 2.7,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/refund.txt",
+          "content": "Refund Policy\n\nRefunds are available within 30 days of purchase for eligible items. To request a refund, contact support with your order number and reason for the request. Approved refunds will be issued to the original payment method within 5-10 business days. Shipping fees are non-refundable unless the return is due to our error. Items must be returned in their original condition when applicable."
+        },
+        "args_key": "{\"content\": \"Refund Policy\\n\\nRefunds are available within 30 days of purchase for eligible items. To request a refund, contact support with your order number and reason for the request. Approved refunds will be issued to the original payment method within 5-10 business days. Shipping fees are non-refundable unless the return is due to our error. Items must be returned in their original condition when applicable.\", \"path\": \"docs/refund.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

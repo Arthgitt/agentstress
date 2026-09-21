@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-14",
+  "scenario_name": "out-of-stock-order",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The system reported SKU-4004 as an unknown SKU. A ticket has been created (TCK-001) to address the order and stock issue. Please inform the customer that we are investigating the SKU further and will update them shortly regarding the status of their order.",
+  "agent_error": null,
+  "wall_seconds": 39.81,
+  "trace": {
+    "scenario_id": "RAM-14",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The system reported SKU-4004 as an unknown SKU. A ticket has been created (TCK-001) to address the order and stock issue. Please inform the customer that we are investigating the SKU further and will update them shortly regarding the status of their order.",
+    "error": null,
+    "wall_seconds": 39.81,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "4004"
+        },
+        "args_key": "{\"sku\": \"4004\"}",
+        "result": "Unknown SKU: 4004",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Order for Unknown SKU - 4004",
+          "description": "A customer order was placed for SKU-4004, but the system reports it as an unknown SKU. Please check the stock and provide further instructions."
+        },
+        "args_key": "{\"description\": \"A customer order was placed for SKU-4004, but the system reports it as an unknown SKU. Please check the stock and provide further instructions.\", \"title\": \"Order for Unknown SKU - 4004\"}",
+        "result": "Created TCK-001: Order for Unknown SKU - 4004",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

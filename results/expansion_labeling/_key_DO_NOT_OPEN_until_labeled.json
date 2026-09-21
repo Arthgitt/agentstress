@@ -1,0 +1,275 @@
+{
+  "seed": 20260915,
+  "items": [
+    {
+      "scenario_id": "RAM-12",
+      "framework": "langgraph",
+      "trial": 2,
+      "judge_score": 0.25,
+      "judge_verdict": "FAIL",
+      "target_mode": "RAM",
+      "label_id": "L01"
+    },
+    {
+      "scenario_id": "RAM-18",
+      "framework": "crewai",
+      "trial": 4,
+      "judge_score": 0.25,
+      "judge_verdict": "FAIL",
+      "target_mode": "RAM",
+      "label_id": "L02"
+    },
+    {
+      "scenario_id": "RAM-14",
+      "framework": "openai_agents",
+      "trial": 3,
+      "judge_score": 0.75,
+      "judge_verdict": "PASS",
+      "target_mode": "RAM",
+      "label_id": "L03"
+    },
+    {
+      "scenario_id": "RAM-15",
+      "framework": "langgraph",
+      "trial": 3,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "RAM",
+      "label_id": "L04"
+    },
+    {
+      "scenario_id": "RAM-22",
+      "framework": "langgraph",
+      "trial": 4,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "RAM",
+      "label_id": "L05"
+    },
+    {
+      "scenario_id": "RAM-23",
+      "framework": "openai_agents",
+      "trial": 1,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "RAM",
+      "label_id": "L06"
+    },
+    {
+      "scenario_id": "RAM-21",
+      "framework": "langgraph",
+      "trial": 2,
+      "judge_score": 0.25,
+      "judge_verdict": "FAIL",
+      "target_mode": "RAM",
+      "label_id": "L07"
+    },
+    {
+      "scenario_id": "UT-21",
+      "framework": "openai_agents",
+      "trial": 4,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "UT",
+      "label_id": "L08"
+    },
+    {
+      "scenario_id": "UT-20",
+      "framework": "crewai",
+      "trial": 4,
+      "judge_score": 0.25,
+      "judge_verdict": "FAIL",
+      "target_mode": "UT",
+      "label_id": "L09"
+    },
+    {
+      "scenario_id": "UT-10",
+      "framework": "openai_agents",
+      "trial": 3,
+      "judge_score": 0.25,
+      "judge_verdict": "FAIL",
+      "target_mode": "UT",
+      "label_id": "L10"
+    },
+    {
+      "scenario_id": "UT-22",
+      "framework": "openai_agents",
+      "trial": 4,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "UT",
+      "label_id": "L11"
+    },
+    {
+      "scenario_id": "UT-11",
+      "framework": "openai_agents",
+      "trial": 3,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "UT",
+      "label_id": "L12"
+    },
+    {
+      "scenario_id": "UT-13",
+      "framework": "crewai",
+      "trial": 1,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "UT",
+      "label_id": "L13"
+    },
+    {
+      "scenario_id": "UT-09",
+      "framework": "openai_agents",
+      "trial": 1,
+      "judge_score": 0.0,
+      "judge_verdict": "FAIL",
+      "target_mode": "UT",
+      "label_id": "L14"
+    },
+    {
+      "scenario_id": "FAQ-18",
+      "framework": "openai_agents",
+      "trial": 3,
+      "judge_score": 0.0,
+      "judge_verdict": "FAIL",
+      "target_mode": "FAQ",
+      "label_id": "L15"
+    },
+    {
+      "scenario_id": "FAQ-14",
+      "framework": "crewai",
+      "trial": 2,
+      "judge_score": 0.0,
+      "judge_verdict": "FAIL",
+      "target_mode": "FAQ",
+      "label_id": "L16"
+    },
+    {
+      "scenario_id": "FAQ-11",
+      "framework": "langgraph",
+      "trial": 2,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "FAQ",
+      "label_id": "L17"
+    },
+    {
+      "scenario_id": "FAQ-13",
+      "framework": "langgraph",
+      "trial": 2,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "FAQ",
+      "label_id": "L18"
+    },
+    {
+      "scenario_id": "FAQ-19",
+      "framework": "langgraph",
+      "trial": 2,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "FAQ",
+      "label_id": "L19"
+    },
+    {
+      "scenario_id": "FAQ-12",
+      "framework": "openai_agents",
+      "trial": 4,
+      "judge_score": 0.0,
+      "judge_verdict": "FAIL",
+      "target_mode": "FAQ",
+      "label_id": "L20"
+    },
+    {
+      "scenario_id": "FAQ-16",
+      "framework": "langgraph",
+      "trial": 1,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "FAQ",
+      "label_id": "L21"
+    },
+    {
+      "scenario_id": "FAQ-21",
+      "framework": "openai_agents",
+      "trial": 2,
+      "judge_score": 0.0,
+      "judge_verdict": "FAIL",
+      "target_mode": "FAQ",
+      "label_id": "L22"
+    },
+    {
+      "scenario_id": "INV-16",
+      "framework": "crewai",
+      "trial": 1,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "INV",
+      "label_id": "L23"
+    },
+    {
+      "scenario_id": "INV-19",
+      "framework": "crewai",
+      "trial": 4,
+      "judge_score": 0.25,
+      "judge_verdict": "FAIL",
+      "target_mode": "INV",
+      "label_id": "L24"
+    },
+    {
+      "scenario_id": "INV-21",
+      "framework": "crewai",
+      "trial": 3,
+      "judge_score": 0.0,
+      "judge_verdict": "FAIL",
+      "target_mode": "INV",
+      "label_id": "L25"
+    },
+    {
+      "scenario_id": "INV-20",
+      "framework": "crewai",
+      "trial": 1,
+      "judge_score": 0.0,
+      "judge_verdict": "FAIL",
+      "target_mode": "INV",
+      "label_id": "L26"
+    },
+    {
+      "scenario_id": "INV-24",
+      "framework": "crewai",
+      "trial": 2,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "INV",
+      "label_id": "L27"
+    },
+    {
+      "scenario_id": "INV-22",
+      "framework": "langgraph",
+      "trial": 3,
+      "judge_score": 0.0,
+      "judge_verdict": "FAIL",
+      "target_mode": "INV",
+      "label_id": "L28"
+    },
+    {
+      "scenario_id": "INV-18",
+      "framework": "langgraph",
+      "trial": 4,
+      "judge_score": 1.0,
+      "judge_verdict": "PASS",
+      "target_mode": "INV",
+      "label_id": "L29"
+    },
+    {
+      "scenario_id": "INV-17",
+      "framework": "crewai",
+      "trial": 3,
+      "judge_score": 0.75,
+      "judge_verdict": "PASS",
+      "target_mode": "INV",
+      "label_id": "L30"
+    }
+  ]
+}

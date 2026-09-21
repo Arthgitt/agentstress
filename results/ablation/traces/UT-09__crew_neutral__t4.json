@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-09",
+  "scenario_name": "already-above-minimum",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Currently, SKU-5005 has 150 units in stock, which exceeds the required minimum of 100 units. Everything is within the expected criteria.",
+  "agent_error": null,
+  "wall_seconds": 5.23,
+  "trace": {
+    "scenario_id": "UT-09",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Currently, SKU-5005 has 150 units in stock, which exceeds the required minimum of 100 units. Everything is within the expected criteria.",
+    "error": null,
+    "wall_seconds": 5.23,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

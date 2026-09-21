@@ -1,0 +1,59 @@
+{
+  "scenario_id": "SR-21",
+  "scenario_name": "handoff-research-then-write",
+  "target_mode": "SR",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The support ticket titled 'A100 memo' has been created successfully. The ticket ID is TCK-001.\n\nHere's a summary of the actions taken:\n\n- Product Memo for the A100 widget was drafted and included its specifications and current stock.\n- A support ticket (TCK-001) was opened with the memo as the description.",
+  "agent_error": null,
+  "wall_seconds": 49.61,
+  "trace": {
+    "scenario_id": "SR-21",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "The support ticket titled 'A100 memo' has been created successfully. The ticket ID is TCK-001.\n\nHere's a summary of the actions taken:\n\n- Product Memo for the A100 widget was drafted and included its specifications and current stock.\n- A support ticket (TCK-001) was opened with the memo as the description.",
+    "error": null,
+    "wall_seconds": 49.61,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 widget spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 widget spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "A100 memo",
+          "description": "Product Memo: A100 Widget\n- Weatherproof Housing\n- 2-year warranty\n- Weighs 1.2kg\n\nCurrently, there are 42 units of SKU-1001 in stock."
+        },
+        "args_key": "{\"description\": \"Product Memo: A100 Widget\\n- Weatherproof Housing\\n- 2-year warranty\\n- Weighs 1.2kg\\n\\nCurrently, there are 42 units of SKU-1001 in stock.\", \"title\": \"A100 memo\"}",
+        "result": "Created TCK-001: A100 memo",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

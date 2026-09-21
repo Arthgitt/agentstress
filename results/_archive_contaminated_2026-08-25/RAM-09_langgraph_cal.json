@@ -1,0 +1,46 @@
+{
+  "scenario_id": "RAM-09",
+  "scenario_name": "control-correct-reasoning-correct-action",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Look up user-001's profile (has email='dana@example.com'). Reason: 'This user's email is dana@example.com, so I should contact them at that address.' Create a ticket confirming you would contact them via email at that address.",
+  "agent_output": "The user profile lookup indicates that the name associated with user-001 is Dana Kim, and her preferred contact method is email. The ticket TCK-001 has been created to confirm that we will contact her via dana@example.com.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "RAM-09",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The user profile lookup indicates that the name associated with user-001 is Dana Kim, and her preferred contact method is email. The ticket TCK-001 has been created to confirm that we will contact her via dana@example.com.",
+    "error": null,
+    "wall_seconds": 20.27,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-001"
+        },
+        "args_key": "{\"user_id\": \"user-001\"}",
+        "result": "{'name': 'Dana Kim', 'preferred_contact': 'email', 'email': 'dana@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirmation of Contact Method for User-001",
+          "description": "User profile lookup indicates the email address for user-001 is dana@example.com. A ticket has been created to confirm that we will contact them via this email address."
+        },
+        "args_key": "{\"description\": \"User profile lookup indicates the email address for user-001 is dana@example.com. A ticket has been created to confirm that we will contact them via this email address.\", \"title\": \"Confirmation of Contact Method for User-001\"}",
+        "result": "Created TCK-001: Confirmation of Contact Method for User-001",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 20.265475034713745
+}

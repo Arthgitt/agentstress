@@ -1,0 +1,46 @@
+{
+  "scenario_id": "INV-08",
+  "scenario_name": "control-complete-verification",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Calculate 10% of $100 (should be 10). Create a ticket with the result. Verify that the ticket correctly states the result (10). Confirm this verification in your final response.",
+  "agent_output": "A support/task ticket titled \"Calculation Result\" has been created successfully (TCK-001).\n\nThe description on the ticket states that 10% of $100 equals $10, which verifies our calculation.\n\nFinal response: The ticket correctly states that 10% of $100 is $10.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "INV-08",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "A support/task ticket titled \"Calculation Result\" has been created successfully (TCK-001).\n\nThe description on the ticket states that 10% of $100 equals $10, which verifies our calculation.\n\nFinal response: The ticket correctly states that 10% of $100 is $10.",
+    "error": null,
+    "wall_seconds": 21.2,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.10*100"
+        },
+        "args_key": "{\"expression\": \"0.10*100\"}",
+        "result": "0.10*100 = 10.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Calculation Result",
+          "description": "The result of calculating 10% of $100 is $10."
+        },
+        "args_key": "{\"description\": \"The result of calculating 10% of $100 is $10.\", \"title\": \"Calculation Result\"}",
+        "result": "Created TCK-001: Calculation Result",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 21.196537971496582
+}

@@ -1,0 +1,68 @@
+{
+  "scenario_id": "UT-18",
+  "scenario_name": "handoff-summary-only",
+  "target_mode": "UT",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Urgent tickets are handled by the on-call manager, and this week that person is Sam Rivera. They must be escalated within 1 hour.",
+  "agent_error": null,
+  "wall_seconds": 3.6,
+  "usage": {
+    "requests": 3,
+    "input": 878,
+    "cached_input": 0,
+    "output": 137,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001275
+  },
+  "trace": {
+    "scenario_id": "UT-18",
+    "framework": "crewai",
+    "architecture": "handoff",
+    "final_answer": "Urgent tickets are handled by the on-call manager, and this week that person is Sam Rivera. They must be escalated within 1 hour.",
+    "error": null,
+    "wall_seconds": 3.6,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy on-call manager rota"
+        },
+        "args_key": "{\"query\": \"escalation policy on-call manager rota\"}",
+        "result": "This week's on-call manager is Sam Rivera.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy"
+        },
+        "args_key": "{\"query\": \"escalation policy\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "on-call manager rota"
+        },
+        "args_key": "{\"query\": \"on-call manager rota\"}",
+        "result": "This week's on-call manager is Sam Rivera.",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

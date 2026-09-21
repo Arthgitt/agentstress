@@ -1,0 +1,69 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Opened ticket TCK-001 for the policy ranking request.\n\nNo relevant internal policy documents were found, so the ticket asks for the policy list or source document needed to complete the ranking.",
+  "agent_error": null,
+  "wall_seconds": 3.31,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "Opened ticket TCK-001 for the policy ranking request.\n\nNo relevant internal policy documents were found, so the ticket asks for the policy list or source document needed to complete the ranking.",
+    "error": null,
+    "wall_seconds": 3.31,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy priority ranking order or priority criteria internal policies"
+        },
+        "args_key": "{\"query\": \"policy priority ranking order or priority criteria internal policies\"}",
+        "result": "No documents found for 'policy priority ranking order or priority criteria internal policies'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "company policies list compliance security privacy HR finance operations"
+        },
+        "args_key": "{\"query\": \"company policies list compliance security privacy HR finance operations\"}",
+        "result": "No documents found for 'company policies list compliance security privacy HR finance operations'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Policy ranking request",
+          "description": "Unable to determine a policy priority ranking because no relevant internal policy documents were found via search. Please provide the policy list or a source document so the ranking can be completed."
+        },
+        "args_key": "{\"description\": \"Unable to determine a policy priority ranking because no relevant internal policy documents were found via search. Please provide the policy list or a source document so the ranking can be completed.\", \"title\": \"Policy ranking request\"}",
+        "result": "Created TCK-001: Policy ranking request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 3,
+    "input": 1013,
+    "cached_input": 0,
+    "output": 159,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001475
+  }
+}

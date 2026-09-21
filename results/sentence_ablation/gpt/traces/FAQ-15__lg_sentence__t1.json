@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-15",
+  "scenario_name": "weather-there",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m not sure which place you mean by \u201cthere.\u201d Please tell me the city or location, and I\u2019ll get today\u2019s weather for you.",
+  "agent_error": null,
+  "wall_seconds": 0.84,
+  "trace": {
+    "scenario_id": "FAQ-15",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I\u2019m not sure which place you mean by \u201cthere.\u201d Please tell me the city or location, and I\u2019ll get today\u2019s weather for you.",
+    "error": null,
+    "wall_seconds": 0.84,
+    "calls": []
+  },
+  "usage": {
+    "requests": 1,
+    "input": 148,
+    "cached_input": 0,
+    "output": 33,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.00026
+  }
+}

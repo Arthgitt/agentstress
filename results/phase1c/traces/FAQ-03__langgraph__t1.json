@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems like I need more information to proceed. Could you please provide at least one SKU number so I can check our inventory for that specific product? If you have multiple SKUs, feel free to list them all.",
+  "agent_error": null,
+  "wall_seconds": 10.47,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems like I need more information to proceed. Could you please provide at least one SKU number so I can check our inventory for that specific product? If you have multiple SKUs, feel free to list them all.",
+    "error": null,
+    "wall_seconds": 10.47,
+    "calls": []
+  }
+}

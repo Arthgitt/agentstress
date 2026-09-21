@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can help, but I need a bit more information to do either action:\n\n1. **Discount details**\n   - What discount should be applied?\n   - Please provide either:\n     - a percentage (e.g. 10%), or\n     - a fixed amount (e.g. $25 off)\n\n2. **Order details**\n   - Order ID or reference number\n\n3. **Billing ticket details**\n   - What issue should the billing ticket mention?\n   - Any relevant notes I should include?\n\nOnce you send those, I can calculate the discount and create the billing ticket.",
+  "agent_error": null,
+  "wall_seconds": 2.18,
+  "usage": {
+    "requests": 1,
+    "input": 211,
+    "cached_input": 0,
+    "output": 121,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000703
+  },
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I can help, but I need a bit more information to do either action:\n\n1. **Discount details**\n   - What discount should be applied?\n   - Please provide either:\n     - a percentage (e.g. 10%), or\n     - a fixed amount (e.g. $25 off)\n\n2. **Order details**\n   - Order ID or reference number\n\n3. **Billing ticket details**\n   - What issue should the billing ticket mention?\n   - Any relevant notes I should include?\n\nOnce you send those, I can calculate the discount and create the billing ticket.",
+    "error": null,
+    "wall_seconds": 2.18,
+    "calls": []
+  }
+}

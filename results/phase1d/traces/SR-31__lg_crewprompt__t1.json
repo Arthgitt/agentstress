@@ -1,0 +1,70 @@
+{
+  "scenario_id": "SR-31",
+  "scenario_name": "adjust-then-report-once",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Done \u2014 4 units of SKU-7007 were removed for return inspection, and the stock level is now 23 units.\n\nTicket created: TCK-001",
+  "agent_error": null,
+  "wall_seconds": 3.99,
+  "usage": {
+    "requests": 4,
+    "input": 1472,
+    "cached_input": 0,
+    "output": 135,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001711
+  },
+  "trace": {
+    "scenario_id": "SR-31",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Done \u2014 4 units of SKU-7007 were removed for return inspection, and the stock level is now 23 units.\n\nTicket created: TCK-001",
+    "error": null,
+    "wall_seconds": 3.99,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -4
+        },
+        "args_key": "{\"delta\": -4, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Return inspection: removed 4 units of SKU-7007 from stock",
+          "description": "Removed 4 units of SKU-7007 for return inspection. Current stock level is 23 units."
+        },
+        "args_key": "{\"description\": \"Removed 4 units of SKU-7007 for return inspection. Current stock level is 23 units.\", \"title\": \"Return inspection: removed 4 units of SKU-7007 from stock\"}",
+        "result": "Created TCK-001: Return inspection: removed 4 units of SKU-7007 from stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

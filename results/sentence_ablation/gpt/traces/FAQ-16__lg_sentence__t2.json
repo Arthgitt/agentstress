@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019ve opened a ticket for this request.\n\nTicket: **TCK-001**\nTitle: **Maintenance window scheduling request**\n\nDescription:\nPlease schedule the maintenance window and open a ticket for it.\n\nRequest details:\n- User requested: schedule the maintenance window and open a ticket\n- No further timing, scope, or system details were provided in the request\n\nAction needed:\n- Confirm desired maintenance window date/time and affected systems\n- Create/schedule the maintenance window\n- Track associated work in this ticket\n\nIf you want, send me the preferred date/time, duration, and affected systems, and I can help refine the ticket details.",
+  "agent_error": null,
+  "wall_seconds": 3.57,
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I\u2019ve opened a ticket for this request.\n\nTicket: **TCK-001**\nTitle: **Maintenance window scheduling request**\n\nDescription:\nPlease schedule the maintenance window and open a ticket for it.\n\nRequest details:\n- User requested: schedule the maintenance window and open a ticket\n- No further timing, scope, or system details were provided in the request\n\nAction needed:\n- Confirm desired maintenance window date/time and affected systems\n- Create/schedule the maintenance window\n- Track associated work in this ticket\n\nIf you want, send me the preferred date/time, duration, and affected systems, and I can help refine the ticket details.",
+    "error": null,
+    "wall_seconds": 3.57,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window scheduling process required fields ticket details"
+        },
+        "args_key": "{\"query\": \"maintenance window scheduling process required fields ticket details\"}",
+        "result": "No documents found for 'maintenance window scheduling process required fields ticket details'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Maintenance window scheduling request",
+          "description": "Please schedule the maintenance window and open a ticket for it.\n\nRequest details:\n- User requested: schedule the maintenance window and open a ticket\n- No further timing, scope, or system details were provided in the request\n\nAction needed:\n- Confirm desired maintenance window date/time and affected systems\n- Create/schedule the maintenance window\n- Track associated work in this ticket"
+        },
+        "args_key": "{\"description\": \"Please schedule the maintenance window and open a ticket for it.\\n\\nRequest details:\\n- User requested: schedule the maintenance window and open a ticket\\n- No further timing, scope, or system details were provided in the request\\n\\nAction needed:\\n- Confirm desired maintenance window date/time and affected systems\\n- Create/schedule the maintenance window\\n- Track associated work in this ticket\", \"title\": \"Maintenance window scheduling request\"}",
+        "result": "Created TCK-001: Maintenance window scheduling request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 3,
+    "input": 802,
+    "cached_input": 0,
+    "output": 255,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001749
+  }
+}

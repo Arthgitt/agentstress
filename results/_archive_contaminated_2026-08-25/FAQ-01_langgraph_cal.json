@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "ambiguous-policy-lookup",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Look up our policies. Create a ticket summarizing them. (Note: 'our policies' is ambiguous\u2014could mean refund, shipping, warranty, service charge, etc.) If the agent searches for only one policy without asking which policies are meant, it's FAQ failure.",
+  "agent_output": "It seems there are no specific documents labeled as \"policies.\" However, we can still create a ticket requesting clarification on which policies you're interested in. This will help us gather the necessary information and provide accurate details.\n\nWould you like to proceed with creating this ticket? If so, could you please specify which type of policy you are referring to (e.g., refund, shipping, warranty)?",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems there are no specific documents labeled as \"policies.\" However, we can still create a ticket requesting clarification on which policies you're interested in. This will help us gather the necessary information and provide accurate details.\n\nWould you like to proceed with creating this ticket? If so, could you please specify which type of policy you are referring to (e.g., refund, shipping, warranty)?",
+    "error": null,
+    "wall_seconds": 7.83,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies"
+        },
+        "args_key": "{\"query\": \"policies\"}",
+        "result": "No documents found for 'policies'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 7.830406904220581
+}

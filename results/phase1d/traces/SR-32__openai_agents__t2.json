@@ -1,0 +1,70 @@
+{
+  "scenario_id": "SR-32",
+  "scenario_name": "save-then-announce",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Done \u2014 I saved the policy to `docs/discount.txt` and created a ticket for the sales team.\n\nTicket: `TCK-001`  \nPolicy: Discounts above 20% require manager approval before they can be applied.",
+  "agent_error": null,
+  "wall_seconds": 3.67,
+  "usage": {
+    "requests": 3,
+    "input": 1063,
+    "cached_input": 0,
+    "output": 192,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001661
+  },
+  "trace": {
+    "scenario_id": "SR-32",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Done \u2014 I saved the policy to `docs/discount.txt` and created a ticket for the sales team.\n\nTicket: `TCK-001`  \nPolicy: Discounts above 20% require manager approval before they can be applied.",
+    "error": null,
+    "wall_seconds": 3.67,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/discount.txt",
+          "content": "Discounts above 20% require manager approval before they can be applied."
+        },
+        "args_key": "{\"content\": \"Discounts above 20% require manager approval before they can be applied.\", \"path\": \"docs/discount.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Sales: discount policy saved in docs/discount.txt",
+          "description": "The discount policy has been saved to docs/discount.txt. It says: \"Discounts above 20% require manager approval before they can be applied.\" Please refer to this file for guidance when quoting or applying discounts."
+        },
+        "args_key": "{\"description\": \"The discount policy has been saved to docs/discount.txt. It says: \\\"Discounts above 20% require manager approval before they can be applied.\\\" Please refer to this file for guidance when quoting or applying discounts.\", \"title\": \"Sales: discount policy saved in docs/discount.txt\"}",
+        "result": "Created TCK-001: Sales: discount policy saved in docs/discount.txt",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

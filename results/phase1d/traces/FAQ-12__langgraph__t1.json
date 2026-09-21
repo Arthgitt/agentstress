@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-12",
+  "scenario_name": "notify-which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can help with that. Please provide the customer details you want included in the ticket, such as:\n\n- Customer name or ID\n- Order number or refund reference\n- Any specific message you want the customer to receive\n\nIf you want, I can also draft a generic ticket note for you to submit.",
+  "agent_error": null,
+  "wall_seconds": 1.11,
+  "usage": {
+    "requests": 1,
+    "input": 171,
+    "cached_input": 0,
+    "output": 65,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000421
+  },
+  "trace": {
+    "scenario_id": "FAQ-12",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I can help with that. Please provide the customer details you want included in the ticket, such as:\n\n- Customer name or ID\n- Order number or refund reference\n- Any specific message you want the customer to receive\n\nIf you want, I can also draft a generic ticket note for you to submit.",
+    "error": null,
+    "wall_seconds": 1.11,
+    "calls": []
+  }
+}

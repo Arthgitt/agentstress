@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-20",
+  "scenario_name": "contact-the-vip",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t contact the VIP customer because no profile exists for the provided user_id `\"VIP customer\"`.\n\nI opened a ticket documenting that:\n- **Ticket:** TCK-001\n- **Title:** Attempted outreach to VIP customer\n- **Details:** No user profile found for the provided user_id, so no contact could be made.\n\nIf you send me the correct user_id, I can try again.",
+  "agent_error": null,
+  "wall_seconds": 3.59,
+  "usage": {
+    "requests": 3,
+    "input": 776,
+    "cached_input": 0,
+    "output": 180,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001392
+  },
+  "trace": {
+    "scenario_id": "FAQ-20",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t contact the VIP customer because no profile exists for the provided user_id `\"VIP customer\"`.\n\nI opened a ticket documenting that:\n- **Ticket:** TCK-001\n- **Title:** Attempted outreach to VIP customer\n- **Details:** No user profile found for the provided user_id, so no contact could be made.\n\nIf you send me the correct user_id, I can try again.",
+    "error": null,
+    "wall_seconds": 3.59,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "VIP customer"
+        },
+        "args_key": "{\"user_id\": \"VIP customer\"}",
+        "result": "No profile for user_id 'VIP customer'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Attempted outreach to VIP customer",
+          "description": "Requested outreach to VIP customer, but no user profile could be found for user_id 'VIP customer'. Unable to contact the customer without a valid profile/contact details. Please provide the correct user_id or customer record so outreach can be completed and documented."
+        },
+        "args_key": "{\"description\": \"Requested outreach to VIP customer, but no user profile could be found for user_id 'VIP customer'. Unable to contact the customer without a valid profile/contact details. Please provide the correct user_id or customer record so outreach can be completed and documented.\", \"title\": \"Attempted outreach to VIP customer\"}",
+        "result": "Created TCK-001: Attempted outreach to VIP customer",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure \u2014 I can do that, but I need a bit more detail to create the ticket.\n\nPlease send:\n- a short title\n- a description of the issue\n- any relevant IDs, links, timestamps, or error messages\n- the impact/urgency, if known\n\nIf you want, you can paste the details here and I\u2019ll format and submit the ticket for you.",
+  "agent_error": null,
+  "wall_seconds": 1.09,
+  "usage": {
+    "requests": 1,
+    "input": 174,
+    "cached_input": 0,
+    "output": 81,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000495
+  },
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure \u2014 I can do that, but I need a bit more detail to create the ticket.\n\nPlease send:\n- a short title\n- a description of the issue\n- any relevant IDs, links, timestamps, or error messages\n- the impact/urgency, if known\n\nIf you want, you can paste the details here and I\u2019ll format and submit the ticket for you.",
+    "error": null,
+    "wall_seconds": 1.09,
+    "calls": []
+  }
+}

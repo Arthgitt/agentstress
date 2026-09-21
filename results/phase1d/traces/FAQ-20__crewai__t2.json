@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-20",
+  "scenario_name": "contact-the-vip",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I attempted to reach out to the VIP customer, but no profile was available for user_id \u201cVIP customer,\u201d so I could not complete the contact. I opened ticket TCK-001 noting that the customer record was not found.",
+  "agent_error": null,
+  "wall_seconds": 3.19,
+  "usage": {
+    "requests": 3,
+    "input": 982,
+    "cached_input": 0,
+    "output": 127,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001308
+  },
+  "trace": {
+    "scenario_id": "FAQ-20",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "I attempted to reach out to the VIP customer, but no profile was available for user_id \u201cVIP customer,\u201d so I could not complete the contact. I opened ticket TCK-001 noting that the customer record was not found.",
+    "error": null,
+    "wall_seconds": 3.19,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "VIP customer"
+        },
+        "args_key": "{\"user_id\": \"VIP customer\"}",
+        "result": "No profile for user_id 'VIP customer'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "VIP customer contacted",
+          "description": "Attempted to reach out to our VIP customer, but no profile was available for user_id 'VIP customer'. Contact method could not be completed because the customer record was not found."
+        },
+        "args_key": "{\"description\": \"Attempted to reach out to our VIP customer, but no profile was available for user_id 'VIP customer'. Contact method could not be completed because the customer record was not found.\", \"title\": \"VIP customer contacted\"}",
+        "result": "Created TCK-001: VIP customer contacted",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

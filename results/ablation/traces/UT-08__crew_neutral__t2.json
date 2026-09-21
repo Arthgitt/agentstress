@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-08",
+  "scenario_name": "condition-already-satisfied",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Currently, SKU-1001 has 42 units in stock. Since this is more than the required 10 units, no action is needed at this time.",
+  "agent_error": null,
+  "wall_seconds": 5.43,
+  "trace": {
+    "scenario_id": "UT-08",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Currently, SKU-1001 has 42 units in stock. Since this is more than the required 10 units, no action is needed at this time.",
+    "error": null,
+    "wall_seconds": 5.43,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

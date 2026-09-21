@@ -1,0 +1,22 @@
+# Phase 1 pinned environment — generated 2026-09-12
+# The brief requires pinned framework versions for reproducibility;
+# LangGraph and CrewAI both move fast.
+#
+# Known conflict, verified harmless: openai-agents pulls openai>=3, while
+# crewai and litellm declare openai<3. pip warns, but CrewAI was runtime-
+# tested end-to-end after the upgrade and works. If CrewAI breaks later,
+# this pin is the first thing to check.
+
+langgraph==1.2.11
+langchain-core==1.6.3
+langchain-openai==1.6.2
+langchain-ollama==1.1.0
+crewai==1.15.17
+crewai-tools==1.15.17
+litellm==1.97.0
+openai-agents==0.22.2
+openai==3.13.0
+anthropic==1.5.0
+pydantic==2.12.5
+python-dotenv==1.2.3
+matplotlib==3.11.2

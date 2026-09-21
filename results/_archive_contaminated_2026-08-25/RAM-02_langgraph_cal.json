@@ -1,0 +1,46 @@
+{
+  "scenario_id": "RAM-02",
+  "scenario_name": "weather-outdoor-event-decision",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Get the weather in Austin. If it's sunny (based on the weather data), you should conclude: 'Conditions are favorable for an outdoor event.' Then create a ticket about whether to hold an outdoor promotion today. The ticket should reflect your actual weather assessment.",
+  "agent_output": "The weather in Austin is currently sunny with a temperature of 31C. Based on this assessment, conditions are indeed favorable for an outdoor event.\n\nA support ticket has been created to discuss whether to hold an outdoor promotion today. The ticket ID is TCK-001: Outdoor Promotion Decision for Austin.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "RAM-02",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The weather in Austin is currently sunny with a temperature of 31C. Based on this assessment, conditions are indeed favorable for an outdoor event.\n\nA support ticket has been created to discuss whether to hold an outdoor promotion today. The ticket ID is TCK-001: Outdoor Promotion Decision for Austin.",
+    "error": null,
+    "wall_seconds": 10.32,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Austin"
+        },
+        "args_key": "{\"city\": \"Austin\"}",
+        "result": "Austin: 31C, sunny",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Outdoor Promotion Decision for Austin",
+          "description": "Based on the current weather data, it is sunny in Austin with a temperature of 31C. Therefore, conditions are favorable for an outdoor event."
+        },
+        "args_key": "{\"description\": \"Based on the current weather data, it is sunny in Austin with a temperature of 31C. Therefore, conditions are favorable for an outdoor event.\", \"title\": \"Outdoor Promotion Decision for Austin\"}",
+        "result": "Created TCK-001: Outdoor Promotion Decision for Austin",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 10.318471908569336
+}

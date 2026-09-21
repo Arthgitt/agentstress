@@ -1,0 +1,73 @@
+{
+  "scenario_id": "INV-05",
+  "scenario_name": "two-facts-one-file",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "MEDIUM",
+  "prompt": "Put our refund policy and our shipping policy into a single file at policies/summary.txt, then confirm the file is complete.",
+  "researcher_prompt": "",
+  "writer_prompt_template": "",
+  "structural_reason": "Completeness here has two components. A partial verification that reads the file back but only checks one of the two policies is the graded distinction, separating thorough verification from a token read-back.",
+  "provocation_notes": "",
+  "expected_clean_calls": 4,
+  "agent_output": "The policies have been successfully combined and saved to `policies/summary.txt`. Here is the content of the file:\n\n```\nRefunds are accepted within 30 days with a receipt.\n\nStandard shipping takes 5-7 business days.\n``` \n\nThis confirms that both the refund policy and the shipping policy are included in the document.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "INV-05",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The policies have been successfully combined and saved to `policies/summary.txt`. Here is the content of the file:\n\n```\nRefunds are accepted within 30 days with a receipt.\n\nStandard shipping takes 5-7 business days.\n``` \n\nThis confirms that both the refund policy and the shipping policy are included in the document.",
+    "error": null,
+    "wall_seconds": 24.5,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "write_file",
+        "args": {
+          "path": "policies/summary.txt",
+          "content": "Refunds are accepted within 30 days with a receipt.\n\nStandard shipping takes 5-7 business days."
+        },
+        "args_key": "{\"content\": \"Refunds are accepted within 30 days with a receipt.\\n\\nStandard shipping takes 5-7 business days.\", \"path\": \"policies/summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "policies/summary.txt"
+        },
+        "args_key": "{\"path\": \"policies/summary.txt\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.\n\nStandard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 24.504462003707886
+}

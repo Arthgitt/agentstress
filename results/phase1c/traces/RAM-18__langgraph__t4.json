@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-18",
+  "scenario_name": "escalation-priority",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "-ticket TCK-001: \"Urgent: Checkout System Down\" has been created and is being processed. The on-call manager will be notified immediately.\n\nIs there anything else you need assistance with regarding this issue?",
+  "agent_error": null,
+  "wall_seconds": 31.88,
+  "trace": {
+    "scenario_id": "RAM-18",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "-ticket TCK-001: \"Urgent: Checkout System Down\" has been created and is being processed. The on-call manager will be notified immediately.\n\nIs there anything else you need assistance with regarding this issue?",
+    "error": null,
+    "wall_seconds": 31.88,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy checkout"
+        },
+        "args_key": "{\"query\": \"escalation policy checkout\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Urgent: Checkout System Down",
+          "description": "The checkout system is currently down for all users. This issue needs immediate attention as it affects a large number of customers."
+        },
+        "args_key": "{\"description\": \"The checkout system is currently down for all users. This issue needs immediate attention as it affects a large number of customers.\", \"title\": \"Urgent: Checkout System Down\"}",
+        "result": "Created TCK-001: Urgent: Checkout System Down",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

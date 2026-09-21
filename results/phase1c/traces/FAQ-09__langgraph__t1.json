@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no specific policy documents available in our internal database that we can use to rank the policies. However, if you could provide me with some information about how you would like to prioritize these policies or any criteria you have in mind, I can help you create a ranking based on that.\n\nAlternatively, if you have a list of policies and their respective priorities, please share them so I can assist further.\nWould you like to proceed this way?",
+  "agent_error": null,
+  "wall_seconds": 12.13,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems there are no specific policy documents available in our internal database that we can use to rank the policies. However, if you could provide me with some information about how you would like to prioritize these policies or any criteria you have in mind, I can help you create a ranking based on that.\n\nAlternatively, if you have a list of policies and their respective priorities, please share them so I can assist further.\nWould you like to proceed this way?",
+    "error": null,
+    "wall_seconds": 12.13,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies"
+        },
+        "args_key": "{\"query\": \"policies\"}",
+        "result": "No documents found for 'policies'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

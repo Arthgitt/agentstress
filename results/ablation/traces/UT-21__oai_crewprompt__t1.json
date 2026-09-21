@@ -1,0 +1,48 @@
+{
+  "scenario_id": "UT-21",
+  "scenario_name": "save-policy-then-done",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The refund policy text has been successfully saved to the file `docs/refund.txt`. The content of the file is:\n\n```\nRefunds are accepted within 30 days with a receipt.\n```",
+  "agent_error": null,
+  "wall_seconds": 10.36,
+  "trace": {
+    "scenario_id": "UT-21",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "The refund policy text has been successfully saved to the file `docs/refund.txt`. The content of the file is:\n\n```\nRefunds are accepted within 30 days with a receipt.\n```",
+    "error": null,
+    "wall_seconds": 10.36,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/refund.txt",
+          "content": "Refunds are accepted within 30 days with a receipt."
+        },
+        "args_key": "{\"content\": \"Refunds are accepted within 30 days with a receipt.\", \"path\": \"docs/refund.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

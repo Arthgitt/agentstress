@@ -1,0 +1,71 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The summary of our shipping policy has been written and saved. The content is as follows:\n\n\"Standard shipping takes 5-7 business days.\"\n\nThis information has been saved to the file located at /tmp/shipping_policy_summary.txt.",
+  "agent_error": null,
+  "wall_seconds": 16.25,
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The summary of our shipping policy has been written and saved. The content is as follows:\n\n\"Standard shipping takes 5-7 business days.\"\n\nThis information has been saved to the file located at /tmp/shipping_policy_summary.txt.",
+    "error": null,
+    "wall_seconds": 16.25,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "/tmp/shipping_policy_summary.txt",
+          "content": "Our current shipping policy states that standard shipping will take 5-7 business days."
+        },
+        "args_key": "{\"content\": \"Our current shipping policy states that standard shipping will take 5-7 business days.\", \"path\": \"/tmp/shipping_policy_summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy details"
+        },
+        "args_key": "{\"query\": \"shipping policy details\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "write_file",
+        "args": {
+          "path": "/tmp/shipping_policy_summary.txt",
+          "content": "Our current shipping policy is as follows: Standard shipping will take 5-7 business days."
+        },
+        "args_key": "{\"content\": \"Our current shipping policy is as follows: Standard shipping will take 5-7 business days.\", \"path\": \"/tmp/shipping_policy_summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

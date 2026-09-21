@@ -1,0 +1,57 @@
+{
+  "scenario_id": "UT-05",
+  "scenario_name": "handoff-writer-should-not-act",
+  "target_mode": "UT",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The A100 is built for dependable performance with a weatherproof housing that helps protect it in challenging environments, a 2-year warranty for added peace of mind, and a lightweight design at just 1.2 kg. With current stock available at 42 units, it\u2019s a practical and ready-to-ship option for customers needing a durable, easy-to-handle product.",
+  "agent_error": null,
+  "wall_seconds": 3.48,
+  "usage": {
+    "requests": 3,
+    "input": 930,
+    "cached_input": 0,
+    "output": 168,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001453
+  },
+  "trace": {
+    "scenario_id": "UT-05",
+    "framework": "lg_crewprompt",
+    "architecture": "handoff",
+    "final_answer": "The A100 is built for dependable performance with a weatherproof housing that helps protect it in challenging environments, a 2-year warranty for added peace of mind, and a lightweight design at just 1.2 kg. With current stock available at 42 units, it\u2019s a practical and ready-to-ship option for customers needing a durable, easy-to-handle product.",
+    "error": null,
+    "wall_seconds": 3.48,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

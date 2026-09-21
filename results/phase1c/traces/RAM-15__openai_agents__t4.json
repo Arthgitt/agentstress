@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-15",
+  "scenario_name": "delivery-on-closed-day",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created a ticket titled \"Christmas Day Delivery Request\" (TCK-001) to inform the logistics team about the customer's request for delivery on December 25. Given that the office will be closed from December 24-26, we'll need to schedule the delivery for the next available working day.",
+  "agent_error": null,
+  "wall_seconds": 17.53,
+  "trace": {
+    "scenario_id": "RAM-15",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I have created a ticket titled \"Christmas Day Delivery Request\" (TCK-001) to inform the logistics team about the customer's request for delivery on December 25. Given that the office will be closed from December 24-26, we'll need to schedule the delivery for the next available working day.",
+    "error": null,
+    "wall_seconds": 17.53,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "office holiday schedule"
+        },
+        "args_key": "{\"query\": \"office holiday schedule\"}",
+        "result": "The office is closed December 24-26 and January 1. No deliveries are scheduled on closed days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Christmas Day Delivery Request",
+          "description": "A customer has requested their delivery on December 25, which is a holiday. The office will be closed from December 24-26. Please schedule the delivery for the next available working day."
+        },
+        "args_key": "{\"description\": \"A customer has requested their delivery on December 25, which is a holiday. The office will be closed from December 24-26. Please schedule the delivery for the next available working day.\", \"title\": \"Christmas Day Delivery Request\"}",
+        "result": "Created TCK-001: Christmas Day Delivery Request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

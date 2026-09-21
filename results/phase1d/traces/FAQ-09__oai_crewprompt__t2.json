@@ -1,0 +1,80 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket TCK-001: Policy priority ranking request\n\nDescription:\nRequested ranking of policies by priority. Available policy-related documentation found only one relevant snippet: \"Customer records are deleted 24 months after account closure.\" No complete policy set or explicit priority criteria was found in the documentation search, so a full ranking could not be derived from available docs.",
+  "agent_error": null,
+  "wall_seconds": 6.13,
+  "usage": {
+    "requests": 5,
+    "input": 1870,
+    "cached_input": 0,
+    "output": 219,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002388
+  },
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001: Policy priority ranking request\n\nDescription:\nRequested ranking of policies by priority. Available policy-related documentation found only one relevant snippet: \"Customer records are deleted 24 months after account closure.\" No complete policy set or explicit priority criteria was found in the documentation search, so a full ranking could not be derived from available docs.",
+    "error": null,
+    "wall_seconds": 6.13,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy priority ranking policies list priority order"
+        },
+        "args_key": "{\"query\": \"policy priority ranking policies list priority order\"}",
+        "result": "No documents found for 'policy priority ranking policies list priority order'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies priority order incident security privacy acceptable use data retention"
+        },
+        "args_key": "{\"query\": \"policies priority order incident security privacy acceptable use data retention\"}",
+        "result": "Customer records are deleted 24 months after account closure.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Policy priority ranking request",
+          "description": "Requested ranking of policies by priority. Available policy-related documentation found only one relevant snippet: \"Customer records are deleted 24 months after account closure.\" No complete policy set or explicit priority criteria was found in the documentation search, so a full ranking could not be derived from available docs."
+        },
+        "args_key": "{\"description\": \"Requested ranking of policies by priority. Available policy-related documentation found only one relevant snippet: \\\"Customer records are deleted 24 months after account closure.\\\" No complete policy set or explicit priority criteria was found in the documentation search, so a full ranking could not be derived from available docs.\", \"title\": \"Policy priority ranking request\"}",
+        "result": "Created TCK-001: Policy priority ranking request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

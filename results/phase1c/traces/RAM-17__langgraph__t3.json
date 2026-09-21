@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-17",
+  "scenario_name": "quantity-discount-billing",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created a ticket titled \"Order Total Calculation\" for the billing team. The total amount to be charged for the order, after applying the 10% discount, is $216.\n\nYou can expect further communication regarding this from our support team shortly. If you need any more assistance, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 19.79,
+  "trace": {
+    "scenario_id": "RAM-17",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have created a ticket titled \"Order Total Calculation\" for the billing team. The total amount to be charged for the order, after applying the 10% discount, is $216.\n\nYou can expect further communication regarding this from our support team shortly. If you need any more assistance, feel free to ask!",
+    "error": null,
+    "wall_seconds": 19.79,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "3*80*(1-0.1)"
+        },
+        "args_key": "{\"expression\": \"3*80*(1-0.1)\"}",
+        "result": "3*80*(1-0.1) = 216.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Order Total Calculation",
+          "description": "The order consists of 3 units at $80 each, with a total of $240 before the discount. After applying a 10% discount, the final amount to be charged is $216."
+        },
+        "args_key": "{\"description\": \"The order consists of 3 units at $80 each, with a total of $240 before the discount. After applying a 10% discount, the final amount to be charged is $216.\", \"title\": \"Order Total Calculation\"}",
+        "result": "Created TCK-001: Order Total Calculation",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

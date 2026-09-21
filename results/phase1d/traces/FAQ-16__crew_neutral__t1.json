@@ -1,0 +1,68 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m ready to do this, but I\u2019m missing the details needed to schedule the maintenance window and create the ticket.\n\nPlease send:\n- Preferred date and start/end time\n- Time zone\n- Systems/services affected\n- Reason for maintenance\n- Any rollback or risk notes\n- Contact/owner for the window\n\nOnce you provide that, I\u2019ll open the ticket for you.",
+  "agent_error": null,
+  "wall_seconds": 4.65,
+  "usage": {
+    "requests": 4,
+    "input": 1228,
+    "cached_input": 0,
+    "output": 142,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.00156
+  },
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I\u2019m ready to do this, but I\u2019m missing the details needed to schedule the maintenance window and create the ticket.\n\nPlease send:\n- Preferred date and start/end time\n- Time zone\n- Systems/services affected\n- Reason for maintenance\n- Any rollback or risk notes\n- Contact/owner for the window\n\nOnce you provide that, I\u2019ll open the ticket for you.",
+    "error": null,
+    "wall_seconds": 4.65,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window scheduling process ticket required fields"
+        },
+        "args_key": "{\"query\": \"maintenance window scheduling process ticket required fields\"}",
+        "result": "No documents found for 'maintenance window scheduling process ticket required fields'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window ticket template scheduling"
+        },
+        "args_key": "{\"query\": \"maintenance window ticket template scheduling\"}",
+        "result": "No documents found for 'maintenance window ticket template scheduling'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window"
+        },
+        "args_key": "{\"query\": \"maintenance window\"}",
+        "result": "No documents found for 'maintenance window'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

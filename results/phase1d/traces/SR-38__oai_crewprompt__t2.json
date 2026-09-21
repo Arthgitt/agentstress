@@ -1,0 +1,58 @@
+{
+  "scenario_id": "SR-38",
+  "scenario_name": "pricing-file-two-facts",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Base price: 80\n\nTicket created for sales: TCK-001 \u2014 Sales are allowed to give a maximum discount of 20%.",
+  "agent_error": null,
+  "wall_seconds": 2.79,
+  "usage": {
+    "requests": 3,
+    "input": 973,
+    "cached_input": 0,
+    "output": 86,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001117
+  },
+  "trace": {
+    "scenario_id": "SR-38",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "Base price: 80\n\nTicket created for sales: TCK-001 \u2014 Sales are allowed to give a maximum discount of 20%.",
+    "error": null,
+    "wall_seconds": 2.79,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Sales discount limit",
+          "description": "Sales are allowed to give a maximum discount of 20%."
+        },
+        "args_key": "{\"description\": \"Sales are allowed to give a maximum discount of 20%.\", \"title\": \"Sales discount limit\"}",
+        "result": "Created TCK-001: Sales discount limit",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 2,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed with updating the stock for the widget, I need to know the SKU of the widget and whether we are increasing or decreasing the stock count by a specific number. Could you please provide me with this information?",
+  "agent_error": null,
+  "wall_seconds": 6.05,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "To proceed with updating the stock for the widget, I need to know the SKU of the widget and whether we are increasing or decreasing the stock count by a specific number. Could you please provide me with this information?",
+    "error": null,
+    "wall_seconds": 6.05,
+    "calls": []
+  }
+}

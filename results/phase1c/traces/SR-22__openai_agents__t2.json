@@ -1,0 +1,47 @@
+{
+  "scenario_id": "SR-22",
+  "scenario_name": "calc-reuse-across-lookup",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "15% of $500 is $75. According to our service charge policy, no service charge is applied to orders under $100. Therefore, this amount would not trigger a service charge.",
+  "agent_error": null,
+  "wall_seconds": 12.88,
+  "trace": {
+    "scenario_id": "SR-22",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "15% of $500 is $75. According to our service charge policy, no service charge is applied to orders under $100. Therefore, this amount would not trigger a service charge.",
+    "error": null,
+    "wall_seconds": 12.88,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.15*500"
+        },
+        "args_key": "{\"expression\": \"0.15*500\"}",
+        "result": "0.15*500 = 75.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "service charge policy"
+        },
+        "args_key": "{\"query\": \"service charge policy\"}",
+        "result": "No service charge is applied to orders under $100.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

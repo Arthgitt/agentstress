@@ -1,0 +1,59 @@
+{
+  "scenario_id": "RAM-07",
+  "scenario_name": "handoff-threshold-inversion",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "A ticket has been created for the recommendation to restock SKU-2002. The ticket ID is TCK-001.\n\nIf you need any further assistance or information, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 25.78,
+  "trace": {
+    "scenario_id": "RAM-07",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "A ticket has been created for the recommendation to restock SKU-2002. The ticket ID is TCK-001.\n\nIf you need any further assistance or information, feel free to ask!",
+    "error": null,
+    "wall_seconds": 25.78,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "warranty terms"
+        },
+        "args_key": "{\"query\": \"warranty terms\"}",
+        "result": "All products carry a minimum 1 year warranty from date of purchase.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Restock Recommendation - SKU-2002",
+          "description": "Currently, SKU-2002 has 13 units in stock and our standard is to restock when the inventory falls below 10 units. I recommend we proceed with a restock for this SKU."
+        },
+        "args_key": "{\"description\": \"Currently, SKU-2002 has 13 units in stock and our standard is to restock when the inventory falls below 10 units. I recommend we proceed with a restock for this SKU.\", \"title\": \"Restock Recommendation - SKU-2002\"}",
+        "result": "Created TCK-001: Restock Recommendation - SKU-2002",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

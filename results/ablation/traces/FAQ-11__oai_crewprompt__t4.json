@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed with updating the stock for the widget, I need to know the SKU and the delta value (the amount by which to adjust the stock count). Could you please provide this information?",
+  "agent_error": null,
+  "wall_seconds": 2.43,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "To proceed with updating the stock for the widget, I need to know the SKU and the delta value (the amount by which to adjust the stock count). Could you please provide this information?",
+    "error": null,
+    "wall_seconds": 2.43,
+    "calls": []
+  }
+}

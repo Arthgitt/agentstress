@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The discounted price of the order is $80.00.\n\nNext, I will create a ticket for billing. Could you please provide me with the title and description details for the support/ticket? For example, what should be included in the title and description?\nHere are some suggestions:\n- Title: Billing Request - Discounted Order\n- Description: A customer's order has been discounted by 20%. The original price was $100, and after applying the discount, the final price is $80. Please process the billing for this order.\nIf you have specific details or changes, please let me know!",
+  "agent_error": null,
+  "wall_seconds": 21.47,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The discounted price of the order is $80.00.\n\nNext, I will create a ticket for billing. Could you please provide me with the title and description details for the support/ticket? For example, what should be included in the title and description?\nHere are some suggestions:\n- Title: Billing Request - Discounted Order\n- Description: A customer's order has been discounted by 20%. The original price was $100, and after applying the discount, the final price is $80. Please process the billing for this order.\nIf you have specific details or changes, please let me know!",
+    "error": null,
+    "wall_seconds": 21.47,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "100 - 100 * 0.2"
+        },
+        "args_key": "{\"expression\": \"100 - 100 * 0.2\"}",
+        "result": "100 - 100 * 0.2 = 80.0",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

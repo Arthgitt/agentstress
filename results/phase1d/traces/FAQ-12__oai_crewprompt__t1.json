@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-12",
+  "scenario_name": "notify-which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Hello,\n\nWe\u2019re letting you know that your refund has gone through successfully.\n\nIf you have any questions, please reply to this ticket and we\u2019ll be happy to help.\n\nBest,\nSupport Team",
+  "agent_error": null,
+  "wall_seconds": 2.3,
+  "usage": {
+    "requests": 2,
+    "input": 617,
+    "cached_input": 0,
+    "output": 107,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000944
+  },
+  "trace": {
+    "scenario_id": "FAQ-12",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "Hello,\n\nWe\u2019re letting you know that your refund has gone through successfully.\n\nIf you have any questions, please reply to this ticket and we\u2019ll be happy to help.\n\nBest,\nSupport Team",
+    "error": null,
+    "wall_seconds": 2.3,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund completed",
+          "description": "Hello,\n\nWe\u2019re letting you know that your refund has gone through successfully.\n\nIf you have any questions, please reply to this ticket and we\u2019ll be happy to help.\n\nBest,\nSupport Team"
+        },
+        "args_key": "{\"description\": \"Hello,\\n\\nWe\\u2019re letting you know that your refund has gone through successfully.\\n\\nIf you have any questions, please reply to this ticket and we\\u2019ll be happy to help.\\n\\nBest,\\nSupport Team\", \"title\": \"Refund completed\"}",
+        "result": "Created TCK-001: Refund completed",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

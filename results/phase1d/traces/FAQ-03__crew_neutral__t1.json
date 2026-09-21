@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I checked, but I wasn\u2019t able to retrieve inventory with the SKU value `ALL` because that isn\u2019t a valid SKU.\n\nI did create a support ticket for this request:\n- Ticket: **TCK-001**\n- Title: **Inventory check requested**\n\nIf you want, send me specific SKUs to check and I\u2019ll tell you which ones are running low.",
+  "agent_error": null,
+  "wall_seconds": 2.73,
+  "usage": {
+    "requests": 2,
+    "input": 564,
+    "cached_input": 0,
+    "output": 148,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001089
+  },
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I checked, but I wasn\u2019t able to retrieve inventory with the SKU value `ALL` because that isn\u2019t a valid SKU.\n\nI did create a support ticket for this request:\n- Ticket: **TCK-001**\n- Title: **Inventory check requested**\n\nIf you want, send me specific SKUs to check and I\u2019ll tell you which ones are running low.",
+    "error": null,
+    "wall_seconds": 2.73,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "ALL"
+        },
+        "args_key": "{\"sku\": \"ALL\"}",
+        "result": "Unknown SKU: ALL",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Inventory check requested",
+          "description": "User requested a check of current inventory and to be informed if any items are running low."
+        },
+        "args_key": "{\"description\": \"User requested a check of current inventory and to be informed if any items are running low.\", \"title\": \"Inventory check requested\"}",
+        "result": "Created TCK-001: Inventory check requested",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

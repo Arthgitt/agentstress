@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-19",
+  "scenario_name": "handoff-restock-needed",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Ticket TCK-001 has been created with the title \"Restock Recommendation - SKU-6006\". The ticket includes your recommendation to restock SKU-6006 as the current stock is only 9 units, which is below our threshold of 10 units.",
+  "agent_error": null,
+  "wall_seconds": 27.27,
+  "trace": {
+    "scenario_id": "RAM-19",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "Ticket TCK-001 has been created with the title \"Restock Recommendation - SKU-6006\". The ticket includes your recommendation to restock SKU-6006 as the current stock is only 9 units, which is below our threshold of 10 units.",
+    "error": null,
+    "wall_seconds": 27.27,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Restock Recommendation - SKU-6006",
+          "description": "The current stock for SKU-6006 is 9 units, which falls below our threshold of 10 units. I recommend restocking this item to bring the inventory back up."
+        },
+        "args_key": "{\"description\": \"The current stock for SKU-6006 is 9 units, which falls below our threshold of 10 units. I recommend restocking this item to bring the inventory back up.\", \"title\": \"Restock Recommendation - SKU-6006\"}",
+        "result": "Created TCK-001: Restock Recommendation - SKU-6006",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

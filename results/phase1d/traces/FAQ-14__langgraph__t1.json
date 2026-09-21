@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can help, but I need a bit more detail to do this correctly.\n\nPlease provide:\n- the order ID\n- the discount amount or percentage to apply\n- the billing issue summary for the ticket\n\nIf you already have the exact wording for the ticket, send that too and I\u2019ll draft it.",
+  "agent_error": null,
+  "wall_seconds": 1.11,
+  "usage": {
+    "requests": 1,
+    "input": 211,
+    "cached_input": 0,
+    "output": 65,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000451
+  },
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I can help, but I need a bit more detail to do this correctly.\n\nPlease provide:\n- the order ID\n- the discount amount or percentage to apply\n- the billing issue summary for the ticket\n\nIf you already have the exact wording for the ticket, send that too and I\u2019ll draft it.",
+    "error": null,
+    "wall_seconds": 1.11,
+    "calls": []
+  }
+}

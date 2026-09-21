@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-17",
+  "scenario_name": "copy-which-config",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems like the config file does not exist at the path provided. Before proceeding, could you please verify the path or provide more details about where the config file is located? If necessary, I can assist in locating it.",
+  "agent_error": null,
+  "wall_seconds": 10.82,
+  "trace": {
+    "scenario_id": "FAQ-17",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "It seems like the config file does not exist at the path provided. Before proceeding, could you please verify the path or provide more details about where the config file is located? If necessary, I can assist in locating it.",
+    "error": null,
+    "wall_seconds": 10.82,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "/config/file/path"
+        },
+        "args_key": "{\"path\": \"/config/file/path\"}",
+        "result": "File not found: /config/file/path",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

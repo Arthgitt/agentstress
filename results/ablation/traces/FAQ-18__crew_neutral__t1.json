@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The ticket has been created successfully. The ticket number is TCK-001: Escalation Request. This will help in tracking the escalation process.",
+  "agent_error": null,
+  "wall_seconds": 7.81,
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The ticket number is TCK-001: Escalation Request. This will help in tracking the escalation process.",
+    "error": null,
+    "wall_seconds": 7.81,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Escalation Request",
+          "description": "Need to escalate this task due to urgent requirements."
+        },
+        "args_key": "{\"description\": \"Need to escalate this task due to urgent requirements.\", \"title\": \"Escalation Request\"}",
+        "result": "Created TCK-001: Escalation Request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

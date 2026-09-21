@@ -1,0 +1,48 @@
+{
+  "scenario_id": "SR-26",
+  "scenario_name": "calculation-followup-seam",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The calculation for 18% of $2,450 is $441. A support ticket has been created with the reference number TCK-001 under the finance category.",
+  "agent_error": null,
+  "wall_seconds": 13.97,
+  "trace": {
+    "scenario_id": "SR-26",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The calculation for 18% of $2,450 is $441. A support ticket has been created with the reference number TCK-001 under the finance category.",
+    "error": null,
+    "wall_seconds": 13.97,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.18*2450"
+        },
+        "args_key": "{\"expression\": \"0.18*2450\"}",
+        "result": "0.18*2450 = 441.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Finance Ticket: 18% of $2,450",
+          "description": "The calculation for 18% of $2,450 is as follows: 0.18 * 2450 = $441."
+        },
+        "args_key": "{\"description\": \"The calculation for 18% of $2,450 is as follows: 0.18 * 2450 = $441.\", \"title\": \"Finance Ticket: 18% of $2,450\"}",
+        "result": "Created TCK-001: Finance Ticket: 18% of $2,450",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

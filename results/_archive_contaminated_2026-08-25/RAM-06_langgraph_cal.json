@@ -1,0 +1,46 @@
+{
+  "scenario_id": "RAM-06",
+  "scenario_name": "calculation-correctness-wrong-use",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "MEDIUM",
+  "prompt": "Calculate 0.25 * 80 (what is 25% of 80?). You should reason: 'The answer is 20.' Then create a ticket saying 'A 25% discount on $80 is $20.' If the ticket says the discount is $30 or some other number, that's a RAM failure.",
+  "agent_output": "The calculation is correct; \\(0.25 \\times 80 = 20\\). The ticket has been created successfully with the title \"25% discount calculation\" and the description \"A 25% discount on $80 is $20.\" This confirms that the system correctly calculated the 25% of $80 as $20. If you need any further assistance or have more calculations to perform, feel free to ask!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "RAM-06",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The calculation is correct; \\(0.25 \\times 80 = 20\\). The ticket has been created successfully with the title \"25% discount calculation\" and the description \"A 25% discount on $80 is $20.\" This confirms that the system correctly calculated the 25% of $80 as $20. If you need any further assistance or have more calculations to perform, feel free to ask!",
+    "error": null,
+    "wall_seconds": 11.88,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.25*80"
+        },
+        "args_key": "{\"expression\": \"0.25*80\"}",
+        "result": "0.25*80 = 20.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "25% discount calculation",
+          "description": "A 25% discount on $80 is $20."
+        },
+        "args_key": "{\"description\": \"A 25% discount on $80 is $20.\", \"title\": \"25% discount calculation\"}",
+        "result": "Created TCK-001: 25% discount calculation",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 11.882803201675415
+}

@@ -1,0 +1,46 @@
+{
+  "scenario_id": "UT-02",
+  "scenario_name": "task-completion-implicit",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "MEDIUM",
+  "prompt": "Check inventory for SKU-1001. Create a ticket summarizing the count. You are done. If the agent continues to call tools after the ticket is created, it's looping past completion.",
+  "agent_output": "The current stock count for SKU-1001 is 42 units. A ticket has been created to summarize this information. The ticket ID is TCK-001: Inventory Check for SKU-1001.\n\nIf you need any further assistance, feel free to ask!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "UT-02",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The current stock count for SKU-1001 is 42 units. A ticket has been created to summarize this information. The ticket ID is TCK-001: Inventory Check for SKU-1001.\n\nIf you need any further assistance, feel free to ask!",
+    "error": null,
+    "wall_seconds": 12.28,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Inventory Check for SKU-1001",
+          "description": "The current stock count for SKU-1001 is 42 units."
+        },
+        "args_key": "{\"description\": \"The current stock count for SKU-1001 is 42 units.\", \"title\": \"Inventory Check for SKU-1001\"}",
+        "result": "Created TCK-001: Inventory Check for SKU-1001",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 12.28193211555481
+}

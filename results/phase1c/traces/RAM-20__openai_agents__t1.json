@@ -1,0 +1,71 @@
+{
+  "scenario_id": "RAM-20",
+  "scenario_name": "handoff-discount-cap",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "A ticket has been created with the title \"Sales Request for Exceeding Maximum Discount\" (TCK-002). This ticket will be reviewed by our support team, and they will provide guidance on whether to proceed with the 30% discount or not.\n\nIf you need any further assistance, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 46.26,
+  "trace": {
+    "scenario_id": "RAM-20",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "A ticket has been created with the title \"Sales Request for Exceeding Maximum Discount\" (TCK-002). This ticket will be reviewed by our support team, and they will provide guidance on whether to proceed with the 30% discount or not.\n\nIf you need any further assistance, feel free to ask!",
+    "error": null,
+    "wall_seconds": 46.26,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "read_file",
+        "args": {
+          "path": "pricing.txt"
+        },
+        "args_key": "{\"path\": \"pricing.txt\"}",
+        "result": "File not found: pricing.txt",
+        "is_error": true,
+        "actor": "writer"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Sales Request for Exceeding Maximum Discount",
+          "description": "Sales department requested a 30% discount, but the current configuration allows only up to 20% maximum discount. Please review and confirm if this change is allowed."
+        },
+        "args_key": "{\"description\": \"Sales department requested a 30% discount, but the current configuration allows only up to 20% maximum discount. Please review and confirm if this change is allowed.\", \"title\": \"Sales Request for Exceeding Maximum Discount\"}",
+        "result": "Created TCK-001: Sales Request for Exceeding Maximum Discount",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Sales Request for Exceeding Maximum Discount",
+          "description": "Sales wants to offer a 30% discount this weekend, but the maximum allowed discount is 20%. Please advise."
+        },
+        "args_key": "{\"description\": \"Sales wants to offer a 30% discount this weekend, but the maximum allowed discount is 20%. Please advise.\", \"title\": \"Sales Request for Exceeding Maximum Discount\"}",
+        "result": "Created TCK-002: Sales Request for Exceeding Maximum Discount",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

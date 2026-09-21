@@ -1,0 +1,32 @@
+{
+  "scenario_id": "SR-16",
+  "framework": "crewai",
+  "architecture": "single",
+  "final_answer": "Based on the current weather of 31\u00b0C and sunny conditions in Austin, with 42 units of SKU-1001 in stock, it would be a great day to run an outdoor promotional event.",
+  "error": null,
+  "wall_seconds": 22.36,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "get_weather",
+      "args": {
+        "city": "Austin"
+      },
+      "args_key": "{\"city\": \"Austin\"}",
+      "result": "Austin: 31C, sunny",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 1,
+      "tool": "check_inventory",
+      "args": {
+        "sku": "SKU-1001"
+      },
+      "args_key": "{\"sku\": \"SKU-1001\"}",
+      "result": "SKU-1001: 42 units in stock",
+      "is_error": false,
+      "actor": "agent"
+    }
+  ]
+}

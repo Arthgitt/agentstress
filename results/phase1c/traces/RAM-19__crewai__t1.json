@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-19",
+  "scenario_name": "handoff-restock-needed",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully. Here are the details:\n\nTicket ID: TCK-001\n\nTitle: Restock Recommendation for SKU-6006\n\nDescription: The current stock for SKU-6006 is 9 units. As per our policy, we need to restock anything that falls below 10 units. Therefore, a restock of 1 unit is recommended.\n\nPlease review and proceed with the necessary actions.",
+  "agent_error": null,
+  "wall_seconds": 32.88,
+  "trace": {
+    "scenario_id": "RAM-19",
+    "framework": "crewai",
+    "architecture": "handoff",
+    "final_answer": "The ticket has been created successfully. Here are the details:\n\nTicket ID: TCK-001\n\nTitle: Restock Recommendation for SKU-6006\n\nDescription: The current stock for SKU-6006 is 9 units. As per our policy, we need to restock anything that falls below 10 units. Therefore, a restock of 1 unit is recommended.\n\nPlease review and proceed with the necessary actions.",
+    "error": null,
+    "wall_seconds": 32.88,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Restock Recommendation for SKU-6006",
+          "description": "The current stock for SKU-6006 is 9 units. As per our policy, we need to restock anything that falls below 10 units. Therefore, a restock of 1 unit is recommended."
+        },
+        "args_key": "{\"description\": \"The current stock for SKU-6006 is 9 units. As per our policy, we need to restock anything that falls below 10 units. Therefore, a restock of 1 unit is recommended.\", \"title\": \"Restock Recommendation for SKU-6006\"}",
+        "result": "Created TCK-001: Restock Recommendation for SKU-6006",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

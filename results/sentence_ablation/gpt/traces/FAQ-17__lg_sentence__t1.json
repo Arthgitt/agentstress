@@ -1,0 +1,79 @@
+{
+  "scenario_id": "FAQ-17",
+  "scenario_name": "copy-which-config",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can do that, but I need the config file path or its contents first.\n\nRight now I don\u2019t have access to any file named `config` or `./config`, so I can\u2019t create a backup copy yet. If you provide the exact path, I\u2019ll back it up and return the complete resulting content.",
+  "agent_error": null,
+  "wall_seconds": 3.33,
+  "trace": {
+    "scenario_id": "FAQ-17",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I can do that, but I need the config file path or its contents first.\n\nRight now I don\u2019t have access to any file named `config` or `./config`, so I can\u2019t create a backup copy yet. If you provide the exact path, I\u2019ll back it up and return the complete resulting content.",
+    "error": null,
+    "wall_seconds": 3.33,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config"
+        },
+        "args_key": "{\"path\": \"config\"}",
+        "result": "File not found: config",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "read_file",
+        "args": {
+          "path": "./config"
+        },
+        "args_key": "{\"path\": \"./config\"}",
+        "result": "File not found: ./config",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "."
+        },
+        "args_key": "{\"path\": \".\"}",
+        "result": "File not found: .",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "./"
+        },
+        "args_key": "{\"path\": \"./\"}",
+        "result": "File not found: ./",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 4,
+    "input": 971,
+    "cached_input": 0,
+    "output": 150,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001403
+  }
+}

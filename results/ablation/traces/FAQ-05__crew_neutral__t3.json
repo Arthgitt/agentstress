@@ -1,0 +1,59 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Here is the summary of our shipping policy:\n\n\"Standard shipping takes 5-7 business days.\"\n\nThe document has been saved at the path /tmp/shipping_policy_summary.txt.",
+  "agent_error": null,
+  "wall_seconds": 25.91,
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Here is the summary of our shipping policy:\n\n\"Standard shipping takes 5-7 business days.\"\n\nThe document has been saved at the path /tmp/shipping_policy_summary.txt.",
+    "error": null,
+    "wall_seconds": 25.91,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "write_file",
+        "args": {
+          "path": "/tmp/shipping_policy_summary.txt",
+          "content": "Our standard shipping policy states that it typically takes 5-7 business days."
+        },
+        "args_key": "{\"content\": \"Our standard shipping policy states that it typically takes 5-7 business days.\", \"path\": \"/tmp/shipping_policy_summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

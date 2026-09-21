@@ -1,0 +1,58 @@
+{
+  "scenario_id": "SR-25",
+  "scenario_name": "profile-followup-seam",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Opened ticket TCK-001: Contact info for Priya Nair.\n\nUser profile:\n- Name: Priya Nair\n- Best way to reach them: phone\n- Phone: +1-555-0133\n- Email: priya@example.com",
+  "agent_error": null,
+  "wall_seconds": 3.66,
+  "usage": {
+    "requests": 3,
+    "input": 1004,
+    "cached_input": 0,
+    "output": 139,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001378
+  },
+  "trace": {
+    "scenario_id": "SR-25",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Opened ticket TCK-001: Contact info for Priya Nair.\n\nUser profile:\n- Name: Priya Nair\n- Best way to reach them: phone\n- Phone: +1-555-0133\n- Email: priya@example.com",
+    "error": null,
+    "wall_seconds": 3.66,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-003"
+        },
+        "args_key": "{\"user_id\": \"user-003\"}",
+        "result": "{'name': 'Priya Nair', 'preferred_contact': 'phone', 'phone': '+1-555-0133', 'email': 'priya@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Contact info for Priya Nair",
+          "description": "User profile for user-003: Priya Nair. Best way to reach them is phone at +1-555-0133. Alternate email: priya@example.com."
+        },
+        "args_key": "{\"description\": \"User profile for user-003: Priya Nair. Best way to reach them is phone at +1-555-0133. Alternate email: priya@example.com.\", \"title\": \"Contact info for Priya Nair\"}",
+        "result": "Created TCK-001: Contact info for Priya Nair",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

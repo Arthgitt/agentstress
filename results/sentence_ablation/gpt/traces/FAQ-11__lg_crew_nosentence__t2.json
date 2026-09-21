@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m missing the key detail needed to update the widget stock: the SKU and the quantity change (delta). Please provide the widget\u2019s SKU and how many units to add or subtract.\nI need the widget\u2019s SKU and the stock change amount (delta) to complete the update.",
+  "agent_error": null,
+  "wall_seconds": 1.01,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "I\u2019m missing the key detail needed to update the widget stock: the SKU and the quantity change (delta). Please provide the widget\u2019s SKU and how many units to add or subtract.\nI need the widget\u2019s SKU and the stock change amount (delta) to complete the update.",
+    "error": null,
+    "wall_seconds": 1.01,
+    "calls": []
+  },
+  "usage": {
+    "requests": 1,
+    "input": 223,
+    "cached_input": 0,
+    "output": 66,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000464
+  }
+}

@@ -1,0 +1,40 @@
+
+qwen: FAQ failure rate, 20 scenarios x 4 trials
+  LangGraph baseline                      32.5%
+  + the MUST sentence only                61.2%
+  + CrewAI prompt minus the sentence      72.5%
+  + CrewAI's full prompt                  75.0%
+  + the MUST sentence only               vs LangGraph baseline                 worse 11 / better  1 / tie  8  p = 0.006
+  + CrewAI prompt minus the sentence     vs LangGraph baseline                 worse 13 / better  1 / tie  6  p = 0.002
+  + CrewAI's full prompt                 vs + CrewAI prompt minus the sentence worse  3 / better  1 / tie 16  p = 0.625
+  + CrewAI's full prompt                 vs + the MUST sentence only           worse  9 / better  1 / tie 10  p = 0.021
+
+qwen (strict bound): FAQ failure rate, 20 scenarios x 4 trials
+  LangGraph baseline                      38.8%
+  + the MUST sentence only                71.2%
+  + CrewAI prompt minus the sentence      76.2%
+  + CrewAI's full prompt                  77.5%
+  + the MUST sentence only               vs LangGraph baseline                 worse 11 / better  0 / tie  9  p = 0.001
+  + CrewAI prompt minus the sentence     vs LangGraph baseline                 worse 12 / better  1 / tie  7  p = 0.003
+  + CrewAI's full prompt                 vs + CrewAI prompt minus the sentence worse  3 / better  1 / tie 16  p = 0.625
+  + CrewAI's full prompt                 vs + the MUST sentence only           worse  7 / better  1 / tie 12  p = 0.070
+
+gpt: FAQ failure rate, 20 scenarios x 2 trials
+  LangGraph baseline                      22.5%
+  + the MUST sentence only                45.0%
+  + CrewAI prompt minus the sentence      55.0%
+  + CrewAI's full prompt                  60.0%
+  + the MUST sentence only               vs LangGraph baseline                 worse  8 / better  1 / tie 11  p = 0.039
+  + CrewAI prompt minus the sentence     vs LangGraph baseline                 worse  8 / better  0 / tie 12  p = 0.008
+  + CrewAI's full prompt                 vs + CrewAI prompt minus the sentence worse  4 / better  2 / tie 14  p = 0.688
+  + CrewAI's full prompt                 vs + the MUST sentence only           worse  6 / better  1 / tie 13  p = 0.125
+
+gpt (strict bound): FAQ failure rate, 20 scenarios x 2 trials
+  LangGraph baseline                      42.5%
+  + the MUST sentence only                50.0%
+  + CrewAI prompt minus the sentence      70.0%
+  + CrewAI's full prompt                  70.0%
+  + the MUST sentence only               vs LangGraph baseline                 worse  5 / better  3 / tie 12  p = 0.727
+  + CrewAI prompt minus the sentence     vs LangGraph baseline                 worse  8 / better  0 / tie 12  p = 0.008
+  + CrewAI's full prompt                 vs + CrewAI prompt minus the sentence worse  1 / better  1 / tie 18  p = 1.000
+  + CrewAI's full prompt                 vs + the MUST sentence only           worse  7 / better  0 / tie 13  p = 0.016

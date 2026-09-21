@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-15",
+  "scenario_name": "weather-there",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 3,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Please provide me with the name of the city you would like to know the weather for.",
+  "agent_error": null,
+  "wall_seconds": 3.24,
+  "trace": {
+    "scenario_id": "FAQ-15",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "Please provide me with the name of the city you would like to know the weather for.",
+    "error": null,
+    "wall_seconds": 3.24,
+    "calls": []
+  }
+}

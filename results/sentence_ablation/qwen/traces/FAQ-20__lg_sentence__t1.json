@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-20",
+  "scenario_name": "contact-the-vip",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed with this task, I first need to identify the VIP customer we are reaching out to. Could you please provide me with the user ID or any other relevant information about the VIP customer? Once I have that information, I can look up their profile and then create a support ticket on your behalf.",
+  "agent_error": null,
+  "wall_seconds": 8.24,
+  "trace": {
+    "scenario_id": "FAQ-20",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "To proceed with this task, I first need to identify the VIP customer we are reaching out to. Could you please provide me with the user ID or any other relevant information about the VIP customer? Once I have that information, I can look up their profile and then create a support ticket on your behalf.",
+    "error": null,
+    "wall_seconds": 8.24,
+    "calls": []
+  }
+}

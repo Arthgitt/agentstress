@@ -1,0 +1,58 @@
+{
+  "scenario_id": "SR-39",
+  "scenario_name": "stock-followup-seam",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "SKU-5005 has **150 units** in stock.\n\nI also opened a ticket:\n- **TCK-001** \u2014 **SKU-5005 stock**",
+  "agent_error": null,
+  "wall_seconds": 3.2,
+  "usage": {
+    "requests": 3,
+    "input": 826,
+    "cached_input": 0,
+    "output": 94,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001043
+  },
+  "trace": {
+    "scenario_id": "SR-39",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "SKU-5005 has **150 units** in stock.\n\nI also opened a ticket:\n- **TCK-001** \u2014 **SKU-5005 stock**",
+    "error": null,
+    "wall_seconds": 3.2,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-5005 stock",
+          "description": "Current inventory for SKU-5005 is 150 units in stock."
+        },
+        "args_key": "{\"description\": \"Current inventory for SKU-5005 is 150 units in stock.\", \"title\": \"SKU-5005 stock\"}",
+        "result": "Created TCK-001: SKU-5005 stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

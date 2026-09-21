@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems that the SKU 123456 is not recognized in our system. Could you please provide another SKU number or check the spelling and try again? If you need assistance finding a specific product's SKU, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 976.62,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "It seems that the SKU 123456 is not recognized in our system. Could you please provide another SKU number or check the spelling and try again? If you need assistance finding a specific product's SKU, feel free to ask!",
+    "error": null,
+    "wall_seconds": 976.62,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "123456"
+        },
+        "args_key": "{\"sku\": \"123456\"}",
+        "result": "Unknown SKU: 123456",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

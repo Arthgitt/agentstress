@@ -1,0 +1,59 @@
+{
+  "scenario_id": "INV-16",
+  "scenario_name": "save-and-confirm-file",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The content of the file `escalation.txt` confirms that the escalation policy is correctly saved:\n\n\"Tickets marked urgent must be escalated to the on-call manager within 1 hour.\"\n\nThis matches what we have in our documentation. If you need any further actions or additional information, feel free to let me know!",
+  "agent_error": null,
+  "wall_seconds": 30.56,
+  "trace": {
+    "scenario_id": "INV-16",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The content of the file `escalation.txt` confirms that the escalation policy is correctly saved:\n\n\"Tickets marked urgent must be escalated to the on-call manager within 1 hour.\"\n\nThis matches what we have in our documentation. If you need any further actions or additional information, feel free to let me know!",
+    "error": null,
+    "wall_seconds": 30.56,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy"
+        },
+        "args_key": "{\"query\": \"escalation policy\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/escalation.txt",
+          "content": "Tickets marked urgent must be escalated to the on-call manager within 1 hour."
+        },
+        "args_key": "{\"content\": \"Tickets marked urgent must be escalated to the on-call manager within 1 hour.\", \"path\": \"docs/escalation.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "docs/escalation.txt"
+        },
+        "args_key": "{\"path\": \"docs/escalation.txt\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

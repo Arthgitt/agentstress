@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-10",
+  "scenario_name": "undefined-comparison-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The current weather in Paris is 18\u00b0C with light rain, while in Tokyo it's 27\u00b0C with clear skies and a humid condition. Based on the criteria of temperature and weather conditions, Tokyo would be considered better for outdoor activities due to its warmer and clearer weather compared to Paris which has light rain.",
+  "agent_error": null,
+  "wall_seconds": 10.3,
+  "trace": {
+    "scenario_id": "FAQ-10",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The current weather in Paris is 18\u00b0C with light rain, while in Tokyo it's 27\u00b0C with clear skies and a humid condition. Based on the criteria of temperature and weather conditions, Tokyo would be considered better for outdoor activities due to its warmer and clearer weather compared to Paris which has light rain.",
+    "error": null,
+    "wall_seconds": 10.3,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        },
+        "args_key": "{\"city\": \"Tokyo\"}",
+        "result": "Tokyo: 27C, humid, clear skies",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

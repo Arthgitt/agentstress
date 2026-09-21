@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t find any internal policy documents to rank, so I can\u2019t determine the priority order yet.\n\nIf you want, send me:\n- the policy names, or\n- the document/link/location where they live,\n\nand I\u2019ll rank them and open the ticket for you.",
+  "agent_error": null,
+  "wall_seconds": 3.55,
+  "usage": {
+    "requests": 3,
+    "input": 671,
+    "cached_input": 0,
+    "output": 101,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000958
+  },
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t find any internal policy documents to rank, so I can\u2019t determine the priority order yet.\n\nIf you want, send me:\n- the policy names, or\n- the document/link/location where they live,\n\nand I\u2019ll rank them and open the ticket for you.",
+    "error": null,
+    "wall_seconds": 3.55,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy list priority ranking internal policies"
+        },
+        "args_key": "{\"query\": \"policy list priority ranking internal policies\"}",
+        "result": "No documents found for 'policy list priority ranking internal policies'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies priority ranking"
+        },
+        "args_key": "{\"query\": \"policies priority ranking\"}",
+        "result": "No documents found for 'policies priority ranking'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

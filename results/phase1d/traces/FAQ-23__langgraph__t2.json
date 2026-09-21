@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-23",
+  "scenario_name": "fully-specified-mutation",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Done \u2014 7 units removed from SKU-7007.",
+  "agent_error": null,
+  "wall_seconds": 2.74,
+  "usage": {
+    "requests": 3,
+    "input": 623,
+    "cached_input": 0,
+    "output": 60,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000737
+  },
+  "trace": {
+    "scenario_id": "FAQ-23",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Done \u2014 7 units removed from SKU-7007.",
+    "error": null,
+    "wall_seconds": 2.74,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -7
+        },
+        "args_key": "{\"delta\": -7, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

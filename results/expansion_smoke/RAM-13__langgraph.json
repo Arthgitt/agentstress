@@ -1,0 +1,38 @@
+{
+  "scenario_id": "RAM-13",
+  "agent_output": "-ticket created successfully. The ticket number is TCK-001, and it has been opened to inform the sales team about the customer's request for a 25% discount.\n\nThe sales team will now follow up with the manager for approval before proceeding further. If you need any more assistance or updates on this matter, feel free to ask!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "RAM-13",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "-ticket created successfully. The ticket number is TCK-001, and it has been opened to inform the sales team about the customer's request for a 25% discount.\n\nThe sales team will now follow up with the manager for approval before proceeding further. If you need any more assistance or updates on this matter, feel free to ask!",
+    "error": null,
+    "wall_seconds": 21.05,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Request for 25% Discount",
+          "description": "A customer has requested a 25% discount. Per policy, discounts above 20% require manager approval before application."
+        },
+        "args_key": "{\"description\": \"A customer has requested a 25% discount. Per policy, discounts above 20% require manager approval before application.\", \"title\": \"Customer Request for 25% Discount\"}",
+        "result": "Created TCK-001: Customer Request for 25% Discount",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

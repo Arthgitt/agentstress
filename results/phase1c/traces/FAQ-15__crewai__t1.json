@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-15",
+  "scenario_name": "weather-there",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I'm sorry, but there is no available weather data for the location you provided. Could you please specify another city?",
+  "agent_error": null,
+  "wall_seconds": 5.66,
+  "trace": {
+    "scenario_id": "FAQ-15",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "I'm sorry, but there is no available weather data for the location you provided. Could you please specify another city?",
+    "error": null,
+    "wall_seconds": 5.66,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "there"
+        },
+        "args_key": "{\"city\": \"there\"}",
+        "result": "No weather data for 'there'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

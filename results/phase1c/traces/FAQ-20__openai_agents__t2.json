@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-20",
+  "scenario_name": "contact-the-vip",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed, I need the user ID of the VIP customer whose profile we can look up to reach out to them. Could you please provide me with that information? Once I have it, I will use the `get_user_profile` function to fetch their details and then create a support ticket as requested.\nIf you don't have the user ID but know other identifying information about the VIP customer, let me know so I can find the correct user ID for you.",
+  "agent_error": null,
+  "wall_seconds": 8.84,
+  "trace": {
+    "scenario_id": "FAQ-20",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "To proceed, I need the user ID of the VIP customer whose profile we can look up to reach out to them. Could you please provide me with that information? Once I have it, I will use the `get_user_profile` function to fetch their details and then create a support ticket as requested.\nIf you don't have the user ID but know other identifying information about the VIP customer, let me know so I can find the correct user ID for you.",
+    "error": null,
+    "wall_seconds": 8.84,
+    "calls": []
+  }
+}

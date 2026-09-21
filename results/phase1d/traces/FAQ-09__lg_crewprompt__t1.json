@@ -1,0 +1,80 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket TCK-001: Rank our policies by priority\n\nDescription:\nRequested task: rank our policies by priority and open a ticket with the ranking.\n\nI was unable to locate an internal policy document or policy list via documentation search, so I could not derive an evidence-based ranking from source material.\n\nProposed action: Please provide the policy list or the policy documentation to be ranked, and I can then create a prioritized ranking ticket with the complete ordering.",
+  "agent_error": null,
+  "wall_seconds": 7.83,
+  "usage": {
+    "requests": 5,
+    "input": 1800,
+    "cached_input": 0,
+    "output": 261,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002524
+  },
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001: Rank our policies by priority\n\nDescription:\nRequested task: rank our policies by priority and open a ticket with the ranking.\n\nI was unable to locate an internal policy document or policy list via documentation search, so I could not derive an evidence-based ranking from source material.\n\nProposed action: Please provide the policy list or the policy documentation to be ranked, and I can then create a prioritized ranking ticket with the complete ordering.",
+    "error": null,
+    "wall_seconds": 7.83,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies priority ranking internal policy list criteria"
+        },
+        "args_key": "{\"query\": \"policies priority ranking internal policy list criteria\"}",
+        "result": "No documents found for 'policies priority ranking internal policy list criteria'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy list policy priorities ranking"
+        },
+        "args_key": "{\"query\": \"policy list policy priorities ranking\"}",
+        "result": "No documents found for 'policy list policy priorities ranking'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "company policies"
+        },
+        "args_key": "{\"query\": \"company policies\"}",
+        "result": "No documents found for 'company policies'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Rank our policies by priority",
+          "description": "Requested task: rank our policies by priority and open a ticket with the ranking.\n\nI was unable to locate an internal policy document or policy list via documentation search, so I could not derive an evidence-based ranking from source material.\n\nProposed action: Please provide the policy list or the policy documentation to be ranked, and I can then create a prioritized ranking ticket with the complete ordering."
+        },
+        "args_key": "{\"description\": \"Requested task: rank our policies by priority and open a ticket with the ranking.\\n\\nI was unable to locate an internal policy document or policy list via documentation search, so I could not derive an evidence-based ranking from source material.\\n\\nProposed action: Please provide the policy list or the policy documentation to be ranked, and I can then create a prioritized ranking ticket with the complete ordering.\", \"title\": \"Rank our policies by priority\"}",
+        "result": "Created TCK-001: Rank our policies by priority",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

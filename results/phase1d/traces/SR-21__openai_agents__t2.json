@@ -1,0 +1,69 @@
+{
+  "scenario_id": "SR-21",
+  "scenario_name": "handoff-research-then-write",
+  "target_mode": "SR",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Done \u2014 I created the ticket **TCK-001** titled **\u201cA100 memo\u201d** with the product memo as the description.",
+  "agent_error": null,
+  "wall_seconds": 5.32,
+  "usage": {
+    "requests": 4,
+    "input": 1348,
+    "cached_input": 0,
+    "output": 235,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002069
+  },
+  "trace": {
+    "scenario_id": "SR-21",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "Done \u2014 I created the ticket **TCK-001** titled **\u201cA100 memo\u201d** with the product memo as the description.",
+    "error": null,
+    "wall_seconds": 5.32,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 widget spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 widget spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "A100 memo",
+          "description": "A100 widget product memo:\n- Weatherproof housing\n- 2-year warranty\n- Weight: 1.2 kg\n- Current stock for SKU-1001: 42 units in stock"
+        },
+        "args_key": "{\"description\": \"A100 widget product memo:\\n- Weatherproof housing\\n- 2-year warranty\\n- Weight: 1.2 kg\\n- Current stock for SKU-1001: 42 units in stock\", \"title\": \"A100 memo\"}",
+        "result": "Created TCK-001: A100 memo",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

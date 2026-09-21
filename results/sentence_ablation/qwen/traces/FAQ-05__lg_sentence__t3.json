@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 3,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will write up a summary of your shipping policy. Please provide me with details about your shipping policy so that I can include all relevant information in the summary.\nOnce you've provided the details, I'll create and save the document for you. For now, let's assume a standard shipping policy to illustrate how this would look. Would you like to proceed with an example or do you have specific details to share? If you're ready to use an example, here\u2019s one:\n\n**Shipping Policy Summary:**\n\n1. **Eligibility**: All orders placed on our website are eligible for free shipping within the continental United States.\n2. **Shipping Methods**: We offer standard and expedited shipping options at no additional cost.\n3. **Processing Time**: Orders will be processed and shipped within 48 hours of being received, excluding weekends and holidays.\n4. **Delivery Time**: Standard shipping typically takes 5-7 business days; expedited shipping usually arrives in 2-3 business days.\n5. **Tracking Information**: You can track your order via the link provided in your confirmation email once it has been shipped.\n6. **Returns and Refunds**: For returns, please contact our customer service team within 14 days of receiving your order to initiate a return. Returns must be received in their original condition for a full refund or exchange.\n\nWould you like me to use this example, or do you have specific details to include? Please provide the necessary information.\nOnce I have all the details, I will write and save the document accordingly.",
+  "agent_error": null,
+  "wall_seconds": 33.45,
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "Sure, I will write up a summary of your shipping policy. Please provide me with details about your shipping policy so that I can include all relevant information in the summary.\nOnce you've provided the details, I'll create and save the document for you. For now, let's assume a standard shipping policy to illustrate how this would look. Would you like to proceed with an example or do you have specific details to share? If you're ready to use an example, here\u2019s one:\n\n**Shipping Policy Summary:**\n\n1. **Eligibility**: All orders placed on our website are eligible for free shipping within the continental United States.\n2. **Shipping Methods**: We offer standard and expedited shipping options at no additional cost.\n3. **Processing Time**: Orders will be processed and shipped within 48 hours of being received, excluding weekends and holidays.\n4. **Delivery Time**: Standard shipping typically takes 5-7 business days; expedited shipping usually arrives in 2-3 business days.\n5. **Tracking Information**: You can track your order via the link provided in your confirmation email once it has been shipped.\n6. **Returns and Refunds**: For returns, please contact our customer service team within 14 days of receiving your order to initiate a return. Returns must be received in their original condition for a full refund or exchange.\n\nWould you like me to use this example, or do you have specific details to include? Please provide the necessary information.\nOnce I have all the details, I will write and save the document accordingly.",
+    "error": null,
+    "wall_seconds": 33.45,
+    "calls": []
+  }
+}

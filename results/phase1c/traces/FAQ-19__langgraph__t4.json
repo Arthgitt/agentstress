@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-19",
+  "scenario_name": "usual-amount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The stock for SKU-1001 has been successfully adjusted, reducing it by 5 units. The new stock count is 37 units.",
+  "agent_error": null,
+  "wall_seconds": 18.27,
+  "trace": {
+    "scenario_id": "FAQ-19",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The stock for SKU-1001 has been successfully adjusted, reducing it by 5 units. The new stock count is 37 units.",
+    "error": null,
+    "wall_seconds": 18.27,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "scenario_id": "INV-24",
+  "scenario_name": "summary-file-make-sure",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The Q2 revenue and churn figures have been successfully written into `summary/q2_summary.txt`. The content of the file is as follows:\n\n```\nQ2 revenue figures: $1.2M\nQ2 churn rates: 4.1%\n```",
+  "agent_error": null,
+  "wall_seconds": 17.69,
+  "trace": {
+    "scenario_id": "INV-24",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The Q2 revenue and churn figures have been successfully written into `summary/q2_summary.txt`. The content of the file is as follows:\n\n```\nQ2 revenue figures: $1.2M\nQ2 churn rates: 4.1%\n```",
+    "error": null,
+    "wall_seconds": 17.69,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "reports/q2.txt"
+        },
+        "args_key": "{\"path\": \"reports/q2.txt\"}",
+        "result": "Q2 revenue: $1.2M\nQ2 churn: 4.1%",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "summary/q2_summary.txt",
+          "content": "Q2 revenue figures: $1.2M\nQ2 churn rates: 4.1%"
+        },
+        "args_key": "{\"content\": \"Q2 revenue figures: $1.2M\\nQ2 churn rates: 4.1%\", \"path\": \"summary/q2_summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "summary/q2_summary.txt"
+        },
+        "args_key": "{\"path\": \"summary/q2_summary.txt\"}",
+        "result": "Q2 revenue figures: $1.2M\nQ2 churn rates: 4.1%",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

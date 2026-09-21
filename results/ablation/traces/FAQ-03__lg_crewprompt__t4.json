@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there was an issue with the SKU 'AB123'. Could you please provide another SKU to check or verify if the SKU is correct? If you need to check our entire inventory, I can do that as well.",
+  "agent_error": null,
+  "wall_seconds": 17.73,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "It seems there was an issue with the SKU 'AB123'. Could you please provide another SKU to check or verify if the SKU is correct? If you need to check our entire inventory, I can do that as well.",
+    "error": null,
+    "wall_seconds": 17.73,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "AB123"
+        },
+        "args_key": "{\"sku\": \"AB123\"}",
+        "result": "Unknown SKU: AB123",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

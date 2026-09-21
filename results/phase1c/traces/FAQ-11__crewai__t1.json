@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed with updating the stock for the widget, I need to know the SKU and the delta value (the amount by which you want to adjust the stock count). Could you please provide me with this information?",
+  "agent_error": null,
+  "wall_seconds": 4.15,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "To proceed with updating the stock for the widget, I need to know the SKU and the delta value (the amount by which you want to adjust the stock count). Could you please provide me with this information?",
+    "error": null,
+    "wall_seconds": 4.15,
+    "calls": []
+  }
+}

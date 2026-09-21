@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed with updating the stock for the widget, I need to know the SKU and the change in quantity (delta) you want to apply. Could you please provide this information? For example: {\"sku\": \"WGT123\", \"delta\": 5} would increase the stock by 5 units.",
+  "agent_error": null,
+  "wall_seconds": 3.47,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "To proceed with updating the stock for the widget, I need to know the SKU and the change in quantity (delta) you want to apply. Could you please provide this information? For example: {\"sku\": \"WGT123\", \"delta\": 5} would increase the stock by 5 units.",
+    "error": null,
+    "wall_seconds": 3.47,
+    "calls": []
+  }
+}

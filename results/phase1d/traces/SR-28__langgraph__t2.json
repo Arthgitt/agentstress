@@ -1,0 +1,102 @@
+{
+  "scenario_id": "SR-28",
+  "scenario_name": "five-docs-onboarding-ticket",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 6,
+  "agent_output": "Done \u2014 I pulled the policies and opened a ticket.\n\nTicket: **TCK-001 \u2014 Support lead onboarding: urgent issue handling and office closures**\n\nKey points included:\n- **Urgent issues:** escalate to the **on-call manager within 1 hour**\n- **Current on-call manager:** **Sam Rivera**\n- **Office closed:** **December 24\u201326** and **January 1**\n\nI also pulled the discount and data retention policies into the ticket for context.",
+  "agent_error": null,
+  "wall_seconds": 5.17,
+  "usage": {
+    "requests": 3,
+    "input": 1275,
+    "cached_input": 0,
+    "output": 402,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002765
+  },
+  "trace": {
+    "scenario_id": "SR-28",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Done \u2014 I pulled the policies and opened a ticket.\n\nTicket: **TCK-001 \u2014 Support lead onboarding: urgent issue handling and office closures**\n\nKey points included:\n- **Urgent issues:** escalate to the **on-call manager within 1 hour**\n- **Current on-call manager:** **Sam Rivera**\n- **Office closed:** **December 24\u201326** and **January 1**\n\nI also pulled the discount and data retention policies into the ticket for context.",
+    "error": null,
+    "wall_seconds": 5.17,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy urgent issues"
+        },
+        "args_key": "{\"query\": \"escalation policy urgent issues\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "data retention policy"
+        },
+        "args_key": "{\"query\": \"data retention policy\"}",
+        "result": "Customer records are deleted 24 months after account closure.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "search_docs",
+        "args": {
+          "query": "office holiday schedule"
+        },
+        "args_key": "{\"query\": \"office holiday schedule\"}",
+        "result": "The office is closed December 24-26 and January 1. No deliveries are scheduled on closed days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 4,
+        "tool": "search_docs",
+        "args": {
+          "query": "on-call manager rota"
+        },
+        "args_key": "{\"query\": \"on-call manager rota\"}",
+        "result": "This week's on-call manager is Sam Rivera.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 5,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Support lead onboarding: urgent issue handling and office closures",
+          "description": "New support lead starts Monday. Relevant policies and contacts:\n- Escalation policy: tickets marked urgent must be escalated to the on-call manager within 1 hour.\n- Discount policy: discounts above 20% require manager approval before they can be applied.\n- Office holiday schedule: the office is closed December 24-26 and January 1. No deliveries are scheduled on closed days.\n- Data retention policy: customer records are deleted 24 months after account closure.\n- On-call manager rota: this week's on-call manager is Sam Rivera.\n\nSummary for urgent issues and closures:\nUrgent issues should go to the on-call manager, currently Sam Rivera, within 1 hour. The office is closed December 24-26 and January 1, so standard office operations and deliveries do not occur on those dates."
+        },
+        "args_key": "{\"description\": \"New support lead starts Monday. Relevant policies and contacts:\\n- Escalation policy: tickets marked urgent must be escalated to the on-call manager within 1 hour.\\n- Discount policy: discounts above 20% require manager approval before they can be applied.\\n- Office holiday schedule: the office is closed December 24-26 and January 1. No deliveries are scheduled on closed days.\\n- Data retention policy: customer records are deleted 24 months after account closure.\\n- On-call manager rota: this week's on-call manager is Sam Rivera.\\n\\nSummary for urgent issues and closures:\\nUrgent issues should go to the on-call manager, currently Sam Rivera, within 1 hour. The office is closed December 24-26 and January 1, so standard office operations and deliveries do not occur on those dates.\", \"title\": \"Support lead onboarding: urgent issue handling and office closures\"}",
+        "result": "Created TCK-001: Support lead onboarding: urgent issue handling and office closures",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

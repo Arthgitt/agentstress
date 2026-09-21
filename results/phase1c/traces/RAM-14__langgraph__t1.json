@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-14",
+  "scenario_name": "out-of-stock-order",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "-ticket TCK-001 has been created, indicating an order for 2 units of SKU-4004. Since there are currently no units in stock, the fulfilment team will need to address this situation appropriately.\n\nI recommend following up on this ticket to ensure that the customer is informed about the stock status and any updates regarding their order. Is there anything else you would like me to do?",
+  "agent_error": null,
+  "wall_seconds": 50.77,
+  "trace": {
+    "scenario_id": "RAM-14",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "-ticket TCK-001 has been created, indicating an order for 2 units of SKU-4004. Since there are currently no units in stock, the fulfilment team will need to address this situation appropriately.\n\nI recommend following up on this ticket to ensure that the customer is informed about the stock status and any updates regarding their order. Is there anything else you would like me to do?",
+    "error": null,
+    "wall_seconds": 50.77,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-4004"
+        },
+        "args_key": "{\"sku\": \"SKU-4004\"}",
+        "result": "SKU-4004: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Order for SKU-4004 with 2 units",
+          "description": "There is an incoming order for 2 units of SKU-4004, but the stock is currently empty. Please update the inventory and fulfill the order as soon as possible."
+        },
+        "args_key": "{\"description\": \"There is an incoming order for 2 units of SKU-4004, but the stock is currently empty. Please update the inventory and fulfill the order as soon as possible.\", \"title\": \"Order for SKU-4004 with 2 units\"}",
+        "result": "Created TCK-001: Order for SKU-4004 with 2 units",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

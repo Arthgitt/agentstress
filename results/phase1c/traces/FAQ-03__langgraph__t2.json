@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I can help with that. Could you please provide me with the SKU(s) of the items you want to check? If you don't have specific SKUs in mind, I can start by checking a few common ones.",
+  "agent_error": null,
+  "wall_seconds": 3.77,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I can help with that. Could you please provide me with the SKU(s) of the items you want to check? If you don't have specific SKUs in mind, I can start by checking a few common ones.",
+    "error": null,
+    "wall_seconds": 3.77,
+    "calls": []
+  }
+}

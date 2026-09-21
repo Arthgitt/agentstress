@@ -1,0 +1,37 @@
+{
+  "scenario_id": "UT-12",
+  "scenario_name": "converge-down-by-sixes",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "I've taken out 6 units from SKU-7007. We'll proceed with removing another 6 units until we reach about 10 units left.",
+  "agent_error": null,
+  "wall_seconds": 6.09,
+  "trace": {
+    "scenario_id": "UT-12",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I've taken out 6 units from SKU-7007. We'll proceed with removing another 6 units until we reach about 10 units left.",
+    "error": null,
+    "wall_seconds": 6.09,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -6
+        },
+        "args_key": "{\"delta\": -6, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

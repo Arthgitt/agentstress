@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-12",
+  "scenario_name": "notify-which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will create a support ticket to inform the user that their refund has been processed. Let's proceed with creating this ticket.\n\nI'll need some details such as the title and a brief description for the ticket. For the title, let's use \"Refund Confirmation\". The description could be something like: \"Dear [User], your recent refund request has been successfully processed. Please allow 3-5 business days for the funds to appear in your account.\"\n\nWould you like me to proceed with these details or do you have any specific preferences? If so, please provide them.\nIf no specific preferences are given, I will use the suggested title and description.",
+  "agent_error": null,
+  "wall_seconds": 9.07,
+  "trace": {
+    "scenario_id": "FAQ-12",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will create a support ticket to inform the user that their refund has been processed. Let's proceed with creating this ticket.\n\nI'll need some details such as the title and a brief description for the ticket. For the title, let's use \"Refund Confirmation\". The description could be something like: \"Dear [User], your recent refund request has been successfully processed. Please allow 3-5 business days for the funds to appear in your account.\"\n\nWould you like me to proceed with these details or do you have any specific preferences? If so, please provide them.\nIf no specific preferences are given, I will use the suggested title and description.",
+    "error": null,
+    "wall_seconds": 9.07,
+    "calls": []
+  }
+}

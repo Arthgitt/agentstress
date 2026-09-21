@@ -1,0 +1,157 @@
+prompt ablation: 60 scenarios x 3 conditions x 4 trials = 720 runs | to run 720
+[   1/720] ok  SR-02    lg_crewprompt   t1  4 calls   13.9s  eta 166.1m
+[   2/720] ok  SR-02    lg_crewprompt   t2  3 calls   10.1s  eta 143.7m
+[   3/720] ok  SR-02    lg_crewprompt   t3  4 calls   11.3s  eta 140.7m
+[   4/720] ok  SR-02    lg_crewprompt   t4  3 calls   10.0s  eta 135.2m
+[   5/720] ok  SR-02    oai_crewprompt  t1  4 calls   11.8s  eta 136.1m
+[   6/720] ok  SR-02    oai_crewprompt  t2  3 calls   10.1s  eta 133.4m
+[   7/720] ok  SR-02    oai_crewprompt  t3  4 calls   11.0s  eta 132.8m
+[   8/720] ok  SR-02    oai_crewprompt  t4  3 calls   10.4s  eta 131.5m
+[   9/720] ok  SR-02    crew_neutral    t1  2 calls    9.8s  eta 129.6m
+[  10/720] ok  SR-02    crew_neutral    t2  2 calls    7.5s  eta 125.3m
+[  11/720] ok  SR-02    crew_neutral    t3  2 calls    7.1s  eta 121.4m
+[  12/720] ok  SR-02    crew_neutral    t4  2 calls    7.3s  eta 118.3m
+[  13/720] ok  SR-21    lg_crewprompt   t1  2 calls   15.0s  eta 122.7m
+[  14/720] ok  SR-21    lg_crewprompt   t2  2 calls   15.4s  eta 126.7m
+[  15/720] ok  SR-21    lg_crewprompt   t3  2 calls   15.8s  eta 130.5m
+[  16/720] ok  SR-21    lg_crewprompt   t4  2 calls   18.0s  eta 135.4m
+[  17/720] ok  SR-21    oai_crewprompt  t1  2 calls   20.2s  eta 141.1m
+[  18/720] ok  SR-21    oai_crewprompt  t2  2 calls   20.3s  eta 146.3m
+[  19/720] ok  SR-21    oai_crewprompt  t3  2 calls   20.4s  eta 151.0m
+[  20/720] ok  SR-21    oai_crewprompt  t4  2 calls   19.6s  eta 154.6m
+[  21/720] ERR SR-21    crew_neutral    t1  2 calls   38.2s  eta 168.3m
+[  22/720] ERR SR-21    crew_neutral    t2  2 calls   29.4s  eta 175.9m
+[  23/720] ok  SR-21    crew_neutral    t3  3 calls   24.5s  eta 180.4m
+[  24/720] ERR SR-21    crew_neutral    t4  2 calls   28.4s  eta 186.4m
+[  25/720] ok  SR-23    lg_crewprompt   t1  3 calls   12.8s  eta 184.6m
+[  26/720] ok  SR-23    lg_crewprompt   t2  3 calls   13.5s  eta 183.3m
+[  27/720] ok  SR-23    lg_crewprompt   t3  3 calls   11.3s  eta 181.1m
+[  28/720] ok  SR-23    lg_crewprompt   t4  3 calls   10.3s  eta 178.6m
+[  29/720] ok  SR-23    oai_crewprompt  t1  3 calls   10.9s  eta 176.5m
+[  30/720] ok  SR-23    oai_crewprompt  t2  3 calls   10.6s  eta 174.5m
+[  31/720] ok  SR-23    oai_crewprompt  t3  3 calls   11.5s  eta 172.8m
+[  32/720] ok  SR-23    oai_crewprompt  t4  3 calls   12.1s  eta 171.5m
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-1179' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+    await self._transport.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+    await self._pool.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+    await self._close_connections(closing_connections)
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+    await connection.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+    await self._connection.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+    await self._network_stream.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+    await self._stream.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+    self._transport.close()
+  File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
+    super().close()
+  File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 875, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "/opt/anaconda3/lib/python3.12/asyncio/base_events.py", line 795, in call_soon
+    self._check_closed()
+  File "/opt/anaconda3/lib/python3.12/asyncio/base_events.py", line 541, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-1180' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+    await self._transport.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+    await self._pool.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+    await self._close_connections(closing_connections)
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+    await connection.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+    await self._connection.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+    await self._network_stream.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+    await self._stream.aclose()
+  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+    self._transport.close()
+  File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
+    super().close()
+  File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 875, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "/opt/anaconda3/lib/python3.12/asyncio/base_events.py", line 795, in call_soon
+    self._check_closed()
+  File "/opt/anaconda3/lib/python3.12/asyncio/base_events.py", line 541, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[  33/720] ok  SR-23    crew_neutral    t1  3 calls   12.1s  eta 170.3m
+[  34/720] ok  SR-23    crew_neutral    t2  3 calls   11.0s  eta 168.7m
+[  35/720] ok  SR-23    crew_neutral    t3  3 calls   14.5s  eta 168.4m
+[  36/720] ok  SR-23    crew_neutral    t4  3 calls   12.4s  eta 167.4m
+[  37/720] ok  SR-24    lg_crewprompt   t1  6 calls   43.0s  eta 175.9m
+[  38/720] ok  SR-24    lg_crewprompt   t2  4 calls   24.3s  eta 178.3m
+[  39/720] ok  SR-24    lg_crewprompt   t3  6 calls   49.0s  eta 187.7m
+[  40/720] ok  SR-24    lg_crewprompt   t4  9 calls   69.7s  eta 202.5m
+[  41/720] ok  SR-24    oai_crewprompt  t1  6 calls   47.0s  eta 210.3m
+[  42/720] ok  SR-24    oai_crewprompt  t2  5 calls   42.2s  eta 216.3m
+[  43/720] ok  SR-24    oai_crewprompt  t3  4 calls   23.7s  eta 217.2m
+[  44/720] ok  SR-24    oai_crewprompt  t4  6 calls   47.2s  eta 224.0m
+[  45/720] ok  SR-24    crew_neutral    t1  4 calls   35.0s  eta 227.5m
+[  46/720] ok  SR-24    crew_neutral    t2  4 calls   30.3s  eta 229.6m
+[  47/720] ok  SR-24    crew_neutral    t3  6 calls   39.2s  eta 233.7m
+[  48/720] ok  SR-24    crew_neutral    t4  4 calls   25.6s  eta 234.5m
+[  49/720] ok  SR-25    lg_crewprompt   t1  2 calls   18.9s  eta 233.7m
+[  50/720] ok  SR-25    lg_crewprompt   t2  2 calls   17.5s  eta 232.6m
+[  51/720] ok  SR-25    lg_crewprompt   t3  2 calls   20.6s  eta 232.2m
+[  52/720] ok  SR-25    lg_crewprompt   t4  2 calls   16.1s  eta 230.8m
+[  53/720] ok  SR-25    oai_crewprompt  t1  2 calls   16.4s  eta 229.6m
+[  54/720] ok  SR-25    oai_crewprompt  t2  2 calls   14.5s  eta 228.0m
+[  55/720] ok  SR-25    oai_crewprompt  t3  2 calls   16.0s  eta 226.7m
+[  56/720] ok  SR-25    oai_crewprompt  t4  2 calls   16.5s  eta 225.6m
+[  57/720] ok  SR-25    crew_neutral    t1  2 calls   24.1s  eta 226.0m
+[  58/720] ok  SR-25    crew_neutral    t2  2 calls   22.1s  eta 225.9m
+[  59/720] ok  SR-25    crew_neutral    t3  2 calls   14.0s  eta 224.4m
+[  60/720] ok  SR-25    crew_neutral    t4  2 calls   17.5s  eta 223.5m
+[  61/720] ok  SR-26    lg_crewprompt   t1  2 calls   16.4s  eta 222.5m
+[  62/720] ok  SR-26    lg_crewprompt   t2  2 calls   13.0s  eta 220.9m
+[  63/720] ok  SR-26    lg_crewprompt   t3  2 calls   13.9s  eta 219.5m
+[  64/720] ok  SR-26    lg_crewprompt   t4  2 calls   12.0s  eta 217.7m
+[  65/720] ok  SR-26    oai_crewprompt  t1  2 calls   11.4s  eta 216.0m
+[  66/720] ok  SR-26    oai_crewprompt  t2  2 calls   13.4s  eta 214.6m
+[  67/720] ok  SR-26    oai_crewprompt  t3  2 calls   11.3s  eta 212.9m
+[  68/720] ok  SR-26    oai_crewprompt  t4  2 calls   15.7s  eta 212.0m
+[  69/720] ok  SR-26    crew_neutral    t1  2 calls   17.0s  eta 211.2m
+[  70/720] ok  SR-26    crew_neutral    t2  2 calls   10.6s  eta 209.6m
+[  71/720] ok  SR-26    crew_neutral    t3  2 calls   13.6s  eta 208.4m
+[  72/720] ok  SR-26    crew_neutral    t4  2 calls   12.8s  eta 207.1m
+[  73/720] ok  SR-27    lg_crewprompt   t1  6 calls   21.4s  eta 207.1m
+[  74/720] ok  SR-27    lg_crewprompt   t2  6 calls   20.3s  eta 206.9m
+[  75/720] ok  SR-27    lg_crewprompt   t3  6 calls   20.9s  eta 206.8m
+[  76/720] ok  SR-27    lg_crewprompt   t4  6 calls   20.1s  eta 206.6m
+[  77/720] ok  SR-27    oai_crewprompt  t1  6 calls   20.8s  eta 206.5m
+[  78/720] ok  SR-27    oai_crewprompt  t2  6 calls   24.0s  eta 206.9m
+[  79/720] ok  SR-27    oai_crewprompt  t3  6 calls   21.9s  eta 206.9m
+[  80/720] ok  SR-27    oai_crewprompt  t4  6 calls   21.6s  eta 206.9m
+[  81/720] ok  SR-27    crew_neutral    t1  6 calls   23.1s  eta 207.0m
+[  82/720] ok  SR-27    crew_neutral    t2  6 calls   21.8s  eta 207.0m
+[  83/720] ok  SR-27    crew_neutral    t3  6 calls   21.6s  eta 207.0m
+[  84/720] ok  SR-27    crew_neutral    t4  6 calls   23.5s  eta 207.1m
+[  85/720] ok  SR-28    lg_crewprompt   t1 17 calls  126.8s  eta 220.2m
+[  86/720] ok  SR-28    lg_crewprompt   t2  6 calls   33.6s  eta 221.4m

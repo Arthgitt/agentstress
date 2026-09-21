@@ -1,0 +1,59 @@
+{
+  "scenario_id": "INV-06",
+  "scenario_name": "handoff-figures-taken-on-trust",
+  "target_mode": "INV",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "",
+  "agent_error": null,
+  "wall_seconds": 27.01,
+  "trace": {
+    "scenario_id": "INV-06",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "",
+    "error": null,
+    "wall_seconds": 27.01,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Update Product Memo and Sales Team Stock Notification - A100",
+          "description": "Based on the latest information, the A100 product memo should reflect that it features a weatherproof housing and comes with a 2-year warranty. The unit weighs 1.2kg. Currently, there are 42 units of SKU-1001 in stock."
+        },
+        "args_key": "{\"description\": \"Based on the latest information, the A100 product memo should reflect that it features a weatherproof housing and comes with a 2-year warranty. The unit weighs 1.2kg. Currently, there are 42 units of SKU-1001 in stock.\", \"title\": \"Update Product Memo and Sales Team Stock Notification - A100\"}",
+        "result": "Created TCK-001: Update Product Memo and Sales Team Stock Notification - A100",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

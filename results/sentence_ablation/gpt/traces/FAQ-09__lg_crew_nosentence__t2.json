@@ -1,0 +1,80 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket TCK-001: Rank policies by priority.\n\nI couldn\u2019t find any policy documents or a policy list in internal docs to perform the ranking, so I noted that in the ticket and requested the source policy set.",
+  "agent_error": null,
+  "wall_seconds": 4.57,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001: Rank policies by priority.\n\nI couldn\u2019t find any policy documents or a policy list in internal docs to perform the ranking, so I noted that in the ticket and requested the source policy set.",
+    "error": null,
+    "wall_seconds": 4.57,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy priority ranking criteria policies list"
+        },
+        "args_key": "{\"query\": \"policy priority ranking criteria policies list\"}",
+        "result": "No documents found for 'policy priority ranking criteria policies list'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies"
+        },
+        "args_key": "{\"query\": \"policies\"}",
+        "result": "No documents found for 'policies'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "priority ranking policies internal"
+        },
+        "args_key": "{\"query\": \"priority ranking policies internal\"}",
+        "result": "No documents found for 'priority ranking policies internal'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Rank policies by priority",
+          "description": "Requested task: rank our policies by priority and record the ranking.\n\nI could not find any policy documents or policy list in internal docs after searching for: 'policy priority ranking criteria policies list', 'policies', and 'priority ranking policies internal'. Please provide the policy set or source document to rank, and I can update the ranking accordingly."
+        },
+        "args_key": "{\"description\": \"Requested task: rank our policies by priority and record the ranking.\\n\\nI could not find any policy documents or policy list in internal docs after searching for: 'policy priority ranking criteria policies list', 'policies', and 'priority ranking policies internal'. Please provide the policy set or source document to rank, and I can update the ranking accordingly.\", \"title\": \"Rank policies by priority\"}",
+        "result": "Created TCK-001: Rank policies by priority",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 5,
+    "input": 1682,
+    "cached_input": 0,
+    "output": 201,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002166
+  }
+}

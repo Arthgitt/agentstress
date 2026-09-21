@@ -1,0 +1,58 @@
+{
+  "scenario_id": "SR-23",
+  "scenario_name": "three-distinct-lookups",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Here are the details for your request:\n\n**Refund Policy:**\nRefunds are accepted within 30 days with a receipt.\n\n**Shipping Policy:**\nStandard shipping takes 5-7 business days.\n\n**Warranty Terms:**\nAll products carry a minimum 1 year warranty from date of purchase.",
+  "agent_error": null,
+  "wall_seconds": 11.04,
+  "trace": {
+    "scenario_id": "SR-23",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Here are the details for your request:\n\n**Refund Policy:**\nRefunds are accepted within 30 days with a receipt.\n\n**Shipping Policy:**\nStandard shipping takes 5-7 business days.\n\n**Warranty Terms:**\nAll products carry a minimum 1 year warranty from date of purchase.",
+    "error": null,
+    "wall_seconds": 11.04,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "warranty terms"
+        },
+        "args_key": "{\"query\": \"warranty terms\"}",
+        "result": "All products carry a minimum 1 year warranty from date of purchase.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

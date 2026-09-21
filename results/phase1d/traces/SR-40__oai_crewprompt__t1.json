@@ -1,0 +1,70 @@
+{
+  "scenario_id": "SR-40",
+  "scenario_name": "incident-two-tickets",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Created tickets:\n- TCK-001: Incident duration\n- TCK-002: Incident root cause",
+  "agent_error": null,
+  "wall_seconds": 2.88,
+  "usage": {
+    "requests": 3,
+    "input": 1079,
+    "cached_input": 0,
+    "output": 117,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001336
+  },
+  "trace": {
+    "scenario_id": "SR-40",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "Created tickets:\n- TCK-001: Incident duration\n- TCK-002: Incident root cause",
+    "error": null,
+    "wall_seconds": 2.88,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "notes/incident.txt"
+        },
+        "args_key": "{\"path\": \"notes/incident.txt\"}",
+        "result": "2026-09-01 outage: checkout API down for 47 minutes. Root cause: expired TLS certificate.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Incident duration",
+          "description": "The outage lasted 47 minutes."
+        },
+        "args_key": "{\"description\": \"The outage lasted 47 minutes.\", \"title\": \"Incident duration\"}",
+        "result": "Created TCK-001: Incident duration",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Incident root cause",
+          "description": "The outage was caused by an expired TLS certificate."
+        },
+        "args_key": "{\"description\": \"The outage was caused by an expired TLS certificate.\", \"title\": \"Incident root cause\"}",
+        "result": "Created TCK-002: Incident root cause",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

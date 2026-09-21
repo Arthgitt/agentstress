@@ -1,0 +1,46 @@
+{
+  "scenario_id": "UT-10",
+  "scenario_name": "already-at-zero",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "SKU-4004 already has 0 units in stock, so there\u2019s no stock left to clear.",
+  "agent_error": null,
+  "wall_seconds": 1.73,
+  "usage": {
+    "requests": 2,
+    "input": 447,
+    "cached_input": 0,
+    "output": 44,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000533
+  },
+  "trace": {
+    "scenario_id": "UT-10",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "SKU-4004 already has 0 units in stock, so there\u2019s no stock left to clear.",
+    "error": null,
+    "wall_seconds": 1.73,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-4004"
+        },
+        "args_key": "{\"sku\": \"SKU-4004\"}",
+        "result": "SKU-4004: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

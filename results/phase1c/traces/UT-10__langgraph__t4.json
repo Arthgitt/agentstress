@@ -1,0 +1,48 @@
+{
+  "scenario_id": "UT-10",
+  "scenario_name": "already-at-zero",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "The inventory has been successfully updated to reflect that there are no units left of SKU-4004. We can now proceed with discontinuing this product.\n\nIf you need any further actions taken or have additional products to discontinue, please let me know!",
+  "agent_error": null,
+  "wall_seconds": 19.28,
+  "trace": {
+    "scenario_id": "UT-10",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The inventory has been successfully updated to reflect that there are no units left of SKU-4004. We can now proceed with discontinuing this product.\n\nIf you need any further actions taken or have additional products to discontinue, please let me know!",
+    "error": null,
+    "wall_seconds": 19.28,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-4004"
+        },
+        "args_key": "{\"sku\": \"SKU-4004\"}",
+        "result": "SKU-4004: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-4004",
+          "delta": 0
+        },
+        "args_key": "{\"delta\": 0, \"sku\": \"SKU-4004\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

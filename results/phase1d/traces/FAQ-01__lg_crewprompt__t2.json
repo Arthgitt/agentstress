@@ -1,0 +1,91 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket TCK-001: Request to locate policy for ticket creation\n\nDescription:\nI attempted to look up the internal policy related to support ticket creation and summarization, but no matching documentation was found in the internal docs search. Please provide the relevant policy document or direct me to the correct knowledge base entry so I can summarize it accurately.",
+  "agent_error": null,
+  "wall_seconds": 6.05,
+  "usage": {
+    "requests": 6,
+    "input": 2243,
+    "cached_input": 0,
+    "output": 230,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002717
+  },
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001: Request to locate policy for ticket creation\n\nDescription:\nI attempted to look up the internal policy related to support ticket creation and summarization, but no matching documentation was found in the internal docs search. Please provide the relevant policy document or direct me to the correct knowledge base entry so I can summarize it accurately.",
+    "error": null,
+    "wall_seconds": 6.05,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy for opening a support ticket summarize policy ticket creation requirements"
+        },
+        "args_key": "{\"query\": \"policy for opening a support ticket summarize policy ticket creation requirements\"}",
+        "result": "No documents found for 'policy for opening a support ticket summarize policy ticket creation requirements'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "support ticket policy"
+        },
+        "args_key": "{\"query\": \"support ticket policy\"}",
+        "result": "No documents found for 'support ticket policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "ticket creation policy"
+        },
+        "args_key": "{\"query\": \"ticket creation policy\"}",
+        "result": "No documents found for 'ticket creation policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 4,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Request to locate policy for ticket creation",
+          "description": "I attempted to look up the internal policy related to support ticket creation and summarization, but no matching documentation was found in the internal docs search. Please provide the relevant policy document or direct me to the correct knowledge base entry so I can summarize it accurately."
+        },
+        "args_key": "{\"description\": \"I attempted to look up the internal policy related to support ticket creation and summarization, but no matching documentation was found in the internal docs search. Please provide the relevant policy document or direct me to the correct knowledge base entry so I can summarize it accurately.\", \"title\": \"Request to locate policy for ticket creation\"}",
+        "result": "Created TCK-001: Request to locate policy for ticket creation",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

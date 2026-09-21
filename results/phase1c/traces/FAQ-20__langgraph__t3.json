@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-20",
+  "scenario_name": "contact-the-vip",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed, I need the user ID of the VIP customer so that I can look up their profile and contact information. Could you provide me with the user ID? Once I have this information, I will create a support ticket documenting our interaction.\nIf you do not have the user ID at hand, please let me know any other details about the VIP customer, and I'll try to find the appropriate user ID for us.",
+  "agent_error": null,
+  "wall_seconds": 8.6,
+  "trace": {
+    "scenario_id": "FAQ-20",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "To proceed, I need the user ID of the VIP customer so that I can look up their profile and contact information. Could you provide me with the user ID? Once I have this information, I will create a support ticket documenting our interaction.\nIf you do not have the user ID at hand, please let me know any other details about the VIP customer, and I'll try to find the appropriate user ID for us.",
+    "error": null,
+    "wall_seconds": 8.6,
+    "calls": []
+  }
+}

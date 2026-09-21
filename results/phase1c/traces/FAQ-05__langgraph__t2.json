@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I can help with that. Let's start by drafting the summary for your shipping policy. Could you please provide me with some details about your shipping policy such as delivery times, costs, return policies, etc.? If you don't have specific information, I'll create a generic example.\nOnce we have the content, I will write it to a file using the `write_file` function.\nPlease share the details or confirm if a generic version is fine.",
+  "agent_error": null,
+  "wall_seconds": 7.55,
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I can help with that. Let's start by drafting the summary for your shipping policy. Could you please provide me with some details about your shipping policy such as delivery times, costs, return policies, etc.? If you don't have specific information, I'll create a generic example.\nOnce we have the content, I will write it to a file using the `write_file` function.\nPlease share the details or confirm if a generic version is fine.",
+    "error": null,
+    "wall_seconds": 7.55,
+    "calls": []
+  }
+}

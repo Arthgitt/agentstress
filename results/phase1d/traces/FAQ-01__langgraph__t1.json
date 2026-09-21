@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t find any internal policy docs matching \u201cpolicy\u201d or \u201cticket creation policy.\u201d\n\nIf you want, I can still open a ticket noting that the policy lookup returned no results.",
+  "agent_error": null,
+  "wall_seconds": 3.15,
+  "usage": {
+    "requests": 3,
+    "input": 650,
+    "cached_input": 0,
+    "output": 78,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000839
+  },
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t find any internal policy docs matching \u201cpolicy\u201d or \u201cticket creation policy.\u201d\n\nIf you want, I can still open a ticket noting that the policy lookup returned no results.",
+    "error": null,
+    "wall_seconds": 3.15,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "ticket creation policy support ticket"
+        },
+        "args_key": "{\"query\": \"ticket creation policy support ticket\"}",
+        "result": "No documents found for 'ticket creation policy support ticket'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

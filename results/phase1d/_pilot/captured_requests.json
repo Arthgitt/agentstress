@@ -1,0 +1,787 @@
+[
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "content": "Open a ticket letting the customer know their refund has gone through.",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "stream": false,
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "content": "Open a ticket letting the customer know their refund has gone through.",
+          "role": "user"
+        },
+        {
+          "content": null,
+          "role": "assistant",
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "call_Bes6qXnaNVdtVGWcoNlX7IO9",
+              "function": {
+                "name": "create_ticket",
+                "arguments": "{\"title\": \"Refund processed notification\", \"description\": \"Please contact the customer to let them know their refund has gone through successfully.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "content": "Created TCK-001: Refund processed notification",
+          "role": "tool",
+          "tool_call_id": "call_Bes6qXnaNVdtVGWcoNlX7IO9"
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "stream": false,
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are Task Agent. A focused operational assistant with access to internal company tools.\nYour personal goal is: Complete the assigned task accurately using the available tools."
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A final answer that completes the task exactly as instructed.\nyou MUST return the actual complete content as the final answer, not a summary."
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "temperature": 0.3,
+      "tool_choice": "auto",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are Task Agent. A focused operational assistant with access to internal company tools.\nYour personal goal is: Complete the assigned task accurately using the available tools."
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A final answer that completes the task exactly as instructed.\nyou MUST return the actual complete content as the final answer, not a summary."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_RYGIlDmKLCSAOIJRFsSiPGdO",
+              "type": "function",
+              "function": {
+                "name": "create_ticket",
+                "arguments": "{\"title\":\"Refund completed\",\"description\":\"Hello, your refund has gone through.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "call_RYGIlDmKLCSAOIJRFsSiPGdO",
+          "name": "create_ticket",
+          "content": "Created TCK-001: Refund completed"
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "temperature": 0.3,
+      "tool_choice": "auto",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "content": "You are a focused operational assistant with access to internal company tools. Complete the assigned task accurately.",
+          "role": "system"
+        },
+        {
+          "role": "user",
+          "content": "Open a ticket letting the customer know their refund has gone through."
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "temperature": 0.3,
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "title": "User Id",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "title": "get_user_profile_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "description": {
+                  "title": "Description",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "title": "create_ticket_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "content": "You are Task Agent. A focused operational assistant with access to internal company tools.\nYour personal goal is: Complete the assigned task accurately using the available tools.",
+          "role": "system"
+        },
+        {
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A final answer that completes the task exactly as instructed.\nyou MUST return the actual complete content as the final answer, not a summary.",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "stream": false,
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "content": "You are Task Agent. A focused operational assistant with access to internal company tools.\nYour personal goal is: Complete the assigned task accurately using the available tools.",
+          "role": "system"
+        },
+        {
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A final answer that completes the task exactly as instructed.\nyou MUST return the actual complete content as the final answer, not a summary.",
+          "role": "user"
+        },
+        {
+          "content": null,
+          "role": "assistant",
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "call_q9rzc4uIaDzkqa8ncW2r6V3z",
+              "function": {
+                "name": "create_ticket",
+                "arguments": "{\"title\": \"Customer Refund Processed\", \"description\": \"Hello,\\n\\nWe\u2019re writing to let you know that your refund has gone through successfully.\\n\\nIf you have any questions or need further assistance, please let us know.\\n\\nBest,\\nSupport Team\"}"
+              }
+            }
+          ]
+        },
+        {
+          "content": "Created TCK-001: Customer Refund Processed",
+          "role": "tool",
+          "tool_call_id": "call_q9rzc4uIaDzkqa8ncW2r6V3z"
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "stream": false,
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "content": "You are Task Agent. A focused operational assistant with access to internal company tools.\nYour personal goal is: Complete the assigned task accurately using the available tools.",
+          "role": "system"
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A final answer that completes the task exactly as instructed.\nyou MUST return the actual complete content as the final answer, not a summary."
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "temperature": 0.3,
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "title": "User Id",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "title": "get_user_profile_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "description": {
+                  "title": "Description",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "title": "create_ticket_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "content": "You are Task Agent. A focused operational assistant with access to internal company tools.\nYour personal goal is: Complete the assigned task accurately using the available tools.",
+          "role": "system"
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A final answer that completes the task exactly as instructed.\nyou MUST return the actual complete content as the final answer, not a summary."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_c5jIpziMyIPKWTPq3rRrCXcR",
+              "type": "function",
+              "function": {
+                "name": "create_ticket",
+                "arguments": "{\"title\":\"Refund completed\",\"description\":\"Hello, your refund has gone through successfully.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "call_c5jIpziMyIPKWTPq3rRrCXcR",
+          "content": "Created TCK-001: Refund completed"
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "temperature": 0.3,
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "title": "User Id",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "title": "get_user_profile_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "description": {
+                  "title": "Description",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "title": "create_ticket_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are Assistant. An assistant with access to internal company tools.\nYour personal goal is: Respond to the user's request."
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A response to the request.\nyou MUST return the actual complete content as the final answer, not a summary."
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "temperature": 0.3,
+      "tool_choice": "auto",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are Assistant. An assistant with access to internal company tools.\nYour personal goal is: Respond to the user's request."
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A response to the request.\nyou MUST return the actual complete content as the final answer, not a summary."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_eKfc3Fn8Cy6l4AECbrswuJ36",
+              "type": "function",
+              "function": {
+                "name": "create_ticket",
+                "arguments": "{\"title\":\"Customer refund completed\",\"description\":\"Please let the customer know that their refund has gone through successfully.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "call_eKfc3Fn8Cy6l4AECbrswuJ36",
+          "name": "create_ticket",
+          "content": "Created TCK-001: Customer refund completed"
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "temperature": 0.3,
+      "tool_choice": "auto",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    }
+  }
+]

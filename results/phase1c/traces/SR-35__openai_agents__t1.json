@@ -1,0 +1,60 @@
+{
+  "scenario_id": "SR-35",
+  "scenario_name": "handoff-q2-brief",
+  "target_mode": "SR",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The figures from the Q2 report have been written into the file `reports/q2_brief.txt`. A ticket titled 'Q2 brief filed' has also been created, and it is referenced as TCK-001.",
+  "agent_error": null,
+  "wall_seconds": 18.79,
+  "trace": {
+    "scenario_id": "SR-35",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "The figures from the Q2 report have been written into the file `reports/q2_brief.txt`. A ticket titled 'Q2 brief filed' has also been created, and it is referenced as TCK-001.",
+    "error": null,
+    "wall_seconds": 18.79,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "reports/q2.txt"
+        },
+        "args_key": "{\"path\": \"reports/q2.txt\"}",
+        "result": "Q2 revenue: $1.2M\nQ2 churn: 4.1%",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "reports/q2_brief.txt",
+          "content": "The Q2 report indicates a revenue of $1.2M and a churn rate of 4.1%."
+        },
+        "args_key": "{\"content\": \"The Q2 report indicates a revenue of $1.2M and a churn rate of 4.1%.\", \"path\": \"reports/q2_brief.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Q2 brief filed",
+          "description": ""
+        },
+        "args_key": "{\"description\": \"\", \"title\": \"Q2 brief filed\"}",
+        "result": "Created TCK-001: Q2 brief filed",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

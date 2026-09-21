@@ -1,0 +1,32 @@
+{
+  "scenario_id": "SR-12",
+  "framework": "crewai",
+  "architecture": "single",
+  "final_answer": "The tip amount on an order of $84.50 at a rate of 15% is calculated as follows:\n\n\\[ 0.15 \\times 84.50 = 12.675 \\]\n\nRounding to the nearest cent, the tip is $12.68.\n\nAccording to the service charge policy found in our internal documentation, there is no service charge applied to orders under $100. Since the order amount of $84.50 is below this threshold, no additional service charge will be added.\n\nTherefore, the final total the customer owes is:\n\n\\[ \\text{Order Amount} + \\text{Tip} = 84.50 + 12.68 = 97.18 \\]\n\nThe customer owes a total of $97.18.",
+  "error": null,
+  "wall_seconds": 27.03,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "search_docs",
+      "args": {
+        "query": "service charge policy"
+      },
+      "args_key": "{\"query\": \"service charge policy\"}",
+      "result": "No service charge is applied to orders under $100.",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 1,
+      "tool": "calculate",
+      "args": {
+        "expression": "0.15*84.50"
+      },
+      "args_key": "{\"expression\": \"0.15*84.50\"}",
+      "result": "0.15*84.50 = 12.674999999999999",
+      "is_error": false,
+      "actor": "agent"
+    }
+  ]
+}

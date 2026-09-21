@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I can help you with that. Could you please provide me with the title and a description of the issue so I can create an escalated support ticket for you?",
+  "agent_error": null,
+  "wall_seconds": 3.25,
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I can help you with that. Could you please provide me with the title and a description of the issue so I can create an escalated support ticket for you?",
+    "error": null,
+    "wall_seconds": 3.25,
+    "calls": []
+  }
+}

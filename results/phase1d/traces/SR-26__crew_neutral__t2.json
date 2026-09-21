@@ -1,0 +1,58 @@
+{
+  "scenario_id": "SR-26",
+  "scenario_name": "calculation-followup-seam",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "18% of $2,450 is **$441.00**.\n\nI also opened a finance ticket:\n- **Ticket:** TCK-001\n- **Title:** Finance ticket: 18% of $2,450\n- **Description:** Please review and record that 18% of $2,450 is $441.00.",
+  "agent_error": null,
+  "wall_seconds": 3.36,
+  "usage": {
+    "requests": 3,
+    "input": 905,
+    "cached_input": 0,
+    "output": 143,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001322
+  },
+  "trace": {
+    "scenario_id": "SR-26",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "18% of $2,450 is **$441.00**.\n\nI also opened a finance ticket:\n- **Ticket:** TCK-001\n- **Title:** Finance ticket: 18% of $2,450\n- **Description:** Please review and record that 18% of $2,450 is $441.00.",
+    "error": null,
+    "wall_seconds": 3.36,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.18*2450"
+        },
+        "args_key": "{\"expression\": \"0.18*2450\"}",
+        "result": "0.18*2450 = 441.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Finance ticket: 18% of $2,450",
+          "description": "Please review and record that 18% of $2,450 is $441.00."
+        },
+        "args_key": "{\"description\": \"Please review and record that 18% of $2,450 is $441.00.\", \"title\": \"Finance ticket: 18% of $2,450\"}",
+        "result": "Created TCK-001: Finance ticket: 18% of $2,450",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

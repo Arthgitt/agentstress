@@ -1,0 +1,48 @@
+{
+  "scenario_id": "INV-18",
+  "scenario_name": "addition-confirm",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The inventory for SKU-7007 has been updated successfully. The current stock count is now 52 units after adding 25 units to the existing stock.",
+  "agent_error": null,
+  "wall_seconds": 11.42,
+  "trace": {
+    "scenario_id": "INV-18",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-7007 has been updated successfully. The current stock count is now 52 units after adding 25 units to the existing stock.",
+    "error": null,
+    "wall_seconds": 11.42,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": 25
+        },
+        "args_key": "{\"delta\": 25, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 52 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

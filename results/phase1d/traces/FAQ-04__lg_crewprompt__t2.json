@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can\u2019t determine whether to run the outdoor event today because I don\u2019t have a valid city or weather data for your location.\n\nIf you share the event city, I can check the weather and give a clear go/no-go recommendation.",
+  "agent_error": null,
+  "wall_seconds": 2.53,
+  "usage": {
+    "requests": 2,
+    "input": 555,
+    "cached_input": 0,
+    "output": 68,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000722
+  },
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "I can\u2019t determine whether to run the outdoor event today because I don\u2019t have a valid city or weather data for your location.\n\nIf you share the event city, I can check the weather and give a clear go/no-go recommendation.",
+    "error": null,
+    "wall_seconds": 2.53,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "current location"
+        },
+        "args_key": "{\"city\": \"current location\"}",
+        "result": "No weather data for 'current location'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

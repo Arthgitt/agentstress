@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 3,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no existing policies documented in our system. However, we can still proceed with creating a ticket based on your request. Could you please provide me with the criteria or priorities you have in mind for ranking these policies? This information will help me create an accurate ticket for you.",
+  "agent_error": null,
+  "wall_seconds": 9.37,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "It seems there are no existing policies documented in our system. However, we can still proceed with creating a ticket based on your request. Could you please provide me with the criteria or priorities you have in mind for ranking these policies? This information will help me create an accurate ticket for you.",
+    "error": null,
+    "wall_seconds": 9.37,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies"
+        },
+        "args_key": "{\"query\": \"policies\"}",
+        "result": "No documents found for 'policies'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

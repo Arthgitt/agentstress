@@ -1,0 +1,59 @@
+{
+  "scenario_id": "RAM-07",
+  "scenario_name": "handoff-threshold-inversion",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "I've created a ticket titled \"Restock Recommendation - SKU-2002\" with the details you provided. The ticket has been assigned the reference number TCK-001.",
+  "agent_error": null,
+  "wall_seconds": 24.78,
+  "trace": {
+    "scenario_id": "RAM-07",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "I've created a ticket titled \"Restock Recommendation - SKU-2002\" with the details you provided. The ticket has been assigned the reference number TCK-001.",
+    "error": null,
+    "wall_seconds": 24.78,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "warranty terms"
+        },
+        "args_key": "{\"query\": \"warranty terms\"}",
+        "result": "All products carry a minimum 1 year warranty from date of purchase.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Restock Recommendation - SKU-2002",
+          "description": "Based on the current stock count, we should consider restocking SKU-2002 as it has 13 units in stock and our policy is to restock when inventory falls below 10 units."
+        },
+        "args_key": "{\"description\": \"Based on the current stock count, we should consider restocking SKU-2002 as it has 13 units in stock and our policy is to restock when inventory falls below 10 units.\", \"title\": \"Restock Recommendation - SKU-2002\"}",
+        "result": "Created TCK-001: Restock Recommendation - SKU-2002",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

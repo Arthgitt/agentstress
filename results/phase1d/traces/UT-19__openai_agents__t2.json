@@ -1,0 +1,46 @@
+{
+  "scenario_id": "UT-19",
+  "scenario_name": "handoff-go-no-go",
+  "target_mode": "UT",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "No \u2014 with 33\u00b0C and heavy rain in Mumbai, the outdoor photo shoot should be postponed today.",
+  "agent_error": null,
+  "wall_seconds": 2.53,
+  "usage": {
+    "requests": 3,
+    "input": 590,
+    "cached_input": 0,
+    "output": 53,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000681
+  },
+  "trace": {
+    "scenario_id": "UT-19",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "No \u2014 with 33\u00b0C and heavy rain in Mumbai, the outdoor photo shoot should be postponed today.",
+    "error": null,
+    "wall_seconds": 2.53,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Mumbai"
+        },
+        "args_key": "{\"city\": \"Mumbai\"}",
+        "result": "Mumbai: 33C, heavy rain",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

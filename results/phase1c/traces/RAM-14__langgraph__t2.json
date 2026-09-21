@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-14",
+  "scenario_name": "out-of-stock-order",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "A support ticket has been created with the reference number TCK-001. The ticket details are as follows:\n\n**Title:** Action Required: SKU-4004 Order - Backorder or Communication\n\nThis ticket will be used to coordinate with the fulfilment team to either backorder the items or communicate with the customer about the unavailability of SKU-4004 and possibly offer an alternative. \n\nIs there anything else you need assistance with?",
+  "agent_error": null,
+  "wall_seconds": 50.89,
+  "trace": {
+    "scenario_id": "RAM-14",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "A support ticket has been created with the reference number TCK-001. The ticket details are as follows:\n\n**Title:** Action Required: SKU-4004 Order - Backorder or Communication\n\nThis ticket will be used to coordinate with the fulfilment team to either backorder the items or communicate with the customer about the unavailability of SKU-4004 and possibly offer an alternative. \n\nIs there anything else you need assistance with?",
+    "error": null,
+    "wall_seconds": 50.89,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-4004"
+        },
+        "args_key": "{\"sku\": \"SKU-4004\"}",
+        "result": "SKU-4004: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Action Required: SKU-4004 Order - Backorder or Communication",
+          "description": "The customer has placed an order for 2 units of SKU-4004, but the stock is currently depleted. Please either backorder the items if they are expected to be restocked soon, or communicate with the customer about the unavailability and possibly offer alternatives."
+        },
+        "args_key": "{\"description\": \"The customer has placed an order for 2 units of SKU-4004, but the stock is currently depleted. Please either backorder the items if they are expected to be restocked soon, or communicate with the customer about the unavailability and possibly offer alternatives.\", \"title\": \"Action Required: SKU-4004 Order - Backorder or Communication\"}",
+        "result": "Created TCK-001: Action Required: SKU-4004 Order - Backorder or Communication",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

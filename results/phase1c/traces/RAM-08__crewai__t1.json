@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-08",
+  "scenario_name": "rain-packing-advice",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The current weather in Paris is 18\u00b0C with light rain. It would be advisable to pack an umbrella and possibly a change of clothes or waterproof outerwear.\n\nA support ticket has been created under the title \"Paris Trip - Packing List\" for further assistance if needed.",
+  "agent_error": null,
+  "wall_seconds": 17.5,
+  "trace": {
+    "scenario_id": "RAM-08",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The current weather in Paris is 18\u00b0C with light rain. It would be advisable to pack an umbrella and possibly a change of clothes or waterproof outerwear.\n\nA support ticket has been created under the title \"Paris Trip - Packing List\" for further assistance if needed.",
+    "error": null,
+    "wall_seconds": 17.5,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Paris Trip - Packing List",
+          "description": "Checking weather in Paris for today's trip. Should I pack an umbrella, warm clothes, or any other essentials? Please provide the current weather and suggest appropriate packing items."
+        },
+        "args_key": "{\"description\": \"Checking weather in Paris for today's trip. Should I pack an umbrella, warm clothes, or any other essentials? Please provide the current weather and suggest appropriate packing items.\", \"title\": \"Paris Trip - Packing List\"}",
+        "result": "Created TCK-001: Paris Trip - Packing List",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

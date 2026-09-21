@@ -1,0 +1,82 @@
+{
+  "scenario_id": "UT-12",
+  "scenario_name": "converge-down-by-sixes",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "SKU-7007 is now down to 10 units.",
+  "agent_error": null,
+  "wall_seconds": 4.9,
+  "usage": {
+    "requests": 5,
+    "input": 1289,
+    "cached_input": 0,
+    "output": 110,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001462
+  },
+  "trace": {
+    "scenario_id": "UT-12",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "SKU-7007 is now down to 10 units.",
+    "error": null,
+    "wall_seconds": 4.9,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -6
+        },
+        "args_key": "{\"delta\": -6, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -6
+        },
+        "args_key": "{\"delta\": -6, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "scenario_id": "RAM-15",
+  "agent_output": "A support ticket has been created with the reference number TCK-001. The logistics team has been informed to reschedule the delivery from December 25 due to the office closure on that day.\n\nIf you need any further assistance or have additional requests, feel free to ask!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "RAM-15",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "A support ticket has been created with the reference number TCK-001. The logistics team has been informed to reschedule the delivery from December 25 due to the office closure on that day.\n\nIf you need any further assistance or have additional requests, feel free to ask!",
+    "error": null,
+    "wall_seconds": 13.53,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "holiday schedule"
+        },
+        "args_key": "{\"query\": \"holiday schedule\"}",
+        "result": "The office is closed December 24-26 and January 1. No deliveries are scheduled on closed days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Reschedule Delivery for December 25",
+          "description": "The office is closed on December 25, which falls within our holiday period. Please reschedule the delivery to a working day."
+        },
+        "args_key": "{\"description\": \"The office is closed on December 25, which falls within our holiday period. Please reschedule the delivery to a working day.\", \"title\": \"Reschedule Delivery for December 25\"}",
+        "result": "Created TCK-001: Reschedule Delivery for December 25",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

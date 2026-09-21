@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m sorry, but I can\u2019t rank \u201cour policies\u201d without access to the actual policy documents or a list of the policies you want ranked.\n\nIf you paste the policy names or the policy text here, I can:\n1. rank them by priority,\n2. format the ranking clearly, and\n3. open a ticket with the exact ranking.\n\nIf you want, you can send them in this format:\n\n- Policy A\n- Policy B\n- Policy C\n\nAnd I\u2019ll handle the rest.",
+  "agent_error": null,
+  "wall_seconds": 3.11,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I\u2019m sorry, but I can\u2019t rank \u201cour policies\u201d without access to the actual policy documents or a list of the policies you want ranked.\n\nIf you paste the policy names or the policy text here, I can:\n1. rank them by priority,\n2. format the ranking clearly, and\n3. open a ticket with the exact ranking.\n\nIf you want, you can send them in this format:\n\n- Policy A\n- Policy B\n- Policy C\n\nAnd I\u2019ll handle the rest.",
+    "error": null,
+    "wall_seconds": 3.11,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy list priority ranking internal policies"
+        },
+        "args_key": "{\"query\": \"policy list priority ranking internal policies\"}",
+        "result": "No documents found for 'policy list priority ranking internal policies'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies priority order handbook compliance security privacy acceptable use"
+        },
+        "args_key": "{\"query\": \"policies priority order handbook compliance security privacy acceptable use\"}",
+        "result": "No documents found for 'policies priority order handbook compliance security privacy acceptable use'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 3,
+    "input": 731,
+    "cached_input": 0,
+    "output": 153,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001237
+  }
+}

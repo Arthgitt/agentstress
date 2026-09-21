@@ -1,0 +1,36 @@
+{
+  "scenario_id": "INV-11",
+  "scenario_name": "read-only-answer-no-artifact",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "The current stock level for SKU-1001 is 42 units.",
+  "agent_error": null,
+  "wall_seconds": 3.91,
+  "trace": {
+    "scenario_id": "INV-11",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The current stock level for SKU-1001 is 42 units.",
+    "error": null,
+    "wall_seconds": 3.91,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

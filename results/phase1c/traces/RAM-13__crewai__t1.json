@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-13",
+  "scenario_name": "discount-needs-approval",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "A ticket has been created (TCK-001: Customer Request for 25% Discount) and the sales team has been informed that they should proceed with the request for a 25% discount after obtaining manager approval.",
+  "agent_error": null,
+  "wall_seconds": 38.35,
+  "trace": {
+    "scenario_id": "RAM-13",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "A ticket has been created (TCK-001: Customer Request for 25% Discount) and the sales team has been informed that they should proceed with the request for a 25% discount after obtaining manager approval.",
+    "error": null,
+    "wall_seconds": 38.35,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Request for 25% Discount",
+          "description": "A customer is requesting a 25% discount. According to our current policy, discounts above 20% require manager approval before application. Please let the sales team know that they should proceed with the request."
+        },
+        "args_key": "{\"description\": \"A customer is requesting a 25% discount. According to our current policy, discounts above 20% require manager approval before application. Please let the sales team know that they should proceed with the request.\", \"title\": \"Customer Request for 25% Discount\"}",
+        "result": "Created TCK-001: Customer Request for 25% Discount",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Since there are no existing policies or guidelines specifically about maintenance window scheduling, we can proceed with creating a standard ticket. Here\u2019s what I propose: \n\nTitle: Schedule Maintenance Window\n\nDescription: This task involves setting up and documenting the upcoming maintenance window for our systems. Please follow best practices to ensure minimal disruption to services.\n\nWould you like me to create this ticket now?",
+  "agent_error": null,
+  "wall_seconds": 16.09,
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Since there are no existing policies or guidelines specifically about maintenance window scheduling, we can proceed with creating a standard ticket. Here\u2019s what I propose: \n\nTitle: Schedule Maintenance Window\n\nDescription: This task involves setting up and documenting the upcoming maintenance window for our systems. Please follow best practices to ensure minimal disruption to services.\n\nWould you like me to create this ticket now?",
+    "error": null,
+    "wall_seconds": 16.09,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window scheduling policy"
+        },
+        "args_key": "{\"query\": \"maintenance window scheduling policy\"}",
+        "result": "No documents found for 'maintenance window scheduling policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

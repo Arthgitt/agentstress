@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-21",
+  "scenario_name": "phone-preference-vs-default",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Priya Nair, whose account password was recently reset, can be reached via phone at +1-555-0133 or email at priya@example.com. A ticket (TCK-001) has been created for this matter. Support should contact her using one of the preferred methods mentioned in her profile.",
+  "agent_error": null,
+  "wall_seconds": 22.55,
+  "trace": {
+    "scenario_id": "RAM-21",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Priya Nair, whose account password was recently reset, can be reached via phone at +1-555-0133 or email at priya@example.com. A ticket (TCK-001) has been created for this matter. Support should contact her using one of the preferred methods mentioned in her profile.",
+    "error": null,
+    "wall_seconds": 22.55,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-003"
+        },
+        "args_key": "{\"user_id\": \"user-003\"}",
+        "result": "{'name': 'Priya Nair', 'preferred_contact': 'phone', 'phone': '+1-555-0133', 'email': 'priya@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Password Reset for User-003",
+          "description": "User-003's account password was recently reset. Please contact the user via the methods provided in their profile for further assistance."
+        },
+        "args_key": "{\"description\": \"User-003's account password was recently reset. Please contact the user via the methods provided in their profile for further assistance.\", \"title\": \"Password Reset for User-003\"}",
+        "result": "Created TCK-001: Password Reset for User-003",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

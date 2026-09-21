@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-19",
+  "scenario_name": "handoff-restock-needed",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Ticket TCK-001 has been created with the title \"Restock Recommendation - SKU-6006\" to address the low stock level for SKU-6006. We recommend restocking this item as it currently has 9 units in inventory, which is below our threshold of 10 units.",
+  "agent_error": null,
+  "wall_seconds": 24.36,
+  "trace": {
+    "scenario_id": "RAM-19",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "Ticket TCK-001 has been created with the title \"Restock Recommendation - SKU-6006\" to address the low stock level for SKU-6006. We recommend restocking this item as it currently has 9 units in inventory, which is below our threshold of 10 units.",
+    "error": null,
+    "wall_seconds": 24.36,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Restock Recommendation - SKU-6006",
+          "description": "The current stock for SKU-6006 is 9 units, which falls below our threshold of 10 units. A restock recommendation is needed."
+        },
+        "args_key": "{\"description\": \"The current stock for SKU-6006 is 9 units, which falls below our threshold of 10 units. A restock recommendation is needed.\", \"title\": \"Restock Recommendation - SKU-6006\"}",
+        "result": "Created TCK-001: Restock Recommendation - SKU-6006",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

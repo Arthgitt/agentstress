@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m ready to update the stock for the widget, but I need the SKU and the quantity change (delta) to proceed.",
+  "agent_error": null,
+  "wall_seconds": 1.16,
+  "usage": {
+    "requests": 1,
+    "input": 259,
+    "cached_input": 0,
+    "output": 29,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000325
+  },
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "I\u2019m ready to update the stock for the widget, but I need the SKU and the quantity change (delta) to proceed.",
+    "error": null,
+    "wall_seconds": 1.16,
+    "calls": []
+  }
+}

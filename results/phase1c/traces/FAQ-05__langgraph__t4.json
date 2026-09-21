@@ -1,0 +1,69 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Based on the information available, here is a summary of our shipping policy:\n\n**Shipping Policy Summary:**\n\n- **Standard Shipping:** Takes 5-7 business days.\n\nSince there are no additional details provided about other shipping options or costs, we will document this as it currently stands. Would you like me to proceed and save this summary to a file?",
+  "agent_error": null,
+  "wall_seconds": 16.55,
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Based on the information available, here is a summary of our shipping policy:\n\n**Shipping Policy Summary:**\n\n- **Standard Shipping:** Takes 5-7 business days.\n\nSince there are no additional details provided about other shipping options or costs, we will document this as it currently stands. Would you like me to proceed and save this summary to a file?",
+    "error": null,
+    "wall_seconds": 16.55,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy details"
+        },
+        "args_key": "{\"query\": \"shipping policy details\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "search_docs",
+        "args": {
+          "query": "additional shipping options and costs"
+        },
+        "args_key": "{\"query\": \"additional shipping options and costs\"}",
+        "result": "No documents found for 'additional shipping options and costs'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

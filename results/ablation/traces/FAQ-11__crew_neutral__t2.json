@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems that the SKU 'WGT123' is not recognized. Could you please provide the correct SKU for the widget?",
+  "agent_error": null,
+  "wall_seconds": 6.28,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "It seems that the SKU 'WGT123' is not recognized. Could you please provide the correct SKU for the widget?",
+    "error": null,
+    "wall_seconds": 6.28,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "WGT123",
+          "delta": 5
+        },
+        "args_key": "{\"delta\": 5, \"sku\": \"WGT123\"}",
+        "result": "Unknown SKU: WGT123",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

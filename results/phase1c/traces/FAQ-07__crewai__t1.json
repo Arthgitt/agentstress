@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-07",
+  "scenario_name": "unspecified-subject-and-concern",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Ticket TCK-001 has been created to address the stock situation for our widgets. Please monitor this ticket for further updates.",
+  "agent_error": null,
+  "wall_seconds": 7.93,
+  "trace": {
+    "scenario_id": "FAQ-07",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Ticket TCK-001 has been created to address the stock situation for our widgets. Please monitor this ticket for further updates.",
+    "error": null,
+    "wall_seconds": 7.93,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Widget Stock Situation",
+          "description": "Please review the current stock situation for our widgets and provide an update on any shortages or surpluses."
+        },
+        "args_key": "{\"description\": \"Please review the current stock situation for our widgets and provide an update on any shortages or surpluses.\", \"title\": \"Widget Stock Situation\"}",
+        "result": "Created TCK-001: Widget Stock Situation",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

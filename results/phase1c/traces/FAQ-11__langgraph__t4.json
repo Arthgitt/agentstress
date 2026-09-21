@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will need the SKU of the widget and the change in quantity to update the inventory. Could you provide me with this information? If you don't have specific numbers, I can use hypothetical values for demonstration purposes.\nIf no details are provided, I'll assume a SKU of 'WGT123' and adjust the stock by +5 units as an example. Would that be okay?",
+  "agent_error": null,
+  "wall_seconds": 537.09,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will need the SKU of the widget and the change in quantity to update the inventory. Could you provide me with this information? If you don't have specific numbers, I can use hypothetical values for demonstration purposes.\nIf no details are provided, I'll assume a SKU of 'WGT123' and adjust the stock by +5 units as an example. Would that be okay?",
+    "error": null,
+    "wall_seconds": 537.09,
+    "calls": []
+  }
+}

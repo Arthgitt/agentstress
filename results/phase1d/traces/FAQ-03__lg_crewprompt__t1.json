@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m unable to determine low inventory levels from a single \u201call\u201d lookup because the inventory tool requires specific SKUs. If you provide the SKUs you want checked, I can tell you which ones are running low.",
+  "agent_error": null,
+  "wall_seconds": 2.4,
+  "usage": {
+    "requests": 2,
+    "input": 520,
+    "cached_input": 0,
+    "output": 64,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000678
+  },
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "I\u2019m unable to determine low inventory levels from a single \u201call\u201d lookup because the inventory tool requires specific SKUs. If you provide the SKUs you want checked, I can tell you which ones are running low.",
+    "error": null,
+    "wall_seconds": 2.4,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "all"
+        },
+        "args_key": "{\"sku\": \"all\"}",
+        "result": "Unknown SKU: all",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems that SKU WGT123 is not recognized in our system. Could you please provide a correct SKU or additional details about the widget so I can look it up again? This will help us proceed with updating the stock accurately.",
+  "agent_error": null,
+  "wall_seconds": 16.75,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "It seems that SKU WGT123 is not recognized in our system. Could you please provide a correct SKU or additional details about the widget so I can look it up again? This will help us proceed with updating the stock accurately.",
+    "error": null,
+    "wall_seconds": 16.75,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "WGT123",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"WGT123\"}",
+        "result": "Unknown SKU: WGT123",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "WGT123"
+        },
+        "args_key": "{\"sku\": \"WGT123\"}",
+        "result": "Unknown SKU: WGT123",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "WGT123"
+        },
+        "args_key": "{\"sku\": \"WGT123\"}",
+        "result": "Unknown SKU: WGT123",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-10",
+  "scenario_name": "undefined-comparison-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Based on the current weather conditions:\n\n- Paris is currently at 18\u00b0C with light rain.\n- Tokyo is at 27\u00b0C with clear skies but quite humid.\n\nConsidering comfort and pleasant weather, Tokyo would be considered better as it's warmer and has clear skies. However, if you prefer cooler temperatures and don't mind a bit of rain, Paris might be more suitable.",
+  "agent_error": null,
+  "wall_seconds": 6.88,
+  "trace": {
+    "scenario_id": "FAQ-10",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Based on the current weather conditions:\n\n- Paris is currently at 18\u00b0C with light rain.\n- Tokyo is at 27\u00b0C with clear skies but quite humid.\n\nConsidering comfort and pleasant weather, Tokyo would be considered better as it's warmer and has clear skies. However, if you prefer cooler temperatures and don't mind a bit of rain, Paris might be more suitable.",
+    "error": null,
+    "wall_seconds": 6.88,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        },
+        "args_key": "{\"city\": \"Tokyo\"}",
+        "result": "Tokyo: 27C, humid, clear skies",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "scenario_id": "FAQ-15",
+  "agent_output": "Could you please tell me which city you are asking about?",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-15",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Could you please tell me which city you are asking about?",
+    "error": null,
+    "wall_seconds": 1.77,
+    "calls": []
+  }
+}

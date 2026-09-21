@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I can help with that. Could you please provide me with the SKU of the widget and the change in stock count (delta) that you would like to apply? For example, if the current stock is 100 units and you want to add 50 more units, the delta would be 50.",
+  "agent_error": null,
+  "wall_seconds": 4.52,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Sure, I can help with that. Could you please provide me with the SKU of the widget and the change in stock count (delta) that you would like to apply? For example, if the current stock is 100 units and you want to add 50 more units, the delta would be 50.",
+    "error": null,
+    "wall_seconds": 4.52,
+    "calls": []
+  }
+}

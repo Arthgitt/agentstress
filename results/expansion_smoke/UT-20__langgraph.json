@@ -1,0 +1,62 @@
+{
+  "scenario_id": "UT-20",
+  "agent_output": "The final restocking of SKU-3003 by 1 unit has been successful. Now we have exactly 15 units in stock, meeting our target.\n\nIf you need any further actions or checks, feel free to let me know!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "UT-20",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The final restocking of SKU-3003 by 1 unit has been successful. Now we have exactly 15 units in stock, meeting our target.\n\nIf you need any further actions or checks, feel free to let me know!",
+    "error": null,
+    "wall_seconds": 33.51,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-3003"
+        },
+        "args_key": "{\"sku\": \"SKU-3003\"}",
+        "result": "SKU-3003: 4 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-3003",
+          "delta": 5
+        },
+        "args_key": "{\"delta\": 5, \"sku\": \"SKU-3003\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-3003",
+          "delta": 5
+        },
+        "args_key": "{\"delta\": 5, \"sku\": \"SKU-3003\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-3003",
+          "delta": 1
+        },
+        "args_key": "{\"delta\": 1, \"sku\": \"SKU-3003\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

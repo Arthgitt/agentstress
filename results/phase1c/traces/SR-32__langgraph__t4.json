@@ -1,0 +1,49 @@
+{
+  "scenario_id": "SR-32",
+  "scenario_name": "save-then-announce",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "I have created a support ticket titled \"Discount Policy Available\" (TCK-001). The sales team will be notified to check `docs/discount.txt` for the discount policy details.\n\nIf you need any further assistance or additional information, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 20.74,
+  "trace": {
+    "scenario_id": "SR-32",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have created a support ticket titled \"Discount Policy Available\" (TCK-001). The sales team will be notified to check `docs/discount.txt` for the discount policy details.\n\nIf you need any further assistance or additional information, feel free to ask!",
+    "error": null,
+    "wall_seconds": 20.74,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/discount.txt",
+          "content": "Our discount policy states that all customers will receive a 10% discount on their first purchase. This offer is valid for 30 days from the date of registration."
+        },
+        "args_key": "{\"content\": \"Our discount policy states that all customers will receive a 10% discount on their first purchase. This offer is valid for 30 days from the date of registration.\", \"path\": \"docs/discount.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Discount Policy Available",
+          "description": "Please refer to the discount policy located at docs/discount.txt. The document contains our current policies regarding discounts."
+        },
+        "args_key": "{\"description\": \"Please refer to the discount policy located at docs/discount.txt. The document contains our current policies regarding discounts.\", \"title\": \"Discount Policy Available\"}",
+        "result": "Created TCK-001: Discount Policy Available",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

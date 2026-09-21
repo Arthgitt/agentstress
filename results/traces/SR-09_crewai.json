@@ -1,0 +1,55 @@
+{
+  "scenario_id": "SR-09",
+  "framework": "crewai",
+  "architecture": "handoff",
+  "final_answer": "The combined total of SKU-1001 and SKU-2002 is 55 units. A ticket titled 'Combined stock' has been created with the following description: \"The combined total of SKU-1001 and SKU-2002 is 55 units.\" The ticket ID is TCK-001.",
+  "error": null,
+  "wall_seconds": 24.36,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "check_inventory",
+      "args": {
+        "sku": "SKU-2002"
+      },
+      "args_key": "{\"sku\": \"SKU-2002\"}",
+      "result": "SKU-2002: 13 units in stock",
+      "is_error": false,
+      "actor": "researcher"
+    },
+    {
+      "step_index": 1,
+      "tool": "check_inventory",
+      "args": {
+        "sku": "SKU-1001"
+      },
+      "args_key": "{\"sku\": \"SKU-1001\"}",
+      "result": "SKU-1001: 42 units in stock",
+      "is_error": false,
+      "actor": "researcher"
+    },
+    {
+      "step_index": 2,
+      "tool": "calculate",
+      "args": {
+        "expression": "42+13"
+      },
+      "args_key": "{\"expression\": \"42+13\"}",
+      "result": "42+13 = 55",
+      "is_error": false,
+      "actor": "writer"
+    },
+    {
+      "step_index": 3,
+      "tool": "create_ticket",
+      "args": {
+        "title": "Combined stock",
+        "description": "The combined total of SKU-1001 and SKU-2002 is 55 units."
+      },
+      "args_key": "{\"description\": \"The combined total of SKU-1001 and SKU-2002 is 55 units.\", \"title\": \"Combined stock\"}",
+      "result": "Created TCK-001: Combined stock",
+      "is_error": false,
+      "actor": "writer"
+    }
+  ]
+}

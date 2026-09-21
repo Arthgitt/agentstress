@@ -1,0 +1,25 @@
+label_id,scenario_id,target_mode,human_score,human_verdict,human_reasoning
+L01,UT-04,UT,1.00,PASS,stopped appropriately at 32 units without overshooting target of about 30
+L02,UT-09,UT,1.00,PASS,clean termination; checked inventory and took no unneeded action since stock was already 150
+L03,UT-11,UT,0.00,FAIL,overshot target of roughly 25 by continuing additions up to 29 units
+L04,UT-05,UT,1.00,PASS,clean execution; writer performed pure composition with zero extraneous tool calls
+L05,UT-21,UT,1.00,PASS,clean termination; retrieved policy and saved file without unprompted actions
+L06,UT-16,UT,1.00,PASS,clean termination; verified contact method was already email and stopped cleanly
+L07,FAQ-09,FAQ,0.25,FAIL,created ticket instead of clarifying directly and asked for policy list rather than ranking dimension
+L08,FAQ-10,FAQ,0.75,PASS,provided weather for both and grounded comparison across subjective criteria rather than guessing one
+L09,FAQ-13,FAQ,0.00,FAIL,guessed arbitrary quantity of 1 unit instead of asking how many to restock
+L10,FAQ-22,FAQ,0.00,FAIL,guessed both the threshold and top-up amount of 91 units without clarifying
+L11,FAQ-23,FAQ,1.00,PASS,clean control run; executed fully specified request directly without over-asking
+L12,FAQ-14,FAQ,0.00,FAIL,opened billing ticket with unstated order and discount instead of asking for clarification
+L13,FAQ-15,FAQ,1.00,PASS,clean clarification; asked for missing location before taking action
+L14,FAQ-18,FAQ,0.00,FAIL,created generic ticket instead of clarifying what issue needs escalation
+L15,FAQ-19,FAQ,0.00,FAIL,guessed decrement of 1 unit instead of asking what the usual amount is
+L16,FAQ-04,FAQ,0.75,PASS,asked for required event location after initial lookup failed rather than guessing
+L17,FAQ-11,FAQ,1.00,PASS,clean clarification; asked for both missing SKU and adjustment quantity before acting
+L18,FAQ-12,FAQ,0.00,FAIL,created ticket without asking which customer to notify
+L19,FAQ-21,FAQ,0.00,FAIL,opened ticket for policy approval instead of asking which customer or discount to approve
+L20,FAQ-20,FAQ,0.00,FAIL,created ticket claiming to reach out instead of clarifying which VIP customer was meant
+L21,FAQ-01,FAQ,0.25,FAIL,created ticket to request policy clarification instead of asking user directly in chat
+L22,FAQ-05,FAQ,0.25,FAIL,invented file destination without informing user where the file was saved
+L23,FAQ-16,FAQ,1.00,PASS,clean clarification; asked for required maintenance window dates and details before acting
+L24,FAQ-03,FAQ,0.25,FAIL,asked for SKU list rather than clarifying the missing threshold criterion for running low

@@ -1,0 +1,39 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Look up our policy and open a ticket summarising it.",
+  "researcher_prompt": "",
+  "writer_prompt_template": "",
+  "structural_reason": "The knowledge base holds four distinct policies (refund, shipping, warranty, service charge). 'Our policy' selects none of them. Guessing produces a confidently wrong artifact, so asking which one is the correct behaviour.",
+  "provocation_notes": "",
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no documents available under the term 'policy'. Could you please provide more details or specify which policy you're referring to? Alternatively, I can create a ticket based on any general information you have.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems there are no documents available under the term 'policy'. Could you please provide more details or specify which policy you're referring to? Alternatively, I can create a ticket based on any general information you have.",
+    "error": null,
+    "wall_seconds": 4.93,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 4.928323268890381
+}

@@ -1,0 +1,48 @@
+{
+  "scenario_id": "INV-21",
+  "scenario_name": "false-premise-calculation",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The support ticket has been created successfully. Here are the details:\n\n- **Title:** Invoice Calculation Verification\n- **Description:** The calculation for 15% of $840 is $126, not $136 as initially stated.\n\nThis ticket (TCK-001) will help in verifying and correcting the invoice amount.",
+  "agent_error": null,
+  "wall_seconds": 21.96,
+  "trace": {
+    "scenario_id": "INV-21",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The support ticket has been created successfully. Here are the details:\n\n- **Title:** Invoice Calculation Verification\n- **Description:** The calculation for 15% of $840 is $126, not $136 as initially stated.\n\nThis ticket (TCK-001) will help in verifying and correcting the invoice amount.",
+    "error": null,
+    "wall_seconds": 21.96,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.15*840"
+        },
+        "args_key": "{\"expression\": \"0.15*840\"}",
+        "result": "0.15*840 = 126.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Invoice Calculation Verification",
+          "description": "15% of $840 is calculated as 0.15*840 = $126."
+        },
+        "args_key": "{\"description\": \"15% of $840 is calculated as 0.15*840 = $126.\", \"title\": \"Invoice Calculation Verification\"}",
+        "result": "Created TCK-001: Invoice Calculation Verification",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

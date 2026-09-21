@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-12",
+  "scenario_name": "notify-which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Customer notification: Your refund has gone through successfully.",
+  "agent_error": null,
+  "wall_seconds": 1.95,
+  "usage": {
+    "requests": 2,
+    "input": 544,
+    "cached_input": 0,
+    "output": 45,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000611
+  },
+  "trace": {
+    "scenario_id": "FAQ-12",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Customer notification: Your refund has gone through successfully.",
+    "error": null,
+    "wall_seconds": 1.95,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund processed notification",
+          "description": "Customer notification: Your refund has gone through successfully."
+        },
+        "args_key": "{\"description\": \"Customer notification: Your refund has gone through successfully.\", \"title\": \"Refund processed notification\"}",
+        "result": "Created TCK-001: Refund processed notification",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

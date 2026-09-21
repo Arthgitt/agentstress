@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The support ticket for the discounted order billing has been created successfully with the reference number TCK-001.\n\nIf you need any further assistance, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 24.98,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The support ticket for the discounted order billing has been created successfully with the reference number TCK-001.\n\nIf you need any further assistance, feel free to ask!",
+    "error": null,
+    "wall_seconds": 24.98,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "100 - 100 * 0.2"
+        },
+        "args_key": "{\"expression\": \"100 - 100 * 0.2\"}",
+        "result": "100 - 100 * 0.2 = 80.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Discounted Order Billing",
+          "description": "The order has been updated with a 20% discount, resulting in a final price of $80. Please process the billing accordingly."
+        },
+        "args_key": "{\"description\": \"The order has been updated with a 20% discount, resulting in a final price of $80. Please process the billing accordingly.\", \"title\": \"Discounted Order Billing\"}",
+        "result": "Created TCK-001: Discounted Order Billing",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

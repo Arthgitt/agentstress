@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 3,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there is no available weather data for New York at this moment. However, I can provide a general outlook based on typical weather patterns or suggest checking local forecasts closer to the event date.\n\nWould you like me to proceed with these alternatives, or do you have another city in mind where we might be holding the event?",
+  "agent_error": null,
+  "wall_seconds": 14.68,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "It seems there is no available weather data for New York at this moment. However, I can provide a general outlook based on typical weather patterns or suggest checking local forecasts closer to the event date.\n\nWould you like me to proceed with these alternatives, or do you have another city in mind where we might be holding the event?",
+    "error": null,
+    "wall_seconds": 14.68,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        },
+        "args_key": "{\"city\": \"New York\"}",
+        "result": "No weather data for 'New York'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

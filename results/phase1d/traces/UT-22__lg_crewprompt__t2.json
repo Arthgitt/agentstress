@@ -1,0 +1,46 @@
+{
+  "scenario_id": "UT-22",
+  "scenario_name": "calculation-with-ticket-tool",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "$378",
+  "agent_error": null,
+  "wall_seconds": 1.64,
+  "usage": {
+    "requests": 2,
+    "input": 540,
+    "cached_input": 0,
+    "output": 26,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000522
+  },
+  "trace": {
+    "scenario_id": "UT-22",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "$378",
+    "error": null,
+    "wall_seconds": 1.64,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.12*3150"
+        },
+        "args_key": "{\"expression\": \"0.12*3150\"}",
+        "result": "0.12*3150 = 378.0",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

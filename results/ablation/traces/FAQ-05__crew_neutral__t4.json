@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The summary of our shipping policy has been written and saved. The content is as follows:\n\n\"Standard shipping takes 5-7 business days.\"",
+  "agent_error": null,
+  "wall_seconds": 1514.08,
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "The summary of our shipping policy has been written and saved. The content is as follows:\n\n\"Standard shipping takes 5-7 business days.\"",
+    "error": null,
+    "wall_seconds": 1514.08,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "/tmp/shipping_policy_summary.txt",
+          "content": "Our standard shipping method typically takes 5-7 business days."
+        },
+        "args_key": "{\"content\": \"Our standard shipping method typically takes 5-7 business days.\", \"path\": \"/tmp/shipping_policy_summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

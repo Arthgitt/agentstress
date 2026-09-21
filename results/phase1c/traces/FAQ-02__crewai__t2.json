@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-02",
+  "scenario_name": "which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed with the task, I need the user_id of the customer whose profile we want to pull up and ticket to be created.\n\nCould you please provide me with the user_id?",
+  "agent_error": null,
+  "wall_seconds": 3.28,
+  "trace": {
+    "scenario_id": "FAQ-02",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "To proceed with the task, I need the user_id of the customer whose profile we want to pull up and ticket to be created.\n\nCould you please provide me with the user_id?",
+    "error": null,
+    "wall_seconds": 3.28,
+    "calls": []
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "scenario_id": "FAQ-06",
+  "scenario_name": "handoff-improve-this",
+  "target_mode": "FAQ",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The updated summary has been successfully saved. Here it is again for your reference:\n\n---\n\n**Refund Policy:**\n- Refunds are accepted within 30 days of purchase.\n- A valid receipt is required.\n\n**Shipping Policy:**\n- Standard shipping typically takes 5 to 7 business days.\n\nIf you need any specific sections highlighted or further details added, let me know!\n\nIs there anything else you would like to add or modify?",
+  "agent_error": null,
+  "wall_seconds": 30.77,
+  "trace": {
+    "scenario_id": "FAQ-06",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "The updated summary has been successfully saved. Here it is again for your reference:\n\n---\n\n**Refund Policy:**\n- Refunds are accepted within 30 days of purchase.\n- A valid receipt is required.\n\n**Shipping Policy:**\n- Standard shipping typically takes 5 to 7 business days.\n\nIf you need any specific sections highlighted or further details added, let me know!\n\nIs there anything else you would like to add or modify?",
+    "error": null,
+    "wall_seconds": 30.77,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "write_file",
+        "args": {
+          "path": "/path/to/save/policy_summary.txt",
+          "content": "Refund Policy: Refunds are accepted within 30 days of purchase. A valid receipt is required.\n\nShipping Policy: Standard shipping typically takes 5 to 7 business days."
+        },
+        "args_key": "{\"content\": \"Refund Policy: Refunds are accepted within 30 days of purchase. A valid receipt is required.\\n\\nShipping Policy: Standard shipping typically takes 5 to 7 business days.\", \"path\": \"/path/to/save/policy_summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

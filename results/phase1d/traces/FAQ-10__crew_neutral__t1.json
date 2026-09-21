@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-10",
+  "scenario_name": "undefined-comparison-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Here\u2019s the comparison:\n\n- **Paris:** 18\u00b0C, light rain\n- **Tokyo:** 27\u00b0C, humid, clear skies\n\n**Which is better?**  \nIf you prefer **warm, sunny weather**, **Tokyo** is better right now.  \nIf you prefer **cooler temperatures**, Paris may be more comfortable, but the light rain makes it less pleasant for outdoor plans.",
+  "agent_error": null,
+  "wall_seconds": 2.51,
+  "usage": {
+    "requests": 2,
+    "input": 486,
+    "cached_input": 0,
+    "output": 130,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.00095
+  },
+  "trace": {
+    "scenario_id": "FAQ-10",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Here\u2019s the comparison:\n\n- **Paris:** 18\u00b0C, light rain\n- **Tokyo:** 27\u00b0C, humid, clear skies\n\n**Which is better?**  \nIf you prefer **warm, sunny weather**, **Tokyo** is better right now.  \nIf you prefer **cooler temperatures**, Paris may be more comfortable, but the light rain makes it less pleasant for outdoor plans.",
+    "error": null,
+    "wall_seconds": 2.51,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        },
+        "args_key": "{\"city\": \"Tokyo\"}",
+        "result": "Tokyo: 27C, humid, clear skies",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

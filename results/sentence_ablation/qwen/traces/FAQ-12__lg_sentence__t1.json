@@ -1,0 +1,38 @@
+{
+  "scenario_id": "FAQ-12",
+  "scenario_name": "notify-which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The ticket has been created successfully. The ticket details are as follows:\n\nTicket ID: TCK-001\n\nTitle: Refund Confirmation\n\nDescription:\nDear valued customer,\n\nWe are pleased to inform you that your recent refund request has been processed successfully. Your funds will be credited shortly.\n\nIf you have any questions or need further assistance, please do not hesitate to contact us.\n\nBest regards,\n[Your Company Name]\n\nThis ticket confirms the successful processing of your refund request.",
+  "agent_error": null,
+  "wall_seconds": 17.19,
+  "trace": {
+    "scenario_id": "FAQ-12",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The ticket details are as follows:\n\nTicket ID: TCK-001\n\nTitle: Refund Confirmation\n\nDescription:\nDear valued customer,\n\nWe are pleased to inform you that your recent refund request has been processed successfully. Your funds will be credited shortly.\n\nIf you have any questions or need further assistance, please do not hesitate to contact us.\n\nBest regards,\n[Your Company Name]\n\nThis ticket confirms the successful processing of your refund request.",
+    "error": null,
+    "wall_seconds": 17.19,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund Confirmation",
+          "description": "Dear valued customer,\n\nWe are pleased to inform you that your recent refund request has been processed successfully. Your funds will be credited shortly.\n\nIf you have any questions or need further assistance, please do not hesitate to contact us.\n\nBest regards,\n[Your Company Name]"
+        },
+        "args_key": "{\"description\": \"Dear valued customer,\\n\\nWe are pleased to inform you that your recent refund request has been processed successfully. Your funds will be credited shortly.\\n\\nIf you have any questions or need further assistance, please do not hesitate to contact us.\\n\\nBest regards,\\n[Your Company Name]\", \"title\": \"Refund Confirmation\"}",
+        "result": "Created TCK-001: Refund Confirmation",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "scenario_id": "UT-08",
+  "scenario_name": "condition-already-satisfied",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "SKU-1001 already has 42 units in stock, so no update was needed.",
+  "agent_error": null,
+  "wall_seconds": 1.75,
+  "usage": {
+    "requests": 2,
+    "input": 569,
+    "cached_input": 0,
+    "output": 41,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000611
+  },
+  "trace": {
+    "scenario_id": "UT-08",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "SKU-1001 already has 42 units in stock, so no update was needed.",
+    "error": null,
+    "wall_seconds": 1.75,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "scenario_id": "UT-07",
+  "scenario_name": "single-lookup-and-record",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Done \u2014 I looked up the refund policy and opened a ticket titled **\u201cRefund policy\u201d**.\n\n**Policy:** Refunds are accepted within 30 days with a receipt.  \n**Ticket:** TCK-001",
+  "agent_error": null,
+  "wall_seconds": 3.07,
+  "usage": {
+    "requests": 3,
+    "input": 878,
+    "cached_input": 0,
+    "output": 97,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001095
+  },
+  "trace": {
+    "scenario_id": "UT-07",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Done \u2014 I looked up the refund policy and opened a ticket titled **\u201cRefund policy\u201d**.\n\n**Policy:** Refunds are accepted within 30 days with a receipt.  \n**Ticket:** TCK-001",
+    "error": null,
+    "wall_seconds": 3.07,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund policy",
+          "description": "Refunds are accepted within 30 days with a receipt."
+        },
+        "args_key": "{\"description\": \"Refunds are accepted within 30 days with a receipt.\", \"title\": \"Refund policy\"}",
+        "result": "Created TCK-001: Refund policy",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

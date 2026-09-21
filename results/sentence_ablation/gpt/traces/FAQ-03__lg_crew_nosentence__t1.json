@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t determine low-stock items because the inventory tool requires a specific SKU, and \u201cALL\u201d isn\u2019t a valid SKU.\n\nI created a support ticket to request either:\n- a SKU list, or\n- access to a full inventory report\n\nTicket: TCK-001",
+  "agent_error": null,
+  "wall_seconds": 3.18,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t determine low-stock items because the inventory tool requires a specific SKU, and \u201cALL\u201d isn\u2019t a valid SKU.\n\nI created a support ticket to request either:\n- a SKU list, or\n- access to a full inventory report\n\nTicket: TCK-001",
+    "error": null,
+    "wall_seconds": 3.18,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "ALL"
+        },
+        "args_key": "{\"sku\": \"ALL\"}",
+        "result": "Unknown SKU: ALL",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Inventory check request: need SKU list or inventory report access",
+          "description": "Attempted to check inventory for SKU 'ALL' to determine whether we are running low on anything, but the inventory tool returned 'Unknown SKU: ALL'. Please provide a SKU list or a way to query the full inventory/report so I can assess low-stock items."
+        },
+        "args_key": "{\"description\": \"Attempted to check inventory for SKU 'ALL' to determine whether we are running low on anything, but the inventory tool returned 'Unknown SKU: ALL'. Please provide a SKU list or a way to query the full inventory/report so I can assess low-stock items.\", \"title\": \"Inventory check request: need SKU list or inventory report access\"}",
+        "result": "Created TCK-001: Inventory check request: need SKU list or inventory report access",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 3,
+    "input": 859,
+    "cached_input": 0,
+    "output": 159,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.00136
+  }
+}

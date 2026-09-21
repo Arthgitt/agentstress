@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-08",
+  "scenario_name": "rain-packing-advice",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I've created a support ticket titled \"Paris Trip Packing List\" with the following notes:\n\n- Umbrella or raincoat\n- Waterproof shoes\n\nMake sure to bring these items along for your trip. Enjoy your visit to Paris! If you need any more assistance, feel free to ask.",
+  "agent_error": null,
+  "wall_seconds": 20.07,
+  "trace": {
+    "scenario_id": "RAM-08",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I've created a support ticket titled \"Paris Trip Packing List\" with the following notes:\n\n- Umbrella or raincoat\n- Waterproof shoes\n\nMake sure to bring these items along for your trip. Enjoy your visit to Paris! If you need any more assistance, feel free to ask.",
+    "error": null,
+    "wall_seconds": 20.07,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Paris Trip Packing List",
+          "description": "Based on the current weather conditions, it is recommended to bring an umbrella or raincoat and waterproof shoes."
+        },
+        "args_key": "{\"description\": \"Based on the current weather conditions, it is recommended to bring an umbrella or raincoat and waterproof shoes.\", \"title\": \"Paris Trip Packing List\"}",
+        "result": "Created TCK-001: Paris Trip Packing List",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

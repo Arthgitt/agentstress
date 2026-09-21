@@ -1,0 +1,47 @@
+{
+  "scenario_id": "UT-01",
+  "scenario_name": "two-lookups-then-summarise",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Based on the information retrieved from our internal documentation:\n\n**Refund Policy:** Refunds are accepted within 30 days of purchase, provided you have a valid receipt.\n\n**Shipping Policy:** Standard shipping typically takes 5 to 7 business days. \n\nIf you need more detailed information or have specific questions about these policies, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 12.16,
+  "trace": {
+    "scenario_id": "UT-01",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Based on the information retrieved from our internal documentation:\n\n**Refund Policy:** Refunds are accepted within 30 days of purchase, provided you have a valid receipt.\n\n**Shipping Policy:** Standard shipping typically takes 5 to 7 business days. \n\nIf you need more detailed information or have specific questions about these policies, feel free to ask!",
+    "error": null,
+    "wall_seconds": 12.16,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

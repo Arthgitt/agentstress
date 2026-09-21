@@ -1,0 +1,71 @@
+{
+  "scenario_id": "SR-33",
+  "scenario_name": "three-distinct-tickets",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Done \u2014 I created three separate tickets:\n\n- SKU-4004 \u2014 stock: 0 units\n- SKU-6006 \u2014 stock: 9 units\n- SKU-7007 \u2014 stock: 27 units",
+  "agent_error": null,
+  "wall_seconds": 2.69,
+  "usage": {
+    "requests": 2,
+    "input": 503,
+    "cached_input": 0,
+    "output": 140,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001007
+  },
+  "trace": {
+    "scenario_id": "SR-33",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Done \u2014 I created three separate tickets:\n\n- SKU-4004 \u2014 stock: 0 units\n- SKU-6006 \u2014 stock: 9 units\n- SKU-7007 \u2014 stock: 27 units",
+    "error": null,
+    "wall_seconds": 2.69,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-4004",
+          "description": "Stock: 0 units"
+        },
+        "args_key": "{\"description\": \"Stock: 0 units\", \"title\": \"SKU-4004\"}",
+        "result": "Created TCK-001: SKU-4004",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-6006",
+          "description": "Stock: 9 units"
+        },
+        "args_key": "{\"description\": \"Stock: 9 units\", \"title\": \"SKU-6006\"}",
+        "result": "Created TCK-002: SKU-6006",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-7007",
+          "description": "Stock: 27 units"
+        },
+        "args_key": "{\"description\": \"Stock: 27 units\", \"title\": \"SKU-7007\"}",
+        "result": "Created TCK-003: SKU-7007",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

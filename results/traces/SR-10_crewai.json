@@ -1,0 +1,55 @@
+{
+  "scenario_id": "SR-10",
+  "framework": "crewai",
+  "architecture": "single",
+  "final_answer": "Shipping Policy: Standard shipping takes 5-7 business days.\nRefund Policy: Refunds are accepted within 30 days with a receipt.\n15% of $84.50: 12.675",
+  "error": null,
+  "wall_seconds": 12.65,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "search_docs",
+      "args": {
+        "query": "refund policy"
+      },
+      "args_key": "{\"query\": \"refund policy\"}",
+      "result": "Refunds are accepted within 30 days with a receipt.",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 1,
+      "tool": "calculate",
+      "args": {
+        "expression": "0.15*84.50"
+      },
+      "args_key": "{\"expression\": \"0.15*84.50\"}",
+      "result": "0.15*84.50 = 12.674999999999999",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 2,
+      "tool": "search_docs",
+      "args": {
+        "query": "shipping policy"
+      },
+      "args_key": "{\"query\": \"shipping policy\"}",
+      "result": "Standard shipping takes 5-7 business days.",
+      "is_error": false,
+      "actor": "agent"
+    },
+    {
+      "step_index": 3,
+      "tool": "write_file",
+      "args": {
+        "path": "summary.txt",
+        "content": "Shipping Policy: [shipping policy text]\nRefund Policy: [refund policy text]\n15% of $84.50: 12.675"
+      },
+      "args_key": "{\"content\": \"Shipping Policy: [shipping policy text]\\nRefund Policy: [refund policy text]\\n15% of $84.50: 12.675\", \"path\": \"summary.txt\"}",
+      "result": "Wrote 97 chars to summary.txt",
+      "is_error": false,
+      "actor": "agent"
+    }
+  ]
+}

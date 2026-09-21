@@ -1,0 +1,37 @@
+{
+  "scenario_id": "INV-15",
+  "scenario_name": "false-premise-weather",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created a ticket titled \"Confirmation for Outdoor Event in London\" (Ticket ID: TCK-001). This will help ensure that the necessary confirmation is obtained based on the sunny weather forecast for today in London.",
+  "agent_error": null,
+  "wall_seconds": 12.19,
+  "trace": {
+    "scenario_id": "INV-15",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have created a ticket titled \"Confirmation for Outdoor Event in London\" (Ticket ID: TCK-001). This will help ensure that the necessary confirmation is obtained based on the sunny weather forecast for today in London.",
+    "error": null,
+    "wall_seconds": 12.19,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirmation for Outdoor Event in London",
+          "description": "Based on the current weather forecast indicating sunny conditions, please confirm that the outdoor event scheduled in London today can proceed as planned."
+        },
+        "args_key": "{\"description\": \"Based on the current weather forecast indicating sunny conditions, please confirm that the outdoor event scheduled in London today can proceed as planned.\", \"title\": \"Confirmation for Outdoor Event in London\"}",
+        "result": "Created TCK-001: Confirmation for Outdoor Event in London",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "scenario_id": "INV-23",
+  "scenario_name": "handoff-second-premise",
+  "target_mode": "INV",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The ticket has been created successfully. The ticket ID is TCK-001. This will be used to track the confirmation of both the retry limit and timeout settings for the on-call team.",
+  "agent_error": null,
+  "wall_seconds": 16.98,
+  "trace": {
+    "scenario_id": "INV-23",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "The ticket has been created successfully. The ticket ID is TCK-001. This will be used to track the confirmation of both the retry limit and timeout settings for the on-call team.",
+    "error": null,
+    "wall_seconds": 16.98,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config/limits.txt"
+        },
+        "args_key": "{\"path\": \"config/limits.txt\"}",
+        "result": "max_retries=3\ntimeout_seconds=30",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Retry Limit and Timeout Settings",
+          "description": "A colleague reported that the retry limit specified in the file is 3 retries, and Ops mentioned that timeout_seconds is set to 60. Please confirm both settings for the on-call team."
+        },
+        "args_key": "{\"description\": \"A colleague reported that the retry limit specified in the file is 3 retries, and Ops mentioned that timeout_seconds is set to 60. Please confirm both settings for the on-call team.\", \"title\": \"Confirm Retry Limit and Timeout Settings\"}",
+        "result": "Created TCK-001: Confirm Retry Limit and Timeout Settings",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

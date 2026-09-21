@@ -1,0 +1,162 @@
+sentence ablation on qwen2.5:7b-instruct: 20 FAQ scenarios x 2 conditions x 4 trials = 160 runs | to run 160
+[  1/160] ok  FAQ-01  lg_sentence         t1  1 calls  15.3s  eta 40.4m
+[  2/160] ok  FAQ-01  lg_crew_nosentence  t1  2 calls  12.9s  eta 37.1m
+[  3/160] ok  FAQ-03  lg_sentence         t1  0 calls   5.7s  eta 29.6m
+[  4/160] ok  FAQ-03  lg_crew_nosentence  t1  1 calls   4.5s  eta 25.0m
+[  5/160] ok  FAQ-04  lg_sentence         t1  5 calls  28.7s  eta 34.7m
+[  6/160] ok  FAQ-04  lg_crew_nosentence  t1  1 calls  12.1s  eta 33.9m
+[  7/160] ok  FAQ-05  lg_sentence         t1  2 calls  92.1s  eta 62.5m
+[  8/160] ok  FAQ-05  lg_crew_nosentence  t1  2 calls   9.2s  eta 57.2m
+[  9/160] ok  FAQ-08  lg_sentence         t1  2 calls  10.6s  eta 53.5m
+[ 10/160] ok  FAQ-08  lg_crew_nosentence  t1  2 calls  11.0s  eta 50.6m
+[ 11/160] ok  FAQ-09  lg_sentence         t1  2 calls  29.2s  eta 52.3m
+[ 12/160] ok  FAQ-09  lg_crew_nosentence  t1  2 calls  25.0s  eta 52.7m
+[ 13/160] ok  FAQ-10  lg_sentence         t1  2 calls  10.9s  eta 50.4m
+[ 14/160] ok  FAQ-10  lg_crew_nosentence  t1  2 calls  12.2s  eta 48.6m
+[ 15/160] ok  FAQ-11  lg_sentence         t1  0 calls   6.4s  eta 46.1m
+[ 16/160] ok  FAQ-11  lg_crew_nosentence  t1  0 calls   8.4s  eta 44.2m
+[ 17/160] ok  FAQ-12  lg_sentence         t1  1 calls  17.2s  eta 43.7m
+[ 18/160] ok  FAQ-12  lg_crew_nosentence  t1  1 calls  17.4s  eta 43.3m
+[ 19/160] ok  FAQ-13  lg_sentence         t1  1 calls   6.6s  eta 41.5m
+[ 20/160] ok  FAQ-13  lg_crew_nosentence  t1  2 calls  11.2s  eta 40.4m
+[ 21/160] ok  FAQ-14  lg_sentence         t1  2 calls  20.9s  eta 40.6m
+[ 22/160] ok  FAQ-14  lg_crew_nosentence  t1  2 calls  14.1s  eta 39.9m
+[ 23/160] ok  FAQ-15  lg_sentence         t1  0 calls   3.2s  eta 38.2m
+[ 24/160] ok  FAQ-15  lg_crew_nosentence  t1  0 calls   3.0s  eta 36.6m
+[ 25/160] ok  FAQ-16  lg_sentence         t1  1 calls  21.0s  eta 36.8m
+[ 26/160] ok  FAQ-16  lg_crew_nosentence  t1  2 calls  29.7s  eta 37.7m
+[ 27/160] ok  FAQ-17  lg_sentence         t1  1 calls  13.0s  eta 37.1m
+[ 28/160] ok  FAQ-17  lg_crew_nosentence  t1  3 calls  17.4s  eta 36.9m
+[ 29/160] ok  FAQ-18  lg_sentence         t1  1 calls   7.9s  eta 35.9m
+[ 30/160] ok  FAQ-18  lg_crew_nosentence  t1  1 calls   7.5s  eta 35.0m
+[ 31/160] ok  FAQ-19  lg_sentence         t1  1 calls   8.0s  eta 34.2m
+[ 32/160] ok  FAQ-19  lg_crew_nosentence  t1  1 calls   8.4s  eta 33.4m
+[ 33/160] ok  FAQ-20  lg_sentence         t1  0 calls   8.2s  eta 32.7m
+[ 34/160] ok  FAQ-20  lg_crew_nosentence  t1  2 calls  16.1s  eta 32.4m
+[ 35/160] ok  FAQ-21  lg_sentence         t1  2 calls  55.1s  eta 34.5m
+[ 36/160] ok  FAQ-21  lg_crew_nosentence  t1  2 calls  18.2s  eta 34.4m
+[ 37/160] ok  FAQ-22  lg_sentence         t1  7 calls  55.7s  eta 36.2m
+[ 38/160] ok  FAQ-22  lg_crew_nosentence  t1  7 calls  35.0s  eta 36.9m
+[ 39/160] ok  FAQ-23  lg_sentence         t1  1 calls   6.9s  eta 36.0m
+[ 40/160] ok  FAQ-23  lg_crew_nosentence  t1  1 calls   6.7s  eta 35.1m
+[ 41/160] ok  FAQ-01  lg_sentence         t2  1 calls   9.2s  eta 34.4m
+[ 42/160] ok  FAQ-01  lg_crew_nosentence  t2  1 calls   9.8s  eta 33.8m
+[ 43/160] ok  FAQ-03  lg_sentence         t2  1 calls   6.7s  eta 33.0m
+[ 44/160] ok  FAQ-03  lg_crew_nosentence  t2  1 calls   8.9s  eta 32.4m
+[ 45/160] ok  FAQ-04  lg_sentence         t2  0 calls   6.9s  eta 31.7m
+[ 46/160] ok  FAQ-04  lg_crew_nosentence  t2  1 calls  15.4s  eta 31.4m
+[ 47/160] ok  FAQ-05  lg_sentence         t2  2 calls  59.8s  eta 32.8m
+[ 48/160] ok  FAQ-05  lg_crew_nosentence  t2  2 calls  11.4s  eta 32.3m
+[ 49/160] ok  FAQ-08  lg_sentence         t2  2 calls  13.1s  eta 31.9m
+[ 50/160] ok  FAQ-08  lg_crew_nosentence  t2  2 calls  12.3s  eta 31.4m
+[ 51/160] ok  FAQ-09  lg_sentence         t2  2 calls  28.1s  eta 31.5m
+[ 52/160] ok  FAQ-09  lg_crew_nosentence  t2  3 calls  36.0s  eta 31.9m
+[ 53/160] ok  FAQ-10  lg_sentence         t2  2 calls  12.3s  eta 31.4m
+[ 54/160] ok  FAQ-10  lg_crew_nosentence  t2  2 calls  13.5s  eta 31.0m
+[ 55/160] ok  FAQ-11  lg_sentence         t2  1 calls  18.4s  eta 30.7m
+[ 56/160] ok  FAQ-11  lg_crew_nosentence  t2  0 calls   6.1s  eta 30.0m
+[ 57/160] ok  FAQ-12  lg_sentence         t2  1 calls  21.9s  eta 29.9m
+[ 58/160] ok  FAQ-12  lg_crew_nosentence  t2  1 calls  20.5s  eta 29.7m
+[ 59/160] ok  FAQ-13  lg_sentence         t2  1 calls  14.0s  eta 29.3m
+[ 60/160] ok  FAQ-13  lg_crew_nosentence  t2  2 calls  11.5s  eta 28.8m
+[ 61/160] ok  FAQ-14  lg_sentence         t2  2 calls  20.4s  eta 28.6m
+[ 62/160] ok  FAQ-14  lg_crew_nosentence  t2  2 calls  13.0s  eta 28.2m
+[ 63/160] ok  FAQ-15  lg_sentence         t2  0 calls   3.1s  eta 27.6m
+[ 64/160] ok  FAQ-15  lg_crew_nosentence  t2  0 calls   3.1s  eta 27.0m
+[ 65/160] ok  FAQ-16  lg_sentence         t2  0 calls  13.5s  eta 26.6m
+[ 66/160] ok  FAQ-16  lg_crew_nosentence  t2  2 calls  14.4s  eta 26.3m
+[ 67/160] ok  FAQ-17  lg_sentence         t2  1 calls  12.3s  eta 25.9m
+[ 68/160] ok  FAQ-17  lg_crew_nosentence  t2  1 calls   8.1s  eta 25.4m
+[ 69/160] ok  FAQ-18  lg_sentence         t2  1 calls   7.8s  eta 24.9m
+[ 70/160] ok  FAQ-18  lg_crew_nosentence  t2  1 calls   8.8s  eta 24.5m
+[ 71/160] ok  FAQ-19  lg_sentence         t2  1 calls   6.3s  eta 24.0m
+[ 72/160] ok  FAQ-19  lg_crew_nosentence  t2  1 calls   6.4s  eta 23.5m
+[ 73/160] ok  FAQ-20  lg_sentence         t2  3 calls  57.5s  eta 24.1m
+[ 74/160] ok  FAQ-20  lg_crew_nosentence  t2  2 calls  18.2s  eta 23.9m
+[ 75/160] ok  FAQ-21  lg_sentence         t2  2 calls  32.3s  eta 23.9m
+[ 76/160] ok  FAQ-21  lg_crew_nosentence  t2  2 calls  20.4s  eta 23.7m
+[ 77/160] ok  FAQ-22  lg_sentence         t2  7 calls  63.0s  eta 24.2m
+[ 78/160] ok  FAQ-22  lg_crew_nosentence  t2  6 calls  35.2s  eta 24.2m
+[ 79/160] ok  FAQ-23  lg_sentence         t2  1 calls   7.1s  eta 23.7m
+[ 80/160] ok  FAQ-23  lg_crew_nosentence  t2  1 calls   6.7s  eta 23.3m
+[ 81/160] ok  FAQ-01  lg_sentence         t3  1 calls   8.4s  eta 22.8m
+[ 82/160] ok  FAQ-01  lg_crew_nosentence  t3  2 calls  17.5s  eta 22.5m
+[ 83/160] ok  FAQ-03  lg_sentence         t3  1 calls   7.8s  eta 22.1m
+[ 84/160] ok  FAQ-03  lg_crew_nosentence  t3  1 calls   7.9s  eta 21.7m
+[ 85/160] ok  FAQ-04  lg_sentence         t3  1 calls  17.3s  eta 21.4m
+[ 86/160] ok  FAQ-04  lg_crew_nosentence  t3  1 calls  14.7s  eta 21.1m
+[ 87/160] ok  FAQ-05  lg_sentence         t3  0 calls  33.4s  eta 21.0m
+[ 88/160] ok  FAQ-05  lg_crew_nosentence  t3  2 calls  12.4s  eta 20.7m
+[ 89/160] ok  FAQ-08  lg_sentence         t3  2 calls  13.7s  eta 20.3m
+[ 90/160] ok  FAQ-08  lg_crew_nosentence  t3  2 calls  13.5s  eta 20.0m
+[ 91/160] ok  FAQ-09  lg_sentence         t3  2 calls  26.1s  eta 19.8m
+[ 92/160] ok  FAQ-09  lg_crew_nosentence  t3  1 calls   9.4s  eta 19.4m
+[ 93/160] ok  FAQ-10  lg_sentence         t3  2 calls  12.8s  eta 19.1m
+[ 94/160] ok  FAQ-10  lg_crew_nosentence  t3  2 calls  15.0s  eta 18.8m
+[ 95/160] ok  FAQ-11  lg_sentence         t3  0 calls   9.2s  eta 18.4m
+[ 96/160] ok  FAQ-11  lg_crew_nosentence  t3  0 calls  12.1s  eta 18.1m
+[ 97/160] ok  FAQ-12  lg_sentence         t3  1 calls  16.4s  eta 17.8m
+[ 98/160] ok  FAQ-12  lg_crew_nosentence  t3  1 calls  18.0s  eta 17.5m
+[ 99/160] ok  FAQ-13  lg_sentence         t3  1 calls  15.0s  eta 17.2m
+[100/160] ok  FAQ-13  lg_crew_nosentence  t3  2 calls  12.8s  eta 16.9m
+[101/160] ok  FAQ-14  lg_sentence         t3  2 calls  20.9s  eta 16.7m
+[102/160] ok  FAQ-14  lg_crew_nosentence  t3  2 calls  15.4s  eta 16.4m
+[103/160] ok  FAQ-15  lg_sentence         t3  0 calls   3.7s  eta 16.0m
+[104/160] ok  FAQ-15  lg_crew_nosentence  t3  0 calls   3.2s  eta 15.5m
+[105/160] ok  FAQ-16  lg_sentence         t3  3 calls  33.0s  eta 15.4m
+[106/160] ok  FAQ-16  lg_crew_nosentence  t3  4 calls  58.2s  eta 15.5m
+[107/160] ok  FAQ-17  lg_sentence         t3  1 calls  13.3s  eta 15.2m
+[108/160] ok  FAQ-17  lg_crew_nosentence  t3  3 calls  19.6s  eta 14.9m
+[109/160] ok  FAQ-18  lg_sentence         t3  1 calls   8.8s  eta 14.5m
+[110/160] ok  FAQ-18  lg_crew_nosentence  t3  1 calls   8.5s  eta 14.2m
+[111/160] ok  FAQ-19  lg_sentence         t3  1 calls   6.9s  eta 13.8m
+[112/160] ok  FAQ-19  lg_crew_nosentence  t3  1 calls   7.1s  eta 13.5m
+[113/160] ok  FAQ-20  lg_sentence         t3  3 calls  42.5s  eta 13.4m
+[114/160] ok  FAQ-20  lg_crew_nosentence  t3  2 calls  16.9s  eta 13.1m
+[115/160] ok  FAQ-21  lg_sentence         t3  2 calls  19.1s  eta 12.8m
+[116/160] ok  FAQ-21  lg_crew_nosentence  t3  3 calls  25.0s  eta 12.6m
+[117/160] ok  FAQ-22  lg_sentence         t3  6 calls  49.6s  eta 12.5m
+[118/160] ok  FAQ-22  lg_crew_nosentence  t3  7 calls  44.6s  eta 12.4m
+[119/160] ok  FAQ-23  lg_sentence         t3  1 calls   7.4s  eta 12.0m
+[120/160] ok  FAQ-23  lg_crew_nosentence  t3  1 calls   6.6s  eta 11.7m
+[121/160] ok  FAQ-01  lg_sentence         t4  1 calls   7.3s  eta 11.3m
+[122/160] ok  FAQ-01  lg_crew_nosentence  t4  2 calls  20.6s  eta 11.0m
+[123/160] ok  FAQ-03  lg_sentence         t4  1 calls   5.9s  eta 10.7m
+[124/160] ok  FAQ-03  lg_crew_nosentence  t4  1 calls   7.9s  eta 10.4m
+[125/160] ok  FAQ-04  lg_sentence         t4  1 calls  22.1s  eta 10.1m
+[126/160] ok  FAQ-04  lg_crew_nosentence  t4  1 calls  18.7s  eta  9.8m
+[127/160] ok  FAQ-05  lg_sentence         t4  1 calls  29.2s  eta  9.6m
+[128/160] ok  FAQ-05  lg_crew_nosentence  t4  2 calls  14.0s  eta  9.3m
+[129/160] ok  FAQ-08  lg_sentence         t4  2 calls  14.0s  eta  9.0m
+[130/160] ok  FAQ-08  lg_crew_nosentence  t4  2 calls  13.7s  eta  8.7m
+[131/160] ok  FAQ-09  lg_sentence         t4  2 calls  26.4s  eta  8.4m
+[132/160] ok  FAQ-09  lg_crew_nosentence  t4  2 calls  33.9s  eta  8.2m
+[133/160] ok  FAQ-10  lg_sentence         t4  2 calls  18.7s  eta  7.9m
+[134/160] ok  FAQ-10  lg_crew_nosentence  t4  2 calls  15.9s  eta  7.6m
+[135/160] ok  FAQ-11  lg_sentence         t4  0 calls   9.8s  eta  7.3m
+[136/160] ok  FAQ-11  lg_crew_nosentence  t4  0 calls   8.4s  eta  7.0m
+[137/160] ok  FAQ-12  lg_sentence         t4  1 calls  21.3s  eta  6.7m
+[138/160] ok  FAQ-12  lg_crew_nosentence  t4  1 calls  17.6s  eta  6.4m
+[139/160] ok  FAQ-13  lg_sentence         t4  4 calls  67.1s  eta  6.2m
+[140/160] ok  FAQ-13  lg_crew_nosentence  t4  2 calls  15.1s  eta  5.9m
+[141/160] ok  FAQ-14  lg_sentence         t4  2 calls  27.0s  eta  5.6m
+[142/160] ok  FAQ-14  lg_crew_nosentence  t4  2 calls  17.7s  eta  5.3m
+[143/160] ok  FAQ-15  lg_sentence         t4  0 calls   4.6s  eta  5.0m
+[144/160] ok  FAQ-15  lg_crew_nosentence  t4  0 calls   3.4s  eta  4.7m
+[145/160] ok  FAQ-16  lg_sentence         t4  1 calls  25.5s  eta  4.4m
+[146/160] ok  FAQ-16  lg_crew_nosentence  t4  0 calls  10.9s  eta  4.1m
+[147/160] ok  FAQ-17  lg_sentence         t4  0 calls  17.7s  eta  3.8m
+[148/160] ok  FAQ-17  lg_crew_nosentence  t4  1 calls  11.1s  eta  3.5m
+[149/160] ok  FAQ-18  lg_sentence         t4  1 calls  12.2s  eta  3.2m
+[150/160] ok  FAQ-18  lg_crew_nosentence  t4  1 calls  12.5s  eta  2.9m
+[151/160] ok  FAQ-19  lg_sentence         t4  1 calls   8.1s  eta  2.6m
+[152/160] ok  FAQ-19  lg_crew_nosentence  t4  1 calls   8.4s  eta  2.3m
+[153/160] ok  FAQ-20  lg_sentence         t4  1 calls  26.7s  eta  2.0m
+[154/160] ok  FAQ-20  lg_crew_nosentence  t4  2 calls  21.9s  eta  1.8m
+[155/160] ok  FAQ-21  lg_sentence         t4  2 calls  76.3s  eta  1.5m
+[156/160] ok  FAQ-21  lg_crew_nosentence  t4  2 calls  17.8s  eta  1.2m
+[157/160] ok  FAQ-22  lg_sentence         t4  8 calls  89.0s  eta  0.9m
+[158/160] ok  FAQ-22  lg_crew_nosentence  t4  6 calls  39.3s  eta  0.6m
+[159/160] ok  FAQ-23  lg_sentence         t4  1 calls   9.8s  eta  0.3m
+[160/160] ok  FAQ-23  lg_crew_nosentence  t4  1 calls   8.3s  eta  0.0m
+done in 48.9 min — 160 runs, 0 harness error(s)

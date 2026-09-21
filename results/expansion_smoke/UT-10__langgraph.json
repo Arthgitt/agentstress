@@ -1,0 +1,27 @@
+{
+  "scenario_id": "UT-10",
+  "agent_output": "The stock for SKU-4004 has been successfully adjusted to zero. We can now proceed with discontinuing this item.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "UT-10",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The stock for SKU-4004 has been successfully adjusted to zero. We can now proceed with discontinuing this item.",
+    "error": null,
+    "wall_seconds": 5.03,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-4004",
+          "delta": -100
+        },
+        "args_key": "{\"delta\": -100, \"sku\": \"SKU-4004\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

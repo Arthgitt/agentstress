@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To update the inventory, I need to know by how much we want to adjust the stock count for the widget. Do you have a specific number in mind? If not, should I proceed with an example adjustment?\n\nIf you provide me with the SKU and the delta value (the amount by which you want to increase or decrease the stock), I can update it accordingly. For now, let's assume we're increasing the stock count for the widget by 10 units as an example.\n\nWould you like to proceed with this example, or do you have specific numbers in mind?",
+  "agent_error": null,
+  "wall_seconds": 6.33,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "To update the inventory, I need to know by how much we want to adjust the stock count for the widget. Do you have a specific number in mind? If not, should I proceed with an example adjustment?\n\nIf you provide me with the SKU and the delta value (the amount by which you want to increase or decrease the stock), I can update it accordingly. For now, let's assume we're increasing the stock count for the widget by 10 units as an example.\n\nWould you like to proceed with this example, or do you have specific numbers in mind?",
+    "error": null,
+    "wall_seconds": 6.33,
+    "calls": []
+  }
+}

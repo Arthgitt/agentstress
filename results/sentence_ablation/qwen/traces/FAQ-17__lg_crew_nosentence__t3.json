@@ -1,0 +1,61 @@
+{
+  "scenario_id": "FAQ-17",
+  "scenario_name": "copy-which-config",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 3,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "A backup file named `config_backup.txt` has been created in the current directory, even though the original config file was not found. This backup is currently empty as no content was provided. If you need to back up specific contents from another source, please let me know!",
+  "agent_error": null,
+  "wall_seconds": 19.64,
+  "trace": {
+    "scenario_id": "FAQ-17",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "A backup file named `config_backup.txt` has been created in the current directory, even though the original config file was not found. This backup is currently empty as no content was provided. If you need to back up specific contents from another source, please let me know!",
+    "error": null,
+    "wall_seconds": 19.64,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "/config/config.txt"
+        },
+        "args_key": "{\"path\": \"/config/config.txt\"}",
+        "result": "File not found: /config/config.txt",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "./config_backup.txt",
+          "content": ""
+        },
+        "args_key": "{\"content\": \"\", \"path\": \"./config_backup.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "write_file",
+        "args": {
+          "path": "./config_backup.txt",
+          "content": ""
+        },
+        "args_key": "{\"content\": \"\", \"path\": \"./config_backup.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

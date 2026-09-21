@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no existing documents specifically titled or tagged as a 'company policy'. However, I can still create an initial ticket based on this information. Would you like me to proceed with creating the ticket? If so, could you provide some details about the policy that we should include in the ticket?",
+  "agent_error": null,
+  "wall_seconds": 8.3,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "It seems there are no existing documents specifically titled or tagged as a 'company policy'. However, I can still create an initial ticket based on this information. Would you like me to proceed with creating the ticket? If so, could you provide some details about the policy that we should include in the ticket?",
+    "error": null,
+    "wall_seconds": 8.3,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "company policy"
+        },
+        "args_key": "{\"query\": \"company policy\"}",
+        "result": "No documents found for 'company policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "scenario_id": "SR-32",
+  "scenario_name": "save-then-announce",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The discount policy has been saved to `docs/discount.txt` and a ticket titled \"New discount policy document available\" (TCK-001) has been created for the sales team. They can find the updated policy in the specified file path.\n\nIf you need any further assistance, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 19.72,
+  "trace": {
+    "scenario_id": "SR-32",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The discount policy has been saved to `docs/discount.txt` and a ticket titled \"New discount policy document available\" (TCK-001) has been created for the sales team. They can find the updated policy in the specified file path.\n\nIf you need any further assistance, feel free to ask!",
+    "error": null,
+    "wall_seconds": 19.72,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/discount.txt",
+          "content": "Discounts above 20% require manager approval before they can be applied."
+        },
+        "args_key": "{\"content\": \"Discounts above 20% require manager approval before they can be applied.\", \"path\": \"docs/discount.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "New discount policy document available",
+          "description": "A new version of the discount policy has been documented. Please find it in docs/discount.txt:\n\nDiscounts above 20% require manager approval before they can be applied."
+        },
+        "args_key": "{\"description\": \"A new version of the discount policy has been documented. Please find it in docs/discount.txt:\\n\\nDiscounts above 20% require manager approval before they can be applied.\", \"title\": \"New discount policy document available\"}",
+        "result": "Created TCK-001: New discount policy document available",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

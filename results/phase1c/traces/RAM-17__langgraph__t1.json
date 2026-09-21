@@ -1,0 +1,59 @@
+{
+  "scenario_id": "RAM-17",
+  "scenario_name": "quantity-discount-billing",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The total cost for the order, after applying a 10% discount, is $216.00.\n\nA ticket has been created to inform the billing team of this calculation. The ticket ID is TCK-001: Order Calculation - 3 units at $80 each with 10% off. They will use this information to charge accordingly.",
+  "agent_error": null,
+  "wall_seconds": 32.97,
+  "trace": {
+    "scenario_id": "RAM-17",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The total cost for the order, after applying a 10% discount, is $216.00.\n\nA ticket has been created to inform the billing team of this calculation. The ticket ID is TCK-001: Order Calculation - 3 units at $80 each with 10% off. They will use this information to charge accordingly.",
+    "error": null,
+    "wall_seconds": 32.97,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "3*80*(1-0.1)"
+        },
+        "args_key": "{\"expression\": \"3*80*(1-0.1)\"}",
+        "result": "3*80*(1-0.1) = 216.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "calculate",
+        "args": {
+          "expression": "3*80*(1-0.1)"
+        },
+        "args_key": "{\"expression\": \"3*80*(1-0.1)\"}",
+        "result": "3*80*(1-0.1) = 216.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Order Calculation - 3 units at $80 each with 10% off",
+          "description": "The total cost for an order of 3 units at $80 each, after applying a 10% discount, is $216.00."
+        },
+        "args_key": "{\"description\": \"The total cost for an order of 3 units at $80 each, after applying a 10% discount, is $216.00.\", \"title\": \"Order Calculation - 3 units at $80 each with 10% off\"}",
+        "result": "Created TCK-001: Order Calculation - 3 units at $80 each with 10% off",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

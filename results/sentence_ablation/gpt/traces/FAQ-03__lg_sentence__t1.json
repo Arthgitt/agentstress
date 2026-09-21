@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can check inventory, but I need the SKU(s) first.\n\nPlease send the product SKU or list of SKUs you want me to check, and I\u2019ll tell you which items are running low.",
+  "agent_error": null,
+  "wall_seconds": 1.0,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I can check inventory, but I need the SKU(s) first.\n\nPlease send the product SKU or list of SKUs you want me to check, and I\u2019ll tell you which items are running low.",
+    "error": null,
+    "wall_seconds": 1.0,
+    "calls": []
+  },
+  "usage": {
+    "requests": 1,
+    "input": 185,
+    "cached_input": 0,
+    "output": 50,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000364
+  }
+}

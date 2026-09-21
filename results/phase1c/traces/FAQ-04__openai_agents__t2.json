@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there's no available weather data for New York at this moment. To make an informed decision about running the outdoor event, we might need to check again later or consider other factors such as backup plans indoors.\n\nWould you like me to set up a reminder to check the weather again later?",
+  "agent_error": null,
+  "wall_seconds": 10.26,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "It seems there's no available weather data for New York at this moment. To make an informed decision about running the outdoor event, we might need to check again later or consider other factors such as backup plans indoors.\n\nWould you like me to set up a reminder to check the weather again later?",
+    "error": null,
+    "wall_seconds": 10.26,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        },
+        "args_key": "{\"city\": \"New York\"}",
+        "result": "No weather data for 'New York'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

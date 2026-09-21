@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn't find any weather data for New York. This might be due to an incorrect or non-existent entry in our database. For accurate results, could you please specify another city where the outdoor event is planned? If no specific location was intended and you just wanted a general example, I can use a different city like Los Angeles instead.\nWould you like to proceed with checking the weather for Los Angeles?",
+  "agent_error": null,
+  "wall_seconds": 15.81,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I couldn't find any weather data for New York. This might be due to an incorrect or non-existent entry in our database. For accurate results, could you please specify another city where the outdoor event is planned? If no specific location was intended and you just wanted a general example, I can use a different city like Los Angeles instead.\nWould you like to proceed with checking the weather for Los Angeles?",
+    "error": null,
+    "wall_seconds": 15.81,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        },
+        "args_key": "{\"city\": \"New York\"}",
+        "result": "No weather data for 'New York'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

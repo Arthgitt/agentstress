@@ -1,0 +1,81 @@
+{
+  "scenario_id": "SR-36",
+  "scenario_name": "handoff-total-stock",
+  "target_mode": "SR",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 5,
+  "agent_output": "I have created a ticket titled 'Total stock' with the total number of units across the three SKUs, which is 186. The ticket ID is TCK-001.",
+  "agent_error": null,
+  "wall_seconds": 27.65,
+  "trace": {
+    "scenario_id": "SR-36",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "I have created a ticket titled 'Total stock' with the total number of units across the three SKUs, which is 186. The ticket ID is TCK-001.",
+    "error": null,
+    "wall_seconds": 27.65,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 3,
+        "tool": "calculate",
+        "args": {
+          "expression": "150 + 9 + 27"
+        },
+        "args_key": "{\"expression\": \"150 + 9 + 27\"}",
+        "result": "150 + 9 + 27 = 186",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 4,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Total stock",
+          "description": "The total number of units across SKU-5005, SKU-6006, and SKU-7007 is 186."
+        },
+        "args_key": "{\"description\": \"The total number of units across SKU-5005, SKU-6006, and SKU-7007 is 186.\", \"title\": \"Total stock\"}",
+        "result": "Created TCK-001: Total stock",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

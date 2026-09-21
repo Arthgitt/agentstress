@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-12",
+  "scenario_name": "notify-which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Done \u2014 I created a ticket to notify the customer that their refund has gone through successfully.",
+  "agent_error": null,
+  "wall_seconds": 2.05,
+  "usage": {
+    "requests": 2,
+    "input": 523,
+    "cached_input": 0,
+    "output": 56,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000644
+  },
+  "trace": {
+    "scenario_id": "FAQ-12",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Done \u2014 I created a ticket to notify the customer that their refund has gone through successfully.",
+    "error": null,
+    "wall_seconds": 2.05,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund completed notification",
+          "description": "Please let the customer know that their refund has gone through successfully."
+        },
+        "args_key": "{\"description\": \"Please let the customer know that their refund has gone through successfully.\", \"title\": \"Refund completed notification\"}",
+        "result": "Created TCK-001: Refund completed notification",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

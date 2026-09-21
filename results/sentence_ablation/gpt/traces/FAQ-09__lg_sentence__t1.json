@@ -1,0 +1,80 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I opened a ticket for this, but I could not complete the ranking because I could only find one policy snippet in the documentation.\n\nTicket: **TCK-001 \u2014 Request: Rank policies by priority**\n\nContent submitted:\n> I was asked to rank our policies by priority, but the internal documentation search only surfaced one policy-related snippet: \"Customer records are deleted 24 months after account closure.\" I could not find a complete policy list to rank. Please provide the full set of policies and any desired ranking criteria (for example: legal/regulatory risk, customer impact, security impact, operational criticality) so a priority ranking can be produced.\n>\n> Known policy snippet found:\n> 1. Customer records are deleted 24 months after account closure.\n\nIf you want, send me the full policy list and I can rank them immediately.",
+  "agent_error": null,
+  "wall_seconds": 5.46,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I opened a ticket for this, but I could not complete the ranking because I could only find one policy snippet in the documentation.\n\nTicket: **TCK-001 \u2014 Request: Rank policies by priority**\n\nContent submitted:\n> I was asked to rank our policies by priority, but the internal documentation search only surfaced one policy-related snippet: \"Customer records are deleted 24 months after account closure.\" I could not find a complete policy list to rank. Please provide the full set of policies and any desired ranking criteria (for example: legal/regulatory risk, customer impact, security impact, operational criticality) so a priority ranking can be produced.\n>\n> Known policy snippet found:\n> 1. Customer records are deleted 24 months after account closure.\n\nIf you want, send me the full policy list and I can rank them immediately.",
+    "error": null,
+    "wall_seconds": 5.46,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy priority ranking policies list internal documentation"
+        },
+        "args_key": "{\"query\": \"policy priority ranking policies list internal documentation\"}",
+        "result": "No documents found for 'policy priority ranking policies list internal documentation'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies policy document compliance security privacy data retention incident response acceptable use"
+        },
+        "args_key": "{\"query\": \"policies policy document compliance security privacy data retention incident response acceptable use\"}",
+        "result": "Customer records are deleted 24 months after account closure.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "acceptable use privacy security data retention incident response policy"
+        },
+        "args_key": "{\"query\": \"acceptable use privacy security data retention incident response policy\"}",
+        "result": "Customer records are deleted 24 months after account closure.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Request: Rank policies by priority",
+          "description": "I was asked to rank our policies by priority, but the internal documentation search only surfaced one policy-related snippet: \"Customer records are deleted 24 months after account closure.\" I could not find a complete policy list to rank. Please provide the full set of policies and any desired ranking criteria (for example: legal/regulatory risk, customer impact, security impact, operational criticality) so a priority ranking can be produced.\n\nKnown policy snippet found:\n1. Customer records are deleted 24 months after account closure."
+        },
+        "args_key": "{\"description\": \"I was asked to rank our policies by priority, but the internal documentation search only surfaced one policy-related snippet: \\\"Customer records are deleted 24 months after account closure.\\\" I could not find a complete policy list to rank. Please provide the full set of policies and any desired ranking criteria (for example: legal/regulatory risk, customer impact, security impact, operational criticality) so a priority ranking can be produced.\\n\\nKnown policy snippet found:\\n1. Customer records are deleted 24 months after account closure.\", \"title\": \"Request: Rank policies by priority\"}",
+        "result": "Created TCK-001: Request: Rank policies by priority",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 5,
+    "input": 1568,
+    "cached_input": 0,
+    "output": 378,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002877
+  }
+}

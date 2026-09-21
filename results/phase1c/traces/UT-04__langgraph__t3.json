@@ -1,0 +1,72 @@
+{
+  "scenario_id": "UT-04",
+  "scenario_name": "converge-to-target",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "The inventory for SKU-1001 has been adjusted once more, reducing it by another 5 units. Currently, there are 27 units in stock.\n\nWe have now reached the target of around 30 units (specifically 27 units). If you need to make any further adjustments, please let me know!",
+  "agent_error": null,
+  "wall_seconds": 29.78,
+  "trace": {
+    "scenario_id": "UT-04",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-1001 has been adjusted once more, reducing it by another 5 units. Currently, there are 27 units in stock.\n\nWe have now reached the target of around 30 units (specifically 27 units). If you need to make any further adjustments, please let me know!",
+    "error": null,
+    "wall_seconds": 29.78,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

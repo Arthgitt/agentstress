@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will create a support ticket to escalate the issue you're facing. Could you please provide me with more details about what needs to be escalated? Specifically, could you tell me the title and a brief description of the problem?",
+  "agent_error": null,
+  "wall_seconds": 7.04,
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Sure, I will create a support ticket to escalate the issue you're facing. Could you please provide me with more details about what needs to be escalated? Specifically, could you tell me the title and a brief description of the problem?",
+    "error": null,
+    "wall_seconds": 7.04,
+    "calls": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-04",
+  "scenario_name": "contact-preference-vs-default",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "A ticket titled \"Delayed Order Notification - User-002\" has been created (TCK-001). Since we couldn't find a profile for user-002, the ticket will include instructions on how to reach out to them. Please check your notifications or the support system for further details on TCK-001.",
+  "agent_error": null,
+  "wall_seconds": 24.07,
+  "trace": {
+    "scenario_id": "RAM-04",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "A ticket titled \"Delayed Order Notification - User-002\" has been created (TCK-001). Since we couldn't find a profile for user-002, the ticket will include instructions on how to reach out to them. Please check your notifications or the support system for further details on TCK-001.",
+    "error": null,
+    "wall_seconds": 24.07,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "002"
+        },
+        "args_key": "{\"user_id\": \"002\"}",
+        "result": "No profile for user_id '002'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Delayed Order Notification - User-002",
+          "description": "There has been a delay in processing the order for user-002. Please contact the user using the available communication channels to inform them about the delay."
+        },
+        "args_key": "{\"description\": \"There has been a delay in processing the order for user-002. Please contact the user using the available communication channels to inform them about the delay.\", \"title\": \"Delayed Order Notification - User-002\"}",
+        "result": "Created TCK-001: Delayed Order Notification - User-002",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

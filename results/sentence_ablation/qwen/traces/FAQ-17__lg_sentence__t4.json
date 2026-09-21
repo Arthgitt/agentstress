@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-17",
+  "scenario_name": "copy-which-config",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 4,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To save a backup copy of the config file, I need to know the path of the original config file. Could you please provide me with the path? For example, it could be something like `/etc/config.txt` or `C:\\config.ini`. If the path is sensitive and you don't want to share it directly, just let me know a placeholder name for now, and I can proceed with that.\nIf no specific path is provided, I'll use a generic one as an example. Please specify if you have a particular file in mind.",
+  "agent_error": null,
+  "wall_seconds": 17.71,
+  "trace": {
+    "scenario_id": "FAQ-17",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "To save a backup copy of the config file, I need to know the path of the original config file. Could you please provide me with the path? For example, it could be something like `/etc/config.txt` or `C:\\config.ini`. If the path is sensitive and you don't want to share it directly, just let me know a placeholder name for now, and I can proceed with that.\nIf no specific path is provided, I'll use a generic one as an example. Please specify if you have a particular file in mind.",
+    "error": null,
+    "wall_seconds": 17.71,
+    "calls": []
+  }
+}

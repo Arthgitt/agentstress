@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no documents available under the query 'company policy'. Could you please provide more details or context about the specific policy you're looking for? Alternatively, I can create a ticket based on this information. Would you like me to proceed with creating a ticket summarizing that we couldn't find relevant company policy documentation?",
+  "agent_error": null,
+  "wall_seconds": 959.91,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "It seems there are no documents available under the query 'company policy'. Could you please provide more details or context about the specific policy you're looking for? Alternatively, I can create a ticket based on this information. Would you like me to proceed with creating a ticket summarizing that we couldn't find relevant company policy documentation?",
+    "error": null,
+    "wall_seconds": 959.91,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "company policy"
+        },
+        "args_key": "{\"query\": \"company policy\"}",
+        "result": "No documents found for 'company policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

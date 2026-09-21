@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019ve opened a billing ticket for this request.\n\nTicket created: **TCK-001** \u2014 *Billing: apply discount to order and review billing*\n\nI\u2019m unable to directly modify the order from here, but the billing team has been notified to apply the discount and review the order.",
+  "agent_error": null,
+  "wall_seconds": 2.28,
+  "usage": {
+    "requests": 2,
+    "input": 695,
+    "cached_input": 0,
+    "output": 160,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001241
+  },
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I\u2019ve opened a billing ticket for this request.\n\nTicket created: **TCK-001** \u2014 *Billing: apply discount to order and review billing*\n\nI\u2019m unable to directly modify the order from here, but the billing team has been notified to apply the discount and review the order.",
+    "error": null,
+    "wall_seconds": 2.28,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "billing discount application order process apply discount open ticket billing"
+        },
+        "args_key": "{\"query\": \"billing discount application order process apply discount open ticket billing\"}",
+        "result": "No documents found for 'billing discount application order process apply discount open ticket billing'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing: apply discount to order and review billing",
+          "description": "Customer requested that a discount be applied to the order and a billing ticket be opened. Please review the order, apply the appropriate discount, and confirm billing adjustments."
+        },
+        "args_key": "{\"description\": \"Customer requested that a discount be applied to the order and a billing ticket be opened. Please review the order, apply the appropriate discount, and confirm billing adjustments.\", \"title\": \"Billing: apply discount to order and review billing\"}",
+        "result": "Created TCK-001: Billing: apply discount to order and review billing",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "scenario_id": "SR-33",
+  "scenario_name": "three-distinct-tickets",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "{\n\"tickets\": [\n    {\"ticket_id\": \"TCK-003\", \"title\": \"SKU-4004 Stock Update\", \"description\": \"Current stock for SKU-4004 is 0 units.\"},\n    {\"ticket_id\": \"TCK-001\", \"title\": \"SKU-6006 Stock Update\", \"description\": \"Current stock for SKU-6006 is 9 units.\"},\n    {\"ticket_id\": \"TCK-002\", \"title\": \"SKU-7007 Stock Update\", \"description\": \"Current stock for SKU-7007 is 27 units.\"}\n]\n}",
+  "agent_error": null,
+  "wall_seconds": 24.04,
+  "trace": {
+    "scenario_id": "SR-33",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "{\n\"tickets\": [\n    {\"ticket_id\": \"TCK-003\", \"title\": \"SKU-4004 Stock Update\", \"description\": \"Current stock for SKU-4004 is 0 units.\"},\n    {\"ticket_id\": \"TCK-001\", \"title\": \"SKU-6006 Stock Update\", \"description\": \"Current stock for SKU-6006 is 9 units.\"},\n    {\"ticket_id\": \"TCK-002\", \"title\": \"SKU-7007 Stock Update\", \"description\": \"Current stock for SKU-7007 is 27 units.\"}\n]\n}",
+    "error": null,
+    "wall_seconds": 24.04,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-6006 Stock Update",
+          "description": "Current stock for SKU-6006 is 9 units."
+        },
+        "args_key": "{\"description\": \"Current stock for SKU-6006 is 9 units.\", \"title\": \"SKU-6006 Stock Update\"}",
+        "result": "Created TCK-001: SKU-6006 Stock Update",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-7007 Stock Update",
+          "description": "Current stock for SKU-7007 is 27 units."
+        },
+        "args_key": "{\"description\": \"Current stock for SKU-7007 is 27 units.\", \"title\": \"SKU-7007 Stock Update\"}",
+        "result": "Created TCK-002: SKU-7007 Stock Update",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-4004 Stock Update",
+          "description": "Current stock for SKU-4004 is 0 units."
+        },
+        "args_key": "{\"description\": \"Current stock for SKU-4004 is 0 units.\", \"title\": \"SKU-4004 Stock Update\"}",
+        "result": "Created TCK-003: SKU-4004 Stock Update",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

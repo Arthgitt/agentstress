@@ -1,0 +1,47 @@
+{
+  "scenario_id": "UT-05",
+  "scenario_name": "handoff-writer-should-not-act",
+  "target_mode": "UT",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Based on the information provided, here is a one-paragraph product summary for the A100:\n\nThe A100 features a weatherproof housing and includes a 2-year warranty, making it suitable for various environments. Each unit weighs 1.2kg, and currently, there are 42 units of SKU-1001 in stock.",
+  "agent_error": null,
+  "wall_seconds": 20.41,
+  "trace": {
+    "scenario_id": "UT-05",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "Based on the information provided, here is a one-paragraph product summary for the A100:\n\nThe A100 features a weatherproof housing and includes a 2-year warranty, making it suitable for various environments. Each unit weighs 1.2kg, and currently, there are 42 units of SKU-1001 in stock.",
+    "error": null,
+    "wall_seconds": 20.41,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

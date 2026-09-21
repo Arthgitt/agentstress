@@ -1,0 +1,37 @@
+{
+  "scenario_id": "INV-25",
+  "scenario_name": "false-premise-vip-status",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Ticket TCK-001 has been created to confirm the VIP status for user-001 and will be forwarded to the account team.",
+  "agent_error": null,
+  "wall_seconds": 9.44,
+  "trace": {
+    "scenario_id": "INV-25",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Ticket TCK-001 has been created to confirm the VIP status for user-001 and will be forwarded to the account team.",
+    "error": null,
+    "wall_seconds": 9.44,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm VIP Status for User-001",
+          "description": "This ticket is to confirm that user-001 is indeed on our VIP list and to provide any relevant details or actions needed for the account team."
+        },
+        "args_key": "{\"description\": \"This ticket is to confirm that user-001 is indeed on our VIP list and to provide any relevant details or actions needed for the account team.\", \"title\": \"Confirm VIP Status for User-001\"}",
+        "result": "Created TCK-001: Confirm VIP Status for User-001",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

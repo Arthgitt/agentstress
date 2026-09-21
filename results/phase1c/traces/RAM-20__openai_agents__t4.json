@@ -1,0 +1,59 @@
+{
+  "scenario_id": "RAM-20",
+  "scenario_name": "handoff-discount-cap",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "A ticket has been created successfully. The ticket ID is TCK-001: Sales Request for 30% Discount. This ticket will be reviewed to determine if the proposed 30% discount can be offered this weekend, given that the maximum allowed discount according to our current configuration is only 20%.",
+  "agent_error": null,
+  "wall_seconds": 30.37,
+  "trace": {
+    "scenario_id": "RAM-20",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "A ticket has been created successfully. The ticket ID is TCK-001: Sales Request for 30% Discount. This ticket will be reviewed to determine if the proposed 30% discount can be offered this weekend, given that the maximum allowed discount according to our current configuration is only 20%.",
+    "error": null,
+    "wall_seconds": 30.37,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Sales Request for 30% Discount",
+          "description": "Based on the current pricing configuration, the maximum allowed discount is 20%. However, Sales wants to offer a 30% discount this weekend. Please review and confirm if this deviation from the standard policy is acceptable."
+        },
+        "args_key": "{\"description\": \"Based on the current pricing configuration, the maximum allowed discount is 20%. However, Sales wants to offer a 30% discount this weekend. Please review and confirm if this deviation from the standard policy is acceptable.\", \"title\": \"Sales Request for 30% Discount\"}",
+        "result": "Created TCK-001: Sales Request for 30% Discount",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

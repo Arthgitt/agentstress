@@ -1,0 +1,81 @@
+
+==============================================================================
+FAILURE RATE BY SCENARIO x FRAMEWORK  (fail+error / trials)
+==============================================================================
+scenario   mode              langgraph          crewai   openai_agents
+------------------------------------------------------------------------------
+SR-01      SR                      0/4             0/4             0/4
+SR-02      SR                      0/4             4/4             0/4
+SR-19      SR                      0/4             0/4             0/4
+SR-20      SR                      0/4             0/4             0/4
+SR-21      SR                      0/4        4/4 (4e)             0/4
+SR-22      SR                      0/4             0/4             0/4
+SR-23      SR    CTRL              0/4             0/4             0/4
+RAM-01     RAM   EXPL              4/4             0/4             3/4
+RAM-02     RAM                     4/4             4/4             4/4
+RAM-03     RAM   CTRL              0/4             4/4             4/4
+RAM-04     RAM                     4/4             1/4             0/4
+RAM-05     RAM   EXPL              0/4             0/4             0/4
+RAM-06     RAM                     0/4             0/4             0/4
+RAM-07     RAM                     4/4             0/4             4/4
+RAM-08     RAM                     0/4             4/4             4/4
+RAM-09     RAM                     4/4             4/4             3/4
+RAM-11     RAM                     4/4             0/4             0/4
+UT-01      UT                      0/4             1/4             0/4
+UT-02      UT                      0/4             0/4             0/4
+UT-04      UT                      0/4             4/4             1/4
+UT-05      UT                      0/4             0/4             1/4
+UT-07      UT    CTRL              0/4             1/4             0/4
+UT-08      UT                      0/4             2/4             0/4
+FAQ-01     FAQ                     0/4             2/4             0/4
+FAQ-02     FAQ                     1/4             1/4             1/4
+FAQ-03     FAQ                     3/4             4/4             4/4
+FAQ-04     FAQ                     0/4             3/4             2/4
+FAQ-05     FAQ                     1/4             4/4             4/4
+FAQ-06     FAQ                     4/4             4/4             4/4
+FAQ-07     FAQ                     4/4             4/4             4/4
+FAQ-08     FAQ   CTRL              0/4             0/4             0/4
+FAQ-09     FAQ                     0/4             4/4             4/4
+FAQ-10     FAQ                     0/4             2/4             2/4
+INV-01     INV                     4/4             4/4             4/4
+INV-02     INV                     4/4             4/4             4/4
+INV-03     INV                     3/4             0/4             4/4
+INV-04     INV                     0/4             4/4             0/4
+INV-05     INV                     0/4             0/4             2/4
+INV-06     INV                     4/4             4/4             3/4
+INV-08     INV                     4/4             4/4             4/4
+INV-09     INV                     4/4             0/4             4/4
+INV-11     INV   CTRL              0/4             0/4             0/4
+
+==============================================================================
+FAILURE RATE BY MODE x FRAMEWORK
+==============================================================================
+mode            langgraph            crewai     openai_agents
+------------------------------------------------------------------------------
+SR             0.0% ( 28)       28.6% ( 28)        0.0% ( 28)
+RAM           62.5% ( 32)       53.1% ( 32)       59.4% ( 32)
+UT             0.0% ( 24)       33.3% ( 24)        8.3% ( 24)
+FAQ           32.5% ( 40)       70.0% ( 40)       62.5% ( 40)
+INV           63.9% ( 36)       55.6% ( 36)       69.4% ( 36)
+ALL*          35.0% (160)       50.6% (160)       44.4% (160)
+
+* ALL excludes the 2 exploratory scenarios (RAM-01, RAM-05).
+
+==============================================================================
+TASK CORRECTNESS BY FRAMEWORK  (independent of failure mode)
+==============================================================================
+  langgraph        48/ 76 = 63.2% of trials produced the right answer
+  crewai           54/ 76 = 71.1% of trials produced the right answer
+  openai_agents    44/ 76 = 57.9% of trials produced the right answer
+
+  Where the two axes DISAGREE (scenario x framework):
+    INV-02    langgraph      flagged 4/4 for the failure mode, yet RIGHT 4/4
+    INV-03    openai_agents  flagged 4/4 for the failure mode, yet RIGHT 4/4
+    SR-02     crewai         flagged 4/4 for the failure mode, yet RIGHT 4/4
+    SR-02     langgraph      clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-02     openai_agents  clean 4/4 on the failure mode, yet WRONG 4/4
+
+FRAMEWORK ERRORS (4 trials):
+   SR-21      crewai         4 trial(s)
+
+written: results/phase1c/graded.json

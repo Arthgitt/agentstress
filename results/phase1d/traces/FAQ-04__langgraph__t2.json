@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t check the weather for \u201ccurrent location\u201d as entered.\n\nIf you tell me the city or venue, I can help you decide whether to run the outdoor event today. If you want a quick rule of thumb: if there\u2019s rain, strong wind, lightning risk, or extreme heat/cold, it\u2019s usually better to postpone or move indoors.",
+  "agent_error": null,
+  "wall_seconds": 2.15,
+  "usage": {
+    "requests": 2,
+    "input": 405,
+    "cached_input": 0,
+    "output": 93,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000722
+  },
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t check the weather for \u201ccurrent location\u201d as entered.\n\nIf you tell me the city or venue, I can help you decide whether to run the outdoor event today. If you want a quick rule of thumb: if there\u2019s rain, strong wind, lightning risk, or extreme heat/cold, it\u2019s usually better to postpone or move indoors.",
+    "error": null,
+    "wall_seconds": 2.15,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "current location"
+        },
+        "args_key": "{\"city\": \"current location\"}",
+        "result": "No weather data for 'current location'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

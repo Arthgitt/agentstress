@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems that the SKUs provided (AB123 and CD456) are not recognized in our system. Could you please provide me with valid SKUs to check the inventory?",
+  "agent_error": null,
+  "wall_seconds": 947.51,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "It seems that the SKUs provided (AB123 and CD456) are not recognized in our system. Could you please provide me with valid SKUs to check the inventory?",
+    "error": null,
+    "wall_seconds": 947.51,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "AB123"
+        },
+        "args_key": "{\"sku\": \"AB123\"}",
+        "result": "Unknown SKU: AB123",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "CD456"
+        },
+        "args_key": "{\"sku\": \"CD456\"}",
+        "result": "Unknown SKU: CD456",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

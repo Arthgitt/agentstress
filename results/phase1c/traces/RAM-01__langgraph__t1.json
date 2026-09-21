@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-01",
+  "scenario_name": "threshold-policy-application",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": true,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created a support ticket titled \"Query on Service Charge for $85 Order.\" The ticket number is TCK-001. This will help us get an official confirmation from our records.\n\nTo summarize, based on the information available, there should be no service charge for your $85 order since it's under the threshold of $100. However, we have opened a ticket to confirm this with our records.\nIs there anything else you need assistance with?",
+  "agent_error": null,
+  "wall_seconds": 27.75,
+  "trace": {
+    "scenario_id": "RAM-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have created a support ticket titled \"Query on Service Charge for $85 Order.\" The ticket number is TCK-001. This will help us get an official confirmation from our records.\n\nTo summarize, based on the information available, there should be no service charge for your $85 order since it's under the threshold of $100. However, we have opened a ticket to confirm this with our records.\nIs there anything else you need assistance with?",
+    "error": null,
+    "wall_seconds": 27.75,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "service charge policy"
+        },
+        "args_key": "{\"query\": \"service charge policy\"}",
+        "result": "No service charge is applied to orders under $100.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Query on Service Charge for $85 Order",
+          "description": "Is there a service charge for an order of $85?"
+        },
+        "args_key": "{\"description\": \"Is there a service charge for an order of $85?\", \"title\": \"Query on Service Charge for $85 Order\"}",
+        "result": "Created TCK-001: Query on Service Charge for $85 Order",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

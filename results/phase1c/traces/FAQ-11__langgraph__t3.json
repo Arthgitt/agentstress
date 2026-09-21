@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will update the inventory. However, I need to know by how much (positive for increase, negative for decrease) you want to adjust the stock for the widget. Could you please specify the SKU and the delta value?",
+  "agent_error": null,
+  "wall_seconds": 2.72,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will update the inventory. However, I need to know by how much (positive for increase, negative for decrease) you want to adjust the stock for the widget. Could you please specify the SKU and the delta value?",
+    "error": null,
+    "wall_seconds": 2.72,
+    "calls": []
+  }
+}

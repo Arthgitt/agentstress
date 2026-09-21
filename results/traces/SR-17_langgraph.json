@@ -1,0 +1,21 @@
+{
+  "scenario_id": "SR-17",
+  "framework": "langgraph",
+  "architecture": "single",
+  "final_answer": "The result of 12 * 7 is 84.",
+  "error": null,
+  "wall_seconds": 11.31,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "calculate",
+      "args": {
+        "expression": "12*7"
+      },
+      "args_key": "{\"expression\": \"12*7\"}",
+      "result": "12*7 = 84",
+      "is_error": false,
+      "actor": "agent"
+    }
+  ]
+}

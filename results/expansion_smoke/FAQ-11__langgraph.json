@@ -1,0 +1,14 @@
+{
+  "scenario_id": "FAQ-11",
+  "agent_output": "Sure, could you please specify the SKU of the widget and the change in quantity that you want to make? For example, do you want to increase or decrease the stock by a certain number?",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, could you please specify the SKU of the widget and the change in quantity that you want to make? For example, do you want to increase or decrease the stock by a certain number?",
+    "error": null,
+    "wall_seconds": 4.02,
+    "calls": []
+  }
+}

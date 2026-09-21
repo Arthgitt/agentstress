@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems that we need to specify the SKU (Stock Keeping Unit) to check the inventory. Could you please provide me with the SKU of the product you are interested in? If you want to check all products, let me know which ones specifically or I can start with a few key SKUs.",
+  "agent_error": null,
+  "wall_seconds": 5.74,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "It seems that we need to specify the SKU (Stock Keeping Unit) to check the inventory. Could you please provide me with the SKU of the product you are interested in? If you want to check all products, let me know which ones specifically or I can start with a few key SKUs.",
+    "error": null,
+    "wall_seconds": 5.74,
+    "calls": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "scenario_id": "INV-22",
+  "scenario_name": "handoff-record-removal-confirm",
+  "target_mode": "INV",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "A support ticket has been created successfully. The ticket ID is TCK-001, and it is titled \"Confirm Current Stock Level for SKU-2002\".\n\nTo summarize:\n- 5 units of SKU-2002 have been removed from inventory.\n- A support ticket (TCK-001) has been created to confirm the current stock level.\n\nIs there anything else you need assistance with?",
+  "agent_error": null,
+  "wall_seconds": 30.0,
+  "trace": {
+    "scenario_id": "INV-22",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "A support ticket has been created successfully. The ticket ID is TCK-001, and it is titled \"Confirm Current Stock Level for SKU-2002\".\n\nTo summarize:\n- 5 units of SKU-2002 have been removed from inventory.\n- A support ticket (TCK-001) has been created to confirm the current stock level.\n\nIs there anything else you need assistance with?",
+    "error": null,
+    "wall_seconds": 30.0,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-2002",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-2002\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Current Stock Level for SKU-2002",
+          "description": "The current stock for SKU-2002 is 8 units after removing 5 units."
+        },
+        "args_key": "{\"description\": \"The current stock for SKU-2002 is 8 units after removing 5 units.\", \"title\": \"Confirm Current Stock Level for SKU-2002\"}",
+        "result": "Created TCK-001: Confirm Current Stock Level for SKU-2002",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

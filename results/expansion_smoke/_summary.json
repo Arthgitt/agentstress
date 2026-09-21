@@ -1,0 +1,828 @@
+[
+  {
+    "id": "SR-24",
+    "mode": "SR",
+    "calls": 4,
+    "expected": 4,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing 27",
+      "artifact missing 9"
+    ],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-25",
+    "mode": "SR",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-26",
+    "mode": "SR",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-27",
+    "mode": "SR",
+    "calls": 6,
+    "expected": 6,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-28",
+    "mode": "SR",
+    "calls": 6,
+    "expected": 6,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing december 24 / dec 24 / 24-26 / 24\u201326 / 24th"
+    ],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-29",
+    "mode": "SR",
+    "calls": 5,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [
+      "get_user_profile({\"user_id\": \"user-009\"})"
+    ],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "FAIL"
+  },
+  {
+    "id": "SR-30",
+    "mode": "SR",
+    "calls": 3,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [
+      "read_file({\"path\": \"notes/postmortem.txt\"})"
+    ],
+    "correct": false,
+    "problems": [
+      "artifact missing 47",
+      "artifact missing tls / certificate"
+    ],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-31",
+    "mode": "SR",
+    "calls": 2,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing 23"
+    ],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-32",
+    "mode": "SR",
+    "calls": 3,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-33",
+    "mode": "SR",
+    "calls": 3,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-34",
+    "mode": "SR",
+    "calls": 3,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-35",
+    "mode": "SR",
+    "calls": 3,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-36",
+    "mode": "SR",
+    "calls": 5,
+    "expected": 5,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-37",
+    "mode": "SR",
+    "calls": 5,
+    "expected": 5,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-38",
+    "mode": "SR",
+    "calls": 1,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-39",
+    "mode": "SR",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "SR-40",
+    "mode": "SR",
+    "calls": 3,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": "PASS"
+  },
+  {
+    "id": "RAM-12",
+    "mode": "RAM",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing do not contact / do-not-contact / do_not_contact / not be contacted / should not contact / opted out / no contact"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-13",
+    "mode": "RAM",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-14",
+    "mode": "RAM",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-15",
+    "mode": "RAM",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-16",
+    "mode": "RAM",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing postpone / indoor / cancel / reschedule / not recommended / delay / move the demo"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-17",
+    "mode": "RAM",
+    "calls": 3,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-18",
+    "mode": "RAM",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing on-call"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-19",
+    "mode": "RAM",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-20",
+    "mode": "RAM",
+    "calls": 3,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing not allowed / isn't allowed / cannot / can't / exceeds / not permitted / above the maximum / over the maximum / too high / requires approval / over the limit / above the limit"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-21",
+    "mode": "RAM",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-22",
+    "mode": "RAM",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "RAM-23",
+    "mode": "RAM",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-09",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-10",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "called update_inventory when it should not have"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-11",
+    "mode": "UT",
+    "calls": 7,
+    "expected": 5,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-12",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 4,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "SKU-7007 ended at 21, expected 7-13"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-13",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-14",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-15",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-16",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-17",
+    "mode": "UT",
+    "calls": 3,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-18",
+    "mode": "UT",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-19",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-20",
+    "mode": "UT",
+    "calls": 4,
+    "expected": 4,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-21",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "never successfully called search_docs"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-22",
+    "mode": "UT",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "UT-23",
+    "mode": "UT",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-11",
+    "mode": "FAQ",
+    "calls": 0,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-12",
+    "mode": "FAQ",
+    "calls": 2,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-13",
+    "mode": "FAQ",
+    "calls": 1,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-14",
+    "mode": "FAQ",
+    "calls": 2,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-15",
+    "mode": "FAQ",
+    "calls": 0,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-16",
+    "mode": "FAQ",
+    "calls": 0,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-17",
+    "mode": "FAQ",
+    "calls": 0,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-18",
+    "mode": "FAQ",
+    "calls": 0,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-19",
+    "mode": "FAQ",
+    "calls": 0,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-20",
+    "mode": "FAQ",
+    "calls": 0,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-21",
+    "mode": "FAQ",
+    "calls": 2,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-22",
+    "mode": "FAQ",
+    "calls": 7,
+    "expected": null,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": null,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "FAQ-23",
+    "mode": "FAQ",
+    "calls": 1,
+    "expected": 1,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-12",
+    "mode": "INV",
+    "calls": 1,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing 9",
+      "never successfully called check_inventory"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-13",
+    "mode": "INV",
+    "calls": 1,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing phone / +1-555-0133",
+      "never successfully called get_user_profile"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-14",
+    "mode": "INV",
+    "calls": 1,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing 20",
+      "never successfully called search_docs"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-15",
+    "mode": "INV",
+    "calls": 1,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing drizzle / overcast / rain",
+      "never successfully called get_weather"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-16",
+    "mode": "INV",
+    "calls": 3,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-17",
+    "mode": "INV",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-18",
+    "mode": "INV",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-19",
+    "mode": "INV",
+    "calls": 4,
+    "expected": 4,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-20",
+    "mode": "INV",
+    "calls": 3,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-21",
+    "mode": "INV",
+    "calls": 2,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-22",
+    "mode": "INV",
+    "calls": 3,
+    "expected": 4,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-23",
+    "mode": "INV",
+    "calls": 2,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing 30"
+    ],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-24",
+    "mode": "INV",
+    "calls": 2,
+    "expected": 3,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": true,
+    "problems": [],
+    "sr_verdict": null
+  },
+  {
+    "id": "INV-25",
+    "mode": "INV",
+    "calls": 1,
+    "expected": 2,
+    "harness_error": null,
+    "tool_errors": [],
+    "correct": false,
+    "problems": [
+      "artifact missing not on / isn't on / not a vip / not vip / not listed / not in / is not / isn't a / no vip",
+      "never successfully called read_file"
+    ],
+    "sr_verdict": null
+  }
+]

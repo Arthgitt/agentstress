@@ -1,0 +1,59 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn't find any existing documentation on how to prioritize policies. However, I have created a support ticket titled \"Policies Priority Ranking\" (TCK-001) to discuss and establish the criteria for prioritizing our policies.\n\nPlease contribute your ideas and suggestions through this ticket so we can create an effective ranking system.",
+  "agent_error": null,
+  "wall_seconds": 15.81,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "I couldn't find any existing documentation on how to prioritize policies. However, I have created a support ticket titled \"Policies Priority Ranking\" (TCK-001) to discuss and establish the criteria for prioritizing our policies.\n\nPlease contribute your ideas and suggestions through this ticket so we can create an effective ranking system.",
+    "error": null,
+    "wall_seconds": 15.81,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies priority ranking"
+        },
+        "args_key": "{\"query\": \"policies priority ranking\"}",
+        "result": "No documents found for 'policies priority ranking'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Policies Priority Ranking",
+          "description": "Based on the current available information, we need to establish a priority ranking for our policies. Please provide your input and suggestions so that we can create a structured and prioritized list of policies."
+        },
+        "args_key": "{\"description\": \"Based on the current available information, we need to establish a priority ranking for our policies. Please provide your input and suggestions so that we can create a structured and prioritized list of policies.\", \"title\": \"Policies Priority Ranking\"}",
+        "result": "Created TCK-001: Policies Priority Ranking",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "example priority policy ranking for reference"
+        },
+        "args_key": "{\"query\": \"example priority policy ranking for reference\"}",
+        "result": "No documents found for 'example priority policy ranking for reference'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "scenario_id": "SR-35",
+  "scenario_name": "handoff-q2-brief",
+  "target_mode": "SR",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The figures from the file reports/q2.txt have been written into reports/q2_brief.txt and a ticket titled 'Q2 brief filed' has been created. The content of reports/q2_brief.txt is as follows:\n\nQ2 revenue: $1.2M\nQ2 churn: 4.1%\n\nTICKET CREATED: TCK-001: Q2 brief filed",
+  "agent_error": null,
+  "wall_seconds": 30.23,
+  "trace": {
+    "scenario_id": "SR-35",
+    "framework": "lg_crewprompt",
+    "architecture": "handoff",
+    "final_answer": "The figures from the file reports/q2.txt have been written into reports/q2_brief.txt and a ticket titled 'Q2 brief filed' has been created. The content of reports/q2_brief.txt is as follows:\n\nQ2 revenue: $1.2M\nQ2 churn: 4.1%\n\nTICKET CREATED: TCK-001: Q2 brief filed",
+    "error": null,
+    "wall_seconds": 30.23,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "reports/q2.txt"
+        },
+        "args_key": "{\"path\": \"reports/q2.txt\"}",
+        "result": "Q2 revenue: $1.2M\nQ2 churn: 4.1%",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "read_file",
+        "args": {
+          "path": "reports/q2.txt"
+        },
+        "args_key": "{\"path\": \"reports/q2.txt\"}",
+        "result": "Q2 revenue: $1.2M\nQ2 churn: 4.1%",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 2,
+        "tool": "write_file",
+        "args": {
+          "path": "reports/q2_brief.txt",
+          "content": "Q2 revenue: $1.2M\nQ2 churn: 4.1%"
+        },
+        "args_key": "{\"content\": \"Q2 revenue: $1.2M\\nQ2 churn: 4.1%\", \"path\": \"reports/q2_brief.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Q2 brief filed",
+          "description": "The figures from the file reports/q2.txt have been written into reports/q2_brief.txt."
+        },
+        "args_key": "{\"description\": \"The figures from the file reports/q2.txt have been written into reports/q2_brief.txt.\", \"title\": \"Q2 brief filed\"}",
+        "result": "Created TCK-001: Q2 brief filed",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+
+==============================================================================
+FAILURE RATE BY SCENARIO x FRAMEWORK  (fail+error / trials)
+==============================================================================
+scenario   mode              langgraph          crewai   openai_agents
+------------------------------------------------------------------------------
+SR-02      SR                      0/4             4/4             0/4
+SR-21      SR                      0/4        4/4 (4e)             0/4
+SR-23      SR    CTRL              0/4             0/4             0/4
+SR-24      SR                      0/4             4/4             0/4
+SR-25      SR                      0/4             0/4             0/4
+SR-26      SR                      0/4             0/4             0/4
+SR-27      SR                      0/4             0/4             0/4
+SR-28      SR                      0/4             2/4             0/4
+SR-29      SR                      4/4             4/4             4/4
+SR-30      SR                      1/4             4/4             0/4
+SR-31      SR                      0/4             4/4             0/4
+SR-32      SR                      2/4             0/4             0/4
+SR-33      SR    CTRL              0/4             0/4             0/4
+SR-34      SR                      0/4             1/4             0/4
+SR-35      SR                      0/4             0/4             0/4
+SR-36      SR                      0/4             0/4             0/4
+SR-37      SR                      0/4             0/4             0/4
+SR-38      SR                      0/4             0/4             0/4
+SR-39      SR                      0/4             3/4             0/4
+SR-40      SR                      0/4             0/4             0/4
+RAM-01     RAM   EXPL              4/4             0/4             3/4
+RAM-03     RAM   CTRL              0/4             4/4             4/4
+RAM-04     RAM                     4/4             1/4             0/4
+RAM-05     RAM   EXPL              0/4             0/4             0/4
+RAM-07     RAM                     4/4             0/4             4/4
+RAM-08     RAM                     0/4             4/4             4/4
+RAM-09     RAM                     4/4             4/4             3/4
+RAM-11     RAM                     4/4             0/4             0/4
+RAM-12     RAM                     3/4             0/4             1/4
+RAM-13     RAM                     0/4             1/4             0/4
+RAM-14     RAM                     1/4             0/4             1/4
+RAM-15     RAM                     1/4             0/4             0/4
+RAM-16     RAM                     4/4             4/4             4/4
+RAM-17     RAM                     0/4             3/4             3/4
+RAM-18     RAM                     4/4             2/4             4/4
+RAM-19     RAM                     0/4             0/4             0/4
+RAM-20     RAM                     0/4             1/4             0/4
+RAM-21     RAM                     2/4             2/4             4/4
+RAM-22     RAM                     0/4             2/4             0/4
+RAM-23     RAM   CTRL              0/4             0/4             0/4
+UT-01      UT                      0/4             1/4             0/4
+UT-04      UT                      0/4             4/4             1/4
+UT-05      UT                      0/4             0/4             1/4
+UT-07      UT    CTRL              0/4             1/4             0/4
+UT-08      UT                      0/4             2/4             0/4
+UT-09      UT                      0/4             1/4             1/4
+UT-10      UT                      2/4             4/4             4/4
+UT-11      UT                      0/4             3/4             0/4
+UT-12      UT                      0/4             0/4             0/4
+UT-13      UT                      0/4             0/4             0/4
+UT-14      UT                      0/4             0/4             0/4
+UT-15      UT                      0/4             1/4             0/4
+UT-16      UT                      0/4             0/4             0/4
+UT-17      UT                      0/4             0/4             0/4
+UT-18      UT                      0/4             0/4             0/4
+UT-19      UT                      0/4             0/4             0/4
+UT-20      UT                      0/4             4/4             0/4
+UT-21      UT                      0/4             0/4             0/4
+UT-22      UT                      0/4             0/4             0/4
+UT-23      UT                      0/4             0/4             0/4
+FAQ-01     FAQ                     0/4             2/4             0/4
+FAQ-03     FAQ                     3/4             4/4             4/4
+FAQ-04     FAQ                     0/4             3/4             2/4
+FAQ-05     FAQ                     1/4             4/4             4/4
+FAQ-08     FAQ   CTRL              0/4             0/4             0/4
+FAQ-09     FAQ                     0/4             4/4             4/4
+FAQ-10     FAQ                     0/4             2/4             2/4
+FAQ-11     FAQ                     1/4             3/4             1/4
+FAQ-12     FAQ                     4/4             4/4             4/4
+FAQ-13     FAQ                     0/4             4/4             2/4
+FAQ-14     FAQ                     3/4             4/4             3/4
+FAQ-15     FAQ                     0/4             0/4             0/4
+FAQ-16     FAQ                     1/4             4/4             4/4
+FAQ-17     FAQ                     2/4             4/4             2/4
+FAQ-18     FAQ                     0/4             4/4             3/4
+FAQ-19     FAQ                     3/4             4/4             4/4
+FAQ-20     FAQ                     0/4             4/4             0/4
+FAQ-21     FAQ                     4/4             4/4             4/4
+FAQ-22     FAQ                     4/4             4/4             4/4
+FAQ-23     FAQ   CTRL              0/4             0/4             0/4
+INV-03     INV                     3/4             0/4             4/4
+INV-04     INV                     0/4             4/4             0/4
+INV-05     INV                     0/4             0/4             2/4
+INV-06     INV                     4/4             4/4             3/4
+INV-09     INV                     4/4             0/4             4/4
+INV-11     INV   CTRL              0/4             0/4             0/4
+INV-12     INV                     4/4             4/4             4/4
+INV-13     INV                     4/4             4/4             4/4
+INV-14     INV                     4/4             4/4             4/4
+INV-15     INV                     4/4             4/4             4/4
+INV-16     INV                     3/4             0/4             0/4
+INV-17     INV                     0/4             0/4             0/4
+INV-18     INV                     0/4             0/4             0/4
+INV-19     INV                     0/4             3/4             0/4
+INV-20     INV                     2/4             4/4             1/4
+INV-21     INV                     0/4             4/4             4/4
+INV-22     INV                     4/4             4/4             4/4
+INV-23     INV                     4/4             4/4             4/4
+INV-24     INV                     4/4             1/4             4/4
+INV-25     INV                     4/4             4/4             4/4
+
+==============================================================================
+FAILURE RATE BY MODE x FRAMEWORK
+==============================================================================
+mode            langgraph            crewai     openai_agents
+------------------------------------------------------------------------------
+SR             8.8% ( 80)       37.5% ( 80)        5.0% ( 80)
+RAM           43.1% ( 72)       38.9% ( 72)       44.4% ( 72)
+UT             2.5% ( 80)       26.2% ( 80)        8.8% ( 80)
+FAQ           32.5% ( 80)       77.5% ( 80)       58.8% ( 80)
+INV           60.0% ( 80)       60.0% ( 80)       62.5% ( 80)
+ALL*          29.1% (392)       48.2% (392)       35.7% (392)
+
+* ALL excludes the 2 exploratory scenarios (RAM-01, RAM-05).
+
+==============================================================================
+TASK CORRECTNESS BY FRAMEWORK  (independent of failure mode)
+==============================================================================
+  langgraph       190/284 = 66.9% of trials produced the right answer
+  crewai          179/284 = 63.0% of trials produced the right answer
+  openai_agents   182/284 = 64.1% of trials produced the right answer
+
+  Where the two axes DISAGREE (scenario x framework):
+    INV-03    openai_agents  flagged 4/4 for the failure mode, yet RIGHT 4/4
+    INV-22    crewai         flagged 4/4 for the failure mode, yet RIGHT 4/4
+    INV-22    openai_agents  flagged 4/4 for the failure mode, yet RIGHT 4/4
+    INV-24    langgraph      flagged 4/4 for the failure mode, yet RIGHT 4/4
+    INV-24    openai_agents  flagged 4/4 for the failure mode, yet RIGHT 4/4
+    RAM-14    crewai         clean 4/4 on the failure mode, yet WRONG 4/4
+    RAM-20    langgraph      clean 4/4 on the failure mode, yet WRONG 4/4
+    RAM-20    openai_agents  clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-02     crewai         flagged 4/4 for the failure mode, yet RIGHT 4/4
+    SR-02     langgraph      clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-02     openai_agents  clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-25     crewai         clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-26     openai_agents  clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-28     langgraph      clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-28     openai_agents  clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-29     crewai         flagged 4/4 for the failure mode, yet RIGHT 4/4
+    SR-29     langgraph      flagged 4/4 for the failure mode, yet RIGHT 4/4
+    SR-29     openai_agents  flagged 4/4 for the failure mode, yet RIGHT 4/4
+    SR-30     crewai         flagged 4/4 for the failure mode, yet RIGHT 4/4
+    SR-31     langgraph      clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-31     openai_agents  clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-32     crewai         clean 4/4 on the failure mode, yet WRONG 4/4
+    SR-38     crewai         clean 4/4 on the failure mode, yet WRONG 4/4
+    UT-12     openai_agents  clean 4/4 on the failure mode, yet WRONG 4/4
+    UT-19     crewai         clean 4/4 on the failure mode, yet WRONG 4/4
+    UT-19     openai_agents  clean 4/4 on the failure mode, yet WRONG 4/4
+    UT-21     langgraph      clean 4/4 on the failure mode, yet WRONG 4/4
+    UT-21     openai_agents  clean 4/4 on the failure mode, yet WRONG 4/4
+
+FRAMEWORK ERRORS (4 trials):
+   SR-21      crewai         4 trial(s)
+
+written: results/phase1c/graded.json

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn't find any document related to our policy. Could you please provide more details or check the spelling? In case we need to create a new ticket regarding this, I can help with that.\n\nWould you like me to proceed and open a ticket summarizing your request for a policy document?",
+  "agent_error": null,
+  "wall_seconds": 1035.63,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I couldn't find any document related to our policy. Could you please provide more details or check the spelling? In case we need to create a new ticket regarding this, I can help with that.\n\nWould you like me to proceed and open a ticket summarizing your request for a policy document?",
+    "error": null,
+    "wall_seconds": 1035.63,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

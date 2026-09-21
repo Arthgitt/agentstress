@@ -1,0 +1,59 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "A support ticket (TCK-001) has been created to request an update on the weather data for New York. Once we have this information, we can make a more informed decision about whether to run the outdoor event today.\n\nIn the meantime, consider checking real-time weather conditions through a reliable source or contacting local meteorological services for immediate updates.",
+  "agent_error": null,
+  "wall_seconds": 2934.66,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "A support ticket (TCK-001) has been created to request an update on the weather data for New York. Once we have this information, we can make a more informed decision about whether to run the outdoor event today.\n\nIn the meantime, consider checking real-time weather conditions through a reliable source or contacting local meteorological services for immediate updates.",
+    "error": null,
+    "wall_seconds": 2934.66,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        },
+        "args_key": "{\"city\": \"New York\"}",
+        "result": "No weather data for 'New York'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        },
+        "args_key": "{\"city\": \"New York\"}",
+        "result": "No weather data for 'New York'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Request for Weather Data Update",
+          "description": "There is no current weather data available for New York. Please provide real-time weather updates to assist in deciding whether to proceed with the outdoor event."
+        },
+        "args_key": "{\"description\": \"There is no current weather data available for New York. Please provide real-time weather updates to assist in deciding whether to proceed with the outdoor event.\", \"title\": \"Request for Weather Data Update\"}",
+        "result": "Created TCK-001: Request for Weather Data Update",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

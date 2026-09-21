@@ -1,0 +1,24 @@
+{
+  "scenario_id": "INV-16",
+  "scenario_name": "save-and-confirm-file",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Sure, I will save the escalation policy into `docs/escalation.txt` and then verify its contents. Could you please provide me with the text of the escalation policy that needs to be saved? If you don't have it ready, I can proceed by creating a sample one for demonstration purposes.\nWould you like to proceed with a sample policy or input your own?",
+  "agent_error": null,
+  "wall_seconds": 6.5,
+  "trace": {
+    "scenario_id": "INV-16",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will save the escalation policy into `docs/escalation.txt` and then verify its contents. Could you please provide me with the text of the escalation policy that needs to be saved? If you don't have it ready, I can proceed by creating a sample one for demonstration purposes.\nWould you like to proceed with a sample policy or input your own?",
+    "error": null,
+    "wall_seconds": 6.5,
+    "calls": []
+  }
+}

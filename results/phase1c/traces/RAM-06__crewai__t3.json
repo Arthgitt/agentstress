@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-06",
+  "scenario_name": "discount-vs-amount-due",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The discount on the $80 item is $20. Therefore, the customer should be charged $60.\n\nA ticket has been created for the billing team with the reference number TCK-001: Customer Discount for $80 Item with 25% Off. They have been informed of the details and will adjust the charge accordingly.",
+  "agent_error": null,
+  "wall_seconds": 18.28,
+  "trace": {
+    "scenario_id": "RAM-06",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The discount on the $80 item is $20. Therefore, the customer should be charged $60.\n\nA ticket has been created for the billing team with the reference number TCK-001: Customer Discount for $80 Item with 25% Off. They have been informed of the details and will adjust the charge accordingly.",
+    "error": null,
+    "wall_seconds": 18.28,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.25*80"
+        },
+        "args_key": "{\"expression\": \"0.25*80\"}",
+        "result": "0.25*80 = 20.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Discount for $80 Item with 25% Off",
+          "description": "A customer is getting a 25% discount on an $80 item. The discount amount is $20, so please charge the customer $60."
+        },
+        "args_key": "{\"description\": \"A customer is getting a 25% discount on an $80 item. The discount amount is $20, so please charge the customer $60.\", \"title\": \"Customer Discount for $80 Item with 25% Off\"}",
+        "result": "Created TCK-001: Customer Discount for $80 Item with 25% Off",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "scenario_id": "INV-22",
+  "agent_output": "The support ticket has been created successfully. The ticket number is TCK-001, and it is titled \"Confirm Current Stock Level for SKU-2002\".\n\nTo summarize:\n- 5 units of SKU-2002 have been removed from inventory.\n- A support ticket (TCK-001) has been created to confirm the current stock level.\n\nIf you need any further assistance, feel free to ask!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "INV-22",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "The support ticket has been created successfully. The ticket number is TCK-001, and it is titled \"Confirm Current Stock Level for SKU-2002\".\n\nTo summarize:\n- 5 units of SKU-2002 have been removed from inventory.\n- A support ticket (TCK-001) has been created to confirm the current stock level.\n\nIf you need any further assistance, feel free to ask!",
+    "error": null,
+    "wall_seconds": 32.93,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-2002",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-2002\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Current Stock Level for SKU-2002",
+          "description": "The current stock for SKU-2002 is 8 units after removing 5 units."
+        },
+        "args_key": "{\"description\": \"The current stock for SKU-2002 is 8 units after removing 5 units.\", \"title\": \"Confirm Current Stock Level for SKU-2002\"}",
+        "result": "Created TCK-001: Confirm Current Stock Level for SKU-2002",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no documents available under the topic 'policy'. Could you please provide more details or specify a different policy area? I can then assist in searching again or help you open a ticket with the information you have.",
+  "agent_error": null,
+  "wall_seconds": 8.61,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "It seems there are no documents available under the topic 'policy'. Could you please provide more details or specify a different policy area? I can then assist in searching again or help you open a ticket with the information you have.",
+    "error": null,
+    "wall_seconds": 8.61,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

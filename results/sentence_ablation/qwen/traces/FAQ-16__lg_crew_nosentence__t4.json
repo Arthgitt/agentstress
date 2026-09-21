@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 4,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed with scheduling the maintenance window and opening a ticket, I need more specific details such as:\n\n1. The date and time for the maintenance window.\n2. Any relevant description or purpose of the maintenance.\n\nOnce you provide these details, I will schedule the maintenance window and create a support/task ticket accordingly. Please provide the necessary information so that I can complete this task accurately.",
+  "agent_error": null,
+  "wall_seconds": 10.92,
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "To proceed with scheduling the maintenance window and opening a ticket, I need more specific details such as:\n\n1. The date and time for the maintenance window.\n2. Any relevant description or purpose of the maintenance.\n\nOnce you provide these details, I will schedule the maintenance window and create a support/task ticket accordingly. Please provide the necessary information so that I can complete this task accurately.",
+    "error": null,
+    "wall_seconds": 10.92,
+    "calls": []
+  }
+}

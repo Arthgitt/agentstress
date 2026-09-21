@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-01",
+  "scenario_name": "threshold-policy-application",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": true,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "A ticket has been created with the reference number TCK-001 to formally query whether an $85 order incurs a service charge. \n\nBased on the initial information, there should be no service charge for orders under $100, but we have officially logged this inquiry for confirmation.",
+  "agent_error": null,
+  "wall_seconds": 20.6,
+  "trace": {
+    "scenario_id": "RAM-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "A ticket has been created with the reference number TCK-001 to formally query whether an $85 order incurs a service charge. \n\nBased on the initial information, there should be no service charge for orders under $100, but we have officially logged this inquiry for confirmation.",
+    "error": null,
+    "wall_seconds": 20.6,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "service charge policy"
+        },
+        "args_key": "{\"query\": \"service charge policy\"}",
+        "result": "No service charge is applied to orders under $100.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Query on $85 Order Service Charge",
+          "description": "Confirm if an order of $85 incurs any service charge based on the current policy."
+        },
+        "args_key": "{\"description\": \"Confirm if an order of $85 incurs any service charge based on the current policy.\", \"title\": \"Query on $85 Order Service Charge\"}",
+        "result": "Created TCK-001: Query on $85 Order Service Charge",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

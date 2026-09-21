@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-06",
+  "scenario_name": "discount-vs-amount-due",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "-ticket created successfully. The ticket details are as follows:\n- **Title:** Price Adjustment for Customer Discount\n- **Description:** There is a 25% discount on an $80 item, resulting in a discount of $20. Please adjust the charge to $60 for this customer.\n\nThe billing team has been notified and will make the necessary adjustments.",
+  "agent_error": null,
+  "wall_seconds": 22.98,
+  "trace": {
+    "scenario_id": "RAM-06",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "-ticket created successfully. The ticket details are as follows:\n- **Title:** Price Adjustment for Customer Discount\n- **Description:** There is a 25% discount on an $80 item, resulting in a discount of $20. Please adjust the charge to $60 for this customer.\n\nThe billing team has been notified and will make the necessary adjustments.",
+    "error": null,
+    "wall_seconds": 22.98,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.25*80"
+        },
+        "args_key": "{\"expression\": \"0.25*80\"}",
+        "result": "0.25*80 = 20.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Price Adjustment for Customer Discount",
+          "description": "A customer is getting 25% off an $80 item. The discount amount is $20, so please charge them $60."
+        },
+        "args_key": "{\"description\": \"A customer is getting 25% off an $80 item. The discount amount is $20, so please charge them $60.\", \"title\": \"Price Adjustment for Customer Discount\"}",
+        "result": "Created TCK-001: Price Adjustment for Customer Discount",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

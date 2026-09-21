@@ -1,0 +1,60 @@
+{
+  "scenario_id": "SR-40",
+  "scenario_name": "incident-two-tickets",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The tickets have been created successfully.\n\n- **Ticket TCK-001**: Incident duration - The checkout API was down for 47 minutes.\n- **Ticket TCK-002**: Incident root cause - The outage occurred because the TLS certificate had expired. \n\nIs there anything else you need assistance with?",
+  "agent_error": null,
+  "wall_seconds": 31.39,
+  "trace": {
+    "scenario_id": "SR-40",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The tickets have been created successfully.\n\n- **Ticket TCK-001**: Incident duration - The checkout API was down for 47 minutes.\n- **Ticket TCK-002**: Incident root cause - The outage occurred because the TLS certificate had expired. \n\nIs there anything else you need assistance with?",
+    "error": null,
+    "wall_seconds": 31.39,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "notes/incident.txt"
+        },
+        "args_key": "{\"path\": \"notes/incident.txt\"}",
+        "result": "2026-09-01 outage: checkout API down for 47 minutes. Root cause: expired TLS certificate.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Incident duration",
+          "description": "The checkout API was down for 47 minutes."
+        },
+        "args_key": "{\"description\": \"The checkout API was down for 47 minutes.\", \"title\": \"Incident duration\"}",
+        "result": "Created TCK-001: Incident duration",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Incident root cause",
+          "description": "The outage occurred because the TLS certificate had expired."
+        },
+        "args_key": "{\"description\": \"The outage occurred because the TLS certificate had expired.\", \"title\": \"Incident root cause\"}",
+        "result": "Created TCK-002: Incident root cause",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To determine if we should run the outdoor event today, I'll first check the weather for the city where the event is scheduled to take place. Could you please provide me with the name of the city?",
+  "agent_error": null,
+  "wall_seconds": 3.47,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "To determine if we should run the outdoor event today, I'll first check the weather for the city where the event is scheduled to take place. Could you please provide me with the name of the city?",
+    "error": null,
+    "wall_seconds": 3.47,
+    "calls": []
+  }
+}

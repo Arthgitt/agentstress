@@ -1,0 +1,70 @@
+{
+  "scenario_id": "FAQ-13",
+  "scenario_name": "restock-how-many",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The restocking of SKU-2002 has been completed successfully. The current stock count for SKU-2002 is now 18 units.",
+  "agent_error": null,
+  "wall_seconds": 14.56,
+  "trace": {
+    "scenario_id": "FAQ-13",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "The restocking of SKU-2002 has been completed successfully. The current stock count for SKU-2002 is now 18 units.",
+    "error": null,
+    "wall_seconds": 14.56,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-2002",
+          "delta": 5
+        },
+        "args_key": "{\"delta\": 5, \"sku\": \"SKU-2002\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 18 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 18 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

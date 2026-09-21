@@ -1,0 +1,91 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket TCK-001: Request: policy priority ranking\n\nDescription:\nI could not locate any internal documentation listing policies or an existing priority order. Please provide the policy set to rank, or confirm the ranking criteria. Once available, I can produce the ranking and update this ticket accordingly.",
+  "agent_error": null,
+  "wall_seconds": 7.55,
+  "usage": {
+    "requests": 6,
+    "input": 2197,
+    "cached_input": 0,
+    "output": 206,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002575
+  },
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001: Request: policy priority ranking\n\nDescription:\nI could not locate any internal documentation listing policies or an existing priority order. Please provide the policy set to rank, or confirm the ranking criteria. Once available, I can produce the ranking and update this ticket accordingly.",
+    "error": null,
+    "wall_seconds": 7.55,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy priority ranking policies internal documentation"
+        },
+        "args_key": "{\"query\": \"policy priority ranking policies internal documentation\"}",
+        "result": "No documents found for 'policy priority ranking policies internal documentation'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies priority order ranking"
+        },
+        "args_key": "{\"query\": \"policies priority order ranking\"}",
+        "result": "No documents found for 'policies priority order ranking'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy list"
+        },
+        "args_key": "{\"query\": \"policy list\"}",
+        "result": "No documents found for 'policy list'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 4,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Request: policy priority ranking",
+          "description": "I could not locate any internal documentation listing policies or an existing priority order. Please provide the policy set to rank, or confirm the ranking criteria. Once available, I can produce the ranking and update this ticket accordingly."
+        },
+        "args_key": "{\"description\": \"I could not locate any internal documentation listing policies or an existing priority order. Please provide the policy set to rank, or confirm the ranking criteria. Once available, I can produce the ranking and update this ticket accordingly.\", \"title\": \"Request: policy priority ranking\"}",
+        "result": "Created TCK-001: Request: policy priority ranking",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

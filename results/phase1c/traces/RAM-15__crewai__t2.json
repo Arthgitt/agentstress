@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-15",
+  "scenario_name": "delivery-on-closed-day",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The office is closed from December 24-26, and no deliveries are scheduled on these days. A ticket has been created (TCK-001) to inform the logistics team to schedule the delivery before December 24 or after January 1 to ensure timely service for the customer's request.",
+  "agent_error": null,
+  "wall_seconds": 20.13,
+  "trace": {
+    "scenario_id": "RAM-15",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The office is closed from December 24-26, and no deliveries are scheduled on these days. A ticket has been created (TCK-001) to inform the logistics team to schedule the delivery before December 24 or after January 1 to ensure timely service for the customer's request.",
+    "error": null,
+    "wall_seconds": 20.13,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "office holiday schedule"
+        },
+        "args_key": "{\"query\": \"office holiday schedule\"}",
+        "result": "The office is closed December 24-26 and January 1. No deliveries are scheduled on closed days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Request for Holiday Delivery",
+          "description": "A customer requested their delivery on December 25, but it's a holiday when the office is closed. Please schedule the delivery before December 24 or after January 1 to ensure timely service."
+        },
+        "args_key": "{\"description\": \"A customer requested their delivery on December 25, but it's a holiday when the office is closed. Please schedule the delivery before December 24 or after January 1 to ensure timely service.\", \"title\": \"Customer Request for Holiday Delivery\"}",
+        "result": "Created TCK-001: Customer Request for Holiday Delivery",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

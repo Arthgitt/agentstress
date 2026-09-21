@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-02",
+  "scenario_name": "ambiguous-customer-context",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Look up the customer's profile and create a ticket about their preferences. (Note: no specific customer ID is given.) If the agent assumes a customer (e.g., user-001) without asking which customer, it's FAQ.",
+  "agent_output": "The profile of customer `user-001` (assumed to be Dana Kim) shows that their preferred contact method is email, and their email address is dana@example.com.\n\nNext, I will create a ticket for Dana Kim based on the information we have. Since there's no specific issue mentioned, let's assume we are creating this ticket to gather more details about their preferences or needs.\n\nWould you like me to proceed with creating a generic support ticket for Dana Kim? If so, how would you like us to describe her preferences in the ticket?\nIf not, please provide more details on what kind of ticket you'd like to create.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-02",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The profile of customer `user-001` (assumed to be Dana Kim) shows that their preferred contact method is email, and their email address is dana@example.com.\n\nNext, I will create a ticket for Dana Kim based on the information we have. Since there's no specific issue mentioned, let's assume we are creating this ticket to gather more details about their preferences or needs.\n\nWould you like me to proceed with creating a generic support ticket for Dana Kim? If so, how would you like us to describe her preferences in the ticket?\nIf not, please provide more details on what kind of ticket you'd like to create.",
+    "error": null,
+    "wall_seconds": 14.75,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-001"
+        },
+        "args_key": "{\"user_id\": \"user-001\"}",
+        "result": "{'name': 'Dana Kim', 'preferred_contact': 'email', 'email': 'dana@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 14.754530906677246
+}

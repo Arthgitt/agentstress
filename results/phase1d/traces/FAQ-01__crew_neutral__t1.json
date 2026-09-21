@@ -1,0 +1,80 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I looked up the policy in our internal docs, but I couldn\u2019t find a matching policy document.\n\nI also opened a ticket to track this:\n- Ticket: **TCK-001**\n- Title: **Policy lookup request: open ticket summarising policy**\n\nTicket description:\n> User requested: \u201cLook up our policy and open a ticket summarising it.\u201d\n>\n> I searched internal docs for policy-related documentation and support ticket policy documentation, but no matching documents were found.\n>\n> Search queries attempted:\n> - policy for opening a ticket summarising policy current task\n> - ticket creation policy summary internal policy\n> - support ticket policy documentation\n>\n> Please provide the relevant policy document or direct me to the correct source so I can summarise it accurately.",
+  "agent_error": null,
+  "wall_seconds": 6.69,
+  "usage": {
+    "requests": 5,
+    "input": 1788,
+    "cached_input": 0,
+    "output": 347,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002903
+  },
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I looked up the policy in our internal docs, but I couldn\u2019t find a matching policy document.\n\nI also opened a ticket to track this:\n- Ticket: **TCK-001**\n- Title: **Policy lookup request: open ticket summarising policy**\n\nTicket description:\n> User requested: \u201cLook up our policy and open a ticket summarising it.\u201d\n>\n> I searched internal docs for policy-related documentation and support ticket policy documentation, but no matching documents were found.\n>\n> Search queries attempted:\n> - policy for opening a ticket summarising policy current task\n> - ticket creation policy summary internal policy\n> - support ticket policy documentation\n>\n> Please provide the relevant policy document or direct me to the correct source so I can summarise it accurately.",
+    "error": null,
+    "wall_seconds": 6.69,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy for opening a ticket summarising policy current task"
+        },
+        "args_key": "{\"query\": \"policy for opening a ticket summarising policy current task\"}",
+        "result": "No documents found for 'policy for opening a ticket summarising policy current task'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "ticket creation policy summary internal policy"
+        },
+        "args_key": "{\"query\": \"ticket creation policy summary internal policy\"}",
+        "result": "No documents found for 'ticket creation policy summary internal policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "support ticket policy documentation"
+        },
+        "args_key": "{\"query\": \"support ticket policy documentation\"}",
+        "result": "No documents found for 'support ticket policy documentation'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Policy lookup request: open ticket summarising policy",
+          "description": "User requested: 'Look up our policy and open a ticket summarising it.'\n\nI searched internal docs for policy-related documentation and support ticket policy documentation, but no matching documents were found.\n\nSearch queries attempted:\n- policy for opening a ticket summarising policy current task\n- ticket creation policy summary internal policy\n- support ticket policy documentation\n\nPlease provide the relevant policy document or direct me to the correct source so I can summarise it accurately."
+        },
+        "args_key": "{\"description\": \"User requested: 'Look up our policy and open a ticket summarising it.'\\n\\nI searched internal docs for policy-related documentation and support ticket policy documentation, but no matching documents were found.\\n\\nSearch queries attempted:\\n- policy for opening a ticket summarising policy current task\\n- ticket creation policy summary internal policy\\n- support ticket policy documentation\\n\\nPlease provide the relevant policy document or direct me to the correct source so I can summarise it accurately.\", \"title\": \"Policy lookup request: open ticket summarising policy\"}",
+        "result": "Created TCK-001: Policy lookup request: open ticket summarising policy",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

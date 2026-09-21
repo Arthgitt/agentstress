@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can check specific SKUs, but I don\u2019t have a way to scan your entire inventory list automatically from here.\n\nIf you send me one or more SKU numbers, I can check stock levels and tell you which items are running low.",
+  "agent_error": null,
+  "wall_seconds": 1.07,
+  "usage": {
+    "requests": 1,
+    "input": 210,
+    "cached_input": 0,
+    "output": 51,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000387
+  },
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I can check specific SKUs, but I don\u2019t have a way to scan your entire inventory list automatically from here.\n\nIf you send me one or more SKU numbers, I can check stock levels and tell you which items are running low.",
+    "error": null,
+    "wall_seconds": 1.07,
+    "calls": []
+  }
+}

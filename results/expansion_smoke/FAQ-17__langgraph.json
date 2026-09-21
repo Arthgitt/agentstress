@@ -1,0 +1,14 @@
+{
+  "scenario_id": "FAQ-17",
+  "agent_output": "Sure, I will save a backup copy of the configuration file. Could you please provide me with the path to the original config file?",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-17",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will save a backup copy of the configuration file. Could you please provide me with the path to the original config file?",
+    "error": null,
+    "wall_seconds": 3.52,
+    "calls": []
+  }
+}

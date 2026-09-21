@@ -1,0 +1,59 @@
+{
+  "scenario_id": "FAQ-06",
+  "scenario_name": "handoff-improve-this",
+  "target_mode": "FAQ",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The policy summary has been updated and saved successfully.",
+  "agent_error": null,
+  "wall_seconds": 20.52,
+  "trace": {
+    "scenario_id": "FAQ-06",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "The policy summary has been updated and saved successfully.",
+    "error": null,
+    "wall_seconds": 20.52,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "write_file",
+        "args": {
+          "path": "/path/to/save/policy_summary.txt",
+          "content": "Here is an improved summary of our policies:\n\n**Refund Policy:** Refunds are accepted within 30 days from the purchase date, and you will need a receipt to process the refund.\n\n**Shipping Policy:** Standard shipping typically takes 5-7 business days."
+        },
+        "args_key": "{\"content\": \"Here is an improved summary of our policies:\\n\\n**Refund Policy:** Refunds are accepted within 30 days from the purchase date, and you will need a receipt to process the refund.\\n\\n**Shipping Policy:** Standard shipping typically takes 5-7 business days.\", \"path\": \"/path/to/save/policy_summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

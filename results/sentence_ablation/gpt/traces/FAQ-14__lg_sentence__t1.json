@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The discount amount is **$12.67**.\n\nBilling ticket opened: **TCK-001** \u2014 *Billing follow-up: apply discount to order*",
+  "agent_error": null,
+  "wall_seconds": 2.15,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "The discount amount is **$12.67**.\n\nBilling ticket opened: **TCK-001** \u2014 *Billing follow-up: apply discount to order*",
+    "error": null,
+    "wall_seconds": 2.15,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.15*84.50"
+        },
+        "args_key": "{\"expression\": \"0.15*84.50\"}",
+        "result": "0.15*84.50 = 12.674999999999999",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing follow-up: apply discount to order",
+          "description": "Please apply the requested discount to the order and confirm the updated billing amount. The order total referenced is $84.50, with a 15% discount to be applied. If additional order details are needed, please review the customer record and update billing accordingly."
+        },
+        "args_key": "{\"description\": \"Please apply the requested discount to the order and confirm the updated billing amount. The order total referenced is $84.50, with a 15% discount to be applied. If additional order details are needed, please review the customer record and update billing accordingly.\", \"title\": \"Billing follow-up: apply discount to order\"}",
+        "result": "Created TCK-001: Billing follow-up: apply discount to order",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 2,
+    "input": 615,
+    "cached_input": 0,
+    "output": 149,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001132
+  }
+}

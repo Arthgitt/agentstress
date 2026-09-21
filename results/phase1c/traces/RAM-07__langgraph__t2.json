@@ -1,0 +1,59 @@
+{
+  "scenario_id": "RAM-07",
+  "scenario_name": "handoff-threshold-inversion",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Ticket TCK-001 has been created to recommend a restock for SKU-2002. The ticket includes the necessary information based on the current stock count of 13 units, which is close to our threshold for restocking at 10 units.",
+  "agent_error": null,
+  "wall_seconds": 27.25,
+  "trace": {
+    "scenario_id": "RAM-07",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "Ticket TCK-001 has been created to recommend a restock for SKU-2002. The ticket includes the necessary information based on the current stock count of 13 units, which is close to our threshold for restocking at 10 units.",
+    "error": null,
+    "wall_seconds": 27.25,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "warranty terms"
+        },
+        "args_key": "{\"query\": \"warranty terms\"}",
+        "result": "All products carry a minimum 1 year warranty from date of purchase.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Restock Recommendation for SKU-2002",
+          "description": "Based on the current stock count, we need to place an order for SKU-2002 as it has 13 units in stock and is close to our threshold of restocking at 10 units."
+        },
+        "args_key": "{\"description\": \"Based on the current stock count, we need to place an order for SKU-2002 as it has 13 units in stock and is close to our threshold of restocking at 10 units.\", \"title\": \"Restock Recommendation for SKU-2002\"}",
+        "result": "Created TCK-001: Restock Recommendation for SKU-2002",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

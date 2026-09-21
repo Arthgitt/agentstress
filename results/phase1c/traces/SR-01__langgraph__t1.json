@@ -1,0 +1,36 @@
+{
+  "scenario_id": "SR-01",
+  "scenario_name": "weather-then-followup",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "The current weather in Tokyo is 27\u00b0C with clear skies and it's currently humid. Since the skies are clear, you probably won't need an umbrella for your 4pm walk. Enjoy your stroll!",
+  "agent_error": null,
+  "wall_seconds": 5.58,
+  "trace": {
+    "scenario_id": "SR-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The current weather in Tokyo is 27\u00b0C with clear skies and it's currently humid. Since the skies are clear, you probably won't need an umbrella for your 4pm walk. Enjoy your stroll!",
+    "error": null,
+    "wall_seconds": 5.58,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        },
+        "args_key": "{\"city\": \"Tokyo\"}",
+        "result": "Tokyo: 27C, humid, clear skies",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

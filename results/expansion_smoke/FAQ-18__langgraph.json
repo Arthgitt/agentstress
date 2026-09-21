@@ -1,0 +1,14 @@
+{
+  "scenario_id": "FAQ-18",
+  "agent_output": "Sure, I can help you with that. Could you please provide me with the title and a description of the issue you want to escalate? This information will assist in creating an accurate support ticket for you.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I can help you with that. Could you please provide me with the title and a description of the issue you want to escalate? This information will assist in creating an accurate support ticket for you.",
+    "error": null,
+    "wall_seconds": 4.96,
+    "calls": []
+  }
+}

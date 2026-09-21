@@ -1,0 +1,21 @@
+{
+  "scenario_id": "SR-01",
+  "framework": "crewai",
+  "architecture": "single",
+  "final_answer": "The current weather in Tokyo is 27 degrees Celsius with clear skies and humidity. Given this information, it does not seem necessary to bring an umbrella at the moment. However, it's always a good idea to check for any unexpected changes throughout the day.",
+  "error": null,
+  "wall_seconds": 5.97,
+  "calls": [
+    {
+      "step_index": 0,
+      "tool": "get_weather",
+      "args": {
+        "city": "Tokyo"
+      },
+      "args_key": "{\"city\": \"Tokyo\"}",
+      "result": "Tokyo: 27C, humid, clear skies",
+      "is_error": false,
+      "actor": "agent"
+    }
+  ]
+}

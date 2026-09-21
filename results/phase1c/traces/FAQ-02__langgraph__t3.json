@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-02",
+  "scenario_name": "which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I'll need the customer's user ID to pull up their profile first. Could you please provide me with that information?\nUser ID: [Please provide]",
+  "agent_error": null,
+  "wall_seconds": 3.15,
+  "trace": {
+    "scenario_id": "FAQ-02",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I'll need the customer's user ID to pull up their profile first. Could you please provide me with that information?\nUser ID: [Please provide]",
+    "error": null,
+    "wall_seconds": 3.15,
+    "calls": []
+  }
+}

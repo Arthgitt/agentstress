@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-02",
+  "scenario_name": "which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there was no profile found for the provided user ID. However, I will proceed to open a ticket noting this issue and the customer's contact preference.\n\nCould you please provide me with the customer's contact preference so I can include it in the ticket?",
+  "agent_error": null,
+  "wall_seconds": 12.03,
+  "trace": {
+    "scenario_id": "FAQ-02",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "It seems there was no profile found for the provided user ID. However, I will proceed to open a ticket noting this issue and the customer's contact preference.\n\nCould you please provide me with the customer's contact preference so I can include it in the ticket?",
+    "error": null,
+    "wall_seconds": 12.03,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "123456"
+        },
+        "args_key": "{\"user_id\": \"123456\"}",
+        "result": "No profile for user_id '123456'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

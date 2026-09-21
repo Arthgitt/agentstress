@@ -1,0 +1,38 @@
+{
+  "scenario_id": "SR-39",
+  "agent_output": "We have 150 units of SKU-5005 in stock. A ticket titled 'SKU-5005 stock' has been created with the reference number TCK-001 for your record.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "SR-39",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "We have 150 units of SKU-5005 in stock. A ticket titled 'SKU-5005 stock' has been created with the reference number TCK-001 for your record.",
+    "error": null,
+    "wall_seconds": 10.7,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-5005 stock",
+          "description": "There are currently 150 units of SKU-5005 in stock."
+        },
+        "args_key": "{\"description\": \"There are currently 150 units of SKU-5005 in stock.\", \"title\": \"SKU-5005 stock\"}",
+        "result": "Created TCK-001: SKU-5005 stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

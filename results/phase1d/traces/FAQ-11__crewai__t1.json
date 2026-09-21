@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Unknown SKU: widget",
+  "agent_error": null,
+  "wall_seconds": 2.3,
+  "usage": {
+    "requests": 2,
+    "input": 510,
+    "cached_input": 0,
+    "output": 24,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000491
+  },
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Unknown SKU: widget",
+    "error": null,
+    "wall_seconds": 2.3,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "widget"
+        },
+        "args_key": "{\"sku\": \"widget\"}",
+        "result": "Unknown SKU: widget",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

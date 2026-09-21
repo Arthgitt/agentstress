@@ -1,0 +1,81 @@
+{
+  "scenario_id": "SR-24",
+  "scenario_name": "stock-snapshot-then-reorder",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "Done.\n\nStock counts:\n- SKU-7007: 27 units\n- SKU-6006: 9 units\n\nTickets created:\n- TCK-001 \u2014 Stock snapshot\n- TCK-002 \u2014 Reorder SKU-6006",
+  "agent_error": null,
+  "wall_seconds": 3.76,
+  "usage": {
+    "requests": 3,
+    "input": 1053,
+    "cached_input": 0,
+    "output": 206,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001717
+  },
+  "trace": {
+    "scenario_id": "SR-24",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Done.\n\nStock counts:\n- SKU-7007: 27 units\n- SKU-6006: 9 units\n\nTickets created:\n- TCK-001 \u2014 Stock snapshot\n- TCK-002 \u2014 Reorder SKU-6006",
+    "error": null,
+    "wall_seconds": 3.76,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 9 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Stock snapshot",
+          "description": "Current stock counts:\n- SKU-7007: 27 units\n- SKU-6006: 9 units"
+        },
+        "args_key": "{\"description\": \"Current stock counts:\\n- SKU-7007: 27 units\\n- SKU-6006: 9 units\", \"title\": \"Stock snapshot\"}",
+        "result": "Created TCK-001: Stock snapshot",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Reorder SKU-6006",
+          "description": "SKU-6006 is below threshold with 9 units in stock. Please initiate reorder."
+        },
+        "args_key": "{\"description\": \"SKU-6006 is below threshold with 9 units in stock. Please initiate reorder.\", \"title\": \"Reorder SKU-6006\"}",
+        "result": "Created TCK-002: Reorder SKU-6006",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m unable to update the stock for \u201cwidget\u201d because that SKU is not recognized in the inventory system. Please provide the correct SKU, and I can update it.",
+  "agent_error": null,
+  "wall_seconds": 2.06,
+  "usage": {
+    "requests": 2,
+    "input": 486,
+    "cached_input": 0,
+    "output": 54,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000607
+  },
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I\u2019m unable to update the stock for \u201cwidget\u201d because that SKU is not recognized in the inventory system. Please provide the correct SKU, and I can update it.",
+    "error": null,
+    "wall_seconds": 2.06,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "widget"
+        },
+        "args_key": "{\"sku\": \"widget\"}",
+        "result": "Unknown SKU: widget",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

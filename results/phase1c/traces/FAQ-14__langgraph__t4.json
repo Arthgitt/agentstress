@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The support ticket has been created successfully. The ticket ID is TCK-001: Billing Ticket.\n\nIf you need any further assistance or have additional requests, feel free to let me know!",
+  "agent_error": null,
+  "wall_seconds": 17.65,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The support ticket has been created successfully. The ticket ID is TCK-001: Billing Ticket.\n\nIf you need any further assistance or have additional requests, feel free to let me know!",
+    "error": null,
+    "wall_seconds": 17.65,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "100 * (1 - 0.2)"
+        },
+        "args_key": "{\"expression\": \"100 * (1 - 0.2)\"}",
+        "result": "100 * (1 - 0.2) = 80.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing Ticket",
+          "description": "Applied 20% discount to the order, resulting in a final price of $80.00."
+        },
+        "args_key": "{\"description\": \"Applied 20% discount to the order, resulting in a final price of $80.00.\", \"title\": \"Billing Ticket\"}",
+        "result": "Created TCK-001: Billing Ticket",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no documents available under the term 'policy'. Could you please provide more details or specify a particular policy you're interested in? Alternatively, if you have a general request, I can still help by creating a ticket based on that.",
+  "agent_error": null,
+  "wall_seconds": 8.43,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems there are no documents available under the term 'policy'. Could you please provide more details or specify a particular policy you're interested in? Alternatively, if you have a general request, I can still help by creating a ticket based on that.",
+    "error": null,
+    "wall_seconds": 8.43,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

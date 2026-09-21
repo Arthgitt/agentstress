@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-20",
+  "scenario_name": "contact-the-vip",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there was no profile found for the user ID 'VIP123'. Could you please verify the user ID or provide more details about the VIP customer so I can look them up again?",
+  "agent_error": null,
+  "wall_seconds": 11.99,
+  "trace": {
+    "scenario_id": "FAQ-20",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "It seems there was no profile found for the user ID 'VIP123'. Could you please verify the user ID or provide more details about the VIP customer so I can look them up again?",
+    "error": null,
+    "wall_seconds": 11.99,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "VIP123"
+        },
+        "args_key": "{\"user_id\": \"VIP123\"}",
+        "result": "No profile for user_id 'VIP123'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

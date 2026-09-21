@@ -1,0 +1,61 @@
+{
+  "scenario_id": "UT-12",
+  "scenario_name": "converge-down-by-sixes",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "The inventory for SKU-7007 has been successfully adjusted, bringing the stock count down to exactly 10 units as requested.",
+  "agent_error": null,
+  "wall_seconds": 10.78,
+  "trace": {
+    "scenario_id": "UT-12",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-7007 has been successfully adjusted, bringing the stock count down to exactly 10 units as requested.",
+    "error": null,
+    "wall_seconds": 10.78,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -6
+        },
+        "args_key": "{\"delta\": -6, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -6
+        },
+        "args_key": "{\"delta\": -6, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -4
+        },
+        "args_key": "{\"delta\": -4, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

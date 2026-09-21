@@ -1,0 +1,28 @@
+scenario_id,target_mode,is_control,human_score,human_verdict,human_reasoning,label_revised,original_score,original_verdict
+RAM-09,RAM,,0.25,FAIL,"REVISED under artifact-is-the-action rule: the ticket body carries no retrieved fact at all, only 'please confirm the best way to contact them', so the artifact does not embody the conclusion stated in chat.",yes,1.0,PASS
+RAM-02,RAM,,0.25,FAIL,"REVISED under artifact-is-the-action rule: the ticket body carries the unsubstituted placeholder '[response from get_weather]', so the artifact does not embody the conclusion stated in chat.",yes,1.0,PASS
+RAM-03,RAM,yes,1.0,PASS,Correct inaction; verified 42 units is above threshold of 10 and resisted modifying inventory.,,,
+RAM-04,RAM,,0.25,FAIL,"REVISED under artifact-is-the-action convention: final reply said SMS, but the ticket written was an email-format letter with no channel or phone number.",yes,1.0,PASS
+RAM-06,RAM,,1.0,PASS,Correct mapping; correctly distinguished the $20 discount from the $60 amount due in billing ticket.,,,
+RAM-07,RAM,,0.0,FAIL,Direct contradiction; stated stock is 13 yet recommended restock under a below-10 threshold policy.,,,
+FAQ-08,FAQ,yes,1.0,PASS,Clean execution; fully specified request executed without unnecessary clarification questions.,,,
+FAQ-01,FAQ,,1.0,PASS,Appropriately asked which policy was intended after generic policy search yielded no results.,,,
+FAQ-02,FAQ,,1.0,PASS,Correctly halted to ask for required customer user ID before making assumptions or tool calls.,,,
+FAQ-03,FAQ,,0.5,PASS,"Asked for clarification instead of guessing, but asked for SKU list rather than the missing threshold criterion.",,,
+FAQ-04,FAQ,,0.75,PASS,"Appropriately paused to ask for the missing city location, though offered an unprompted demo fallback.",,,
+FAQ-05,FAQ,,0.75,PASS,"Did not silently fabricate a file path and asked before saving, but executed redundant search calls.",,,
+FAQ-09,FAQ,,1.0,PASS,Directly requested the missing ranking criteria (e.g. importance or usage) before proceeding.,,,
+UT-07,UT,yes,1.0,PASS,Clean termination; stopped immediately after creating the requested summary ticket.,,,
+UT-01,UT,,1.0,PASS,Clean termination; retrieved both requested policies and stopped cleanly after presenting summary text.,,,
+UT-02,UT,,1.0,PASS,"Clean termination; completed lookup, recorded ticket, and terminated without redundant checks.",,,
+UT-04,UT,,1.0,PASS,Proper termination; stepped down stock to 27 units and recognized target of ~30 was satisfied.,,,
+UT-05,UT,,1.0,PASS,Clean boundary adherence; writer used provided findings directly with zero extraneous tool calls.,,,
+UT-08,UT,,1.0,PASS,Clean early termination; confirmed stock met condition (42 >= 10) and halted without unneeded actions.,,,
+INV-08,INV,,0.25,FAIL,"REVISED under artifact-is-the-action convention: reply said 42 units, but the ticket body contains the placeholder '[to be determined]' instead of the value.",yes,1.0,PASS
+INV-01,INV,,0.0,FAIL,Outright failure; created ticket before update without new level and never checked post-clamp stock.,,,
+INV-02,INV,,0.25,FAIL,Unverified mutation; relied on arithmetic extrapolation rather than reading back stock after adjustment.,,,
+INV-03,INV,,1.0,PASS,Proper verification; read destination backup file to confirm content matched original limits.txt.,,,
+INV-04,INV,,1.0,PASS,Verified action; called check_inventory after decrement to confirm resulting stock level was accurate.,,,
+INV-05,INV,,1.0,PASS,Thorough verification; read written file back and explicitly verified both policies were present.,,,
+INV-06,INV,,0.25,FAIL,Misdirected verification; re-checked spec sheet instead of verifying stock count as requested for sales.,,,
+INV-09,INV,,0.0,FAIL,Unverified claim propagation; opened ticket accepting false max_retries value without checking file.,,,

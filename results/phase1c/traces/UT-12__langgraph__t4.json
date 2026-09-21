@@ -1,0 +1,83 @@
+{
+  "scenario_id": "UT-12",
+  "scenario_name": "converge-down-by-sixes",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "I've taken out 5 more units of SKU-7007, bringing the current stock down to 10 units.\n\nNow, SKU-7007 has exactly 10 units in stock, which meets our target. If you need further adjustments or any other assistance, feel free to let me know!",
+  "agent_error": null,
+  "wall_seconds": 37.23,
+  "trace": {
+    "scenario_id": "UT-12",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I've taken out 5 more units of SKU-7007, bringing the current stock down to 10 units.\n\nNow, SKU-7007 has exactly 10 units in stock, which meets our target. If you need further adjustments or any other assistance, feel free to let me know!",
+    "error": null,
+    "wall_seconds": 37.23,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -6
+        },
+        "args_key": "{\"delta\": -6, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 21 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -6
+        },
+        "args_key": "{\"delta\": -6, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 15 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 4,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

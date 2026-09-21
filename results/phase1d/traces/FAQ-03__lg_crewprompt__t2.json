@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m unable to check the entire inventory with the available tool because it only checks one specific SKU at a time, and I wasn\u2019t given any SKU(s) to inspect.\n\nI created a ticket to flag this limitation:\n- Ticket: TCK-001\n- Title: Inventory low-stock check requested\n\nIf you send me one or more SKU numbers, I can check each one and tell you whether anything is running low.",
+  "agent_error": null,
+  "wall_seconds": 3.42,
+  "usage": {
+    "requests": 3,
+    "input": 893,
+    "cached_input": 0,
+    "output": 196,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001552
+  },
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "I\u2019m unable to check the entire inventory with the available tool because it only checks one specific SKU at a time, and I wasn\u2019t given any SKU(s) to inspect.\n\nI created a ticket to flag this limitation:\n- Ticket: TCK-001\n- Title: Inventory low-stock check requested\n\nIf you send me one or more SKU numbers, I can check each one and tell you whether anything is running low.",
+    "error": null,
+    "wall_seconds": 3.42,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "ALL"
+        },
+        "args_key": "{\"sku\": \"ALL\"}",
+        "result": "Unknown SKU: ALL",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Inventory low-stock check requested",
+          "description": "Unable to perform a full inventory scan with the available tool because check_inventory requires a specific SKU and does not support listing all SKUs. Please provide one or more SKU(s) to check stock levels, or use a broader inventory-reporting tool if available."
+        },
+        "args_key": "{\"description\": \"Unable to perform a full inventory scan with the available tool because check_inventory requires a specific SKU and does not support listing all SKUs. Please provide one or more SKU(s) to check stock levels, or use a broader inventory-reporting tool if available.\", \"title\": \"Inventory low-stock check requested\"}",
+        "result": "Created TCK-001: Inventory low-stock check requested",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-19",
+  "scenario_name": "usual-amount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Currently, SKU-1001 has 42 units in stock. Could you please specify the usual amount you would like to take off this inventory?",
+  "agent_error": null,
+  "wall_seconds": 9.86,
+  "trace": {
+    "scenario_id": "FAQ-19",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Currently, SKU-1001 has 42 units in stock. Could you please specify the usual amount you would like to take off this inventory?",
+    "error": null,
+    "wall_seconds": 9.86,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

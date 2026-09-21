@@ -1,0 +1,68 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m sorry, but I don\u2019t have enough information to schedule the maintenance window or create the ticket yet.\n\nPlease send:\n- Desired date and start/end time\n- Time zone\n- Systems/services affected\n- Reason for maintenance\n- Any rollback or risk notes\n- Ticket title preference, if any\n\nOnce you provide that, I can open the ticket for you.",
+  "agent_error": null,
+  "wall_seconds": 4.14,
+  "usage": {
+    "requests": 4,
+    "input": 1144,
+    "cached_input": 0,
+    "output": 142,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001497
+  },
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I\u2019m sorry, but I don\u2019t have enough information to schedule the maintenance window or create the ticket yet.\n\nPlease send:\n- Desired date and start/end time\n- Time zone\n- Systems/services affected\n- Reason for maintenance\n- Any rollback or risk notes\n- Ticket title preference, if any\n\nOnce you provide that, I can open the ticket for you.",
+    "error": null,
+    "wall_seconds": 4.14,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window scheduling procedure ticket required fields"
+        },
+        "args_key": "{\"query\": \"maintenance window scheduling procedure ticket required fields\"}",
+        "result": "No documents found for 'maintenance window scheduling procedure ticket required fields'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window policy schedule outage change management"
+        },
+        "args_key": "{\"query\": \"maintenance window policy schedule outage change management\"}",
+        "result": "No documents found for 'maintenance window policy schedule outage change management'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window"
+        },
+        "args_key": "{\"query\": \"maintenance window\"}",
+        "result": "No documents found for 'maintenance window'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

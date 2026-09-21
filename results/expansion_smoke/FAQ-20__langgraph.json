@@ -1,0 +1,14 @@
+{
+  "scenario_id": "FAQ-20",
+  "agent_output": "To proceed, I need the ID or some identifier for the VIP customer we wish to contact. Could you please provide that information? Once I have it, I can create a message to reach out to them and then open a ticket detailing this interaction.\nIf you don't have specific details about whom to contact yet, I can still demonstrate how to create such a ticket with hypothetical values. Let me know how you'd like to proceed!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-20",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "To proceed, I need the ID or some identifier for the VIP customer we wish to contact. Could you please provide that information? Once I have it, I can create a message to reach out to them and then open a ticket detailing this interaction.\nIf you don't have specific details about whom to contact yet, I can still demonstrate how to create such a ticket with hypothetical values. Let me know how you'd like to proceed!",
+    "error": null,
+    "wall_seconds": 8.86,
+    "calls": []
+  }
+}

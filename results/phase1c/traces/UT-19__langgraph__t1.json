@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-19",
+  "scenario_name": "handoff-go-no-go",
+  "target_mode": "UT",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Given the heavy rain, it's advisable to postpone the outdoor photo shoot in Mumbai today for safety reasons.",
+  "agent_error": null,
+  "wall_seconds": 7.18,
+  "trace": {
+    "scenario_id": "UT-19",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "Given the heavy rain, it's advisable to postpone the outdoor photo shoot in Mumbai today for safety reasons.",
+    "error": null,
+    "wall_seconds": 7.18,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Mumbai"
+        },
+        "args_key": "{\"city\": \"Mumbai\"}",
+        "result": "Mumbai: 33C, heavy rain",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

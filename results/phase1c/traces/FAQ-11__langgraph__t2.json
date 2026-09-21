@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will update the inventory. Could you please specify the SKU of the widget and the change in quantity that you want to make? For example, do you want to increase or decrease the stock by a certain number?",
+  "agent_error": null,
+  "wall_seconds": 1013.3,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will update the inventory. Could you please specify the SKU of the widget and the change in quantity that you want to make? For example, do you want to increase or decrease the stock by a certain number?",
+    "error": null,
+    "wall_seconds": 1013.3,
+    "calls": []
+  }
+}

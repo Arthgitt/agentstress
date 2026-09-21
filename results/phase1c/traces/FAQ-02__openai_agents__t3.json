@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-02",
+  "scenario_name": "which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will first fetch the user's profile using their ID and then create a support ticket based on their contact preferences.\n\nCould you please provide me with the user ID so I can proceed?",
+  "agent_error": null,
+  "wall_seconds": 3.18,
+  "trace": {
+    "scenario_id": "FAQ-02",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Sure, I will first fetch the user's profile using their ID and then create a support ticket based on their contact preferences.\n\nCould you please provide me with the user ID so I can proceed?",
+    "error": null,
+    "wall_seconds": 3.18,
+    "calls": []
+  }
+}

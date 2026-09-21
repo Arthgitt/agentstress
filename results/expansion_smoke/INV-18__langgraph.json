@@ -1,0 +1,38 @@
+{
+  "scenario_id": "INV-18",
+  "agent_output": "The inventory for SKU-7007 has been updated successfully. Currently, there are 52 units in stock for this SKU.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "INV-18",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-7007 has been updated successfully. Currently, there are 52 units in stock for this SKU.",
+    "error": null,
+    "wall_seconds": 7.83,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": 25
+        },
+        "args_key": "{\"delta\": 25, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 52 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

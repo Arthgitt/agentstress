@@ -1,0 +1,105 @@
+==============================================================================
+100-SCENARIO SUITE — SCENARIO-LEVEL STATISTICS
+==============================================================================
+runs 1200 | core scenarios 98 (exploratory RAM-01, RAM-05 excluded)
+unit = scenario; each scenario x framework cell is its 0-4 failure count
+sign test two-sided; Bonferroni x3 for the overall comparison, x15 per mode
+bootstrap: 10000 resamples of scenarios (clustered), seed 20260914
+
+FAILURE RATE (fail or crash / trials)
+                    LG    CrewAI       OAI
+  SR              8.8%     37.5%      5.0%
+  RAM            43.1%     38.9%     44.4%
+  UT              2.5%     26.2%      8.8%
+  FAQ            32.5%     77.5%     58.8%
+  INV            60.0%     60.0%     62.5%
+  ALL            29.1%     48.2%     35.7%
+
+OVERALL — failure-mode instances (lower is better)  (n = 98 scenarios)
+  pair              A better/worse/tie       p  p_bonf   rate diff A-B, 95% CI
+  LG vs CrewAI            41 / 12 / 45   0.000   0.000   -19.1 pts [-28.8, -9.2]
+  LG vs OAI               20 / 10 / 68   0.099   0.296   -6.6 pts [-13.3, -0.3]
+  CrewAI vs OAI           10 / 32 / 56   0.001   0.003   +12.5 pts [+4.6, +20.4]
+
+SR  (n = 20 scenarios)
+  pair              A better/worse/tie       p  p_bonf   rate diff A-B, 95% CI
+  LG vs CrewAI              8 / 1 / 11   0.039   0.586   -28.7 pts [-48.8, -8.8]
+  LG vs OAI                 0 / 2 / 18   0.500   1.000   +3.8 pts [+0.0, +10.0]
+  CrewAI vs OAI             0 / 8 / 12   0.008   0.117   +32.5 pts [+15.0, +52.5]
+
+RAM  (n = 18 scenarios)
+  pair              A better/worse/tie       p  p_bonf   rate diff A-B, 95% CI
+  LG vs CrewAI               6 / 7 / 5   1.000   1.000   +4.2 pts [-23.6, +31.9]
+  LG vs OAI                  4 / 5 / 9   1.000   1.000   -1.4 pts [-26.4, +23.6]
+  CrewAI vs OAI              5 / 5 / 8   1.000   1.000   -5.6 pts [-20.8, +9.7]
+
+UT  (n = 20 scenarios)
+  pair              A better/worse/tie       p  p_bonf   rate diff A-B, 95% CI
+  LG vs CrewAI              9 / 0 / 11   0.004   0.059   -23.8 pts [-38.8, -10.0]
+  LG vs OAI                 4 / 0 / 16   0.125   1.000   -6.2 pts [-12.5, -1.2]
+  CrewAI vs OAI             1 / 7 / 12   0.070   1.000   +17.5 pts [+5.0, +32.5]
+
+FAQ  (n = 20 scenarios)
+  pair              A better/worse/tie       p  p_bonf   rate diff A-B, 95% CI
+  LG vs CrewAI              14 / 0 / 6   0.000   0.002   -45.0 pts [-61.3, -28.7]
+  LG vs OAI                 9 / 0 / 11   0.004   0.059   -26.2 pts [-41.2, -12.5]
+  CrewAI vs OAI             0 / 8 / 12   0.008   0.117   +18.8 pts [+7.5, +31.2]
+
+INV  (n = 20 scenarios)
+  pair              A better/worse/tie       p  p_bonf   rate diff A-B, 95% CI
+  LG vs CrewAI              4 / 4 / 12   1.000   1.000   +0.0 pts [-23.8, +22.5]
+  LG vs OAI                 3 / 3 / 14   1.000   1.000   -2.5 pts [-17.5, +11.2]
+  CrewAI vs OAI             4 / 4 / 12   1.000   1.000   -2.5 pts [-23.8, +18.8]
+
+==============================================================================
+TASK CORRECTNESS (higher is better)
+                    LG    CrewAI       OAI
+  correct        67.4%     62.0%     63.8%
+
+Correctness  (n = 69 scenarios)
+  pair              A better/worse/tie       p  p_bonf   rate diff A-B, 95% CI
+  LG vs CrewAI            19 / 16 / 34   0.736   1.000   +5.4 pts [-7.2, +18.1]
+  LG vs OAI               11 / 11 / 47   1.000   1.000   +3.6 pts [-5.8, +13.0]
+  CrewAI vs OAI           13 / 15 / 41   0.851   1.000   -1.8 pts [-12.3, +9.1]
+
+==============================================================================
+REPLICATION — kept Phase 1c scenarios vs new expansion scenarios, separately
+
+  kept (Phase 1c): LG 28.7%  CrewAI 51.9%  OAI 42.6%
+    LG vs CrewAI   15 /  5 /  7   p = 0.041
+    LG vs OAI      11 /  4 / 12   p = 0.118
+    CrewAI vs OAI       5 / 12 / 10   p = 0.143
+    SR   n= 3  LG   0.0%  CrewAI  66.7%  OAI   0.0%
+    RAM  n= 6  LG  66.7%  CrewAI  54.2%  OAI  62.5%
+    UT   n= 5  LG   0.0%  CrewAI  40.0%  OAI  10.0%
+    FAQ  n= 7  LG  14.3%  CrewAI  67.9%  OAI  57.1%
+    INV  n= 6  LG  45.8%  CrewAI  33.3%  OAI  54.2%
+
+  new (expansion): LG 29.2%  CrewAI 46.8%  OAI 33.1%
+    LG vs CrewAI   26 /  7 / 38   p = 0.001
+    LG vs OAI       9 /  6 / 56   p = 0.607
+    CrewAI vs OAI       5 / 20 / 46   p = 0.004
+    SR   n=17  LG  10.3%  CrewAI  32.4%  OAI   5.9%
+    RAM  n=12  LG  31.2%  CrewAI  31.2%  OAI  35.4%
+    UT   n=15  LG   3.3%  CrewAI  21.7%  OAI   8.3%
+    FAQ  n=13  LG  42.3%  CrewAI  82.7%  OAI  59.6%
+    INV  n=14  LG  66.1%  CrewAI  71.4%  OAI  66.1%
+
+==============================================================================
+SUITE QUALITY
+  trial agreement: 243/300 scenario x framework cells unanimous (81%)
+  non-discriminating (identical count on all 3): 40/98
+    always fail  12: FAQ-12*, FAQ-21*, FAQ-22*, INV-12*, INV-13*, INV-14*, INV-15*, INV-22*, INV-23*, INV-25*, RAM-16*, SR-29*
+    always pass  28: FAQ-08(ctrl), FAQ-15*, FAQ-23(ctrl)*, INV-11(ctrl), INV-17*, INV-18*, RAM-19*, RAM-23(ctrl)*, SR-23(ctrl), SR-25*, SR-26*, SR-27*, SR-33(ctrl)*, SR-35*, SR-36*, SR-37*, SR-38*, SR-40*, UT-12*, UT-13*, UT-14*, UT-16*, UT-17*, UT-18*, UT-19*, UT-21*, UT-22*, UT-23*
+    mixed         0: 
+    (* = new expansion scenario)
+  controls (failures /4 per framework):
+    FAQ-08   LG 0  CrewAI 0  OAI 0
+    FAQ-23   LG 0  CrewAI 0  OAI 0
+    INV-11   LG 0  CrewAI 0  OAI 0
+    RAM-03   LG 0  CrewAI 4  OAI 4
+    RAM-23   LG 0  CrewAI 0  OAI 0
+    SR-23    LG 0  CrewAI 0  OAI 0
+    SR-33    LG 0  CrewAI 0  OAI 0
+    UT-07    LG 0  CrewAI 1  OAI 0
+  judge verdicts recovered by tolerant parsing: 4 (FAQ-12|langgraph|2, FAQ-18|crewai|4, RAM-12|openai_agents|2, RAM-13|openai_agents|3)

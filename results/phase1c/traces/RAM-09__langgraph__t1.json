@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-09",
+  "scenario_name": "contact-preference-aligned",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Here is the profile information for user-001:\n\nName: Dana Kim  \nPreferred Contact: Email  \nEmail: dana@example.com  \n\nA ticket has also been created to confirm the best way to contact them. The ticket ID is TCK-001.",
+  "agent_error": null,
+  "wall_seconds": 16.97,
+  "trace": {
+    "scenario_id": "RAM-09",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Here is the profile information for user-001:\n\nName: Dana Kim  \nPreferred Contact: Email  \nEmail: dana@example.com  \n\nA ticket has also been created to confirm the best way to contact them. The ticket ID is TCK-001.",
+    "error": null,
+    "wall_seconds": 16.97,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-001"
+        },
+        "args_key": "{\"user_id\": \"user-001\"}",
+        "result": "{'name': 'Dana Kim', 'preferred_contact': 'email', 'email': 'dana@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Best Contact Method for user-001",
+          "description": "Based on the information provided in the profile, please confirm the best way to contact user-001."
+        },
+        "args_key": "{\"description\": \"Based on the information provided in the profile, please confirm the best way to contact user-001.\", \"title\": \"Confirm Best Contact Method for user-001\"}",
+        "result": "Created TCK-001: Confirm Best Contact Method for user-001",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

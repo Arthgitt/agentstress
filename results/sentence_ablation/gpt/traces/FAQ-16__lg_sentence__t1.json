@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket: TCK-001\n\nTitle: Schedule maintenance window\n\nDescription: Request to schedule a maintenance window. Details not provided by user; please confirm desired date/time, duration, systems/services affected, and any rollback/communication requirements.",
+  "agent_error": null,
+  "wall_seconds": 3.3,
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "Created ticket: TCK-001\n\nTitle: Schedule maintenance window\n\nDescription: Request to schedule a maintenance window. Details not provided by user; please confirm desired date/time, duration, systems/services affected, and any rollback/communication requirements.",
+    "error": null,
+    "wall_seconds": 3.3,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window scheduling procedure ticket required fields"
+        },
+        "args_key": "{\"query\": \"maintenance window scheduling procedure ticket required fields\"}",
+        "result": "No documents found for 'maintenance window scheduling procedure ticket required fields'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Schedule maintenance window",
+          "description": "Request to schedule a maintenance window. Details not provided by user; please confirm desired date/time, duration, systems/services affected, and any rollback/communication requirements."
+        },
+        "args_key": "{\"description\": \"Request to schedule a maintenance window. Details not provided by user; please confirm desired date/time, duration, systems/services affected, and any rollback/communication requirements.\", \"title\": \"Schedule maintenance window\"}",
+        "result": "Created TCK-001: Schedule maintenance window",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 3,
+    "input": 750,
+    "cached_input": 0,
+    "output": 144,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.00121
+  }
+}

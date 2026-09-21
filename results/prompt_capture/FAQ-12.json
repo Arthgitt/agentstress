@@ -1,0 +1,550 @@
+[
+  {
+    "framework": "langgraph",
+    "path": "/api/chat",
+    "body": {
+      "model": "qwen2.5:7b-instruct",
+      "stream": true,
+      "options": {
+        "temperature": 0.3
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Open a ticket letting the customer know their refund has gone through."
+        }
+      ],
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "type": "object",
+              "required": [
+                "user_id"
+              ],
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "type": "object",
+              "required": [
+                "title",
+                "description"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "framework": "langgraph",
+    "path": "/api/chat",
+    "body": {
+      "model": "qwen2.5:7b-instruct",
+      "stream": true,
+      "options": {
+        "temperature": 0.3
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Open a ticket letting the customer know their refund has gone through."
+        },
+        {
+          "role": "assistant",
+          "tool_calls": [
+            {
+              "function": {
+                "name": "create_ticket",
+                "arguments": {
+                  "description": "Dear [Customer Name],\n\nWe are pleased to inform you that your recent refund request has been processed successfully. The funds should be reflected in your account shortly.\n\nIf you have any questions or need further assistance, please do not hesitate to contact us.\n\nBest regards,\n[Your Company]",
+                  "title": "Refund Confirmation"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": "Created TCK-001: Refund Confirmation"
+        }
+      ],
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "type": "object",
+              "required": [
+                "user_id"
+              ],
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "type": "object",
+              "required": [
+                "title",
+                "description"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "framework": "crewai",
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are Task Agent. A focused operational assistant with access to internal company tools.\nYour personal goal is: Complete the assigned task accurately using the available tools."
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A final answer that completes the task exactly as instructed.\nyou MUST return the actual complete content as the final answer, not a summary."
+        }
+      ],
+      "model": "qwen2.5:7b-instruct",
+      "temperature": 0.3,
+      "tool_choice": "auto",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "framework": "crewai",
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are Task Agent. A focused operational assistant with access to internal company tools.\nYour personal goal is: Complete the assigned task accurately using the available tools."
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A final answer that completes the task exactly as instructed.\nyou MUST return the actual complete content as the final answer, not a summary."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_nz7h85cy",
+              "type": "function",
+              "function": {
+                "name": "create_ticket",
+                "arguments": "{\"title\":\"Refund Confirmation\",\"description\":\"Dear [Customer Name],\\n\\nWe are pleased to inform you that your refund has been processed successfully. Please allow 3-5 business days for the funds to appear in your account.\\n\\nIf you have any questions or concerns, please do not hesitate to contact us.\\n\\nBest regards,\\n[Your Company]\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "call_nz7h85cy",
+          "name": "create_ticket",
+          "content": "Created TCK-001: Refund Confirmation"
+        }
+      ],
+      "model": "qwen2.5:7b-instruct",
+      "temperature": 0.3,
+      "tool_choice": "auto",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "framework": "crewai",
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are Task Agent. A focused operational assistant with access to internal company tools.\nYour personal goal is: Complete the assigned task accurately using the available tools."
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Open a ticket letting the customer know their refund has gone through.\n\nThis is the expected criteria for your final answer: A final answer that completes the task exactly as instructed.\nyou MUST return the actual complete content as the final answer, not a summary."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_nz7h85cy",
+              "type": "function",
+              "function": {
+                "name": "create_ticket",
+                "arguments": "{\"title\":\"Refund Confirmation\",\"description\":\"Dear [Customer Name],\\n\\nWe are pleased to inform you that your refund has been processed successfully. Please allow 3-5 business days for the funds to appear in your account.\\n\\nIf you have any questions or concerns, please do not hesitate to contact us.\\n\\nBest regards,\\n[Your Company]\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "call_nz7h85cy",
+          "name": "create_ticket",
+          "content": "Created TCK-001: Refund Confirmation"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_yprfa0ig",
+              "type": "function",
+              "function": {
+                "name": "create_ticket",
+                "arguments": "{\"description\":\"Dear [Customer Name],\\n\\nWe are pleased to inform you that your refund has been processed successfully. Please allow 3-5 business days for the funds to appear in your account.\\n\\nIf you have any questions or concerns, please do not hesitate to contact us.\\n\\nBest regards,\\n[Your Company]\",\"title\":\"Refund Confirmation\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "call_yprfa0ig",
+          "name": "create_ticket",
+          "content": "Created TCK-002: Refund Confirmation"
+        }
+      ],
+      "model": "qwen2.5:7b-instruct",
+      "temperature": 0.3,
+      "tool_choice": "auto",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "strict": true,
+            "parameters": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "framework": "openai_agents",
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "content": "You are a focused operational assistant with access to internal company tools. Complete the assigned task accurately.",
+          "role": "system"
+        },
+        {
+          "role": "user",
+          "content": "Open a ticket letting the customer know their refund has gone through."
+        }
+      ],
+      "model": "qwen2.5:7b-instruct",
+      "temperature": 0.3,
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "title": "User Id",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "title": "get_user_profile_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "description": {
+                  "title": "Description",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "title": "create_ticket_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "framework": "openai_agents",
+    "path": "/v1/chat/completions",
+    "body": {
+      "messages": [
+        {
+          "content": "You are a focused operational assistant with access to internal company tools. Complete the assigned task accurately.",
+          "role": "system"
+        },
+        {
+          "role": "user",
+          "content": "Open a ticket letting the customer know their refund has gone through."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_rwsc4ymu",
+              "type": "function",
+              "function": {
+                "name": "create_ticket",
+                "arguments": "{\"title\":\"Refund Confirmation\",\"description\":\"Dear valued customer, we have processed your recent refund request. The payment has been successfully credited to your account. Thank you for choosing our service.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "call_rwsc4ymu",
+          "content": "Created TCK-001: Refund Confirmation"
+        }
+      ],
+      "model": "qwen2.5:7b-instruct",
+      "temperature": 0.3,
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_user_profile",
+            "description": "Look up a user's profile by user_id.",
+            "parameters": {
+              "properties": {
+                "user_id": {
+                  "title": "User Id",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_id"
+              ],
+              "title": "get_user_profile_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "create_ticket",
+            "description": "Create a support/task ticket with a title and description.",
+            "parameters": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "description": {
+                  "title": "Description",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "title": "create_ticket_args",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "strict": true
+          }
+        }
+      ]
+    }
+  }
+]

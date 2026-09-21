@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-07",
+  "scenario_name": "unspecified-subject-and-concern",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I have created a ticket titled \"Widget Stock Situation\" (Ticket ID: TCK-001). This ticket will help us track and address any issues related to the stock of your widgets. Is there anything specific you would like to add or check on this ticket?",
+  "agent_error": null,
+  "wall_seconds": 10.68,
+  "trace": {
+    "scenario_id": "FAQ-07",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have created a ticket titled \"Widget Stock Situation\" (Ticket ID: TCK-001). This ticket will help us track and address any issues related to the stock of your widgets. Is there anything specific you would like to add or check on this ticket?",
+    "error": null,
+    "wall_seconds": 10.68,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Widget Stock Situation",
+          "description": "Please check the current inventory levels for our widget products."
+        },
+        "args_key": "{\"description\": \"Please check the current inventory levels for our widget products.\", \"title\": \"Widget Stock Situation\"}",
+        "result": "Created TCK-001: Widget Stock Situation",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

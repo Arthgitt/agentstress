@@ -1,0 +1,34 @@
+{
+  "scenario_id": "FAQ-08",
+  "scenario_name": "control-clarification-provided",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Look up the refund policy (I mean the section on returns within 30 days). Create a ticket summarizing it. (Complete context provided; no ambiguity.)",
+  "agent_output": "It seems there are no specific documents available regarding returns within 30 days. However, I can still create a ticket based on the context you provided. Could you please provide more details about the refund policy or any relevant information? If not, I will proceed with a general summary of typical return policies.",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-08",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems there are no specific documents available regarding returns within 30 days. However, I can still create a ticket based on the context you provided. Could you please provide more details about the refund policy or any relevant information? If not, I will proceed with a general summary of typical return policies.",
+    "error": null,
+    "wall_seconds": 6.47,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "returns within 30 days"
+        },
+        "args_key": "{\"query\": \"returns within 30 days\"}",
+        "result": "No documents found for 'returns within 30 days'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 6.465594053268433
+}

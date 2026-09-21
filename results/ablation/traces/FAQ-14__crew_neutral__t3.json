@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The discount has been calculated as $12.67. A ticket titled \"Apply Discount and Invoice\" (TCK-001) has been created for further billing actions.",
+  "agent_error": null,
+  "wall_seconds": 9.4,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "The discount has been calculated as $12.67. A ticket titled \"Apply Discount and Invoice\" (TCK-001) has been created for further billing actions.",
+    "error": null,
+    "wall_seconds": 9.4,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Apply Discount and Invoice",
+          "description": "Apply the 15% discount to the order total of $84.50 and open a ticket for billing."
+        },
+        "args_key": "{\"description\": \"Apply the 15% discount to the order total of $84.50 and open a ticket for billing.\", \"title\": \"Apply Discount and Invoice\"}",
+        "result": "Created TCK-001: Apply Discount and Invoice",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.15*84.50"
+        },
+        "args_key": "{\"expression\": \"0.15*84.50\"}",
+        "result": "0.15*84.50 = 12.674999999999999",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-20",
+  "scenario_name": "contact-the-vip",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 4,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there is no profile available for the user ID \"VIP123\". Could you please provide me with an accurate user ID or the name of the VIP customer so I can look up their profile and proceed accordingly?\n\nOnce we have the correct information, I will reach out to the VIP customer and create a ticket detailing our interaction.\n",
+  "agent_error": null,
+  "wall_seconds": 26.72,
+  "trace": {
+    "scenario_id": "FAQ-20",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "It seems there is no profile available for the user ID \"VIP123\". Could you please provide me with an accurate user ID or the name of the VIP customer so I can look up their profile and proceed accordingly?\n\nOnce we have the correct information, I will reach out to the VIP customer and create a ticket detailing our interaction.\n",
+    "error": null,
+    "wall_seconds": 26.72,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "VIP123"
+        },
+        "args_key": "{\"user_id\": \"VIP123\"}",
+        "result": "No profile for user_id 'VIP123'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

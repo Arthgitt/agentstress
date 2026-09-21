@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To determine if it's suitable to run an outdoor event today, I'll need to check the weather forecast for your location. Could you please tell me which city you're planning the event in? If you don't specify, I'll use a default location for demonstration purposes.",
+  "agent_error": null,
+  "wall_seconds": 4.58,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "To determine if it's suitable to run an outdoor event today, I'll need to check the weather forecast for your location. Could you please tell me which city you're planning the event in? If you don't specify, I'll use a default location for demonstration purposes.",
+    "error": null,
+    "wall_seconds": 4.58,
+    "calls": []
+  }
+}

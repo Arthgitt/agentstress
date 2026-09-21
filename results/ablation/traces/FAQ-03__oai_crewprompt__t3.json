@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems that the SKUs A123, B456, and C789 are not recognized in our system. Please provide valid SKUs or check the spelling and try again. If you need assistance with determining the correct SKUs, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 1016.57,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "It seems that the SKUs A123, B456, and C789 are not recognized in our system. Please provide valid SKUs or check the spelling and try again. If you need assistance with determining the correct SKUs, feel free to ask!",
+    "error": null,
+    "wall_seconds": 1016.57,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "A123"
+        },
+        "args_key": "{\"sku\": \"A123\"}",
+        "result": "Unknown SKU: A123",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "B456"
+        },
+        "args_key": "{\"sku\": \"B456\"}",
+        "result": "Unknown SKU: B456",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "C789"
+        },
+        "args_key": "{\"sku\": \"C789\"}",
+        "result": "Unknown SKU: C789",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

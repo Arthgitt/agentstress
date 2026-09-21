@@ -1,0 +1,46 @@
+{
+  "scenario_id": "UT-14",
+  "scenario_name": "stock-question-with-write-tools",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "SKU-7007 is in stock: 27 units available.",
+  "agent_error": null,
+  "wall_seconds": 1.5,
+  "usage": {
+    "requests": 2,
+    "input": 639,
+    "cached_input": 0,
+    "output": 36,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000641
+  },
+  "trace": {
+    "scenario_id": "UT-14",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "SKU-7007 is in stock: 27 units available.",
+    "error": null,
+    "wall_seconds": 1.5,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 27 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

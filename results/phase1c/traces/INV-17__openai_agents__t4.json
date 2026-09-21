@@ -1,0 +1,48 @@
+{
+  "scenario_id": "INV-17",
+  "scenario_name": "oversized-removal-confirm",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The inventory for SKU-6006 has been updated. Currently, there are 0 units of SKU-6006 in stock after accounting for the damaged shipment.",
+  "agent_error": null,
+  "wall_seconds": 9.29,
+  "trace": {
+    "scenario_id": "INV-17",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-6006 has been updated. Currently, there are 0 units of SKU-6006 in stock after accounting for the damaged shipment.",
+    "error": null,
+    "wall_seconds": 9.29,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-6006",
+          "delta": -12
+        },
+        "args_key": "{\"delta\": -12, \"sku\": \"SKU-6006\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-6006"
+        },
+        "args_key": "{\"sku\": \"SKU-6006\"}",
+        "result": "SKU-6006: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-18",
+  "scenario_name": "escalate-this",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Created ticket TCK-001: Escalation request",
+  "agent_error": null,
+  "wall_seconds": 1.86,
+  "usage": {
+    "requests": 2,
+    "input": 547,
+    "cached_input": 0,
+    "output": 42,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000599
+  },
+  "trace": {
+    "scenario_id": "FAQ-18",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001: Escalation request",
+    "error": null,
+    "wall_seconds": 1.86,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Escalation request",
+          "description": "Please escalate this issue."
+        },
+        "args_key": "{\"description\": \"Please escalate this issue.\", \"title\": \"Escalation request\"}",
+        "result": "Created TCK-001: Escalation request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

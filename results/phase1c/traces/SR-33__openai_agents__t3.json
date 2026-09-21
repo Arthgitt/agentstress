@@ -1,0 +1,61 @@
+{
+  "scenario_id": "SR-33",
+  "scenario_name": "three-distinct-tickets",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The tickets have been created successfully:\n\n- **TCK-001**: SKU-4004 Stock Update\n- **TCK-002**: SKU-6006 Stock Update\n- **TCK-003**: SKU-7007 Stock Update\n\nEach ticket corresponds to the stock status of the respective SKU.",
+  "agent_error": null,
+  "wall_seconds": 18.32,
+  "trace": {
+    "scenario_id": "SR-33",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The tickets have been created successfully:\n\n- **TCK-001**: SKU-4004 Stock Update\n- **TCK-002**: SKU-6006 Stock Update\n- **TCK-003**: SKU-7007 Stock Update\n\nEach ticket corresponds to the stock status of the respective SKU.",
+    "error": null,
+    "wall_seconds": 18.32,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-4004 Stock Update",
+          "description": "Current stock for SKU-4004 is 0 units."
+        },
+        "args_key": "{\"description\": \"Current stock for SKU-4004 is 0 units.\", \"title\": \"SKU-4004 Stock Update\"}",
+        "result": "Created TCK-001: SKU-4004 Stock Update",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-6006 Stock Update",
+          "description": "Current stock for SKU-6006 is 9 units."
+        },
+        "args_key": "{\"description\": \"Current stock for SKU-6006 is 9 units.\", \"title\": \"SKU-6006 Stock Update\"}",
+        "result": "Created TCK-002: SKU-6006 Stock Update",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "SKU-7007 Stock Update",
+          "description": "Current stock for SKU-7007 is 27 units."
+        },
+        "args_key": "{\"description\": \"Current stock for SKU-7007 is 27 units.\", \"title\": \"SKU-7007 Stock Update\"}",
+        "result": "Created TCK-003: SKU-7007 Stock Update",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

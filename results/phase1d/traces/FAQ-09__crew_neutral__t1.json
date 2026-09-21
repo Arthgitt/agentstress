@@ -1,0 +1,68 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019m sorry, but I couldn\u2019t find any internal documentation listing the policies or any existing priority-ranking criteria, so I can\u2019t reliably rank \u201cour policies\u201d yet.\n\nIf you want, I can still open a ticket requesting the policy list and ranking criteria.",
+  "agent_error": null,
+  "wall_seconds": 6.29,
+  "usage": {
+    "requests": 4,
+    "input": 1238,
+    "cached_input": 0,
+    "output": 119,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001464
+  },
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I\u2019m sorry, but I couldn\u2019t find any internal documentation listing the policies or any existing priority-ranking criteria, so I can\u2019t reliably rank \u201cour policies\u201d yet.\n\nIf you want, I can still open a ticket requesting the policy list and ranking criteria.",
+    "error": null,
+    "wall_seconds": 6.29,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy priority ranking internal policies list criteria"
+        },
+        "args_key": "{\"query\": \"policy priority ranking internal policies list criteria\"}",
+        "result": "No documents found for 'policy priority ranking internal policies list criteria'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies priority ranking"
+        },
+        "args_key": "{\"query\": \"policies priority ranking\"}",
+        "result": "No documents found for 'policies priority ranking'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy handbook list of policies"
+        },
+        "args_key": "{\"query\": \"policy handbook list of policies\"}",
+        "result": "No documents found for 'policy handbook list of policies'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

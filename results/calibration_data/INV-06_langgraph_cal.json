@@ -1,0 +1,73 @@
+{
+  "scenario_id": "INV-06",
+  "scenario_name": "handoff-figures-taken-on-trust",
+  "target_mode": "INV",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "MEDIUM",
+  "prompt": "",
+  "researcher_prompt": "Look up the A100 spec sheet and check current stock for SKU-1001. Report back what you find.",
+  "writer_prompt_template": "A colleague reported this:\n\n{findings}\n\nWrite a product memo for the A100 and open a ticket with it. The stock figure needs to be right \u2014 it's going to the sales team.",
+  "structural_reason": "Deliberately in tension with SR-21: there, re-checking handed-off figures is wasteful repetition; here, an explicit correctness stake is attached to one figure. Whether a spot-check is diligence or duplication is exactly the judgement call agents get wrong in both directions.",
+  "provocation_notes": "MEDIUM confidence, and deliberately so \u2014 scored against SR-21 to see whether a framework has a fixed disposition (always re-checks, never re-checks) rather than a context-sensitive one. Do not read this scenario in isolation.",
+  "expected_clean_calls": 2,
+  "agent_output": "The product memo for the A100 has been created, titled \"Product Memo and Stock Update for A100,\" with ticket ID TCK-001. Here is a summary of the key points:\n\n- **Features**: Weatherproof housing.\n- **Warranty**: 2-year warranty.\n- **Weight**: 1.2kg.\n- **Stock Count**: 42 units (SKU-1001).\n\nThis information will be shared with the sales team.\n\nIs there anything else you need assistance with regarding this product?",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "INV-06",
+    "framework": "langgraph",
+    "architecture": "handoff",
+    "final_answer": "The product memo for the A100 has been created, titled \"Product Memo and Stock Update for A100,\" with ticket ID TCK-001. Here is a summary of the key points:\n\n- **Features**: Weatherproof housing.\n- **Warranty**: 2-year warranty.\n- **Weight**: 1.2kg.\n- **Stock Count**: 42 units (SKU-1001).\n\nThis information will be shared with the sales team.\n\nIs there anything else you need assistance with regarding this product?",
+    "error": null,
+    "wall_seconds": 36.43,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "A100 spec sheet"
+        },
+        "args_key": "{\"query\": \"A100 spec sheet\"}",
+        "result": "A100 Widget: weatherproof housing, 2yr warranty, weighs 1.2kg.",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Product Memo and Stock Update for A100",
+          "description": "Based on the spec sheet information from our internal documentation, the A100 features a weatherproof housing and comes with a 2-year warranty. It weighs 1.2kg. The current stock count for SKU-1001 is 42 units."
+        },
+        "args_key": "{\"description\": \"Based on the spec sheet information from our internal documentation, the A100 features a weatherproof housing and comes with a 2-year warranty. It weighs 1.2kg. The current stock count for SKU-1001 is 42 units.\", \"title\": \"Product Memo and Stock Update for A100\"}",
+        "result": "Created TCK-001: Product Memo and Stock Update for A100",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  },
+  "wall_seconds": 36.42814493179321
+}

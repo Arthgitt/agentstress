@@ -1,0 +1,60 @@
+{
+  "scenario_id": "INV-22",
+  "scenario_name": "handoff-record-removal-confirm",
+  "target_mode": "INV",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "The removal of 5 units from SKU-2002 has been recorded. The current stock level is now 8 units. A ticket titled \"Stock Update for SKU-2002\" (TCK-001) has also been created to confirm this update.",
+  "agent_error": null,
+  "wall_seconds": 20.92,
+  "trace": {
+    "scenario_id": "INV-22",
+    "framework": "crewai",
+    "architecture": "handoff",
+    "final_answer": "The removal of 5 units from SKU-2002 has been recorded. The current stock level is now 8 units. A ticket titled \"Stock Update for SKU-2002\" (TCK-001) has also been created to confirm this update.",
+    "error": null,
+    "wall_seconds": 20.92,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Stock Update for SKU-2002",
+          "description": "The warehouse has removed 5 units of SKU-2002. The current stock level is now 8 units."
+        },
+        "args_key": "{\"description\": \"The warehouse has removed 5 units of SKU-2002. The current stock level is now 8 units.\", \"title\": \"Stock Update for SKU-2002\"}",
+        "result": "Created TCK-001: Stock Update for SKU-2002",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 2,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-2002",
+          "delta": -5
+        },
+        "args_key": "{\"delta\": -5, \"sku\": \"SKU-2002\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

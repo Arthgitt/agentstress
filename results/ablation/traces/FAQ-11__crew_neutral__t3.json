@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-11",
+  "scenario_name": "update-which-widget",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed with updating the stock for the widget, I need more information such as the SKU and the change in quantity (delta) you want to apply. Could you please provide these details? For example:\n\n- The SKU of the widget: `WGT123`\n- The change in quantity: +50 (to increase the stock by 50 units) or -20 (to decrease the stock by 20 units)\n\nOnce I have this information, I can update the inventory for you.",
+  "agent_error": null,
+  "wall_seconds": 6.89,
+  "trace": {
+    "scenario_id": "FAQ-11",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "To proceed with updating the stock for the widget, I need more information such as the SKU and the change in quantity (delta) you want to apply. Could you please provide these details? For example:\n\n- The SKU of the widget: `WGT123`\n- The change in quantity: +50 (to increase the stock by 50 units) or -20 (to decrease the stock by 20 units)\n\nOnce I have this information, I can update the inventory for you.",
+    "error": null,
+    "wall_seconds": 6.89,
+    "calls": []
+  }
+}

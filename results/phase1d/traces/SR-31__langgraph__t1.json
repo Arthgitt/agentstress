@@ -1,0 +1,70 @@
+{
+  "scenario_id": "SR-31",
+  "scenario_name": "adjust-then-report-once",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Done \u2014 4 units of SKU-7007 were removed, and the current stock level is 23 units.\n\nTicket created: TCK-001",
+  "agent_error": null,
+  "wall_seconds": 4.7,
+  "usage": {
+    "requests": 4,
+    "input": 1170,
+    "cached_input": 0,
+    "output": 133,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001476
+  },
+  "trace": {
+    "scenario_id": "SR-31",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Done \u2014 4 units of SKU-7007 were removed, and the current stock level is 23 units.\n\nTicket created: TCK-001",
+    "error": null,
+    "wall_seconds": 4.7,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -4
+        },
+        "args_key": "{\"delta\": -4, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-7007"
+        },
+        "args_key": "{\"sku\": \"SKU-7007\"}",
+        "result": "SKU-7007: 23 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Return inspection: removed 4 units of SKU-7007",
+          "description": "4 units were removed from stock for a return inspection. Current stock level for SKU-7007 is 23 units."
+        },
+        "args_key": "{\"description\": \"4 units were removed from stock for a return inspection. Current stock level for SKU-7007 is 23 units.\", \"title\": \"Return inspection: removed 4 units of SKU-7007\"}",
+        "result": "Created TCK-001: Return inspection: removed 4 units of SKU-7007",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The ticket has been created successfully. The ticket details are as follows:\n\n- **Title:** TCK-001: Billing Ticket - Discounted Order\n- **Description:** This ticket pertains to the application of a 20% discount on an order, resulting in a final price of $80.\n\nIf you need any further assistance or additional information, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 27.84,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The ticket details are as follows:\n\n- **Title:** TCK-001: Billing Ticket - Discounted Order\n- **Description:** This ticket pertains to the application of a 20% discount on an order, resulting in a final price of $80.\n\nIf you need any further assistance or additional information, feel free to ask!",
+    "error": null,
+    "wall_seconds": 27.84,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "100 - 100 * 0.2"
+        },
+        "args_key": "{\"expression\": \"100 - 100 * 0.2\"}",
+        "result": "100 - 100 * 0.2 = 80.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing Ticket - Discounted Order",
+          "description": "An order with an original price of $100 has been discounted by 20%, resulting in a final price of $80."
+        },
+        "args_key": "{\"description\": \"An order with an original price of $100 has been discounted by 20%, resulting in a final price of $80.\", \"title\": \"Billing Ticket - Discounted Order\"}",
+        "result": "Created TCK-001: Billing Ticket - Discounted Order",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

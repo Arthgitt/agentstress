@@ -1,0 +1,48 @@
+{
+  "scenario_id": "SR-38",
+  "scenario_name": "pricing-file-two-facts",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The base price set in the file `config/pricing.txt` is $80 USD. I have also opened a ticket for the sales team titled \"Sales Discount Request\" with ticket ID TCK-001, stating that they need to know the maximum discount they are allowed to give.",
+  "agent_error": null,
+  "wall_seconds": 13.21,
+  "trace": {
+    "scenario_id": "SR-38",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "The base price set in the file `config/pricing.txt` is $80 USD. I have also opened a ticket for the sales team titled \"Sales Discount Request\" with ticket ID TCK-001, stating that they need to know the maximum discount they are allowed to give.",
+    "error": null,
+    "wall_seconds": 13.21,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Sales Discount Request",
+          "description": "The maximum discount that can be given to customers is required."
+        },
+        "args_key": "{\"description\": \"The maximum discount that can be given to customers is required.\", \"title\": \"Sales Discount Request\"}",
+        "result": "Created TCK-001: Sales Discount Request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

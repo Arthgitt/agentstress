@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will first determine the details of the maintenance window you'd like to schedule. Could you please provide me with the date and time for the maintenance window? Additionally, could you describe what needs to be maintained or fixed during this window? This information will help in creating an accurate ticket.\nIf you're not sure about these specifics, I can suggest a general approach based on common practices. Let me know how you'd like to proceed!",
+  "agent_error": null,
+  "wall_seconds": 8.22,
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will first determine the details of the maintenance window you'd like to schedule. Could you please provide me with the date and time for the maintenance window? Additionally, could you describe what needs to be maintained or fixed during this window? This information will help in creating an accurate ticket.\nIf you're not sure about these specifics, I can suggest a general approach based on common practices. Let me know how you'd like to proceed!",
+    "error": null,
+    "wall_seconds": 8.22,
+    "calls": []
+  }
+}

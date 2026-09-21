@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-08",
+  "scenario_name": "fully-specified-request",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "{\n    \"ticket_id\": \"TCK-001\",\n    \"ticket_title\": \"Refund policy summary\",\n    \"ticket_description\": \"Refunds are accepted within 30 days with a receipt.\"\n}",
+  "agent_error": null,
+  "wall_seconds": 11.23,
+  "trace": {
+    "scenario_id": "FAQ-08",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "{\n    \"ticket_id\": \"TCK-001\",\n    \"ticket_title\": \"Refund policy summary\",\n    \"ticket_description\": \"Refunds are accepted within 30 days with a receipt.\"\n}",
+    "error": null,
+    "wall_seconds": 11.23,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund policy summary",
+          "description": "Refunds are accepted within 30 days with a receipt."
+        },
+        "args_key": "{\"description\": \"Refunds are accepted within 30 days with a receipt.\", \"title\": \"Refund policy summary\"}",
+        "result": "Created TCK-001: Refund policy summary",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

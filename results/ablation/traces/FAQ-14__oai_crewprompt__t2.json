@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The order amount is $84.50, applying a 15% discount results in a final amount of $71.83 (which is $84.50 - $12.67).\n\nTicket TCK-001 has been created to proceed with billing the customer.",
+  "agent_error": null,
+  "wall_seconds": 15.57,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "The order amount is $84.50, applying a 15% discount results in a final amount of $71.83 (which is $84.50 - $12.67).\n\nTicket TCK-001 has been created to proceed with billing the customer.",
+    "error": null,
+    "wall_seconds": 15.57,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.15*84.50"
+        },
+        "args_key": "{\"expression\": \"0.15*84.50\"}",
+        "result": "0.15*84.50 = 12.674999999999999",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Apply Discount and Invoice Order",
+          "description": "The order amount is $84.50, applying a 15% discount results in a final amount of ${discounted_amount}. Please proceed with billing the customer."
+        },
+        "args_key": "{\"description\": \"The order amount is $84.50, applying a 15% discount results in a final amount of ${discounted_amount}. Please proceed with billing the customer.\", \"title\": \"Apply Discount and Invoice Order\"}",
+        "result": "Created TCK-001: Apply Discount and Invoice Order",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

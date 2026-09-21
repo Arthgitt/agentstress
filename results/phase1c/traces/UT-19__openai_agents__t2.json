@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-19",
+  "scenario_name": "handoff-go-no-go",
+  "target_mode": "UT",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Given the heavy rain, it might not be the best idea to proceed with the outdoor photo shoot in Mumbai today.",
+  "agent_error": null,
+  "wall_seconds": 5.97,
+  "trace": {
+    "scenario_id": "UT-19",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "Given the heavy rain, it might not be the best idea to proceed with the outdoor photo shoot in Mumbai today.",
+    "error": null,
+    "wall_seconds": 5.97,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Mumbai"
+        },
+        "args_key": "{\"city\": \"Mumbai\"}",
+        "result": "Mumbai: 33C, heavy rain",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

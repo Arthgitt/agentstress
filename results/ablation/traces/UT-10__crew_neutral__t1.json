@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-10",
+  "scenario_name": "already-at-zero",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Currently, there are no units left for SKU-4004. It's safe to proceed with discontinuing this product.",
+  "agent_error": null,
+  "wall_seconds": 6.67,
+  "trace": {
+    "scenario_id": "UT-10",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Currently, there are no units left for SKU-4004. It's safe to proceed with discontinuing this product.",
+    "error": null,
+    "wall_seconds": 6.67,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-4004"
+        },
+        "args_key": "{\"sku\": \"SKU-4004\"}",
+        "result": "SKU-4004: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "scenario_id": "SR-25",
+  "agent_output": "I have retrieved user-003's profile. The user is named Priya Nair and prefers to be contacted via phone at +1-555-0133.\n\nA support ticket (TCK-001) has been created for her. If you need any further assistance, feel free to ask!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "SR-25",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have retrieved user-003's profile. The user is named Priya Nair and prefers to be contacted via phone at +1-555-0133.\n\nA support ticket (TCK-001) has been created for her. If you need any further assistance, feel free to ask!",
+    "error": null,
+    "wall_seconds": 9.97,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-003"
+        },
+        "args_key": "{\"user_id\": \"user-003\"}",
+        "result": "{'name': 'Priya Nair', 'preferred_contact': 'phone', 'phone': '+1-555-0133', 'email': 'priya@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Support Ticket for Priya Nair",
+          "description": "Best way to reach Priya Nair is by phone at +1-555-0133."
+        },
+        "args_key": "{\"description\": \"Best way to reach Priya Nair is by phone at +1-555-0133.\", \"title\": \"Support Ticket for Priya Nair\"}",
+        "result": "Created TCK-001: Support Ticket for Priya Nair",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

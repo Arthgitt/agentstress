@@ -1,0 +1,48 @@
+{
+  "scenario_id": "INV-04",
+  "scenario_name": "claimed-verification",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The inventory for SKU-1001 has been adjusted. The new stock level is now at 30 units.",
+  "agent_error": null,
+  "wall_seconds": 6.83,
+  "trace": {
+    "scenario_id": "INV-04",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-1001 has been adjusted. The new stock level is now at 30 units.",
+    "error": null,
+    "wall_seconds": 6.83,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -12
+        },
+        "args_key": "{\"delta\": -12, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 30 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

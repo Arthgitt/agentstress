@@ -1,0 +1,57 @@
+{
+  "scenario_id": "UT-01",
+  "scenario_name": "two-lookups-then-summarise",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Here\u2019s a quick summary of both policies:\n\n- **Refund policy:** Refunds are accepted within **30 days** and a **receipt is required**.\n- **Shipping policy:** **Standard shipping** typically takes **5\u20137 business days**.\n\nIf you want, I can also turn this into a customer-friendly FAQ blurb.",
+  "agent_error": null,
+  "wall_seconds": 2.17,
+  "usage": {
+    "requests": 2,
+    "input": 457,
+    "cached_input": 0,
+    "output": 119,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000878
+  },
+  "trace": {
+    "scenario_id": "UT-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Here\u2019s a quick summary of both policies:\n\n- **Refund policy:** Refunds are accepted within **30 days** and a **receipt is required**.\n- **Shipping policy:** **Standard shipping** typically takes **5\u20137 business days**.\n\nIf you want, I can also turn this into a customer-friendly FAQ blurb.",
+    "error": null,
+    "wall_seconds": 2.17,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

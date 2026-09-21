@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-08",
+  "scenario_name": "condition-already-satisfied",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Currently, SKU-1001 has 42 units in stock, which is more than enough to meet your requirement of at least 10 units. No action is needed for this SKU regarding inventory adjustment.\n\nIf you need any further assistance or if there's another SKU you're concerned about, feel free to let me know!",
+  "agent_error": null,
+  "wall_seconds": 15.4,
+  "trace": {
+    "scenario_id": "UT-08",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Currently, SKU-1001 has 42 units in stock, which is more than enough to meet your requirement of at least 10 units. No action is needed for this SKU regarding inventory adjustment.\n\nIf you need any further assistance or if there's another SKU you're concerned about, feel free to let me know!",
+    "error": null,
+    "wall_seconds": 15.4,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

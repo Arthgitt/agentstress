@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 2,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To determine if we should run the outdoor event today, I need to know the city where the event is scheduled to take place. Could you please provide me with that information? Based on the current weather conditions in the specified city, I can give you an informed recommendation.",
+  "agent_error": null,
+  "wall_seconds": 6.9,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "To determine if we should run the outdoor event today, I need to know the city where the event is scheduled to take place. Could you please provide me with that information? Based on the current weather conditions in the specified city, I can give you an informed recommendation.",
+    "error": null,
+    "wall_seconds": 6.9,
+    "calls": []
+  }
+}

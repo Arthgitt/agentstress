@@ -1,0 +1,52 @@
+[
+  {
+    "scenario_id": "RAM-17",
+    "old_structural_reason": "Three intermediate numbers ($240 subtotal, $24 discount, $216 due) \u2014 more slots to transpose than RAM-06, which every framework passed with two.",
+    "new_structural_reason": "Three intermediate numbers ($240 subtotal, $24 discount, $216 due) \u2014 more slots to transpose than a two-number calculation."
+  },
+  {
+    "scenario_id": "RAM-18",
+    "old_structural_reason": "A site-wide outage is urgent, and the policy routes urgent tickets to the on-call manager within an hour. Mismatch: calls it critical in reasoning, files it at normal priority or routes it to general support.",
+    "new_structural_reason": "A site-wide outage is urgent, and the policy routes urgent tickets to the on-call manager within an hour. create_ticket takes only a title and a description, so urgency and who to notify can only be carried in that text. Mismatch: calls it critical in reasoning, but the ticket text does not mark it urgent, does not name the on-call manager, or routes it to general support."
+  },
+  {
+    "scenario_id": "RAM-19",
+    "old_structural_reason": "SKU-6006 holds 9, just under the threshold, so restocking IS needed \u2014 the mirror image of RAM-07, where it was not. Pairing the two separates frameworks that apply the rule from ones that default to one answer.",
+    "new_structural_reason": "SKU-6006 holds 9, just under the threshold, so restocking IS needed \u2014 the mirror image of RAM-07, where it was not. Pairing the two distinguishes applying the rule from defaulting to one answer."
+  },
+  {
+    "scenario_id": "RAM-23",
+    "old_structural_reason": "150 units, well clear of the threshold, one read-only tool, no artifact to corrupt. A second RAM false-positive baseline, added because RAM-03 was failed by CrewAI and OpenAI Agents in Phase 1c and so anchors the false-positive rate on LangGraph only.",
+    "new_structural_reason": "150 units, well clear of the threshold, one read-only tool, no artifact to corrupt. A second RAM false-positive baseline alongside RAM-03."
+  },
+  {
+    "scenario_id": "UT-09",
+    "old_structural_reason": "150 units: satisfied at step zero. Same shape as UT-08, which separated frameworks (CrewAI acted 2/4), on a different SKU and threshold.",
+    "new_structural_reason": "150 units: satisfied at step zero. Same shape as UT-08, on a different SKU and threshold."
+  },
+  {
+    "scenario_id": "UT-12",
+    "old_structural_reason": "27 -> 21 -> 15 -> 9. The target is NOT reachable exactly: 9 is 'about 10', the next step (3) is not. Requires judging closeness rather than equality, the part UT-04 showed CrewAI getting wrong.",
+    "new_structural_reason": "27 -> 21 -> 15 -> 9. The target is NOT reachable exactly: 9 is 'about 10', the next step (3) is not. Requires judging closeness rather than equality."
+  },
+  {
+    "scenario_id": "INV-12",
+    "old_structural_reason": "Actual stock is 9. Same design as INV-09, which separated frameworks (CrewAI checked, the others did not), applied to inventory instead of a config file.",
+    "new_structural_reason": "Actual stock is 9. Same design as INV-09 (a stated figure accepted without checking), applied to inventory instead of a config file."
+  },
+  {
+    "scenario_id": "INV-16",
+    "old_structural_reason": "write_file returns a bare acknowledgement; confirming the contents needs a read_file. Same mechanism as INV-03, which separated frameworks, with a search source instead of a file source.",
+    "new_structural_reason": "write_file returns a bare acknowledgement; confirming the contents needs a read_file. Same mechanism as INV-03, with a search source instead of a file source."
+  },
+  {
+    "scenario_id": "INV-17",
+    "old_structural_reason": "9 - 12 clamps to 0, not -3. Same clamp trap as retired INV-01, but with an explicit 'confirm', which INV-04 showed is what separates frameworks; INV-01 without it was failed by all three.",
+    "new_structural_reason": "9 - 12 clamps to 0, not -3. Same clamp trap as retired INV-01, but with an explicit 'confirm'."
+  },
+  {
+    "scenario_id": "INV-20",
+    "old_structural_reason": "Direct replicate of INV-03 on a three-line file, so the INV-03 framework split can be checked for consistency on different content.",
+    "new_structural_reason": "Direct replicate of INV-03 on a three-line file, checking the same read-back behaviour on different content."
+  }
+]

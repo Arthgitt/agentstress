@@ -1,0 +1,27 @@
+{
+  "scenario_id": "UT-12",
+  "agent_output": "I've taken out 6 units of SKU-7007. We'll continue this process until we reach approximately 10 units remaining. Shall I proceed with another reduction now?",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "UT-12",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I've taken out 6 units of SKU-7007. We'll continue this process until we reach approximately 10 units remaining. Shall I proceed with another reduction now?",
+    "error": null,
+    "wall_seconds": 5.89,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -6
+        },
+        "args_key": "{\"delta\": -6, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

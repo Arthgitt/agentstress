@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-02",
+  "scenario_name": "which-customer",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there is no profile found for the user ID '12345'. Could you please verify the user ID or provide more details so I can assist further? If this was a test case, could you give me another valid user ID to proceed with retrieving the profile and opening a ticket?",
+  "agent_error": null,
+  "wall_seconds": 15.04,
+  "trace": {
+    "scenario_id": "FAQ-02",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems there is no profile found for the user ID '12345'. Could you please verify the user ID or provide more details so I can assist further? If this was a test case, could you give me another valid user ID to proceed with retrieving the profile and opening a ticket?",
+    "error": null,
+    "wall_seconds": 15.04,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "12345"
+        },
+        "args_key": "{\"user_id\": \"12345\"}",
+        "result": "No profile for user_id '12345'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

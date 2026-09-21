@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can\u2019t determine whether to run the outdoor event today because I don\u2019t have your location or a usable weather report.\n\nIf you want, send me the city or event location and I can help you decide based on the forecast.",
+  "agent_error": null,
+  "wall_seconds": 2.29,
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I can\u2019t determine whether to run the outdoor event today because I don\u2019t have your location or a usable weather report.\n\nIf you want, send me the city or event location and I can help you decide based on the forecast.",
+    "error": null,
+    "wall_seconds": 2.29,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "current location"
+        },
+        "args_key": "{\"city\": \"current location\"}",
+        "result": "No weather data for 'current location'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "today"
+        },
+        "args_key": "{\"city\": \"today\"}",
+        "result": "No weather data for 'today'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 3,
+    "input": 709,
+    "cached_input": 0,
+    "output": 90,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000937
+  }
+}

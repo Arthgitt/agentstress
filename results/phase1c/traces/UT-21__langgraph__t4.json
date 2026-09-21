@@ -1,0 +1,37 @@
+{
+  "scenario_id": "UT-21",
+  "scenario_name": "save-policy-then-done",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The refund policy text has been successfully saved to `docs/refund.txt`. The content of the file is as follows:\n\n```\nOur refund policy allows for a full refund within 30 days of purchase.\n```",
+  "agent_error": null,
+  "wall_seconds": 6.7,
+  "trace": {
+    "scenario_id": "UT-21",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The refund policy text has been successfully saved to `docs/refund.txt`. The content of the file is as follows:\n\n```\nOur refund policy allows for a full refund within 30 days of purchase.\n```",
+    "error": null,
+    "wall_seconds": 6.7,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "write_file",
+        "args": {
+          "path": "docs/refund.txt",
+          "content": "Our refund policy allows for a full refund within 30 days of purchase."
+        },
+        "args_key": "{\"content\": \"Our refund policy allows for a full refund within 30 days of purchase.\", \"path\": \"docs/refund.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

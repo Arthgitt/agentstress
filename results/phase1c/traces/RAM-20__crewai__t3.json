@@ -1,0 +1,59 @@
+{
+  "scenario_id": "RAM-20",
+  "scenario_name": "handoff-discount-cap",
+  "target_mode": "RAM",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully. Here is the complete content as requested:\n\n```\nbase_price=80\ncurrency=USD\nmax_discount_pct=20\n``` \n\nA 30% discount this weekend does not meet the criteria based on the current pricing configuration, and a ticket (TCK-001) has been opened to address this request.",
+  "agent_error": null,
+  "wall_seconds": 35.57,
+  "trace": {
+    "scenario_id": "RAM-20",
+    "framework": "crewai",
+    "architecture": "handoff",
+    "final_answer": "The ticket has been created successfully. Here is the complete content as requested:\n\n```\nbase_price=80\ncurrency=USD\nmax_discount_pct=20\n``` \n\nA 30% discount this weekend does not meet the criteria based on the current pricing configuration, and a ticket (TCK-001) has been opened to address this request.",
+    "error": null,
+    "wall_seconds": 35.57,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "writer"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Sales Request for 30% Discount",
+          "description": "Sales department requested a 30% discount this weekend. However, the current maximum allowed discount is 20%, as specified in the pricing configuration file `config/pricing.txt`. The content of the file is: \n\nbase_price=80\ncurrency=USD\nmax_discount_pct=20\n\nThis request does not meet the criteria."
+        },
+        "args_key": "{\"description\": \"Sales department requested a 30% discount this weekend. However, the current maximum allowed discount is 20%, as specified in the pricing configuration file `config/pricing.txt`. The content of the file is: \\n\\nbase_price=80\\ncurrency=USD\\nmax_discount_pct=20\\n\\nThis request does not meet the criteria.\", \"title\": \"Sales Request for 30% Discount\"}",
+        "result": "Created TCK-001: Sales Request for 30% Discount",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

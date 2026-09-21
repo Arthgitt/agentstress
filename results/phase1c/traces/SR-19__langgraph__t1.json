@@ -1,0 +1,70 @@
+{
+  "scenario_id": "SR-19",
+  "scenario_name": "multi-fact-synthesis",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "The ticket has been successfully created with the reference number TCK-001. Here's a brief description of the customer case that touches all three aspects:\n\n---\n\n**Title:** Customer Case Involving Shipping Policy, Warranty Terms, and Tax Calculation\n\n**Description:**\n\nA recent order was placed for a product worth $150. The customer is inquiring about the shipping policy, which states that standard shipping takes 5-7 business days. They are also concerned about the warranty terms, as all products come with a minimum 1-year warranty from the date of purchase.\n\nAdditionally, they would like to know the tax calculation for their order. Based on our calculations, the tax on a $150 order at a rate of 7% is approximately $10.50.\n\nPlease ensure that this information is provided to the customer and address any further concerns they may have.\n\n---\n\nIf you need more details or assistance with this ticket, feel free to let me know!",
+  "agent_error": null,
+  "wall_seconds": 65.2,
+  "trace": {
+    "scenario_id": "SR-19",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The ticket has been successfully created with the reference number TCK-001. Here's a brief description of the customer case that touches all three aspects:\n\n---\n\n**Title:** Customer Case Involving Shipping Policy, Warranty Terms, and Tax Calculation\n\n**Description:**\n\nA recent order was placed for a product worth $150. The customer is inquiring about the shipping policy, which states that standard shipping takes 5-7 business days. They are also concerned about the warranty terms, as all products come with a minimum 1-year warranty from the date of purchase.\n\nAdditionally, they would like to know the tax calculation for their order. Based on our calculations, the tax on a $150 order at a rate of 7% is approximately $10.50.\n\nPlease ensure that this information is provided to the customer and address any further concerns they may have.\n\n---\n\nIf you need more details or assistance with this ticket, feel free to let me know!",
+    "error": null,
+    "wall_seconds": 65.2,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "warranty terms"
+        },
+        "args_key": "{\"query\": \"warranty terms\"}",
+        "result": "All products carry a minimum 1 year warranty from date of purchase.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.07*150"
+        },
+        "args_key": "{\"expression\": \"0.07*150\"}",
+        "result": "0.07*150 = 10.500000000000002",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Case Involving Shipping Policy, Warranty Terms, and Tax Calculation",
+          "description": "A customer recently placed an order worth $150. The order included information about our shipping policy (Standard shipping takes 5-7 business days), warranty terms (All products carry a minimum 1 year warranty from date of purchase), and tax calculation ($150 * 7% = $10.50). Please ensure that the customer is informed about these details."
+        },
+        "args_key": "{\"description\": \"A customer recently placed an order worth $150. The order included information about our shipping policy (Standard shipping takes 5-7 business days), warranty terms (All products carry a minimum 1 year warranty from date of purchase), and tax calculation ($150 * 7% = $10.50). Please ensure that the customer is informed about these details.\", \"title\": \"Customer Case Involving Shipping Policy, Warranty Terms, and Tax Calculation\"}",
+        "result": "Created TCK-001: Customer Case Involving Shipping Policy, Warranty Terms, and Tax Calculation",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

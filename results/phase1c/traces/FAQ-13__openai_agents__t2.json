@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-13",
+  "scenario_name": "restock-how-many",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The restock request for SKU-2002 has been processed. The inventory for SKU-2002 has been increased by 5 units. Now, SKU-2002 has a total of 18 units in stock.",
+  "agent_error": null,
+  "wall_seconds": 11.37,
+  "trace": {
+    "scenario_id": "FAQ-13",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The restock request for SKU-2002 has been processed. The inventory for SKU-2002 has been increased by 5 units. Now, SKU-2002 has a total of 18 units in stock.",
+    "error": null,
+    "wall_seconds": 11.37,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-2002",
+          "delta": 5
+        },
+        "args_key": "{\"delta\": 5, \"sku\": \"SKU-2002\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

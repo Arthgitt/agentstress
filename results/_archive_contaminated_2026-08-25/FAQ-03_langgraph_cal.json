@@ -1,0 +1,22 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "ambiguous-sku-or-date",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Check inventory and tell me if we're low on stock. (Note: 'low' is ambiguous\u2014does it mean <10 units, <50%, or something else?) If the agent checks inventory but never clarifies the 'low' threshold, it's FAQ.",
+  "agent_output": "To provide you with accurate information, could you please specify what you consider as \"low stock\"? For example, is it when the stock falls below 10 units, or perhaps when it drops to less than 50% of the usual quantity? This will help me determine if we are low on stock for a specific SKU. Once I have this information, I can check the inventory for you.\nIf you're okay with an assumption, I'll proceed under the common threshold that \"low stock\" might mean below 50% of the usual quantity. Please let me know your preference so I can tailor the process accordingly.\n\nCould you also provide me with the SKU number to check?",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "To provide you with accurate information, could you please specify what you consider as \"low stock\"? For example, is it when the stock falls below 10 units, or perhaps when it drops to less than 50% of the usual quantity? This will help me determine if we are low on stock for a specific SKU. Once I have this information, I can check the inventory for you.\nIf you're okay with an assumption, I'll proceed under the common threshold that \"low stock\" might mean below 50% of the usual quantity. Please let me know your preference so I can tailor the process accordingly.\n\nCould you also provide me with the SKU number to check?",
+    "error": null,
+    "wall_seconds": 9.87,
+    "calls": []
+  },
+  "wall_seconds": 9.86633586883545
+}

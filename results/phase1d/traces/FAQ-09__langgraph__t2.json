@@ -1,0 +1,91 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I opened a ticket with the ranking.\n\nRanked policy priority:\n1. Incident/Urgent escalation policy \u2014 tickets marked urgent must be escalated to the on-call manager within 1 hour.\n2. Data retention policy \u2014 customer records are deleted 24 months after account closure.\n\nTicket created: **TCK-001**",
+  "agent_error": null,
+  "wall_seconds": 7.17,
+  "usage": {
+    "requests": 6,
+    "input": 1928,
+    "cached_input": 0,
+    "output": 277,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002693
+  },
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I opened a ticket with the ranking.\n\nRanked policy priority:\n1. Incident/Urgent escalation policy \u2014 tickets marked urgent must be escalated to the on-call manager within 1 hour.\n2. Data retention policy \u2014 customer records are deleted 24 months after account closure.\n\nTicket created: **TCK-001**",
+    "error": null,
+    "wall_seconds": 7.17,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy priorities ranking order hierarchy escalation criticality internal policies"
+        },
+        "args_key": "{\"query\": \"policy priorities ranking order hierarchy escalation criticality internal policies\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "all policy documents priority ranking mandatory policies order"
+        },
+        "args_key": "{\"query\": \"all policy documents priority ranking mandatory policies order\"}",
+        "result": "No documents found for 'all policy documents priority ranking mandatory policies order'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy precedence compliance security privacy incident response acceptable use data retention"
+        },
+        "args_key": "{\"query\": \"policy precedence compliance security privacy incident response acceptable use data retention\"}",
+        "result": "Customer records are deleted 24 months after account closure.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy security privacy incident response escalation records retention acceptable use"
+        },
+        "args_key": "{\"query\": \"policy security privacy incident response escalation records retention acceptable use\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 4,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Policy priority ranking request",
+          "description": "Ranked policy priority based on available documentation:\n1. Incident/Urgent escalation policy \u2014 tickets marked urgent must be escalated to the on-call manager within 1 hour.\n2. Data retention policy \u2014 customer records are deleted 24 months after account closure.\n\nNote: Only these policy snippets were found in the docs search. If there are additional policies, please provide them for a complete ranking."
+        },
+        "args_key": "{\"description\": \"Ranked policy priority based on available documentation:\\n1. Incident/Urgent escalation policy \\u2014 tickets marked urgent must be escalated to the on-call manager within 1 hour.\\n2. Data retention policy \\u2014 customer records are deleted 24 months after account closure.\\n\\nNote: Only these policy snippets were found in the docs search. If there are additional policies, please provide them for a complete ranking.\", \"title\": \"Policy priority ranking request\"}",
+        "result": "Created TCK-001: Policy priority ranking request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

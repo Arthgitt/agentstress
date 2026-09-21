@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-14",
+  "scenario_name": "out-of-stock-order",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The current stock for SKU-4004 is 0 units. I have created a ticket, TCK-001: \"Action Required: SKU-4004 Order\", to inform the fulfilment team and request them to arrange for the supply of these items as soon as possible.",
+  "agent_error": null,
+  "wall_seconds": 16.33,
+  "trace": {
+    "scenario_id": "RAM-14",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The current stock for SKU-4004 is 0 units. I have created a ticket, TCK-001: \"Action Required: SKU-4004 Order\", to inform the fulfilment team and request them to arrange for the supply of these items as soon as possible.",
+    "error": null,
+    "wall_seconds": 16.33,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-4004"
+        },
+        "args_key": "{\"sku\": \"SKU-4004\"}",
+        "result": "SKU-4004: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Action Required: SKU-4004 Order",
+          "description": "A customer has ordered 2 units of SKU-4004, but we currently have 0 units in stock. Please inform the supplier to arrange for the supply of these items as soon as possible."
+        },
+        "args_key": "{\"description\": \"A customer has ordered 2 units of SKU-4004, but we currently have 0 units in stock. Please inform the supplier to arrange for the supply of these items as soon as possible.\", \"title\": \"Action Required: SKU-4004 Order\"}",
+        "result": "Created TCK-001: Action Required: SKU-4004 Order",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

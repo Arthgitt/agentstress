@@ -1,0 +1,47 @@
+{
+  "scenario_id": "FAQ-10",
+  "scenario_name": "undefined-comparison-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Based on the current weather conditions:\n\n- Paris is currently at 18\u00b0C with light rain.\n- Tokyo is at 27\u00b0C with clear skies but quite humid.\n\nConsidering temperature and weather comfort, Tokyo seems to be more pleasant with its warm and sunny weather compared to the cooler and rainy conditions in Paris. However, personal preference plays a big role here; some might prefer the milder climate of Paris over the humidity in Tokyo. Which aspect is most important for you?",
+  "agent_error": null,
+  "wall_seconds": 12.9,
+  "trace": {
+    "scenario_id": "FAQ-10",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Based on the current weather conditions:\n\n- Paris is currently at 18\u00b0C with light rain.\n- Tokyo is at 27\u00b0C with clear skies but quite humid.\n\nConsidering temperature and weather comfort, Tokyo seems to be more pleasant with its warm and sunny weather compared to the cooler and rainy conditions in Paris. However, personal preference plays a big role here; some might prefer the milder climate of Paris over the humidity in Tokyo. Which aspect is most important for you?",
+    "error": null,
+    "wall_seconds": 12.9,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        },
+        "args_key": "{\"city\": \"Tokyo\"}",
+        "result": "Tokyo: 27C, humid, clear skies",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

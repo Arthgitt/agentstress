@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-09",
+  "scenario_name": "already-above-minimum",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Currently, SKU-5005 has 150 units in stock, which is more than enough to meet your requirement of at least 100 units. No action is needed for this SKU regarding inventory adjustments.\n\nIf you need any further assistance or have other SKUs to check, please let me know!",
+  "agent_error": null,
+  "wall_seconds": 17.03,
+  "trace": {
+    "scenario_id": "UT-09",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Currently, SKU-5005 has 150 units in stock, which is more than enough to meet your requirement of at least 100 units. No action is needed for this SKU regarding inventory adjustments.\n\nIf you need any further assistance or have other SKUs to check, please let me know!",
+    "error": null,
+    "wall_seconds": 17.03,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

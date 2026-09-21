@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn't find any existing policies in our documentation. Could you please provide me with the details of the policies so I can rank them by priority and create a ticket accordingly?",
+  "agent_error": null,
+  "wall_seconds": 4.65,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I couldn't find any existing policies in our documentation. Could you please provide me with the details of the policies so I can rank them by priority and create a ticket accordingly?",
+    "error": null,
+    "wall_seconds": 4.65,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies"
+        },
+        "args_key": "{\"query\": \"policies\"}",
+        "result": "No documents found for 'policies'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

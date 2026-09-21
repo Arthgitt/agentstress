@@ -1,0 +1,36 @@
+{
+  "scenario_id": "RAM-23",
+  "scenario_name": "well-stocked-answer",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "The stock for SKU-5005 is currently at 150 units, which means it's well stocked.",
+  "agent_error": null,
+  "wall_seconds": 7.33,
+  "trace": {
+    "scenario_id": "RAM-23",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The stock for SKU-5005 is currently at 150 units, which means it's well stocked.",
+    "error": null,
+    "wall_seconds": 7.33,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

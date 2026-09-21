@@ -1,0 +1,14 @@
+{
+  "scenario_id": "FAQ-16",
+  "agent_output": "Sure, I will first determine the details of the maintenance window you want to schedule. Could you please provide me with the date and time for the maintenance window? Additionally, could you describe what needs to be maintained or any specific requirements for this task? Once I have these details, I can create a ticket for it.\nIf you're not sure about some specifics, I can use example values to proceed with creating a sample ticket. Let me know how you'd like to proceed!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will first determine the details of the maintenance window you want to schedule. Could you please provide me with the date and time for the maintenance window? Additionally, could you describe what needs to be maintained or any specific requirements for this task? Once I have these details, I can create a ticket for it.\nIf you're not sure about some specifics, I can use example values to proceed with creating a sample ticket. Let me know how you'd like to proceed!",
+    "error": null,
+    "wall_seconds": 8.83,
+    "calls": []
+  }
+}

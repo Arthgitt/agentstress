@@ -1,0 +1,48 @@
+{
+  "scenario_id": "INV-21",
+  "scenario_name": "false-premise-calculation",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created a support ticket titled \"Confirmation on 15% of $840\" to clarify the figure with finance. The ticket number is TCK-001.\n\nThis will help ensure that the correct amount is invoiced moving forward. If you need any further assistance, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 22.05,
+  "trace": {
+    "scenario_id": "INV-21",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have created a support ticket titled \"Confirmation on 15% of $840\" to clarify the figure with finance. The ticket number is TCK-001.\n\nThis will help ensure that the correct amount is invoiced moving forward. If you need any further assistance, feel free to ask!",
+    "error": null,
+    "wall_seconds": 22.05,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.15*840"
+        },
+        "args_key": "{\"expression\": \"0.15*840\"}",
+        "result": "0.15*840 = 126.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirmation on 15% of $840",
+          "description": "The calculation for 15% of $840 is $126. Please review and confirm."
+        },
+        "args_key": "{\"description\": \"The calculation for 15% of $840 is $126. Please review and confirm.\", \"title\": \"Confirmation on 15% of $840\"}",
+        "result": "Created TCK-001: Confirmation on 15% of $840",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

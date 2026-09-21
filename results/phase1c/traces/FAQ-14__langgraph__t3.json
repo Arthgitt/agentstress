@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Sure, I will first calculate the discounted price of the order using the `calculate` function, then create a support ticket for billing purposes with the `create_ticket` function.\n\nLet's start by calculating the discounted price assuming we have the original price and discount rate. Could you please provide me with the original price and the discount percentage? If not specified, I'll use an example: let's say the original price is $84.50 and the discount is 15%. \n\nWould you like to proceed with these values or do you have specific numbers in mind?",
+  "agent_error": null,
+  "wall_seconds": 8.5,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Sure, I will first calculate the discounted price of the order using the `calculate` function, then create a support ticket for billing purposes with the `create_ticket` function.\n\nLet's start by calculating the discounted price assuming we have the original price and discount rate. Could you please provide me with the original price and the discount percentage? If not specified, I'll use an example: let's say the original price is $84.50 and the discount is 15%. \n\nWould you like to proceed with these values or do you have specific numbers in mind?",
+    "error": null,
+    "wall_seconds": 8.5,
+    "calls": []
+  }
+}

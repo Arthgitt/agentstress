@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-13",
+  "scenario_name": "discount-needs-approval",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "A ticket has been created (TCK-001: Customer Request for 25% Discount) to inform the sales team that a customer is requesting a 25% discount. According to our discount policy, discounts above 20% require manager approval before they can be applied. Please proceed with the discount after obtaining manager approval.",
+  "agent_error": null,
+  "wall_seconds": 33.23,
+  "trace": {
+    "scenario_id": "RAM-13",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "A ticket has been created (TCK-001: Customer Request for 25% Discount) to inform the sales team that a customer is requesting a 25% discount. According to our discount policy, discounts above 20% require manager approval before they can be applied. Please proceed with the discount after obtaining manager approval.",
+    "error": null,
+    "wall_seconds": 33.23,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Request for 25% Discount",
+          "description": "A customer is requesting a 25% discount. According to our discount policy, discounts above 20% require manager approval before they can be applied. Please proceed with the discount after obtaining manager approval."
+        },
+        "args_key": "{\"description\": \"A customer is requesting a 25% discount. According to our discount policy, discounts above 20% require manager approval before they can be applied. Please proceed with the discount after obtaining manager approval.\", \"title\": \"Customer Request for 25% Discount\"}",
+        "result": "Created TCK-001: Customer Request for 25% Discount",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

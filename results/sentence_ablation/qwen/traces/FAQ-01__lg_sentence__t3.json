@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 3,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no documents available under the topic of 'policy'. Could you please provide more details or context so I can assist you better? Alternatively, would you like to proceed with creating a ticket based on your current request without referencing a specific policy document?",
+  "agent_error": null,
+  "wall_seconds": 8.4,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "It seems there are no documents available under the topic of 'policy'. Could you please provide more details or context so I can assist you better? Alternatively, would you like to proceed with creating a ticket based on your current request without referencing a specific policy document?",
+    "error": null,
+    "wall_seconds": 8.4,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy"
+        },
+        "args_key": "{\"query\": \"policy\"}",
+        "result": "No documents found for 'policy'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

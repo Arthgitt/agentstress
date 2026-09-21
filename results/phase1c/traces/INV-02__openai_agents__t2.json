@@ -1,0 +1,49 @@
+{
+  "scenario_id": "INV-02",
+  "scenario_name": "readback-required-no-surprise",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The inventory for SKU-3003 has been successfully restocked with 15 more units. A ticket has also been created and its reference number is TCK-001: Restock SKU-3003.",
+  "agent_error": null,
+  "wall_seconds": 523.7,
+  "trace": {
+    "scenario_id": "INV-02",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-3003 has been successfully restocked with 15 more units. A ticket has also been created and its reference number is TCK-001: Restock SKU-3003.",
+    "error": null,
+    "wall_seconds": 523.7,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-3003",
+          "delta": 15
+        },
+        "args_key": "{\"delta\": 15, \"sku\": \"SKU-3003\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Restock SKU-3003",
+          "description": "Restocked SKU-3003 with 15 units. Current total: [current_total + 15]"
+        },
+        "args_key": "{\"description\": \"Restocked SKU-3003 with 15 units. Current total: [current_total + 15]\", \"title\": \"Restock SKU-3003\"}",
+        "result": "Created TCK-001: Restock SKU-3003",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

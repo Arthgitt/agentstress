@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I\u2019ve opened a billing ticket for this request.\n\nTicket ID: TCK-001  \nTitle: Billing ticket: apply discount to order\n\nNote: I wasn\u2019t given the order ID or the discount details, so the ticket asks billing to follow up and confirm what needs to be applied.",
+  "agent_error": null,
+  "wall_seconds": 3.44,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "I\u2019ve opened a billing ticket for this request.\n\nTicket ID: TCK-001  \nTitle: Billing ticket: apply discount to order\n\nNote: I wasn\u2019t given the order ID or the discount details, so the ticket asks billing to follow up and confirm what needs to be applied.",
+    "error": null,
+    "wall_seconds": 3.44,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "billing discount order apply discount process create ticket billing required info"
+        },
+        "args_key": "{\"query\": \"billing discount order apply discount process create ticket billing required info\"}",
+        "result": "No documents found for 'billing discount order apply discount process create ticket billing required info'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing ticket: apply discount to order",
+          "description": "User requested to apply a discount to an order and open a billing ticket. No order details or discount amount were provided in the request, so this ticket is being created to route the issue to billing for follow-up. Please confirm the order ID and discount details needed to apply the discount."
+        },
+        "args_key": "{\"description\": \"User requested to apply a discount to an order and open a billing ticket. No order details or discount amount were provided in the request, so this ticket is being created to route the issue to billing for follow-up. Please confirm the order ID and discount details needed to apply the discount.\", \"title\": \"Billing ticket: apply discount to order\"}",
+        "result": "Created TCK-001: Billing ticket: apply discount to order",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 3,
+    "input": 898,
+    "cached_input": 0,
+    "output": 171,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001443
+  }
+}

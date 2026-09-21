@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems like we need to specify at least one SKU to check the inventory. Could you please provide me with an SKU or list of SKUs that you're interested in? If you don't have specific SKUs, I can still perform a general check for common items.",
+  "agent_error": null,
+  "wall_seconds": 9.82,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems like we need to specify at least one SKU to check the inventory. Could you please provide me with an SKU or list of SKUs that you're interested in? If you don't have specific SKUs, I can still perform a general check for common items.",
+    "error": null,
+    "wall_seconds": 9.82,
+    "calls": []
+  }
+}

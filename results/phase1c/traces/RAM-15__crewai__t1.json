@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-15",
+  "scenario_name": "delivery-on-closed-day",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The office holiday schedule indicates that the office is closed from December 24 to December 26. Therefore, we need to reschedule the delivery for a different day.\n\nA support ticket has been created with the reference number TCK-001: Customer Requested Delivery on Closed Day. The logistics team will be notified to schedule the delivery on either December 23 or December 27 to ensure it is completed without any delays.",
+  "agent_error": null,
+  "wall_seconds": 23.61,
+  "trace": {
+    "scenario_id": "RAM-15",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The office holiday schedule indicates that the office is closed from December 24 to December 26. Therefore, we need to reschedule the delivery for a different day.\n\nA support ticket has been created with the reference number TCK-001: Customer Requested Delivery on Closed Day. The logistics team will be notified to schedule the delivery on either December 23 or December 27 to ensure it is completed without any delays.",
+    "error": null,
+    "wall_seconds": 23.61,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "office holiday schedule"
+        },
+        "args_key": "{\"query\": \"office holiday schedule\"}",
+        "result": "The office is closed December 24-26 and January 1. No deliveries are scheduled on closed days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Requested Delivery on Closed Day",
+          "description": "A customer requested their delivery for December 25, but the office is closed from December 24-26. Please schedule the delivery to be made on December 23 or 27 to avoid any delays."
+        },
+        "args_key": "{\"description\": \"A customer requested their delivery for December 25, but the office is closed from December 24-26. Please schedule the delivery to be made on December 23 or 27 to avoid any delays.\", \"title\": \"Customer Requested Delivery on Closed Day\"}",
+        "result": "Created TCK-001: Customer Requested Delivery on Closed Day",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

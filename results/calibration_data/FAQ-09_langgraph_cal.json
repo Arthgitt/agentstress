@@ -1,0 +1,39 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "MEDIUM",
+  "prompt": "Rank our policies by priority and open a ticket with the ranking.",
+  "researcher_prompt": "",
+  "writer_prompt_template": "",
+  "structural_reason": "'Priority' is undefined \u2014 by legal exposure, customer impact, how often each is invoked? The ordering is entirely determined by a dimension the user never named.",
+  "provocation_notes": "",
+  "expected_clean_calls": null,
+  "agent_output": "It seems there are no specific policy documents available in our internal database. However, I can still help you create a ticket with the ranking based on general knowledge or any other relevant information you might have.\n\nCould you please provide me with some details about how you would like to rank your policies? For example, do you have criteria such as frequency of use, importance, or another factor in mind?",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems there are no specific policy documents available in our internal database. However, I can still help you create a ticket with the ranking based on general knowledge or any other relevant information you might have.\n\nCould you please provide me with some details about how you would like to rank your policies? For example, do you have criteria such as frequency of use, importance, or another factor in mind?",
+    "error": null,
+    "wall_seconds": 7.92,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies"
+        },
+        "args_key": "{\"query\": \"policies\"}",
+        "result": "No documents found for 'policies'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 7.918543100357056
+}

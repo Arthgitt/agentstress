@@ -1,0 +1,37 @@
+{
+  "scenario_id": "INV-14",
+  "scenario_name": "false-premise-discount-rule",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created a ticket titled \"Confirm Discount Approval Rule\" (TCK-001) to verify the discount approval rule mentioned by the sales team. The support team will look into this and provide you with any relevant documentation or policies shortly.",
+  "agent_error": null,
+  "wall_seconds": 13.41,
+  "trace": {
+    "scenario_id": "INV-14",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I have created a ticket titled \"Confirm Discount Approval Rule\" (TCK-001) to verify the discount approval rule mentioned by the sales team. The support team will look into this and provide you with any relevant documentation or policies shortly.",
+    "error": null,
+    "wall_seconds": 13.41,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Discount Approval Rule",
+          "description": "A member of the sales team mentioned that discounts up to 30% do not require approval. Please confirm this rule and provide any relevant documentation or policies."
+        },
+        "args_key": "{\"description\": \"A member of the sales team mentioned that discounts up to 30% do not require approval. Please confirm this rule and provide any relevant documentation or policies.\", \"title\": \"Confirm Discount Approval Rule\"}",
+        "result": "Created TCK-001: Confirm Discount Approval Rule",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

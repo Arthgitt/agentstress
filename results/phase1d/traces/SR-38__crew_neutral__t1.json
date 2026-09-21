@@ -1,0 +1,58 @@
+{
+  "scenario_id": "SR-38",
+  "scenario_name": "pricing-file-two-facts",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The base price set in `config/pricing.txt` is **80 USD**.\n\nI also opened a ticket for sales:\n- **Ticket:** TCK-001\n- **Title:** Sales discount limit\n- **Description:** Maximum discount allowed: 20%.",
+  "agent_error": null,
+  "wall_seconds": 2.9,
+  "usage": {
+    "requests": 3,
+    "input": 878,
+    "cached_input": 0,
+    "output": 106,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001136
+  },
+  "trace": {
+    "scenario_id": "SR-38",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "The base price set in `config/pricing.txt` is **80 USD**.\n\nI also opened a ticket for sales:\n- **Ticket:** TCK-001\n- **Title:** Sales discount limit\n- **Description:** Maximum discount allowed: 20%.",
+    "error": null,
+    "wall_seconds": 2.9,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config/pricing.txt"
+        },
+        "args_key": "{\"path\": \"config/pricing.txt\"}",
+        "result": "base_price=80\ncurrency=USD\nmax_discount_pct=20",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Sales discount limit",
+          "description": "Maximum discount allowed: 20%."
+        },
+        "args_key": "{\"description\": \"Maximum discount allowed: 20%.\", \"title\": \"Sales discount limit\"}",
+        "result": "Created TCK-001: Sales discount limit",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

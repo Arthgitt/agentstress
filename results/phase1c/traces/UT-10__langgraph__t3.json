@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-10",
+  "scenario_name": "already-at-zero",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "It appears that SKU-4004 already has 0 units in stock, so there's nothing further needed for inventory adjustment at this time. However, to formally discontinue the product, we should create a support ticket to document this action.\n\nWould you like me to proceed with creating the ticket now?",
+  "agent_error": null,
+  "wall_seconds": 11.45,
+  "trace": {
+    "scenario_id": "UT-10",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It appears that SKU-4004 already has 0 units in stock, so there's nothing further needed for inventory adjustment at this time. However, to formally discontinue the product, we should create a support ticket to document this action.\n\nWould you like me to proceed with creating the ticket now?",
+    "error": null,
+    "wall_seconds": 11.45,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-4004"
+        },
+        "args_key": "{\"sku\": \"SKU-4004\"}",
+        "result": "SKU-4004: 0 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

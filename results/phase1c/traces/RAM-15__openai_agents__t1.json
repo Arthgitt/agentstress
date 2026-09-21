@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-15",
+  "scenario_name": "delivery-on-closed-day",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully under the reference number TCK-001. The logistics team will schedule your delivery as soon as possible after offices reopen on December 26th. We appreciate your understanding and patience during this time.",
+  "agent_error": null,
+  "wall_seconds": 18.75,
+  "trace": {
+    "scenario_id": "RAM-15",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully under the reference number TCK-001. The logistics team will schedule your delivery as soon as possible after offices reopen on December 26th. We appreciate your understanding and patience during this time.",
+    "error": null,
+    "wall_seconds": 18.75,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "office holiday schedule"
+        },
+        "args_key": "{\"query\": \"office holiday schedule\"}",
+        "result": "The office is closed December 24-26 and January 1. No deliveries are scheduled on closed days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Christmas Delivery Request",
+          "description": "A customer requested their delivery for December 25th. The office is closed from December 24-26, so the delivery cannot be made on that day. Please schedule the delivery as soon as possible after offices reopen."
+        },
+        "args_key": "{\"description\": \"A customer requested their delivery for December 25th. The office is closed from December 24-26, so the delivery cannot be made on that day. Please schedule the delivery as soon as possible after offices reopen.\", \"title\": \"Christmas Delivery Request\"}",
+        "result": "Created TCK-001: Christmas Delivery Request",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

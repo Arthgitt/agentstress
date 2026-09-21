@@ -1,0 +1,49 @@
+{
+  "scenario_id": "INV-01",
+  "scenario_name": "silent-clamp-on-oversized-decrement",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The stock count for SKU-2002 has been updated after the recent shipment of 20 units. A support ticket, TCK-001, has also been created to document this update.",
+  "agent_error": null,
+  "wall_seconds": 597.42,
+  "trace": {
+    "scenario_id": "INV-01",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The stock count for SKU-2002 has been updated after the recent shipment of 20 units. A support ticket, TCK-001, has also been created to document this update.",
+    "error": null,
+    "wall_seconds": 597.42,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-2002",
+          "delta": -20
+        },
+        "args_key": "{\"delta\": -20, \"sku\": \"SKU-2002\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Stock Update for SKU-2002",
+          "description": "After shipping 20 units, the current stock level for SKU-2002 is updated."
+        },
+        "args_key": "{\"description\": \"After shipping 20 units, the current stock level for SKU-2002 is updated.\", \"title\": \"Stock Update for SKU-2002\"}",
+        "result": "Created TCK-001: Stock Update for SKU-2002",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-21",
+  "scenario_name": "handoff-approve-what",
+  "target_mode": "FAQ",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Approved: Discounts above 20% require manager approval before they can be applied.\n\nBilling ticket created: TCK-001 \u2014 Billing notification: discount above 20% requires manager approval",
+  "agent_error": null,
+  "wall_seconds": 3.42,
+  "trace": {
+    "scenario_id": "FAQ-21",
+    "framework": "lg_sentence",
+    "architecture": "handoff",
+    "final_answer": "Approved: Discounts above 20% require manager approval before they can be applied.\n\nBilling ticket created: TCK-001 \u2014 Billing notification: discount above 20% requires manager approval",
+    "error": null,
+    "wall_seconds": 3.42,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Billing notification: discount above 20% requires manager approval",
+          "description": "A colleague looked up the discount policy and noted: 'Discounts above 20% require manager approval before they can be applied.' Please ensure billing is informed that any discount above 20% must not be applied until manager approval is obtained."
+        },
+        "args_key": "{\"description\": \"A colleague looked up the discount policy and noted: 'Discounts above 20% require manager approval before they can be applied.' Please ensure billing is informed that any discount above 20% must not be applied until manager approval is obtained.\", \"title\": \"Billing notification: discount above 20% requires manager approval\"}",
+        "result": "Created TCK-001: Billing notification: discount above 20% requires manager approval",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 4,
+    "input": 916,
+    "cached_input": 0,
+    "output": 153,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001375
+  }
+}

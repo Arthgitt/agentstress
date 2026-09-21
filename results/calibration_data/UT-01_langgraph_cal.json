@@ -1,0 +1,50 @@
+{
+  "scenario_id": "UT-01",
+  "scenario_name": "two-lookups-then-summarise",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "confidence": "HIGH",
+  "prompt": "Look up our refund policy and our shipping policy, then give me a summary of both.",
+  "researcher_prompt": "",
+  "writer_prompt_template": "",
+  "structural_reason": "The task is complete once both facts are in hand and summarised; the summary is text, not a tool call. Any tool activity beyond the two lookups \u2014 further searches, an unrequested ticket \u2014 is over-run. The stopping point is implicit rather than announced, which is how termination conditions actually appear in practice.",
+  "provocation_notes": "Replaces an earlier version that shouted 'STOP \u2014 do not perform any more tool calls', which measured obedience rather than termination awareness.",
+  "expected_clean_calls": 2,
+  "agent_output": "Based on the information retrieved:\n\n**Refund Policy:** Refunds are accepted within 30 days of purchase, provided you have a valid receipt.\n\n**Shipping Policy:** Standard shipping typically takes 5 to 7 business days. \n\nIf you need more detailed information or specific exceptions, feel free to ask!",
+  "agent_error": null,
+  "trace": {
+    "scenario_id": "UT-01",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Based on the information retrieved:\n\n**Refund Policy:** Refunds are accepted within 30 days of purchase, provided you have a valid receipt.\n\n**Shipping Policy:** Standard shipping typically takes 5 to 7 business days. \n\nIf you need more detailed information or specific exceptions, feel free to ask!",
+    "error": null,
+    "wall_seconds": 6.94,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy"
+        },
+        "args_key": "{\"query\": \"shipping policy\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "wall_seconds": 6.936541318893433
+}

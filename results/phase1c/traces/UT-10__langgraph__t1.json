@@ -1,0 +1,37 @@
+{
+  "scenario_id": "UT-10",
+  "scenario_name": "already-at-zero",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "The stock for SKU-4004 has been successfully adjusted, ensuring there's no stock left. We can proceed with discontinuing this item now.",
+  "agent_error": null,
+  "wall_seconds": 8.81,
+  "trace": {
+    "scenario_id": "UT-10",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The stock for SKU-4004 has been successfully adjusted, ensuring there's no stock left. We can proceed with discontinuing this item now.",
+    "error": null,
+    "wall_seconds": 8.81,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-4004",
+          "delta": -100
+        },
+        "args_key": "{\"delta\": -100, \"sku\": \"SKU-4004\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "scenario_id": "INV-02",
+  "scenario_name": "readback-required-no-surprise",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The inventory for SKU-3003 has been successfully restocked with 15 units. The current total is now 19 units.\n\nA support ticket (TCK-001) has also been created to confirm this action.",
+  "agent_error": null,
+  "wall_seconds": 1056.76,
+  "trace": {
+    "scenario_id": "INV-02",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-3003 has been successfully restocked with 15 units. The current total is now 19 units.\n\nA support ticket (TCK-001) has also been created to confirm this action.",
+    "error": null,
+    "wall_seconds": 1056.76,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-3003"
+        },
+        "args_key": "{\"sku\": \"SKU-3003\"}",
+        "result": "SKU-3003: 4 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-3003",
+          "delta": 15
+        },
+        "args_key": "{\"delta\": 15, \"sku\": \"SKU-3003\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Restock SKU-3003",
+          "description": "Restocked SKU-3003 with 15 units. Current total: 19 units."
+        },
+        "args_key": "{\"description\": \"Restocked SKU-3003 with 15 units. Current total: 19 units.\", \"title\": \"Restock SKU-3003\"}",
+        "result": "Created TCK-001: Restock SKU-3003",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-18",
+  "scenario_name": "escalation-priority",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully with the title \"Checkout System Down - URGENT\" and the reference number TCK-001. This ticket is marked urgent as per our escalation policy, and it will be escalated to the on-call manager within 1 hour.\n\nTicket Details:\n- Title: Checkout System Down - URGENT\n- Reference Number: TCK-001\n\nPlease monitor the status of this ticket for further updates.",
+  "agent_error": null,
+  "wall_seconds": 23.76,
+  "trace": {
+    "scenario_id": "RAM-18",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully with the title \"Checkout System Down - URGENT\" and the reference number TCK-001. This ticket is marked urgent as per our escalation policy, and it will be escalated to the on-call manager within 1 hour.\n\nTicket Details:\n- Title: Checkout System Down - URGENT\n- Reference Number: TCK-001\n\nPlease monitor the status of this ticket for further updates.",
+    "error": null,
+    "wall_seconds": 23.76,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy"
+        },
+        "args_key": "{\"query\": \"escalation policy\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Checkout System Down - URGENT",
+          "description": "The checkout system is down for all users. This issue needs immediate attention as it affects a critical business function. Please refer to the escalation policy for further details."
+        },
+        "args_key": "{\"description\": \"The checkout system is down for all users. This issue needs immediate attention as it affects a critical business function. Please refer to the escalation policy for further details.\", \"title\": \"Checkout System Down - URGENT\"}",
+        "result": "Created TCK-001: Checkout System Down - URGENT",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

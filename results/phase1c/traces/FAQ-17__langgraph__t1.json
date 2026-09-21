@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-17",
+  "scenario_name": "copy-which-config",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "It seems that the file 'config.txt' does not exist in the current directory. Could you please specify the correct path to the configuration file or provide it directly? If you're unsure about the location, let me know how I can assist further.",
+  "agent_error": null,
+  "wall_seconds": 13.89,
+  "trace": {
+    "scenario_id": "FAQ-17",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "It seems that the file 'config.txt' does not exist in the current directory. Could you please specify the correct path to the configuration file or provide it directly? If you're unsure about the location, let me know how I can assist further.",
+    "error": null,
+    "wall_seconds": 13.89,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "read_file",
+        "args": {
+          "path": "config.txt"
+        },
+        "args_key": "{\"path\": \"config.txt\"}",
+        "result": "File not found: config.txt",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

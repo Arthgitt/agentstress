@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-04",
+  "scenario_name": "contact-preference-vs-default",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully. The details are as follows:\n\nTicket ID: TCK-001\nTitle: Notification for delayed order - Marco Silva\nDescription: User with the user_id 'user-002' prefers to be contacted via SMS. Their phone number is +1-555-0100.\n\nThe ticket has been created and will be used to notify Marco Silva about the delayed order.",
+  "agent_error": null,
+  "wall_seconds": 23.26,
+  "trace": {
+    "scenario_id": "RAM-04",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The details are as follows:\n\nTicket ID: TCK-001\nTitle: Notification for delayed order - Marco Silva\nDescription: User with the user_id 'user-002' prefers to be contacted via SMS. Their phone number is +1-555-0100.\n\nThe ticket has been created and will be used to notify Marco Silva about the delayed order.",
+    "error": null,
+    "wall_seconds": 23.26,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-002"
+        },
+        "args_key": "{\"user_id\": \"user-002\"}",
+        "result": "{'name': 'Marco Silva', 'preferred_contact': 'sms', 'phone': '+1-555-0100'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Notification for delayed order - Marco Silva",
+          "description": "User with the user_id 'user-002' prefers to be contacted via SMS. Their phone number is +1-555-0100."
+        },
+        "args_key": "{\"description\": \"User with the user_id 'user-002' prefers to be contacted via SMS. Their phone number is +1-555-0100.\", \"title\": \"Notification for delayed order - Marco Silva\"}",
+        "result": "Created TCK-001: Notification for delayed order - Marco Silva",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

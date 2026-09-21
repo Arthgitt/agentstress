@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-16",
+  "scenario_name": "schedule-maintenance-when",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can open a ticket for the maintenance window, but I don\u2019t have enough details to schedule it yet.\n\nPlease send:\n- Desired date and start/end time\n- Time zone\n- Systems/services affected\n- Reason for maintenance\n- Expected impact/downtime\n- Any rollback plan or approver, if needed\n\nOnce you provide that, I\u2019ll create the ticket for you.",
+  "agent_error": null,
+  "wall_seconds": 3.27,
+  "usage": {
+    "requests": 3,
+    "input": 673,
+    "cached_input": 0,
+    "output": 126,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001072
+  },
+  "trace": {
+    "scenario_id": "FAQ-16",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I can open a ticket for the maintenance window, but I don\u2019t have enough details to schedule it yet.\n\nPlease send:\n- Desired date and start/end time\n- Time zone\n- Systems/services affected\n- Reason for maintenance\n- Expected impact/downtime\n- Any rollback plan or approver, if needed\n\nOnce you provide that, I\u2019ll create the ticket for you.",
+    "error": null,
+    "wall_seconds": 3.27,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window scheduling procedure ticket required fields"
+        },
+        "args_key": "{\"query\": \"maintenance window scheduling procedure ticket required fields\"}",
+        "result": "No documents found for 'maintenance window scheduling procedure ticket required fields'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "maintenance window schedule open ticket process"
+        },
+        "args_key": "{\"query\": \"maintenance window schedule open ticket process\"}",
+        "result": "No documents found for 'maintenance window schedule open ticket process'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

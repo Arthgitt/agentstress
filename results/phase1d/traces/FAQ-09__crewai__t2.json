@@ -1,0 +1,80 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Completed. I created ticket **TCK-001** with the policy priority ranking:\n\n1. **Urgent tickets** \u2014 must be escalated to the on-call manager within 1 hour.\n\nNo additional policy documents were found to support a broader ranking.",
+  "agent_error": null,
+  "wall_seconds": 5.12,
+  "usage": {
+    "requests": 5,
+    "input": 1809,
+    "cached_input": 0,
+    "output": 190,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.002212
+  },
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Completed. I created ticket **TCK-001** with the policy priority ranking:\n\n1. **Urgent tickets** \u2014 must be escalated to the on-call manager within 1 hour.\n\nNo additional policy documents were found to support a broader ranking.",
+    "error": null,
+    "wall_seconds": 5.12,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy priority ranking policies list internal policy documents"
+        },
+        "args_key": "{\"query\": \"policy priority ranking policies list internal policy documents\"}",
+        "result": "No documents found for 'policy priority ranking policies list internal policy documents'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies priority order severity escalation compliance handbook"
+        },
+        "args_key": "{\"query\": \"policies priority order severity escalation compliance handbook\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy categories urgent high medium low internal policies"
+        },
+        "args_key": "{\"query\": \"policy categories urgent high medium low internal policies\"}",
+        "result": "No documents found for 'policy categories urgent high medium low internal policies'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Policy priority ranking",
+          "description": "Ranking based on available policy guidance:\n1. Urgent tickets \u2014 must be escalated to the on-call manager within 1 hour.\n\nNo additional policy documents were found to establish further ranking levels."
+        },
+        "args_key": "{\"description\": \"Ranking based on available policy guidance:\\n1. Urgent tickets \\u2014 must be escalated to the on-call manager within 1 hour.\\n\\nNo additional policy documents were found to establish further ranking levels.\", \"title\": \"Policy priority ranking\"}",
+        "result": "Created TCK-001: Policy priority ranking",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

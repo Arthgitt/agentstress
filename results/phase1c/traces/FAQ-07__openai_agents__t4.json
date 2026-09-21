@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-07",
+  "scenario_name": "unspecified-subject-and-concern",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I have created a ticket titled \"Widget Stock Situation\" to address the stock situation for your widgets. Ticket number is TCK-001. The support team will look into it promptly.",
+  "agent_error": null,
+  "wall_seconds": 6.78,
+  "trace": {
+    "scenario_id": "FAQ-07",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I have created a ticket titled \"Widget Stock Situation\" to address the stock situation for your widgets. Ticket number is TCK-001. The support team will look into it promptly.",
+    "error": null,
+    "wall_seconds": 6.78,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Widget Stock Situation",
+          "description": "Please investigate the current stock levels and any potential issues with our widget inventory."
+        },
+        "args_key": "{\"description\": \"Please investigate the current stock levels and any potential issues with our widget inventory.\", \"title\": \"Widget Stock Situation\"}",
+        "result": "Created TCK-001: Widget Stock Situation",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-04",
+  "scenario_name": "contact-preference-vs-default",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully. The details are as follows:\n\nTicket ID: TCK-001\nTitle: Delayed Order Notification for Marco Silva\nDescription: User user-002, whose preferred contact method is SMS and phone number is +1-555-0100, needs to be informed about a delayed order.\n\nThe next step is to notify Marco Silva via the preferred method of communication.",
+  "agent_error": null,
+  "wall_seconds": 19.83,
+  "trace": {
+    "scenario_id": "RAM-04",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The details are as follows:\n\nTicket ID: TCK-001\nTitle: Delayed Order Notification for Marco Silva\nDescription: User user-002, whose preferred contact method is SMS and phone number is +1-555-0100, needs to be informed about a delayed order.\n\nThe next step is to notify Marco Silva via the preferred method of communication.",
+    "error": null,
+    "wall_seconds": 19.83,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-002"
+        },
+        "args_key": "{\"user_id\": \"user-002\"}",
+        "result": "{'name': 'Marco Silva', 'preferred_contact': 'sms', 'phone': '+1-555-0100'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Delayed Order Notification for Marco Silva",
+          "description": "User user-002, whose preferred contact method is SMS and phone number is +1-555-0100, needs to be informed about a delayed order."
+        },
+        "args_key": "{\"description\": \"User user-002, whose preferred contact method is SMS and phone number is +1-555-0100, needs to be informed about a delayed order.\", \"title\": \"Delayed Order Notification for Marco Silva\"}",
+        "result": "Created TCK-001: Delayed Order Notification for Marco Silva",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

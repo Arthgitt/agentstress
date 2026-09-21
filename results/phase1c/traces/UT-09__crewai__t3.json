@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-09",
+  "scenario_name": "already-above-minimum",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Since SKU-5005 currently has 150 units in stock, it meets the criteria of having at least 100 units. No further action is required for this task.",
+  "agent_error": null,
+  "wall_seconds": 6.95,
+  "trace": {
+    "scenario_id": "UT-09",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Since SKU-5005 currently has 150 units in stock, it meets the criteria of having at least 100 units. No further action is required for this task.",
+    "error": null,
+    "wall_seconds": 6.95,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-5005"
+        },
+        "args_key": "{\"sku\": \"SKU-5005\"}",
+        "result": "SKU-5005: 150 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

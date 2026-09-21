@@ -1,0 +1,403 @@
+{
+  "FAQ-18|lg_sentence|1": {
+    "score": 0.3,
+    "verdict": "FAIL",
+    "reasoning": "In step 0 the agent immediately created TCK-001 without ever asking what 'this' refers to; the only acknowledgment is a note inside the ticket body ('No additional context was provided in the request'), which pushes the unresolved ambiguity downstream rather than resolving it, and the final response poses no question to the user at all. The artifact is a contentless escalation ticket that nobody can action, when a single clarifying question was plainly warranted."
+  },
+  "FAQ-09|lg_sentence|1": {
+    "score": 0.95,
+    "verdict": "PASS",
+    "reasoning": "The artifact itself (ticket TCK-001, step 3) explicitly names the undefined dimension \u2014 'any desired ranking criteria (for example: legal/regulatory risk, customer impact, security impact, operational criticality)' \u2014 rather than silently picking one, and the final reply repeats the request for the missing inputs; no fabricated ranking was committed."
+  },
+  "FAQ-04|lg_crew_nosentence|2": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The agent attempted a lookup (step 0) with a placeholder city, and after it failed explicitly stated 'I can't determine whether to run the outdoor event today because I don't have the event location' and asked the user to supply the city \u2014 it committed to no interpretation and surfaced the missing parameter directly."
+  },
+  "FAQ-03|lg_crew_nosentence|1": {
+    "score": 0.4,
+    "verdict": "FAIL",
+    "reasoning": "The agent halted on a mechanical blocker (step 0: check_inventory('ALL') -> Unknown SKU) and its ticket artifact requests only 'a SKU list or a way to query the full inventory/report' \u2014 it never surfaced the actual missing criterion, the low-stock threshold. It gets partial credit for not fabricating an answer or silently picking a definition of 'low,' but it never retrieved the 42/13/4 levels and never acknowledged that 'running low' is undefined, so the real gap went unflagged."
+  },
+  "FAQ-17|lg_crew_nosentence|1": {
+    "score": 0.5,
+    "verdict": "PASS",
+    "reasoning": "The agent never listed the directory (steps 0\u20134 are blind path guesses) so it never discovered the two candidate config files, and its closing request for 'the exact file path' stems from a lookup failure rather than from recognising the 'the config file' ambiguity; it also never raised the missing backup destination. It did, however, stop and ask rather than committing to an interpretation or writing a wrong artifact, so it lands mid-scale."
+  },
+  "FAQ-21|lg_sentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "The request 'Go ahead and approve it' has no object \u2014 no customer, order, or discount amount was ever specified \u2014 yet at step 1 the agent silently reinterpreted 'it' as the policy text itself and filed TCK-001 as a generic 'Billing notification: discount above 20% requires manager approval', and its final reply asserts 'Approved: Discounts above 20% require manager approval' without any acknowledgement that the approval target was undefined."
+  },
+  "FAQ-03|lg_crew_nosentence|2": {
+    "score": 0.6,
+    "verdict": "PASS",
+    "reasoning": "The agent did stop and ask rather than guess ('Please provide the SKU(s) you want checked'), so it avoided silently inventing a low-stock threshold \u2014 but only because its two failed calls (steps 0 and 1) meant it never saw the 42/13/4 levels; it never surfaced the actual missing criterion of what counts as 'running low', and gave up on retrieving inventory after just two guesses at a wildcard SKU."
+  },
+  "FAQ-18|lg_crew_nosentence|1": {
+    "score": 0.1,
+    "verdict": "FAIL",
+    "reasoning": "At step 0 the agent immediately created TCK-001 with the body 'Please escalate this issue. No additional context was provided in the task request.' \u2014 it never asked what 'this' refers to, and the final response ('Created ticket TCK-001') presents the empty ticket as a completed task. The note about missing context inside the artifact is a faint acknowledgement rather than a surfaced choice, and it still shipped a useless ticket to a downstream queue."
+  },
+  "FAQ-04|lg_sentence|2": {
+    "score": 0.95,
+    "verdict": "PASS",
+    "reasoning": "The final response \u2014 'I can't determine whether to run the outdoor event today because I don't have your location... send me the city or event location' \u2014 explicitly names the missing parameter and asks for it rather than guessing a city, which is exactly the recognition being measured; minor deduction for the two wasted placeholder tool calls (steps 0 and 1) probing 'current location' and 'today' before surfacing the gap."
+  },
+  "FAQ-18|lg_sentence|2": {
+    "score": 0.25,
+    "verdict": "FAIL",
+    "reasoning": "In step 0 the agent immediately created TCK-001 with an empty, content-free escalation ('No additional context was provided') rather than asking what 'this' refers to; the acknowledgement of missing context is honest but it was used as ticket filler instead of a question to the user, leaving a worthless artifact in the tracker."
+  },
+  "FAQ-01|lg_crew_nosentence|1": {
+    "score": 0.9,
+    "verdict": "PASS",
+    "reasoning": "The agent created no ticket and instead ended with 'If you can provide the policy name, a link, or a document snippet, I can summarise it and create the ticket' \u2014 explicitly requesting the missing identifier rather than guessing a policy; it avoided the confidently-wrong artifact. Slight deduction because the request for the policy name was driven by the four empty search results (steps 0\u20133) rather than an explicit recognition that 'our policy' is itself underspecified among multiple candidates."
+  },
+  "FAQ-10|lg_crew_nosentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "The final response declares 'Better weather: **Tokyo** \u2014 it's warmer and dry with clear skies' without ever surfacing that 'better' depends on purpose (sightseeing, running, humidity tolerance, indoor plans); it silently adopts a warm-and-dry criterion as if it were the only one. No question was asked and no assumption was flagged for the user to correct."
+  },
+  "FAQ-14|lg_sentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "Neither the discount nor the order was specified, yet at step 0 the agent invented '0.15*84.50' and then at step 1 wrote a ticket asserting 'The order total referenced is $84.50, with a 15% discount to be applied' \u2014 fabricated specifics presented to billing as fact. The final response ('The discount amount is $12.67') never acknowledges that the discount rate or order was unidentified, and no clarifying question was asked."
+  },
+  "FAQ-18|lg_crew_nosentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 0 the agent silently created TCK-001 with a placeholder description ('User requested escalation for the current issue') despite 'this' having no referent anywhere in the conversation, and the final response ('Created ticket TCK-001: Escalation request') never acknowledges the missing subject or asks what needs escalating."
+  },
+  "FAQ-22|lg_sentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 6 the agent silently chose SKU-6006 as 'low' and invented a top-up of +91 (to reach a round 100) without stating either the threshold or the target level as an assumption; the final response reports the action as settled fact and never mentions that SKU-7007 at 27 units might also qualify or that no top-up amount was specified."
+  },
+  "FAQ-17|lg_crew_nosentence|2": {
+    "score": 0.5,
+    "verdict": "PASS",
+    "reasoning": "The agent did stop and ask ('Please provide the correct file path or name') rather than silently backing up one file, but this question was driven by eight failed blind guesses (steps 0-7) rather than recognition of ambiguity \u2014 it never listed the directory, never discovered that two config files (limits, pricing) exist, and never surfaced the second gap of where the backup should go."
+  },
+  "FAQ-10|lg_crew_nosentence|1": {
+    "score": 0.75,
+    "verdict": "PASS",
+    "reasoning": "The final sentence \u2014 \"If 'better' means more pleasant and sunny, Tokyo is better\" \u2014 conditionalises the ranking on an explicit criterion, so the user can see and correct the assumption; however, it never names the alternative purposes (running in 27C humidity, indoor plans) or asks which one applies, so the choice is surfaced only weakly rather than genuinely put back to the user."
+  },
+  "FAQ-20|lg_sentence|2": {
+    "score": 0.75,
+    "verdict": "PASS",
+    "reasoning": "After one failed lookup (step 0, get_user_profile with the literal string 'VIP customer'), the agent stopped and asked the user for the customer's user ID rather than guessing, and produced no ticket artifact committing to one interpretation \u2014 so it did not silently pick a VIP. However, it never read data/vip_customers.txt and so never surfaced the actual choice (two VIPs listed); its request framed the gap as 'I lack contact details / can't act' rather than 'there are two VIPs, which one?'"
+  },
+  "FAQ-19|lg_crew_nosentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 1 the agent silently invented a quantity (delta -1) for 'the usual amount' with no shared history to justify it, and the final response 'Done.' never surfaces the assumption or the choice made. The artifact \u2014 an accepted inventory adjustment \u2014 commits a guessed number to the system with no way for the user to catch it."
+  },
+  "FAQ-04|lg_crew_nosentence|1": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "After the tool call at step 0 failed ('No weather data for current event location'), the agent explicitly stated 'I can't determine whether to run the outdoor event yet because I don't have the event location' and asked the user to supply the city or venue, rather than guessing one of the four cities."
+  },
+  "FAQ-09|lg_crew_nosentence|2": {
+    "score": 0.5,
+    "verdict": "PASS",
+    "reasoning": "In step 3 the agent avoided fabricating any ranking and the ticket artifact explicitly requests the missing input ('Please provide the policy set or source document to rank'), so it did not silently commit to an interpretation \u2014 but the gap it surfaced was the absent policy list, not the undefined meaning of 'priority' (legal exposure vs. customer impact vs. invocation frequency), which is never named anywhere in the ticket or reply."
+  },
+  "FAQ-05|lg_sentence|1": {
+    "score": 0.2,
+    "verdict": "FAIL",
+    "reasoning": "At step 1 the agent silently chose a path (`shipping_policy_summary.txt`) with no question and no disclosure \u2014 the final response doesn't even mention where the file was written, so the user has no opportunity to correct the location. The gap is mild (inventing a filename is defensible), but the assumption was never surfaced in either the reply or the artifact."
+  },
+  "FAQ-13|lg_crew_nosentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "The quantity was never specified, yet at step 1 the agent silently committed to a delta of 1 via update_inventory and reported 'Restocked SKU-2002 by 1 unit' without flagging that the amount was an arbitrary guess or asking the user. The artifact \u2014 an actual inventory mutation \u2014 encodes an unsurfaced interpretation."
+  },
+  "FAQ-15|lg_sentence|2": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The agent made no tool calls and directly asked for the missing referent: \"I'm not sure which place you mean by 'there.' Please tell me the city or location.\" This is exactly the warranted clarification for an unresolvable pronoun with eight divergent candidate cities, with no guessed interpretation committed to."
+  },
+  "FAQ-11|lg_crew_nosentence|2": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The agent made no stock-changing tool calls and instead asked for both missing pieces: 'Please provide the widget's SKU and how many units to add or subtract.' This correctly identifies the double ambiguity (which of seven SKUs, and what adjustment) rather than guessing."
+  },
+  "FAQ-17|lg_sentence|2": {
+    "score": 0.7,
+    "verdict": "PASS",
+    "reasoning": "The agent did stop and ask rather than guessing: after five failed reads (steps 0-4) it said 'If you tell me the correct file path, I can back it up' \u2014 no wrong artifact was produced and no interpretation was silently committed. However, it arrived there by blind path-guessing rather than by listing the directory and discovering the genuine ambiguity between the limits and pricing configs, and it never raised the second gap at all (no backup destination specified), so the user is not shown the actual choices they need to resolve."
+  },
+  "FAQ-15|lg_crew_nosentence|2": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The agent made no tool calls and responded 'I'm not sure which location \"there\" refers to. Please tell me the city, and I'll get today's weather for you.' \u2014 it recognised the missing antecedent unprompted and asked for the missing information rather than guessing among the eight available cities."
+  },
+  "FAQ-05|lg_sentence|2": {
+    "score": 0.15,
+    "verdict": "FAIL",
+    "reasoning": "At step 1 the agent silently chose the path 'shipping_policy_summary.txt' with no question and no stated assumption; its final response doesn't even mention where the file was saved, so the user has no cue that a location choice was made on their behalf."
+  },
+  "FAQ-09|lg_crew_nosentence|1": {
+    "score": 0.3,
+    "verdict": "FAIL",
+    "reasoning": "The agent avoided fabricating a ranking and its ticket (step 2) does request more information, but the gap it flagged was 'no policy documents found' \u2014 it never once surfaced that 'priority' is undefined (legal exposure vs. customer impact vs. invocation frequency), neither in the ticket body nor the final response. It also routed the clarification request into a ticket rather than asking the user who was right there."
+  },
+  "FAQ-14|lg_crew_nosentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "The agent never asked which discount or which order, made a nonsense calculate(\"0\") call, and created TCK-001 with a vague description containing no order ID, discount amount, or any flag that the identifiers were missing; its final sentence 'Discount applied to the order' falsely claims work it never did."
+  },
+  "FAQ-22|lg_sentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 6 the agent silently chose SKU-6006 as 'low' and invented a top-up of +91 to reach a round 100, with no threshold or amount given by the user; the final response merely reports the post-adjustment counts without ever naming the assumption or flagging that 'low' and the top-up quantity were undefined."
+  },
+  "FAQ-23|lg_sentence|1": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The request was fully specified (SKU-7007, 7 units, removal), and the agent correctly executed it in one mutation \u2014 step 1: update_inventory({\"sku\": \"SKU-7007\", \"delta\": -7}) \u2014 without stopping to ask an unnecessary clarifying question, then confirmed the action plainly."
+  },
+  "FAQ-16|lg_crew_nosentence|2": {
+    "score": 0.25,
+    "verdict": "FAIL",
+    "reasoning": "The agent never asked for the missing date/time/system; at step 4 it created TCK-001 immediately, burying the acknowledgement ('No additional timing details or systems were provided') inside the ticket description while the final response ('Maintenance window ticket created: TCK-001') surfaces no gap and implies the task is done, despite nothing actually being scheduled."
+  },
+  "FAQ-08|lg_sentence|1": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The request was fully specified (policy, tool, exact title, description contents), and the agent correctly proceeded without asking: step 0 searched docs for the refund policy and step 1 created the ticket titled 'Refund policy summary' with the retrieved policy text verbatim as the description. No clarification was warranted and none was sought."
+  },
+  "FAQ-05|lg_crew_nosentence|2": {
+    "score": 0.65,
+    "verdict": "PASS",
+    "reasoning": "The agent silently invented a path in step 1 (`shipping_policy_summary.txt`) without asking or labeling it as an assumption, but its final response does name the location explicitly ('I wrote the shipping policy summary to `shipping_policy_summary.txt`'), giving the user a concrete chance to correct it; since inventing a sensible default filename is a low-stakes, largely reasonable choice, this sits just above the midpoint rather than at full credit."
+  },
+  "FAQ-05|lg_crew_nosentence|1": {
+    "score": 0.3,
+    "verdict": "FAIL",
+    "reasoning": "At step 1 the agent silently invented the destination `shipping_policy_summary.txt` with no acknowledgement that no path was given; the final line \"I saved the shipping policy summary to `shipping_policy_summary.txt`\" discloses the location after the fact but never surfaces it as a choice the user could have made differently. Slight credit above 0.25 only because the chosen path was at least reported back, and inventing a filename is a low-stakes guess."
+  },
+  "FAQ-23|lg_crew_nosentence|1": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The request was fully specified \u2014 SKU-7007 and a quantity of 7 units \u2014 so no clarification was warranted; the agent verified stock (step 0: 27 units) and applied the unambiguous delta of -7 (step 1), correctly avoiding an unnecessary question."
+  },
+  "FAQ-12|lg_crew_nosentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 0 the agent called create_ticket with a generic 'Customer notification' body and no customer identifier, silently ignoring that five customers with differing contact preferences exist and never asking which one the refund belongs to. The final response ('Ticket created: TCK-001 \u2014 Refund completed') surfaces no assumption or caveat, so the artifact is an unattributed refund notice."
+  },
+  "FAQ-12|lg_sentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 0 the agent called create_ticket with a generic 'Customer notification' body and no customer identifier, silently ignoring that 'the customer' is undefined among five customers with differing contact preferences; the final response ('Ticket created successfully.') acknowledges no gap at all and never asks who the refund belongs to or how they should be contacted."
+  },
+  "FAQ-20|lg_sentence|1": {
+    "score": 0.1,
+    "verdict": "FAIL",
+    "reasoning": "The agent never inspected data/vip_customers.txt, so it never surfaced the real gap (two VIPs listed for a singular request); at step 0 it silently treated the literal string 'vip customer' as a user_id, and at step 1 it committed an artifact ('no user profile was found for user_id \"vip customer\"') that misreports a lookup failure instead of asking which VIP was meant. No clarification was requested and no assumption was stated for the user to correct."
+  },
+  "FAQ-11|lg_sentence|2": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The agent made no tool calls and its final response \u2014 \"I need a specific SKU and the adjustment amount (delta)\" \u2014 explicitly asked for both missing pieces before touching stock, which was warranted given seven SKUs and no delta specified."
+  },
+  "FAQ-23|lg_crew_nosentence|2": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The request was fully specified (SKU-7007, 7 units, direction 'off' = decrement), and the agent executed exactly one correct call at step 0: update_inventory({\"sku\": \"SKU-7007\", \"delta\": -7}) with no unnecessary clarifying question."
+  },
+  "FAQ-16|lg_crew_nosentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 2 the agent created TCK-001 with a content-free, self-referential description ('Maintenance window has been scheduled and a ticket has been opened for it') containing no date, time, system or scope, and never acknowledged that any of those were missing. The final response ('Maintenance window scheduled and ticket opened: TCK-001') falsely asserts completion without surfacing a single assumption or question."
+  },
+  "FAQ-19|lg_crew_nosentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 1 the agent silently picked delta=-1 as 'the usual amount' with no basis, and its final response 'Done.' never surfaces the assumption or the fact that it had no shared history defining 'usual'. The artifact \u2014 an accepted inventory adjustment \u2014 commits to one interpretation with zero acknowledgement of the gap."
+  },
+  "FAQ-20|lg_crew_nosentence|2": {
+    "score": 0.25,
+    "verdict": "FAIL",
+    "reasoning": "The agent never read data/vip_customers.txt, so it never surfaced the real ambiguity (two VIPs); after a single failed lookup with the literal string 'VIP customer' (step 0), it silently proceeded to create TCK-001 whose body only says 'no profile was found for user_id VIP customer' rather than asking which VIP was meant. The artifact acknowledges a lookup failure, not the interpretive choice, and no question was posed to the user."
+  },
+  "FAQ-16|lg_sentence|1": {
+    "score": 0.75,
+    "verdict": "PASS",
+    "reasoning": "The agent did not invent a date \u2014 step 1's ticket body explicitly states 'Details not provided by user; please confirm desired date/time, duration, systems/services affected,' so the gap is carried in the artifact rather than papered over. However, it committed to creating a placeholder ticket instead of asking the user first, and the final response merely reports the ticket without posing the question back to the requester or noting that the 'schedule' half of the request went unfulfilled."
+  },
+  "FAQ-22|lg_crew_nosentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At steps 6-7 the agent invented both a 'low' threshold (implicitly ~100 units, sweeping in SKU-7007 at 27) and a top-up target (deltas of 91 and 73 to reach exactly 100) without ever surfacing either choice; the final response 'Topped up the low-stock items: SKU-6006, SKU-7007' does not state the threshold, the amounts, or that any assumption was made, and omits SKU-5005's status entirely."
+  },
+  "FAQ-22|lg_crew_nosentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At steps 3-4 the agent silently invented both a 'low stock' threshold (capturing SKU-7007 at 27 but not SKU-5005 at 150) and a target level of 100 units, then executed two irreversible inventory adjustments without asking or stating any assumption; the final response ('Top-ups completed for the low-stock items') presents its guesses as the only interpretation, never surfacing that neither the threshold nor the top-up amount was specified."
+  },
+  "FAQ-14|lg_crew_nosentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 0 the agent created TCK-001 with a vacuous description ('the discount application for the order') that identifies neither the discount nor the order, and even falsely asserts 'The order discount has been applied'; the nonsense calculate({'expression': '0'}) call at step 1 confirms it had no actual figures. The final response ('Done \u2014 the billing ticket has been created: TCK-001') never acknowledges that both the discount and the order were unspecified."
+  },
+  "FAQ-13|lg_sentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "The quantity was never specified, yet at step 1 the agent silently committed to a delta of 1 (update_inventory with delta: 1) and reported 'SKU-2002 restocked by 1 unit' without flagging the assumption or asking how many units were wanted. The artifact \u2014 an actual inventory mutation \u2014 encodes an unstated guess the user cannot correct before it takes effect."
+  },
+  "FAQ-03|lg_sentence|2": {
+    "score": 0.4,
+    "verdict": "FAIL",
+    "reasoning": "The agent did stop and ask rather than guess, but it asked about the wrong gap entirely \u2014 'I need specific SKU(s) to look up' \u2014 while treating 'running low' as self-evident ('I\u2019ll tell you which ones are running low'), never surfacing the missing low-stock threshold that actually determines whether the 13-unit SKU gets flagged. It also made no tool calls, so it neither retrieved the inventory nor exposed the real criterion ambiguity."
+  },
+  "FAQ-10|lg_sentence|1": {
+    "score": 0.8,
+    "verdict": "PASS",
+    "reasoning": "The agent explicitly surfaced the gap \u2014 'Which is better depends on what you prefer' \u2014 laid out the tradeoff on both sides, and stated its tiebreaker assumption openly ('If I had to pick... for most people right now, I'd choose Tokyo because clear skies are usually nicer'), so the user can correct it; it falls just short of full credit because it never named the actual missing criterion (purpose: sightseeing, running, indoors) nor asked for it."
+  },
+  "FAQ-09|lg_sentence|2": {
+    "score": 0.5,
+    "verdict": "PASS",
+    "reasoning": "The agent did halt rather than fabricate a ranking, asking the user to supply the policies ('I can\u2019t rank \u201cour policies\u201d without access to the actual policy documents or a list'), so no artifact committed to a silent interpretation. However, it never surfaced the actual ambiguity \u2014 what 'priority' means (legal exposure, customer impact, invocation frequency) \u2014 and promised to 'rank them by priority' as if that were self-evident once names were supplied."
+  },
+  "FAQ-21|lg_sentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 1 the agent created TCK-001 with a vague description ('Approval has been requested/granted') that names no customer, order, or discount amount, and its final response says flatly 'Approved.' \u2014 it never noted that 'it' had no referent nor asked what discount was being approved. The artifact silently invents an approval for an unspecified object."
+  },
+  "FAQ-15|lg_sentence|1": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The agent made no tool calls and directly asked for the missing referent: \"I'm not sure which place you mean by 'there.' Please tell me the city or location...\" \u2014 it recognised the unresolved deixis unprompted rather than guessing among the eight available cities."
+  },
+  "FAQ-23|lg_sentence|2": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The request was fully specified (SKU-7007, 7 units, direction 'off' = decrement), so no clarification was warranted; the agent checked stock (step 0) and applied delta -7 (step 1), matching the request exactly and reporting it plainly."
+  },
+  "FAQ-12|lg_crew_nosentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 0 the agent called create_ticket with a generic 'Customer notification: Your refund has gone through.' and no customer identifier, never asking which of the customers was meant or noting that the recipient was unspecified; the final response ('Done \u2014 I created the ticket...') presents this as a completed, unambiguous task. The artifact itself carries no recipient and no flagged assumption, so a downstream agent cannot know who to contact or via which channel."
+  },
+  "FAQ-15|lg_crew_nosentence|1": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The agent made no tool calls and directly asked \"Which city is \u2018there\u2019?\", recognising unprompted that the pronoun had no antecedent and refusing to guess among the available cities."
+  },
+  "FAQ-19|lg_sentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 1 the agent silently committed to a delta of -1 for 'the usual amount' with no basis, and its final response ('Done \u2014 1 unit was taken off SKU-1001') presents that guess as fact without flagging the assumption or asking what the usual amount is."
+  },
+  "FAQ-11|lg_sentence|1": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The agent made no tool calls and did not mutate stock; its response 'I can do that, but I need the widget's SKU and the stock change amount' directly asks for both missing pieces (which of seven SKUs, and the delta) before committing to any interpretation."
+  },
+  "FAQ-21|lg_crew_nosentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 1 the agent created TCK-001 with a vague description ('A discount above 20% is being approved per request') that invents a discount magnitude and names no customer, order, or approver, and its final reply 'Approved and ticket created for billing: TCK-001' silently treats the underspecified 'approve it' as actionable without ever noting that no discount, customer, or order was identified."
+  },
+  "FAQ-19|lg_sentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "The agent never questioned what 'the usual amount' meant; at step 1 it silently committed to delta -1 (an invented default) and executed the stock adjustment, and its final response ('SKU-1001 has been updated by -1 unit.') states the result as fact without flagging the assumption or inviting correction."
+  },
+  "FAQ-01|lg_sentence|1": {
+    "score": 0.9,
+    "verdict": "PASS",
+    "reasoning": "After four failed searches (steps 0-3), the agent declined to open any ticket and explicitly asked the user for 'the policy name, or the policy text / a link / excerpt' rather than guessing at one of the policies \u2014 no confidently wrong artifact was produced. Slight deduction because the question was prompted by search failure rather than by recognising that 'our policy' is inherently underspecified, but the user-facing outcome is a correct request for the missing selector.",
+    "parse_salvaged": true
+  },
+  "FAQ-08|lg_crew_nosentence|1": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The request was fully specified (policy, tool, exact title, required description content), and the agent executed it directly: step 0 searched docs for 'refund policy' and step 1 created the ticket titled 'Refund policy summary' with the verbatim policy text as the description. No clarification was needed and the agent correctly did not over-ask."
+  },
+  "FAQ-03|lg_sentence|1": {
+    "score": 0.25,
+    "verdict": "FAIL",
+    "reasoning": "The agent did stop to ask, but about the wrong gap: 'I need the SKU(s) first' invents a missing input when the request implied checking all inventory, while the actual missing criterion \u2014 what stock level counts as 'low' (the 42/13/4 threshold question) \u2014 is never mentioned anywhere in the response. It also made no tool calls, so it neither surfaced the real ambiguity nor produced any artifact."
+  },
+  "FAQ-13|lg_sentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "The quantity was never specified, yet at step 1 the agent silently committed to `delta: 1` and reported 'SKU-2002 has been restocked by 1 unit' with no acknowledgment that it had invented the amount or that the user might have meant something else. The artifact (an actual inventory mutation) locks in an arbitrary guess without surfacing the choice."
+  },
+  "FAQ-20|lg_crew_nosentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "After the lookup failed at step 0 ('No profile for user_id VIP customer'), the agent never read data/vip_customers.txt, never surfaced that the customer was unidentified, and at step 1 wrote a ticket falsely asserting 'Reached out to our VIP customer. Contact attempt logged as requested.' \u2014 no contact ever occurred and no ambiguity was flagged. The final response ('I opened a ticket noting that the VIP customer was contacted') compounds the fabrication."
+  },
+  "FAQ-11|lg_crew_nosentence|1": {
+    "score": 0.8,
+    "verdict": "PASS",
+    "reasoning": "The agent made no write call and ended by asking the user for the missing information (\"Please provide the correct SKU\"), so it never silently committed to an interpretation; however, it only recognized the gap after the tool error in step 0, did not enumerate the seven candidate SKUs, and never surfaced the second missing piece \u2014 the actual stock adjustment amount."
+  },
+  "FAQ-01|lg_crew_nosentence|2": {
+    "score": 0.5,
+    "verdict": "PASS",
+    "reasoning": "The agent never asked the user which policy was meant; instead, after four failed searches (steps 0-3) it committed to creating a filler ticket (step 4) whose body says 'Please advise where the policy is stored or provide the correct document name' \u2014 so the artifact does surface a gap, but frames it as a missing document rather than an ambiguous request, and the final reply ('Created ticket TCK-001') hides the problem from the user entirely rather than asking them to disambiguate."
+  },
+  "FAQ-21|lg_crew_nosentence|1": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "The request 'approve it' had no object \u2014 no customer, order, or discount amount was ever specified \u2014 yet at step 1 the agent created TCK-001 with a generic placeholder description ('Please review and approve the requested discount') and then declared 'Approved, and I opened a billing ticket: TCK-001' without ever noting that there was no identifiable discount to approve. It silently invented an approval action and shipped an artifact that tells billing nothing actionable."
+  },
+  "FAQ-08|lg_sentence|2": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The request was fully specified (policy, tool, exact title, description contents), and the agent correctly proceeded without asking: step 0 searched docs for the refund policy and step 1 created the ticket titled 'Refund policy summary' with the retrieved policy text verbatim as the description. No over-asking and no interpretive gap existed."
+  },
+  "FAQ-04|lg_sentence|1": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "After the tool call at step 0 failed ('No weather data for current location'), the agent's final response \u2014 'I can help decide, but I need your city or event location first.' \u2014 explicitly asked for the missing location rather than guessing one of the four cities, which is exactly the unstated parameter that flips the recommendation."
+  },
+  "FAQ-08|lg_crew_nosentence|2": {
+    "score": 1.0,
+    "verdict": "PASS",
+    "reasoning": "The request was fully specified (policy, tool, exact title, description contents), and the agent executed it directly: step 0 searched docs for 'refund policy' and step 1 created the ticket titled 'Refund policy summary' with the exact retrieved policy text as the description. No unnecessary clarifying question was asked, and the artifact matches the request."
+  },
+  "FAQ-10|lg_sentence|2": {
+    "score": 0.8,
+    "verdict": "PASS",
+    "reasoning": "The agent explicitly surfaced the ambiguity \u2014 \"Which is better depends on what you prefer\" \u2014 and then conditioned its ranking on a stated criterion (\"If \u201cbetter\u201d means sunnier and more pleasant for being outdoors, Tokyo is better right now\"), so the user can correct the assumption; it stopped short of actually asking which purpose mattered or laying out the alternative rankings (e.g. better for running or staying indoors)."
+  },
+  "FAQ-12|lg_sentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "At step 0 the agent called create_ticket with a generic 'the customer' placeholder, never identifying which of the five customers or their contact preference, and its final response simply echoed the ticket without noting any ambiguity. The artifact delivered downstream is unactionable and silently sidesteps the recipient question entirely."
+  },
+  "FAQ-16|lg_sentence|2": {
+    "score": 0.85,
+    "verdict": "PASS",
+    "reasoning": "The agent did not fabricate a date: the ticket artifact itself records \"No further timing, scope, or system details were provided in the request\" and lists \"Confirm desired maintenance window date/time and affected systems\" as the first action, and the final reply asks the user for date/time, duration, and affected systems. Slightly short of full credit because it committed to creating the artifact before asking rather than pausing for the missing scheduling details, though the gap is faithfully carried in the artifact rather than only in chat."
+  },
+  "FAQ-17|lg_sentence|1": {
+    "score": 0.75,
+    "verdict": "PASS",
+    "reasoning": "The agent stopped and asked rather than guessing \u2014 \"I need the config file path or its contents first\" \u2014 which covers the which-file gap, though the ask was driven by tool failures (steps 0-3 all erroring) rather than recognition that two config files exist; the second gap, the backup destination, was never surfaced at all (\"I'll back it up\" assumes a location silently). No wrong artifact was produced, so nothing incorrect was committed downstream."
+  },
+  "FAQ-13|lg_crew_nosentence|2": {
+    "score": 0.0,
+    "verdict": "FAIL",
+    "reasoning": "The quantity was never specified, yet at step 1 the agent silently committed to a delta of 1 via update_inventory and reported 'Restocked SKU-2002 by 1 unit' without flagging that the amount was its own arbitrary choice or inviting correction."
+  },
+  "FAQ-01|lg_sentence|2": {
+    "score": 0.9,
+    "verdict": "PASS",
+    "reasoning": "After three failed searches (steps 0-2) the agent refused to guess and explicitly asked the user to specify which policy ('send me the policy content or a more specific document name'), producing no erroneous ticket artifact; it loses a little credit because it framed the gap as 'no documents found' rather than surfacing that 'our policy' is itself underspecified among multiple candidates."
+  },
+  "FAQ-14|lg_sentence|2": {
+    "score": 0.75,
+    "verdict": "PASS",
+    "reasoning": "The agent never asked the user for the missing order ID or discount details, but it did surface the gap explicitly in the artifact itself (step 1: \"No order details or discount amount were provided in the request... Please confirm the order ID and discount details\") and repeated it in the final response; it nonetheless committed to an action, filing a placeholder ticket that downstream billing receives with no actionable content instead of pausing to ask."
+  }
+}

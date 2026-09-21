@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-11",
+  "scenario_name": "threshold-action-required-no-artifact",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The inventory for SKU-3003 has been restocked. It now has 20 units in stock.",
+  "agent_error": null,
+  "wall_seconds": 8.83,
+  "trace": {
+    "scenario_id": "RAM-11",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The inventory for SKU-3003 has been restocked. It now has 20 units in stock.",
+    "error": null,
+    "wall_seconds": 8.83,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-3003"
+        },
+        "args_key": "{\"sku\": \"SKU-3003\"}",
+        "result": "SKU-3003: 4 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-3003",
+          "delta": 16
+        },
+        "args_key": "{\"delta\": 16, \"sku\": \"SKU-3003\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

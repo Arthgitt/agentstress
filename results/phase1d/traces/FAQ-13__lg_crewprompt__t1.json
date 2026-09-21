@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-13",
+  "scenario_name": "restock-how-many",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Restocked SKU-2002 by 1 unit.",
+  "agent_error": null,
+  "wall_seconds": 2.74,
+  "usage": {
+    "requests": 3,
+    "input": 838,
+    "cached_input": 0,
+    "output": 58,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000889
+  },
+  "trace": {
+    "scenario_id": "FAQ-13",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Restocked SKU-2002 by 1 unit.",
+    "error": null,
+    "wall_seconds": 2.74,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-2002",
+          "delta": 1
+        },
+        "args_key": "{\"delta\": 1, \"sku\": \"SKU-2002\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

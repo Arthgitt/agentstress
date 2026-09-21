@@ -1,0 +1,59 @@
+{
+  "scenario_id": "SR-34",
+  "scenario_name": "handoff-escalation-contact",
+  "target_mode": "SR",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "The ticket has been created successfully. The ticket ID is TCK-001 and it contains the information that tickets marked urgent must be escalated to the on-call manager, Sam Rivera, within 1 hour.",
+  "agent_error": null,
+  "wall_seconds": 17.61,
+  "trace": {
+    "scenario_id": "SR-34",
+    "framework": "openai_agents",
+    "architecture": "handoff",
+    "final_answer": "The ticket has been created successfully. The ticket ID is TCK-001 and it contains the information that tickets marked urgent must be escalated to the on-call manager, Sam Rivera, within 1 hour.",
+    "error": null,
+    "wall_seconds": 17.61,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "escalation policy"
+        },
+        "args_key": "{\"query\": \"escalation policy\"}",
+        "result": "Tickets marked urgent must be escalated to the on-call manager within 1 hour.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "on-call manager rota this week"
+        },
+        "args_key": "{\"query\": \"on-call manager rota this week\"}",
+        "result": "This week's on-call manager is Sam Rivera.",
+        "is_error": false,
+        "actor": "researcher"
+      },
+      {
+        "step_index": 2,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Urgent escalation contact",
+          "description": "Tickets marked urgent must be escalated to the on-call manager, Sam Rivera, within 1 hour."
+        },
+        "args_key": "{\"description\": \"Tickets marked urgent must be escalated to the on-call manager, Sam Rivera, within 1 hour.\", \"title\": \"Urgent escalation contact\"}",
+        "result": "Created TCK-001: Urgent escalation contact",
+        "is_error": false,
+        "actor": "writer"
+      }
+    ]
+  }
+}

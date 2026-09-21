@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-08",
+  "scenario_name": "rain-packing-advice",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I've created a support ticket titled \"Paris Weather and Packing Advice\" with the following details:\n\n- **Weather Conditions:** 18\u00b0C, light rain\n- **Packing Suggestions:** \n  - An umbrella or a raincoat\n  - A change of clothes that can get wet (or waterproof clothing)\n  - Waterproof shoes or boots\n\nFeel free to check your support portal for more information on the ticket. Enjoy your trip to Paris!",
+  "agent_error": null,
+  "wall_seconds": 28.89,
+  "trace": {
+    "scenario_id": "RAM-08",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I've created a support ticket titled \"Paris Weather and Packing Advice\" with the following details:\n\n- **Weather Conditions:** 18\u00b0C, light rain\n- **Packing Suggestions:** \n  - An umbrella or a raincoat\n  - A change of clothes that can get wet (or waterproof clothing)\n  - Waterproof shoes or boots\n\nFeel free to check your support portal for more information on the ticket. Enjoy your trip to Paris!",
+    "error": null,
+    "wall_seconds": 28.89,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        },
+        "args_key": "{\"city\": \"Paris\"}",
+        "result": "Paris: 18C, light rain",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Paris Weather and Packing Advice",
+          "description": "The current weather in Paris is 18\u00b0C with light rain. Suggested items to pack include an umbrella or raincoat, waterproof clothing, and waterproof shoes or boots."
+        },
+        "args_key": "{\"description\": \"The current weather in Paris is 18\\u00b0C with light rain. Suggested items to pack include an umbrella or raincoat, waterproof clothing, and waterproof shoes or boots.\", \"title\": \"Paris Weather and Packing Advice\"}",
+        "result": "Created TCK-001: Paris Weather and Packing Advice",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

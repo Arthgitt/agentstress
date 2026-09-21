@@ -1,0 +1,25 @@
+{
+  "scenario_id": "FAQ-15",
+  "scenario_name": "weather-there",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 3,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To provide you with the current weather, I need to know which city you are asking about. Could you please specify a city?",
+  "agent_error": null,
+  "wall_seconds": 3.74,
+  "trace": {
+    "scenario_id": "FAQ-15",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "To provide you with the current weather, I need to know which city you are asking about. Could you please specify a city?",
+    "error": null,
+    "wall_seconds": 3.74,
+    "calls": []
+  }
+}

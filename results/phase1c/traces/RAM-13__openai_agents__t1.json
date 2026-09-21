@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-13",
+  "scenario_name": "discount-needs-approval",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The ticket has been created successfully. The reference number for the ticket is TCK-001: Customer Request for 25% Discount. I have informed the sales team that they need manager approval before proceeding with the discount request.",
+  "agent_error": null,
+  "wall_seconds": 28.57,
+  "trace": {
+    "scenario_id": "RAM-13",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "The ticket has been created successfully. The reference number for the ticket is TCK-001: Customer Request for 25% Discount. I have informed the sales team that they need manager approval before proceeding with the discount request.",
+    "error": null,
+    "wall_seconds": 28.57,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "discount policy"
+        },
+        "args_key": "{\"query\": \"discount policy\"}",
+        "result": "Discounts above 20% require manager approval before they can be applied.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Request for 25% Discount",
+          "description": "A customer has requested a 25% discount. According to our policy, discounts above 20% require manager approval before they can be applied. Please inform the sales team whether we can proceed with this request."
+        },
+        "args_key": "{\"description\": \"A customer has requested a 25% discount. According to our policy, discounts above 20% require manager approval before they can be applied. Please inform the sales team whether we can proceed with this request.\", \"title\": \"Customer Request for 25% Discount\"}",
+        "result": "Created TCK-001: Customer Request for 25% Discount",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "FAQ-13",
+  "scenario_name": "restock-how-many",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Currently, SKU-2002 has 13 units in stock. To proceed with the restock, we need to know how many additional units you would like to add. Could you please specify the number of units to restock for SKU-2002?",
+  "agent_error": null,
+  "wall_seconds": 8.61,
+  "trace": {
+    "scenario_id": "FAQ-13",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "Currently, SKU-2002 has 13 units in stock. To proceed with the restock, we need to know how many additional units you would like to add. Could you please specify the number of units to restock for SKU-2002?",
+    "error": null,
+    "wall_seconds": 8.61,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

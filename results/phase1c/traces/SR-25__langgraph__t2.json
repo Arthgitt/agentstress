@@ -1,0 +1,48 @@
+{
+  "scenario_id": "SR-25",
+  "scenario_name": "profile-followup-seam",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have retrieved user-003's profile. The user is named Priya Nair and the best way to reach her is by phone at +1-555-0133.\n\nA support ticket (TCK-001) has been created for Priya Nair.",
+  "agent_error": null,
+  "wall_seconds": 12.32,
+  "trace": {
+    "scenario_id": "SR-25",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have retrieved user-003's profile. The user is named Priya Nair and the best way to reach her is by phone at +1-555-0133.\n\nA support ticket (TCK-001) has been created for Priya Nair.",
+    "error": null,
+    "wall_seconds": 12.32,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-003"
+        },
+        "args_key": "{\"user_id\": \"user-003\"}",
+        "result": "{'name': 'Priya Nair', 'preferred_contact': 'phone', 'phone': '+1-555-0133', 'email': 'priya@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Support Ticket for Priya Nair",
+          "description": "Best way to reach Priya Nair is by phone at +1-555-0133."
+        },
+        "args_key": "{\"description\": \"Best way to reach Priya Nair is by phone at +1-555-0133.\", \"title\": \"Support Ticket for Priya Nair\"}",
+        "result": "Created TCK-001: Support Ticket for Priya Nair",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

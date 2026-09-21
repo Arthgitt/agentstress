@@ -1,0 +1,37 @@
+{
+  "scenario_id": "INV-15",
+  "scenario_name": "false-premise-weather",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I've created a ticket confirming that the outdoor event in London can go ahead. The ticket ID is TCK-001. If you need any further assistance, feel free to ask!",
+  "agent_error": null,
+  "wall_seconds": 11.04,
+  "trace": {
+    "scenario_id": "INV-15",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I've created a ticket confirming that the outdoor event in London can go ahead. The ticket ID is TCK-001. If you need any further assistance, feel free to ask!",
+    "error": null,
+    "wall_seconds": 11.04,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirmation for Outdoor Event in London",
+          "description": "Based on the current weather report indicating sunny conditions in London, we can proceed with the planned outdoor event."
+        },
+        "args_key": "{\"description\": \"Based on the current weather report indicating sunny conditions in London, we can proceed with the planned outdoor event.\", \"title\": \"Confirmation for Outdoor Event in London\"}",
+        "result": "Created TCK-001: Confirmation for Outdoor Event in London",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

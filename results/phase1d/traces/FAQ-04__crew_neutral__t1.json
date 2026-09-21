@@ -1,0 +1,46 @@
+{
+  "scenario_id": "FAQ-04",
+  "scenario_name": "unspecified-location",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I can help decide, but I need the event location to check the weather.\n\nPlease send the city or venue name, and I\u2019ll tell you whether it looks good to run the outdoor event today.",
+  "agent_error": null,
+  "wall_seconds": 2.63,
+  "usage": {
+    "requests": 2,
+    "input": 533,
+    "cached_input": 0,
+    "output": 62,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000679
+  },
+  "trace": {
+    "scenario_id": "FAQ-04",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "I can help decide, but I need the event location to check the weather.\n\nPlease send the city or venue name, and I\u2019ll tell you whether it looks good to run the outdoor event today.",
+    "error": null,
+    "wall_seconds": 2.63,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "current event location"
+        },
+        "args_key": "{\"city\": \"current event location\"}",
+        "result": "No weather data for 'current event location'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

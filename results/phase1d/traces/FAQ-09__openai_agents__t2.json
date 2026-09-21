@@ -1,0 +1,68 @@
+{
+  "scenario_id": "FAQ-09",
+  "scenario_name": "undefined-ranking-dimension",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t find any internal documentation listing your policies or a defined priority hierarchy, so I can\u2019t reliably rank them yet.\n\nIf you send me:\n- the policy names, or\n- a link/snippet to the policy set, or\n- the rule for how to rank them,\n\nI can then produce the ranking and open the ticket for you.",
+  "agent_error": null,
+  "wall_seconds": 4.56,
+  "usage": {
+    "requests": 4,
+    "input": 1154,
+    "cached_input": 0,
+    "output": 138,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001486
+  },
+  "trace": {
+    "scenario_id": "FAQ-09",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t find any internal documentation listing your policies or a defined priority hierarchy, so I can\u2019t reliably rank them yet.\n\nIf you send me:\n- the policy names, or\n- a link/snippet to the policy set, or\n- the rule for how to rank them,\n\nI can then produce the ranking and open the ticket for you.",
+    "error": null,
+    "wall_seconds": 4.56,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy priority ranking policies priority order internal policy hierarchy"
+        },
+        "args_key": "{\"query\": \"policy priority ranking policies priority order internal policy hierarchy\"}",
+        "result": "No documents found for 'policy priority ranking policies priority order internal policy hierarchy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "search_docs",
+        "args": {
+          "query": "policy hierarchy priority order"
+        },
+        "args_key": "{\"query\": \"policy hierarchy priority order\"}",
+        "result": "No documents found for 'policy hierarchy priority order'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "search_docs",
+        "args": {
+          "query": "policies list"
+        },
+        "args_key": "{\"query\": \"policies list\"}",
+        "result": "No documents found for 'policies list'.",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}

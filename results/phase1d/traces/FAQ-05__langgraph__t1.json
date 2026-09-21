@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Done \u2014 I summarized the shipping policy and saved it to `shipping_policy_summary.txt`.",
+  "agent_error": null,
+  "wall_seconds": 2.8,
+  "usage": {
+    "requests": 3,
+    "input": 680,
+    "cached_input": 0,
+    "output": 85,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000892
+  },
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Done \u2014 I summarized the shipping policy and saved it to `shipping_policy_summary.txt`.",
+    "error": null,
+    "wall_seconds": 2.8,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "shipping policy summary return concise shipping policy internal docs"
+        },
+        "args_key": "{\"query\": \"shipping policy summary return concise shipping policy internal docs\"}",
+        "result": "Standard shipping takes 5-7 business days.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "write_file",
+        "args": {
+          "path": "shipping_policy_summary.txt",
+          "content": "Shipping Policy Summary:\n- Standard shipping takes 5-7 business days.\n"
+        },
+        "args_key": "{\"content\": \"Shipping Policy Summary:\\n- Standard shipping takes 5-7 business days.\", \"path\": \"shipping_policy_summary.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

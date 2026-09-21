@@ -1,0 +1,38 @@
+{
+  "scenario_id": "FAQ-05",
+  "scenario_name": "unspecified-destination",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_sentence",
+  "trial": 4,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The shipping policy has been written and saved successfully under the filename `shipping_policy.txt`.\n\nHere is the content of the file:\n```\nFree shipping on orders over $50.\nStandard shipping within 3-5 business days.\nExpress shipping available for an additional fee, delivered within 1-2 business days.\nInternational shipping is available but may incur customs duties and taxes.\n```",
+  "agent_error": null,
+  "wall_seconds": 29.16,
+  "trace": {
+    "scenario_id": "FAQ-05",
+    "framework": "lg_sentence",
+    "architecture": "single",
+    "final_answer": "The shipping policy has been written and saved successfully under the filename `shipping_policy.txt`.\n\nHere is the content of the file:\n```\nFree shipping on orders over $50.\nStandard shipping within 3-5 business days.\nExpress shipping available for an additional fee, delivered within 1-2 business days.\nInternational shipping is available but may incur customs duties and taxes.\n```",
+    "error": null,
+    "wall_seconds": 29.16,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "write_file",
+        "args": {
+          "path": "shipping_policy.txt",
+          "content": "Shipping Policy:\n- Free shipping on orders over $50.\n- Standard shipping within 3-5 business days.\n- Express shipping available for an additional fee, delivered within 1-2 business days.\n- International shipping is available but may incur customs duties and taxes."
+        },
+        "args_key": "{\"content\": \"Shipping Policy:\\n- Free shipping on orders over $50.\\n- Standard shipping within 3-5 business days.\\n- Express shipping available for an additional fee, delivered within 1-2 business days.\\n- International shipping is available but may incur customs duties and taxes.\", \"path\": \"shipping_policy.txt\"}",
+        "result": "Write accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

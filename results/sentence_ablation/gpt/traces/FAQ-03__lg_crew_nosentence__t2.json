@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I couldn\u2019t determine inventory levels because I only have a SKU-level inventory check tool, and I wasn\u2019t given any specific SKU to inspect. Please provide the SKU(s) you want checked, and I can tell you whether any are running low.",
+  "agent_error": null,
+  "wall_seconds": 1.7,
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "I couldn\u2019t determine inventory levels because I only have a SKU-level inventory check tool, and I wasn\u2019t given any specific SKU to inspect. Please provide the SKU(s) you want checked, and I can tell you whether any are running low.",
+    "error": null,
+    "wall_seconds": 1.7,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "ALL"
+        },
+        "args_key": "{\"sku\": \"ALL\"}",
+        "result": "Unknown SKU: ALL",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "all"
+        },
+        "args_key": "{\"sku\": \"all\"}",
+        "result": "Unknown SKU: all",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 2,
+    "input": 528,
+    "cached_input": 0,
+    "output": 99,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000842
+  }
+}

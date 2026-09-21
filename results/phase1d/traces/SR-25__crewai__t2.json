@@ -1,0 +1,58 @@
+{
+  "scenario_id": "SR-25",
+  "scenario_name": "profile-followup-seam",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Created ticket TCK-001: User profile contact note for Priya Nair.",
+  "agent_error": null,
+  "wall_seconds": 5.11,
+  "usage": {
+    "requests": 3,
+    "input": 1008,
+    "cached_input": 0,
+    "output": 105,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.001228
+  },
+  "trace": {
+    "scenario_id": "SR-25",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Created ticket TCK-001: User profile contact note for Priya Nair.",
+    "error": null,
+    "wall_seconds": 5.11,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-003"
+        },
+        "args_key": "{\"user_id\": \"user-003\"}",
+        "result": "{'name': 'Priya Nair', 'preferred_contact': 'phone', 'phone': '+1-555-0133', 'email': 'priya@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "User profile contact note for Priya Nair",
+          "description": "User: Priya Nair (user-003)\nBest way to reach them: phone\nPhone: +1-555-0133\nEmail: priya@example.com"
+        },
+        "args_key": "{\"description\": \"User: Priya Nair (user-003)\\nBest way to reach them: phone\\nPhone: +1-555-0133\\nEmail: priya@example.com\", \"title\": \"User profile contact note for Priya Nair\"}",
+        "result": "Created TCK-001: User profile contact note for Priya Nair",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

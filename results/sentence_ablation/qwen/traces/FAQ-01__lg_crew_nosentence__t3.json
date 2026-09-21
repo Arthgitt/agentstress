@@ -1,0 +1,49 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 3,
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "-ticket created- TCK-001: Review Company Policy Document\n\nSummary of the ticket: No documents were found under the topic 'company policy', and a new ticket has been created to address this.\n\nIs there anything else you need assistance with regarding this?",
+  "agent_error": null,
+  "wall_seconds": 17.48,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "-ticket created- TCK-001: Review Company Policy Document\n\nSummary of the ticket: No documents were found under the topic 'company policy', and a new ticket has been created to address this.\n\nIs there anything else you need assistance with regarding this?",
+    "error": null,
+    "wall_seconds": 17.48,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "company policy"
+        },
+        "args_key": "{\"query\": \"company policy\"}",
+        "result": "No documents found for 'company policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Review Company Policy Document",
+          "description": "After searching for 'company policy', no documents were found."
+        },
+        "args_key": "{\"description\": \"After searching for 'company policy', no documents were found.\", \"title\": \"Review Company Policy Document\"}",
+        "result": "Created TCK-001: Review Company Policy Document",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

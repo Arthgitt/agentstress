@@ -1,0 +1,48 @@
+{
+  "scenario_id": "FAQ-01",
+  "scenario_name": "which-policy",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crewprompt",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Ticket Title: Summary of Company Policy Not Found\n\nTicket Description: After searching through the internal documentation, no documents were found for our company policy. This might indicate that we need to establish or update our policy document. Please review and provide any relevant details or create the necessary document.\n\nTicket Created: TCK-001\n\nThe ticket has been created successfully.",
+  "agent_error": null,
+  "wall_seconds": 1005.58,
+  "trace": {
+    "scenario_id": "FAQ-01",
+    "framework": "lg_crewprompt",
+    "architecture": "single",
+    "final_answer": "Ticket Title: Summary of Company Policy Not Found\n\nTicket Description: After searching through the internal documentation, no documents were found for our company policy. This might indicate that we need to establish or update our policy document. Please review and provide any relevant details or create the necessary document.\n\nTicket Created: TCK-001\n\nThe ticket has been created successfully.",
+    "error": null,
+    "wall_seconds": 1005.58,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "company policy"
+        },
+        "args_key": "{\"query\": \"company policy\"}",
+        "result": "No documents found for 'company policy'.",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Summary of Company Policy Not Found",
+          "description": "After searching through the internal documentation, no documents were found for our company policy. This might indicate that we need to establish or update our policy document. Please review and provide any relevant details or create the necessary document."
+        },
+        "args_key": "{\"description\": \"After searching through the internal documentation, no documents were found for our company policy. This might indicate that we need to establish or update our policy document. Please review and provide any relevant details or create the necessary document.\", \"title\": \"Summary of Company Policy Not Found\"}",
+        "result": "Created TCK-001: Summary of Company Policy Not Found",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

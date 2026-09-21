@@ -1,0 +1,48 @@
+{
+  "scenario_id": "UT-07",
+  "scenario_name": "single-lookup-and-record",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "crew_neutral",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "The refund policy states that refunds are accepted within 30 days with a receipt. A ticket titled 'Refund policy' has been created and its reference number is TCK-001.",
+  "agent_error": null,
+  "wall_seconds": 10.13,
+  "trace": {
+    "scenario_id": "UT-07",
+    "framework": "crew_neutral",
+    "architecture": "single",
+    "final_answer": "The refund policy states that refunds are accepted within 30 days with a receipt. A ticket titled 'Refund policy' has been created and its reference number is TCK-001.",
+    "error": null,
+    "wall_seconds": 10.13,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "search_docs",
+        "args": {
+          "query": "refund policy"
+        },
+        "args_key": "{\"query\": \"refund policy\"}",
+        "result": "Refunds are accepted within 30 days with a receipt.",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Refund policy",
+          "description": "Refunds are accepted within 30 days with a receipt."
+        },
+        "args_key": "{\"description\": \"Refunds are accepted within 30 days with a receipt.\", \"title\": \"Refund policy\"}",
+        "result": "Created TCK-001: Refund policy",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

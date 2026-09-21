@@ -1,0 +1,36 @@
+{
+  "scenario_id": "UT-19",
+  "scenario_name": "handoff-go-no-go",
+  "target_mode": "UT",
+  "architecture": "handoff",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "Based on the current weather conditions with 33 degrees Celsius and heavy rain in Mumbai, it would not be advisable to proceed with the outdoor photo shoot today.",
+  "agent_error": null,
+  "wall_seconds": 8.36,
+  "trace": {
+    "scenario_id": "UT-19",
+    "framework": "crewai",
+    "architecture": "handoff",
+    "final_answer": "Based on the current weather conditions with 33 degrees Celsius and heavy rain in Mumbai, it would not be advisable to proceed with the outdoor photo shoot today.",
+    "error": null,
+    "wall_seconds": 8.36,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Mumbai"
+        },
+        "args_key": "{\"city\": \"Mumbai\"}",
+        "result": "Mumbai: 33C, heavy rain",
+        "is_error": false,
+        "actor": "researcher"
+      }
+    ]
+  }
+}

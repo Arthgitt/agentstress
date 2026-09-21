@@ -1,0 +1,48 @@
+{
+  "scenario_id": "RAM-06",
+  "scenario_name": "discount-vs-amount-due",
+  "target_mode": "RAM",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "A support ticket has been created and is titled \"TCK-001: Customer Discount Adjustment - $80 Item with 25% Off\". The billing team has been informed that the customer should be charged $60 for this item. \n\nIs there anything else you need assistance with?",
+  "agent_error": null,
+  "wall_seconds": 26.4,
+  "trace": {
+    "scenario_id": "RAM-06",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "A support ticket has been created and is titled \"TCK-001: Customer Discount Adjustment - $80 Item with 25% Off\". The billing team has been informed that the customer should be charged $60 for this item. \n\nIs there anything else you need assistance with?",
+    "error": null,
+    "wall_seconds": 26.4,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "calculate",
+        "args": {
+          "expression": "0.25*80"
+        },
+        "args_key": "{\"expression\": \"0.25*80\"}",
+        "result": "0.25*80 = 20.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Customer Discount Adjustment - $80 Item with 25% Off",
+          "description": "A customer is getting a 25% discount on an $80 item. The discount amount is $20, so the final charge should be $60."
+        },
+        "args_key": "{\"description\": \"A customer is getting a 25% discount on an $80 item. The discount amount is $20, so the final charge should be $60.\", \"title\": \"Customer Discount Adjustment - $80 Item with 25% Off\"}",
+        "result": "Created TCK-001: Customer Discount Adjustment - $80 Item with 25% Off",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

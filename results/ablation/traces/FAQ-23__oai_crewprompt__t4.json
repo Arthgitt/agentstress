@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-23",
+  "scenario_name": "fully-specified-mutation",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": true,
+  "is_exploratory": false,
+  "framework": "oai_crewprompt",
+  "trial": 4,
+  "temperature": 0.3,
+  "expected_clean_calls": 1,
+  "agent_output": "The task has been completed successfully. 7 units have been taken off SKU-7007, and the stock adjustment has been accepted.",
+  "agent_error": null,
+  "wall_seconds": 5.18,
+  "trace": {
+    "scenario_id": "FAQ-23",
+    "framework": "oai_crewprompt",
+    "architecture": "single",
+    "final_answer": "The task has been completed successfully. 7 units have been taken off SKU-7007, and the stock adjustment has been accepted.",
+    "error": null,
+    "wall_seconds": 5.18,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-7007",
+          "delta": -7
+        },
+        "args_key": "{\"delta\": -7, \"sku\": \"SKU-7007\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

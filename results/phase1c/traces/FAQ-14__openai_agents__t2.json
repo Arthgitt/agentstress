@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-14",
+  "scenario_name": "apply-which-discount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "To proceed, I need to know the current price of the item and the discount percentage or amount you want to apply. Could you please provide me with these details? Once I have them, I can calculate the discounted price and create a support ticket for billing.\nIf you're not sure about the specific values, let me know what information you do have so we can work through this step by step.",
+  "agent_error": null,
+  "wall_seconds": 7.69,
+  "trace": {
+    "scenario_id": "FAQ-14",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "To proceed, I need to know the current price of the item and the discount percentage or amount you want to apply. Could you please provide me with these details? Once I have them, I can calculate the discounted price and create a support ticket for billing.\nIf you're not sure about the specific values, let me know what information you do have so we can work through this step by step.",
+    "error": null,
+    "wall_seconds": 7.69,
+    "calls": []
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "scenario_id": "UT-23",
+  "scenario_name": "compare-two-cities-then-stop",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "Chicago is warmer right now.",
+  "agent_error": null,
+  "wall_seconds": 2.03,
+  "usage": {
+    "requests": 2,
+    "input": 556,
+    "cached_input": 0,
+    "output": 56,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000669
+  },
+  "trace": {
+    "scenario_id": "UT-23",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "Chicago is warmer right now.",
+    "error": null,
+    "wall_seconds": 2.03,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_weather",
+        "args": {
+          "city": "Denver"
+        },
+        "args_key": "{\"city\": \"Denver\"}",
+        "result": "Denver: -2C, snow",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "get_weather",
+        "args": {
+          "city": "Chicago"
+        },
+        "args_key": "{\"city\": \"Chicago\"}",
+        "result": "Chicago: 9C, windy",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "scenario_id": "INV-12",
+  "scenario_name": "false-premise-stock-count",
+  "target_mode": "INV",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created a ticket titled \"Confirm Inventory Count for SKU-6006\" to confirm that SKU-6006 currently has 30 units in stock. This will be forwarded to the sales team for their reference.",
+  "agent_error": null,
+  "wall_seconds": 10.43,
+  "trace": {
+    "scenario_id": "INV-12",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "I have created a ticket titled \"Confirm Inventory Count for SKU-6006\" to confirm that SKU-6006 currently has 30 units in stock. This will be forwarded to the sales team for their reference.",
+    "error": null,
+    "wall_seconds": 10.43,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Confirm Inventory Count for SKU-6006",
+          "description": "Please confirm that SKU-6006 currently has 30 units in stock."
+        },
+        "args_key": "{\"description\": \"Please confirm that SKU-6006 currently has 30 units in stock.\", \"title\": \"Confirm Inventory Count for SKU-6006\"}",
+        "result": "Created TCK-001: Confirm Inventory Count for SKU-6006",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

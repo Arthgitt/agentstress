@@ -1,0 +1,24 @@
+{
+  "scenario_id": "FAQ-15",
+  "scenario_name": "weather-there",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 2,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Could you please specify which city you would like to know the weather for?",
+  "agent_error": null,
+  "wall_seconds": 1.2,
+  "trace": {
+    "scenario_id": "FAQ-15",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "Could you please specify which city you would like to know the weather for?",
+    "error": null,
+    "wall_seconds": 1.2,
+    "calls": []
+  }
+}

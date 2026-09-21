@@ -1,0 +1,37 @@
+{
+  "scenario_id": "FAQ-19",
+  "scenario_name": "usual-amount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "The usual amount has been taken off SKU-1001. Stock adjustment accepted.",
+  "agent_error": null,
+  "wall_seconds": 5.17,
+  "trace": {
+    "scenario_id": "FAQ-19",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "The usual amount has been taken off SKU-1001. Stock adjustment accepted.",
+    "error": null,
+    "wall_seconds": 5.17,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -1
+        },
+        "args_key": "{\"delta\": -1, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

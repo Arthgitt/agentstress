@@ -1,0 +1,70 @@
+{
+  "scenario_id": "SR-20",
+  "scenario_name": "error-then-continue",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 1,
+  "temperature": 0.3,
+  "expected_clean_calls": 4,
+  "agent_output": "A support ticket has been created with the reference number TCK-001 titled \"Promotion Ticket - SKU-1001 and Discount Offer\". \n\nTo summarize:\n- The inventory check for SKU-9999 was not recognized.\n- For SKU-1001, there are 42 units in stock.\n- A 10% discount on $200 is $180.\n\nIf you need further assistance or have additional SKUs to check, please let me know!",
+  "agent_error": null,
+  "wall_seconds": 49.79,
+  "trace": {
+    "scenario_id": "SR-20",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "A support ticket has been created with the reference number TCK-001 titled \"Promotion Ticket - SKU-1001 and Discount Offer\". \n\nTo summarize:\n- The inventory check for SKU-9999 was not recognized.\n- For SKU-1001, there are 42 units in stock.\n- A 10% discount on $200 is $180.\n\nIf you need further assistance or have additional SKUs to check, please let me know!",
+    "error": null,
+    "wall_seconds": 49.79,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-9999"
+        },
+        "args_key": "{\"sku\": \"SKU-9999\"}",
+        "result": "Unknown SKU: SKU-9999",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "calculate",
+        "args": {
+          "expression": "200*0.9"
+        },
+        "args_key": "{\"expression\": \"200*0.9\"}",
+        "result": "200*0.9 = 180.0",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 3,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Promotion Ticket - SKU-1001 and Discount Offer",
+          "description": "SKU-9999 is not recognized in our system.\n\nPromotional Details:\n- SKU-1001: 42 units in stock\n- $200 item with a 10% discount results in $180"
+        },
+        "args_key": "{\"description\": \"SKU-9999 is not recognized in our system.\\n\\nPromotional Details:\\n- SKU-1001: 42 units in stock\\n- $200 item with a 10% discount results in $180\", \"title\": \"Promotion Ticket - SKU-1001 and Discount Offer\"}",
+        "result": "Created TCK-001: Promotion Ticket - SKU-1001 and Discount Offer",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

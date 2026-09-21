@@ -1,0 +1,48 @@
+{
+  "scenario_id": "SR-25",
+  "scenario_name": "profile-followup-seam",
+  "target_mode": "SR",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "openai_agents",
+  "trial": 3,
+  "temperature": 0.3,
+  "expected_clean_calls": 2,
+  "agent_output": "I have created the ticket TCK-001 for Priya Nair. Her preferred contact method is phone, and you can reach her at +1-555-0133 or via email at priya@example.com.\n\nIs there anything else you need assistance with?",
+  "agent_error": null,
+  "wall_seconds": 13.21,
+  "trace": {
+    "scenario_id": "SR-25",
+    "framework": "openai_agents",
+    "architecture": "single",
+    "final_answer": "I have created the ticket TCK-001 for Priya Nair. Her preferred contact method is phone, and you can reach her at +1-555-0133 or via email at priya@example.com.\n\nIs there anything else you need assistance with?",
+    "error": null,
+    "wall_seconds": 13.21,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "get_user_profile",
+        "args": {
+          "user_id": "user-003"
+        },
+        "args_key": "{\"user_id\": \"user-003\"}",
+        "result": "{'name': 'Priya Nair', 'preferred_contact': 'phone', 'phone': '+1-555-0133', 'email': 'priya@example.com'}",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "create_ticket",
+        "args": {
+          "title": "Profile for Priya Nair",
+          "description": "Priya Nair's preferred contact method is phone. Her number is +1-555-0133 and her email is priya@example.com."
+        },
+        "args_key": "{\"description\": \"Priya Nair's preferred contact method is phone. Her number is +1-555-0133 and her email is priya@example.com.\", \"title\": \"Profile for Priya Nair\"}",
+        "result": "Created TCK-001: Profile for Priya Nair",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

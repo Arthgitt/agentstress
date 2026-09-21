@@ -1,0 +1,68 @@
+{
+  "scenario_id": "UT-17",
+  "scenario_name": "three-counts-then-stop",
+  "target_mode": "UT",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "langgraph",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": 3,
+  "agent_output": "Current stock:\n- SKU-1001: 42 units\n- SKU-2002: 13 units\n- SKU-3003: 4 units",
+  "agent_error": null,
+  "wall_seconds": 2.85,
+  "usage": {
+    "requests": 2,
+    "input": 533,
+    "cached_input": 0,
+    "output": 105,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000872
+  },
+  "trace": {
+    "scenario_id": "UT-17",
+    "framework": "langgraph",
+    "architecture": "single",
+    "final_answer": "Current stock:\n- SKU-1001: 42 units\n- SKU-2002: 13 units\n- SKU-3003: 4 units",
+    "error": null,
+    "wall_seconds": 2.85,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-2002"
+        },
+        "args_key": "{\"sku\": \"SKU-2002\"}",
+        "result": "SKU-2002: 13 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 2,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-3003"
+        },
+        "args_key": "{\"sku\": \"SKU-3003\"}",
+        "result": "SKU-3003: 4 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "scenario_id": "FAQ-19",
+  "scenario_name": "usual-amount",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "lg_crew_nosentence",
+  "trial": 2,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "Done.",
+  "agent_error": null,
+  "wall_seconds": 2.25,
+  "trace": {
+    "scenario_id": "FAQ-19",
+    "framework": "lg_crew_nosentence",
+    "architecture": "single",
+    "final_answer": "Done.",
+    "error": null,
+    "wall_seconds": 2.25,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "SKU-1001"
+        },
+        "args_key": "{\"sku\": \"SKU-1001\"}",
+        "result": "SKU-1001: 42 units in stock",
+        "is_error": false,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "update_inventory",
+        "args": {
+          "sku": "SKU-1001",
+          "delta": -1
+        },
+        "args_key": "{\"delta\": -1, \"sku\": \"SKU-1001\"}",
+        "result": "Stock adjustment accepted.",
+        "is_error": false,
+        "actor": "agent"
+      }
+    ]
+  },
+  "usage": {
+    "requests": 3,
+    "input": 800,
+    "cached_input": 0,
+    "output": 50,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000825
+  }
+}

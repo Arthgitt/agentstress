@@ -1,0 +1,57 @@
+{
+  "scenario_id": "FAQ-03",
+  "scenario_name": "undefined-threshold",
+  "target_mode": "FAQ",
+  "architecture": "single",
+  "is_control": false,
+  "is_exploratory": false,
+  "framework": "crewai",
+  "trial": 1,
+  "model": "gpt-5.4-mini",
+  "temperature": 0.3,
+  "expected_clean_calls": null,
+  "agent_output": "I checked the inventory, but the inventory tool requires a specific SKU and does not support a full-stock or low-stock scan directly.\n\nPlease send me the SKU(s) you want checked, and I\u2019ll tell you whether any are running low.",
+  "agent_error": null,
+  "wall_seconds": 2.28,
+  "usage": {
+    "requests": 2,
+    "input": 564,
+    "cached_input": 0,
+    "output": 100,
+    "no_usage": 0,
+    "http_errors": 0,
+    "cost_usd": 0.000873
+  },
+  "trace": {
+    "scenario_id": "FAQ-03",
+    "framework": "crewai",
+    "architecture": "single",
+    "final_answer": "I checked the inventory, but the inventory tool requires a specific SKU and does not support a full-stock or low-stock scan directly.\n\nPlease send me the SKU(s) you want checked, and I\u2019ll tell you whether any are running low.",
+    "error": null,
+    "wall_seconds": 2.28,
+    "calls": [
+      {
+        "step_index": 0,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "LOW_STOCK"
+        },
+        "args_key": "{\"sku\": \"LOW_STOCK\"}",
+        "result": "Unknown SKU: LOW_STOCK",
+        "is_error": true,
+        "actor": "agent"
+      },
+      {
+        "step_index": 1,
+        "tool": "check_inventory",
+        "args": {
+          "sku": "ALL"
+        },
+        "args_key": "{\"sku\": \"ALL\"}",
+        "result": "Unknown SKU: ALL",
+        "is_error": true,
+        "actor": "agent"
+      }
+    ]
+  }
+}
