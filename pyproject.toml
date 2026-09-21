@@ -32,8 +32,8 @@ all = ["agentstress[langgraph,crewai,openai,judge]"]
 dev = ["matplotlib>=3.8"]
 
 [project.urls]
-Homepage = "https://github.com/REPLACE-ME/agentstress"
-Paper = "https://github.com/REPLACE-ME/agentstress/tree/main/paper"
+Homepage = "https://github.com/Arthgitt/agentstress"
+Paper = "https://github.com/Arthgitt/agentstress/tree/main/paper"
 
 [project.scripts]
 agentstress = "agentstress.cli:main"

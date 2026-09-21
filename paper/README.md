@@ -24,7 +24,7 @@ twice (the second pass resolves references).
 
 | What | Where |
 |---|---|
-| Repository URL for the released tool | Implications section |
+
 | Verify all six citations (authors, venue, arXiv id) | bibliography |
 | Add framework/SDK documentation URLs | bibliography |
 | Acknowledgements (or delete) | end |
