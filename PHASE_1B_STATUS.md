@@ -125,7 +125,7 @@ Once calibration set is approved:
 ## Files Ready for Phase 1b Step 2
 
 ```
-/Users/arthpatel/Desktop/stress-test-tool/
+<repo>/
 ├── grading/
 │   ├── ram_rubric.md          ← Calibration examples included
 │   ├── faq_rubric.md

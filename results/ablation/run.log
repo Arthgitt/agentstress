@@ -114,30 +114,30 @@ prompt ablation: 60 scenarios x 3 conditions x 4 trials = 720 runs | to run 634
 [ 113/634] ok  SR-37    oai_crewprompt  t3  5 calls   33.6s  eta 380.8m
 [ 114/634] ok  SR-37    oai_crewprompt  t4  5 calls   36.6s  eta 379.6m
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-4896' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-4896' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -149,30 +149,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-4897' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-4897' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -184,30 +184,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-4898' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-4898' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -219,30 +219,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-4899' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-4899' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -278,30 +278,30 @@ RuntimeError: Event loop is closed
 [ 137/634] ok  SR-39    oai_crewprompt  t3  3 calls   14.5s  eta 326.8m
 [ 138/634] ok  SR-39    oai_crewprompt  t4  3 calls   15.9s  eta 324.7m
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-5608' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-5608' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -313,30 +313,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-5609' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-5609' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -374,30 +374,30 @@ RuntimeError: Event loop is closed
 [ 163/634] ok  UT-01    crew_neutral    t1  2 calls   11.1s  eta 281.4m
 [ 164/634] ok  UT-01    crew_neutral    t2  2 calls    9.4s  eta 279.5m
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-6317' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-6317' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -540,30 +540,30 @@ RuntimeError: Event loop is closed
 [ 294/634] ok  UT-15    oai_crewprompt  t4  2 calls   10.0s  eta 303.9m
 [ 295/634] ok  UT-15    crew_neutral    t1  1 calls    7.8s  eta 302.1m
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-10739' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-10739' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -575,30 +575,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-10740' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-10740' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -730,30 +730,30 @@ RuntimeError: Event loop is closed
 [ 414/634] ok  FAQ-03   oai_crewprompt  t4  1 calls  976.6s  eta 314.2m
 [ 415/634] ok  FAQ-03   crew_neutral    t1  1 calls 1061.1s  eta 321.3m
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-14566' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-14566' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -838,30 +838,30 @@ RuntimeError: Event loop is closed
 [ 487/634] ok  FAQ-11   crew_neutral    t1  1 calls    7.9s  eta 349.6m
 [ 488/634] ok  FAQ-11   crew_neutral    t2  1 calls    6.3s  eta 346.5m
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-16904' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-16904' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -873,30 +873,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-16905' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-16905' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -919,30 +919,30 @@ RuntimeError: Event loop is closed
 [ 498/634] ok  FAQ-12   oai_crewprompt  t4  2 calls   22.0s  eta 317.1m
 [ 499/634] ok  FAQ-12   crew_neutral    t1  1 calls   14.6s  eta 314.2m
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-17249' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-17249' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -954,30 +954,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-17250' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-17250' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -1037,30 +1037,30 @@ RuntimeError: Event loop is closed
 [ 546/634] ok  FAQ-16   oai_crewprompt  t4  2 calls   16.3s  eta 188.6m
 [ 547/634] ok  FAQ-16   crew_neutral    t1  1 calls   12.2s  eta 186.1m
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-18601' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-18601' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -1072,30 +1072,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-18602' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-18602' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -1167,30 +1167,30 @@ RuntimeError: Event loop is closed
 [ 606/634] ok  FAQ-21   oai_crewprompt  t4  3 calls   21.7s  eta  54.6m
 [ 607/634] ok  FAQ-21   crew_neutral    t1  2 calls   16.5s  eta  52.5m
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-20319' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-20319' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -1202,30 +1202,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-20320' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-20320' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
@@ -1237,30 +1237,30 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-20321' coro=<AsyncClient.aclose() done, defined at /Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
+future: <Task finished name='Task-20321' coro=<AsyncClient.aclose() done, defined at <repo>/venv/lib/python3.12/site-packages/httpx2/_client.py:2198> exception=RuntimeError('Event loop is closed')>
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
+  File "<repo>/venv/lib/python3.12/site-packages/crewai/flow/runtime/__init__.py", line 2071, in kickoff
     asyncio.get_running_loop()
 RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_client.py", line 2205, in aclose
     await self._transport.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 400, in aclose
     await self._pool.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 382, in aclose
     await self._close_connections(closing_connections)
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 374, in _close_connections
     await connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 157, in aclose
     await self._connection.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 236, in aclose
     await self._network_stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 55, in aclose
     await self._stream.aclose()
-  File "/Users/arthpatel/Desktop/stress-test-tool/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
+  File "<repo>/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1397, in aclose
     self._transport.close()
   File "/opt/anaconda3/lib/python3.12/asyncio/selector_events.py", line 1210, in close
     super().close()
