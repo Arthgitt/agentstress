@@ -1,5 +1,9 @@
 # agentstress
 
+[![PyPI](https://img.shields.io/pypi/v/agentstress.svg)](https://pypi.org/project/agentstress/)
+[![Python](https://img.shields.io/pypi/pyversions/agentstress.svg)](https://pypi.org/project/agentstress/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A stress-test benchmark for LLM agent frameworks. 100 scenarios engineered to
 provoke five failure modes from the [MAST](https://arxiv.org/abs/2503.13657)
 taxonomy, with graders that say *which* failure happened and whether the task
