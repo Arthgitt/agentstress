@@ -1,0 +1,42 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package
+        run: pip install -e .
+      # These suites need no model and no API key: they check the scenario
+      # suite, the deterministic grader, the ground-truth checks, the judge
+      # response parser, and that the mock world the published traces were
+      # produced against has not drifted.
+      - name: Scenario prompt hygiene
+        run: python -m tests.test_prompt_hygiene
+      - name: Deterministic step-repetition grader
+        run: python -m tests.test_grader
+      - name: Task-correctness checks
+        run: python -m tests.test_correctness
+      - name: Judge response parsing
+        run: python -m tests.test_judge_parse
+      - name: Judge-facing design notes
+        run: python -m tests.test_judge_context
+      - name: Mock world pin
+        run: python -m tests.test_world
+      - name: CLI smoke
+        run: |
+          agentstress list --mode SR
+          agentstress --help
