@@ -41,9 +41,9 @@ Paired sign tests, scenario as unit, Bonferroni ×6:
   most two.
 - Neutral wording removes a large part of CrewAI's excess, but **not all of it**:
   CrewAI with neutral wording is still worse than LangGraph (20 / 3). What
-  remains is CrewAI's fixed template sentence, which cannot be switched off
-  through its API ("you MUST return the actual complete content as the final
-  answer, not a summary"), and/or its execution loop.
+  remains is CrewAI's default template sentence ("you MUST return the actual
+  complete content as the final answer, not a summary") and/or its execution
+  loop. That sentence is *nominally* configurable — see the correction below.
 
 ## By mode
 
@@ -127,3 +127,37 @@ Two honest qualifications:
 | Ablation agent runs (720) | $0 (local) |
 | Ablation judge batch (480 calls, 474,726 in / 117,221 out) | **$2.65** |
 | **Project total** | **~$13.21** |
+
+---
+
+## Correction, 2026-09-28: the sentence is configurable in principle, ignored in practice
+
+Earlier versions of this document said the template sentence "cannot be switched
+off through CrewAI's API". That is not right, and the truth is more interesting.
+
+Reported upstream as [crewAIInc/crewAI#7766](https://github.com/crewAIInc/crewAI/issues/7766); two contributors replied
+and located it. The sentence is the `slices.expected_output` entry in
+`crewai/translations/en.json`, and CrewAI documents `Crew(prompt_file=...)` as
+the supported way to override prompt slices. **But in 1.15.17 that override is
+silently ignored for task prompts:** `task.py:1040` (the expected-output slice)
+and `task.py:1112` (the conversation instruction) resolve through the global
+`I18N_DEFAULT`, while `crew.py:1532` — the hierarchical manager — is the only
+call site that honours `prompt_file`.
+
+Verified on this machine against crewai 1.15.17: a custom prompt file whose
+`expected_output` slice carries a marker string produces
+
+    custom marker present in what was sent : False
+    default MUST sentence present          : True
+
+So the accurate statement is: **the sentence is meant to be overridable, and
+the documented override does not reach task prompts.** A user following the
+documentation would see no change in behaviour and no error. This strengthens
+rather than weakens the finding — the measured effect exists, and the supported
+mitigation does not currently work.
+
+A maintainer-side fix (resolving i18n from the crew's `prompt_file`, plus a
+regression test) was proposed in that thread. When it lands, the 20 FAQ
+scenarios should be re-run against a softened slice to measure whether
+clarification behaviour recovers; that measurement is the natural follow-up and
+is offered in the issue.

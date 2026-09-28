@@ -2,7 +2,7 @@
 
 **Complete, 2026-09-19.** The clarification (FAQ) effect survives on
 gpt-5.4-mini, and Phase 1d named one suspect: the sentence CrewAI appends to
-every task and that its API cannot switch off —
+every task —
 
 > you MUST return the actual complete content as the final answer, not a summary.
 
@@ -88,3 +88,24 @@ scored 0.5–0.74 counted as FAIL — see `results/phase1d_labeling/AGREEMENT.md
 | Agent runs — 160 qwen (local) + 80 GPT | $0 + **$0.08** |
 | Judge — 160 qwen + 80 GPT, batch | **$0.91 + $0.49 = $1.40** |
 | **Total** | **~$1.48** |
+
+---
+
+## Upstream, 2026-09-28
+
+Reported as [crewAIInc/crewAI#7766](https://github.com/crewAIInc/crewAI/issues/7766). Two contributors traced the
+sentence to the `slices.expected_output` entry in `crewai/translations/en.json`
+and found that `Crew(prompt_file=...)`, the documented way to override prompt
+slices, is silently ignored for task prompts in 1.15.17: `task.py:1040` and
+`task.py:1112` resolve through the global `I18N_DEFAULT`, while `crew.py:1532`
+(hierarchical manager) is the only call site honouring `prompt_file`.
+
+Verified here against crewai 1.15.17 with
+`experiments/verify_prompt_file_override.py`: a custom prompt file carrying a
+marker string in that slice never reaches the model, while the default sentence
+does. So the sentence is configurable by design and not in practice — a user
+following the documentation sees no behaviour change and no error.
+
+A maintainer-side fix plus a regression test was proposed in the thread. When it
+lands, re-running the 20 FAQ scenarios against a softened slice would measure
+directly whether clarification behaviour recovers.

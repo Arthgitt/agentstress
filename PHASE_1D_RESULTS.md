@@ -74,8 +74,10 @@ Paired sign tests on gpt-5.4-mini, scenario as unit, Bonferroni ×6:
   Neutralising our goal and expected-output wording barely moves CrewAI on
   either model (FAQ 77.5 → 65.0% on qwen, 62.5 → 55.0% on GPT), consistent with
   that. The candidate sentence was CrewAI's fixed template line — "you MUST return the actual complete content as the final
-  answer, not a summary" — which instructs delivery, not asking, and cannot be
-  switched off through CrewAI's API. Consistent with this, OpenAI Agents' one
+  answer, not a summary" — which instructs delivery, not asking. It is meant to be
+  overridable via `Crew(prompt_file=...)`, but in 1.15.17 that override is
+  silently ignored for task prompts ([crewAIInc/crewAI#7766](https://github.com/crewAIInc/crewAI/issues/7766); see the
+  correction in `PROMPT_ABLATION_RESULTS.md`). Consistent with this, OpenAI Agents' one
   line "Complete the assigned task accurately" already sits between LangGraph
   and CrewAI on FAQ on both models.
 
