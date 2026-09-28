@@ -21,19 +21,32 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Any, TypedDict
+from typing import TYPE_CHECKING, Any, TypedDict
 
-import anthropic
+if TYPE_CHECKING:  # the SDK is only needed to call the judge, never to parse it
+    import anthropic
 
 JUDGE_MODEL = "claude-opus-5"
 MAX_TOKENS = 1500  # 700 truncated one Phase 1c verdict mid-JSON
 
-_client: anthropic.Anthropic | None = None
+_client: "anthropic.Anthropic | None" = None
 
 
-def _get_client() -> anthropic.Anthropic:
+def _get_client() -> "anthropic.Anthropic":
+    """Build the judge client on first use.
+
+    The SDK is imported here rather than at module scope so that scoring
+    helpers (verdict parsing, prompt construction) work on a base install:
+    grading step repetition needs no API access at all.
+    """
     global _client
     if _client is None:
+        try:
+            import anthropic
+        except ImportError as e:
+            raise RuntimeError(
+                "The LLM judge needs the anthropic SDK: pip install 'agentstress[judge]'"
+            ) from e
         key = os.environ.get("ANTHROPIC_API_KEY")
         if not key:
             # An `export` typed into one terminal tab does not reach other
