@@ -1,6 +1,7 @@
 # agentstress
 
 [![PyPI](https://img.shields.io/pypi/v/agentstress.svg)](https://pypi.org/project/agentstress/)
+[![tests](https://github.com/Arthgitt/agentstress/actions/workflows/tests.yml/badge.svg)](https://github.com/Arthgitt/agentstress/actions/workflows/tests.yml)
 [![Python](https://img.shields.io/pypi/pyversions/agentstress.svg)](https://pypi.org/project/agentstress/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
