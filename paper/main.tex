@@ -26,8 +26,9 @@ Developers choose an agent framework expecting it to orchestrate a model, not to
 change how the model behaves. We test that assumption with a benchmark of 100
 scenarios engineered to provoke five failure modes from the MAST taxonomy, run
 identically on LangGraph, CrewAI and the OpenAI Agents SDK with the same model,
-tools and decoding settings. Across \nRunsPhaseOne{} runs, CrewAI fails
-\swapQcrewai\% of trials on the three modes where frameworks differ, against
+tools and decoding settings. Across \nRunsPhaseOne{} runs, CrewAI fails 48.2\%
+of trials overall and \swapQcrewai\% on the three modes where frameworks
+differ, against
 \swapQlanggraph\% for LangGraph and \swapQopenaiagents\% for the OpenAI Agents
 SDK. We then show the cause is not orchestration: transplanting CrewAI's prompt
 scaffolding into the other two frameworks reproduces CrewAI's failure rate
@@ -59,7 +60,7 @@ scaffolding between frameworks.
 Our contributions:
 \begin{enumerate}
 \item \textbf{A provocation benchmark.} \nScenarios{} scenarios (\nCore{} core,
-  plus controls) engineered to make five MAST~\cite{mast} failure modes
+  including 8 controls; 2 exploratory scenarios excluded) engineered to make five MAST~\cite{mast} failure modes
   available but not inevitable, with a deterministic grader for step repetition
   and a validated LLM judge for the rest, plus an independent task-correctness
   axis.
@@ -83,7 +84,7 @@ annotated traces, which we use to define what our scenarios provoke and how
 graders score them. Our judge follows the LLM-as-a-judge
 methodology~\cite{judge}, with the addition that the judge model family is never
 the model under test, and that judge verdicts are validated against blind human
-labels twice (Section~\ref{sec:judge}).
+labels three times, on both models scored (Section~\ref{sec:judge}).
 
 Prompt sensitivity in LLMs is well documented, but it is usually studied as a
 property of a task prompt the developer writes. We study scaffolding the
@@ -155,7 +156,7 @@ read-only tool; with exemptions for benign retries after errors and for
 scenarios that legitimately repeat a mutation). The other four modes are graded
 by claude-opus-5 from the trace and artifacts, with framework identity withheld.
 
-\paragraph{Judge validation.}\label{sec:judge} The judge was validated twice
+\paragraph{Judge validation.}\label{sec:judge} The judge was validated three times
 against blind human labels: 27 scenarios in an initial calibration (96\% verdict
 agreement) and 30 held-out expansion runs (96.7\%, $\kappa=0.93$). A third round
 on 24 gpt-5.4-mini runs agreed 87.5\% ($\kappa=0.75$); all three disagreements
@@ -255,6 +256,18 @@ task'', ``this is the expected criteria for your final answer'' --- carries the
 same pressure on its own. The practical consequence is that a developer cannot
 fix this by deleting one string.
 
+The sentence is nominally overridable through \texttt{Crew(prompt\_file=...)},
+the mechanism CrewAI's own deprecation notice directs users to. In 1.15.17 that
+override never reaches task prompts: the slice resolves through a module-level
+default, so a custom prompt file is silently ignored, with no warning. We
+confirm this empirically; it was reported twice
+before\footnote{\url{https://github.com/crewAIInc/crewAI/issues/1384} (2024) and
+\url{https://github.com/crewAIInc/crewAI/issues/5931} (closed as stale, 2026).}
+and remains present. The documented mitigation for the effect measured here
+therefore does not work. Our own
+report\footnote{\url{https://github.com/crewAIInc/crewAI/issues/7766}} drew a
+diagnosis of the responsible call sites and a proposed fix from contributors.
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{figures/fig3_sentence}
@@ -287,6 +300,11 @@ configurations.
 \paragraph{Synthetic environment.} One mock world, nine tools, no real side
 effects.
 
+\paragraph{Upstream status.} The sentence measured here is a default a
+maintainer may change, and the configuration path intended to override it is
+currently broken (Section~5.5). Results are tied to the versions listed above,
+and the mitigation a reader might attempt does not work in them.
+
 \paragraph{Judge.} Validated three times against blind human labels by a single
 rater who knew the hypotheses; agreement is high on the primary model and lower
 on gpt-5.4-mini, where we report a strict bound alongside.
@@ -297,6 +315,9 @@ For practitioners: a framework's default scaffolding is part of the system's
 reliability profile, and it is invisible in most application code. Before
 attributing a failure to the model, capture what the framework actually sends.
 Clarification failures in particular are not fixed by upgrading the model.
+
+The behaviour reported here has been raised upstream, where contributors
+located the responsible call sites and proposed a fix.
 
 For benchmark builders: report failure modes and task correctness separately;
 they disagree. Validate judges against human labels on every model family you
@@ -314,23 +335,24 @@ text frameworks add rather than their orchestration, and that a stronger model
 removes the effect for repetition and termination but not for asking the user a
 question when the request is underspecified.
 
-\paragraph{Acknowledgements.} \todo{optional}
-
 \begin{thebibliography}{9}
 \small
-\bibitem{mast} Cemri et al. \emph{Why Do Multi-Agent LLM Systems Fail?}
-  arXiv:2503.13657, 2025. \todo{verify authors/venue}
-\bibitem{agentbench} Liu et al. \emph{AgentBench: Evaluating LLMs as Agents.}
-  arXiv:2308.03688, 2023. \todo{verify}
-\bibitem{taubench} Yao et al. \emph{$\tau$-bench: A Benchmark for Tool-Agent-User
-  Interaction in Real-World Domains.} arXiv:2406.12045, 2024. \todo{verify}
-\bibitem{judge} Zheng et al. \emph{Judging LLM-as-a-Judge with MT-Bench and
-  Chatbot Arena.} arXiv:2306.05685, 2023. \todo{verify}
-\bibitem{qwen} Qwen Team. \emph{Qwen2.5 Technical Report.} arXiv:2412.15115,
-  2024. \todo{verify}
-\bibitem{sw} LangGraph 1.2.11 (\url{https://github.com/langchain-ai/langgraph});
-  CrewAI 1.15.17 (\url{https://github.com/crewAIInc/crewAI}); OpenAI Agents SDK
-  0.22.2 (\url{https://github.com/openai/openai-agents-python}). \todo{verify URLs}
+\bibitem{mast} M. Cemri, M. Z. Pan, S. Yang, L. A. Agrawal, B. Chopra, R. Tiwari,
+  K. Keutzer, A. Parameswaran, D. Klein, K. Ramchandran, M. Zaharia,
+  J. E. Gonzalez and I. Stoica. \emph{Why Do Multi-Agent LLM Systems Fail?}
+  arXiv:2503.13657, 2025.
+\bibitem{agentbench} X. Liu, H. Yu, H. Zhang et al. \emph{AgentBench: Evaluating
+  LLMs as Agents.} ICLR 2024; arXiv:2308.03688, 2023.
+\bibitem{taubench} S. Yao, N. Shinn, P. Razavi et al. \emph{$\tau$-bench: A
+  Benchmark for Tool-Agent-User Interaction in Real-World Domains.}
+  arXiv:2406.12045, 2024.
+\bibitem{judge} L. Zheng, W.-L. Chiang, Y. Sheng et al. \emph{Judging
+  LLM-as-a-Judge with MT-Bench and Chatbot Arena.} NeurIPS 2023 Datasets and
+  Benchmarks Track; arXiv:2306.05685, 2023.
+\bibitem{qwen} Qwen Team. \emph{Qwen2.5 Technical Report.} arXiv:2412.15115, 2024.
+\bibitem{sw} LangGraph 1.2.11, \url{https://github.com/langchain-ai/langgraph};
+  CrewAI 1.15.17, \url{https://github.com/crewAIInc/crewAI}; OpenAI Agents SDK
+  0.22.2, \url{https://github.com/openai/openai-agents-python}.
 \end{thebibliography}
 
 \end{document}
