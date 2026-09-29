@@ -1,0 +1,24 @@
+name: joss draft
+
+# Compiles paper/joss/paper.md into the JOSS PDF using the publisher's own
+# action, so the paper can be checked before and during review. Run it from the
+# Actions tab; the PDF is attached to the run as an artifact.
+on:
+  push:
+    paths: ["paper/joss/**"]
+  workflow_dispatch:
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build draft PDF
+        uses: openjournals/openjournals-draft-action@master
+        with:
+          journal: joss
+          paper-path: paper/joss/paper.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper
+          path: paper/joss/paper.pdf
