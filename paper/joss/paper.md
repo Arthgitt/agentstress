@@ -139,7 +139,19 @@ model [@qwen] and a hosted mid-size model.
 
 For practitioners the actionable result is that a framework's default prompt is
 part of its reliability profile and is invisible in application code; `capture`
-makes it visible in one command. All traces, judge verdicts, human-label sets
+makes it visible in one command.
+
+The findings have had effect outside the study. The scaffolding behaviour was
+reported to the framework's maintainers
+([crewAIInc/crewAI#7766](https://github.com/crewAIInc/crewAI/issues/7766)),
+where contributors located the responsible call sites and proposed a fix. That
+report also established that the documented mechanism for overriding the text in
+question has been silently ineffective since 2024, across two issues closed
+without a fix ([#1384](https://github.com/crewAIInc/crewAI/issues/1384),
+[#5931](https://github.com/crewAIInc/crewAI/issues/5931)); the package includes a
+script that re-checks this in one command. The `capture` command and the released
+traces are what made the behaviour reportable as a measurement rather than an
+anecdote. All traces, judge verdicts, human-label sets
 and analysis scripts are released with the package so every figure can be
 regenerated without re-running any model.
 
